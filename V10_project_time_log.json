@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "sessions": [
+    {
+      "started_at": "2026-10-21T12:46:56+05:30",
+      "ended_at": "2026-10-21T12:46:59+05:30",
+      "duration_seconds": 2.8,
+      "mode": "audit/build"
+    }
+  ],
+  "manual_minutes": 0,
+  "last_updated": "2026-10-21T12:46:59+05:30"
+}

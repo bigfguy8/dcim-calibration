@@ -1,0 +1,19 @@
+{
+  "xml_well_formed": true,
+  "schema_compatible": true,
+  "key_count_match": true,
+  "no_missing_keys": true,
+  "no_extra_keys": true,
+  "changed_keys_count": 11,
+  "hash_differs_from_baseline": true,
+  "device_compatible": true,
+  "status": "UNVERIFIED",
+  "notes": [
+    "Config derived from genuine device working baseline (default .xml)",
+    "Only 11 verified tuning keys changed",
+    "All other 2629 keys identical to working baseline",
+    "No undocumented or invented keys",
+    "Ready for LMC 8.4 import via Settings -> Config -> Import",
+    "STATUS: UNVERIFIED - no A/B test performed"
+  ]
+}

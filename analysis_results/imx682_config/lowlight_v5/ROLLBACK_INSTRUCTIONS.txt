@@ -1,0 +1,61 @@
+LOWLIGHT SHOT V5 CONFIG - ROLLBACK PROCEDURE
+============================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+LOWLIGHT SHOT V5 CONFIG:
+  File: LXX521_IMX682_LowLight_Shot_V5.xml
+  SHA-256: b246c2ce881eb541c9973b87fee395f961c901fdb75c87de28252e6e825e8226
+  Location: analysis_results/imx682_config/lowlight_v5/ (local)
+
+CHANGES FROM BASELINE (LowLight Shot V5):
+  Same as V3/V4 PLUS:
+    lib_denoise_key: 2 -> 3 (increased for extreme ISO night captures)
+    lib_lumadenoise_key: 2 -> 3 (increased for extreme ISO)
+    lib_lumanoise_key: 2 -> 3 (increased for extreme ISO)
+
+JUSTIFICATION FOR DENOISE INCREASE:
+  Night captures show ISO 15,094-25,500 (extremely high)
+  Black clip varies 1.23-52% (severe noise in dark scenes)
+  Denoise level 2 (V3/V4) may be insufficient for ISO >15000
+  Denoise level 3 is still conservative (not max)
+  All other settings unchanged from V3/V4
+
+IMPROVEMENTS OVER V3/V4:
+  - Increased denoise from 2 to 3 for extreme ISO night captures
+  - All other settings identical to V3/V4
+  - Minimal change (3 keys) for targeted improvement
+
+LOW-LIGHT SCENARIO RECOMMENDATIONS:
+  Static night scenes: Full config (night mode + denoise 3 + HDR)
+  Indoor low light: Moderate denoise (3) + slight exposure boost
+  Moving subjects: Reduce HDR frames (8) and avoid long exposure
+  Highlight preservation: lib_preservinghigh_key=1, enhanced HDR+
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: Denoise level 3 may reduce fine detail in very dark scenes.
+WARNING: Night mode may increase processing time.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_LowLight_Shot_V5.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_LowLight_Shot_V5.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_LowLight_Shot_V5.xml
+  5. Capture test photos in low-light conditions
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/lowlight_v5/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

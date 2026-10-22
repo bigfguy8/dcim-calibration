@@ -1,0 +1,47 @@
+HDR VIDEO CONFIG - ROLLBACK PROCEDURE
+====================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+HDR VIDEO CONFIG:
+  File: Lava_HDR_Video.xml
+  SHA-256: afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc
+  Location: analysis_results/imx682_config/hdr_video/ (local)
+
+VIDEO SETTINGS:
+  Resolution: 1080P
+  FPS: 30 (auto for p2018)
+  Aspect ratio: 16:9
+  HEVC: 0 (default)
+  Bitrate: 0 (auto)
+
+HDR SETTINGS:
+  HDR+: enhanced (was auto)
+  HDR region: 8 (was 5)
+  HDR frames: 12 (was 0)
+  Gamma curve: 0 (was -1)
+  cw_rg_key: 0.45 (warm cast reduction)
+  Sharpness: 2, Contrast: 1, NR: 1
+  Preserve highlights: 1
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/Lava_HDR_Video.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push Lava_HDR_Video.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select Lava_HDR_Video.xml
+  5. Record test video in consistent lighting
+  6. Compare with baseline video
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - STATUS: UNVERIFIED - no A/B test performed

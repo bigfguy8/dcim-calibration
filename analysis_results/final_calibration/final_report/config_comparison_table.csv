@@ -1,0 +1,13 @@
+Parameter,Desktop Baseline,Optimized Corrected,Changed?,Evidence
+cw_rg_key,0.5925,0.4500,YES,Warm cast R-G +5.7 mean (target <4.0)
+lib_sharpnessb_key,0,2,YES,Edge density 0.0296 (target >0.10)
+lib_sharpgain_key,0,2,YES,Complement to sharpnessb
+lib_sharpmini_key,0,2,YES,Fine detail preservation
+cw_rg_key_2-5,0.4200,0.4200,NO,Already reduced in baseline
+cw_rg_key_front,0.5925,0.5925,NO,No front camera data
+lib_denoise_key,0,0,NO,ISO covered by noise modeler
+pref_camera_hdr_plus_key,auto,auto,NO,Confirmed working
+pref_qjpg_key,97,97,NO,"High quality, no evidence for change"
+pref_awb_key,0,0,NO,Daylight preset matches outdoor range
+lib_contrast_1_key,0,0,NO,No strong evidence
+lib_saturation2_key,0,0,NO,No color saturation measurement

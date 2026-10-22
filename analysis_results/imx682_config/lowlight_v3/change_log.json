@@ -1,0 +1,180 @@
+{
+  "generated": "2026-10-19T18:25:23.523165",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "lowlight_v3": {
+    "file": "LXX521_IMX682_LowLight_Shot_V3.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\lowlight_v3\\LXX521_IMX682_LowLight_Shot_V3.xml",
+    "sha256": "9e7bbfb1ab70cdffe5e0f20d379b539afbee80f219be97d2960f73bcf0187ad8",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean across 50 LMC images"
+    },
+    {
+      "key": "cw_rg_key_2-5",
+      "old": "0.5925",
+      "new": "0.5200",
+      "source": "evidence_v1.3",
+      "evidence": "Secondary cameras warm cast reduction"
+    },
+    {
+      "key": "lib_night_mode_gain_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight night mode gain for low-light"
+    },
+    {
+      "key": "lib_nightmodeexposition_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight night exposure boost"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate denoise for clean shadows"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate luma noise"
+    },
+    {
+      "key": "lib_denoisesmoothing_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light smoothing"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "4",
+      "new": "3",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_darkenlight_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Shadow detail recovery"
+    },
+    {
+      "key": "lib_exposure_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight exposure boost"
+    },
+    {
+      "key": "lib_hdrbrightness_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "HDR brightness for shadow detail"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlights"
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "evidence": "HDR+ enhanced for low light"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "6",
+      "evidence": "HDR region (Evidence v1.3)"
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "8",
+      "evidence": "Moderate HDR frames (prioritize motion)"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "evidence": "Gamma curve for low light"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light sharpening (conservative)"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light sharpening gain"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light micro-sharpening"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "pref_awb_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Daylight AWB (Evidence v1.3)"
+    },
+    {
+      "key": "pref_color_key",
+      "old": "0",
+      "new": "-1",
+      "evidence": "Slight color adjustment"
+    }
+  ],
+  "unchanged_keys": 2616,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Low-light shot optimization V3.0",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "scenarios": {
+    "static_night": "Full config (night mode + denoise + HDR)",
+    "indoor_low_light": "Moderate denoise (2) + slight exposure boost",
+    "moving_subjects": "Reduce HDR frames (8) and avoid long exposure"
+  },
+  "limitations": [
+    "No A/B test performed",
+    "Night mode may increase processing time",
+    "Denoise level 2 may reduce fine detail in very dark scenes",
+    "No physical chart targets for MTF validation",
+    "Warm cast may be sensor-level (MT6878 ISP)",
+    "HDR enhanced mode may increase processing time"
+  ]
+}

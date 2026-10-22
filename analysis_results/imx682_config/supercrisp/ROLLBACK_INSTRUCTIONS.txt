@@ -1,0 +1,50 @@
+SUPER-CRISP CONFIG - ROLLBACK PROCEDURE
+=======================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+SUPER-CRISP CONFIG:
+  File: LXX521_IMX682_SuperCrisp.xml
+  SHA-256: c2fb3fbb88fca67a915d9f0d770d3a835ba3ef1f763881a670ade8d1ceda99c1
+  Location: analysis_results/imx682_config/supercrisp/ (local)
+
+CHANGES FROM BASELINE (super-crisp profile):
+  cw_rg_key: 0.5925 -> 0.4000 (warm cast reduction)
+  lib_sharpnessb_key: 0 -> 5 (strong sharpening)
+  lib_sharpgain_key: 0 -> 4 (higher sharpening gain)
+  lib_sharpmini_key: 0 -> 4 (higher micro-sharpening)
+  lib_contrast_1_key: 0 -> 2 (micro-contrast boost)
+  lib_contrast_2_key: 0 -> 2 (micro-contrast boost)
+  pref_iso_noise_key: 2 -> 3 (ISO noise handling)
+  lib_denoise_key: 0 -> 1 (light denoise, preserve texture)
+  lib_lumadenoise_key: 0 -> 1 (light luma denoise)
+  lib_lumanoise_key: 0 -> 1 (light luma noise)
+  lib_preservinghigh_key: 0 -> 1 (preserve highlights)
+
+WARNING: Sharpening level 5 is AGGRESSIVE. May introduce halos.
+WARNING: Test thoroughly before committing.
+WARNING: This config is UNVERIFIED - no A/B test performed yet.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_SuperCrisp.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_SuperCrisp.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_SuperCrisp.xml
+  5. Capture test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/supercrisp/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

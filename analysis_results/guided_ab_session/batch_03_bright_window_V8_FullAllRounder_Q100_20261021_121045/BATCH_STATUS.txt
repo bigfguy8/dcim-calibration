@@ -1,0 +1,6 @@
+Status: PASS_BATCH_HASH_MATCH
+Expected image count: 5
+Detected new/changed count: 5
+Audit report: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_121046
+SHA-256 set match: True
+Profile attribution remains user-declared; this script does not prove runtime XML application.

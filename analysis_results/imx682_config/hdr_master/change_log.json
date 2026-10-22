@@ -1,0 +1,112 @@
+{
+  "generated": "2026-10-19T18:01:00.882332",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "hdr_master": {
+    "file": "LXX521_IMX682_HDR_Master.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\hdr_master\\LXX521_IMX682_HDR_Master.xml",
+    "sha256": "afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean across 50 LMC images"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Edge density 0.0296 mean (target >0.10)"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Complement to sharpnessb"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Fine detail preservation"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast, preserve DR"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "2",
+      "new": "3",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlights in HDR"
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "evidence": "HDR+ confirmed active; enhanced mode for better DR"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "8",
+      "evidence": "HDR region adjustment for better highlight/shadow balance"
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "12",
+      "evidence": "HDR frame count for multi-frame processing"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "evidence": "Gamma curve mode adjustment"
+    }
+  ],
+  "unchanged_keys": 2625,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "HDR optimization",
+  "status": "UNVERIFIED - no A/B test performed yet"
+}

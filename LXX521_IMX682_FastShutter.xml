@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Config Identifier -->
+<string name="pref_config_nickname_key">LXX521_IMX682_FastShutter</string>
+
+<!-- Active Main Camera ID (Sony IMX682) -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Model Base & AWB (Pixel 6 Pro) -->
+<string name="pref_camera_model_back_key">12</string>
+<string name="pref_awb_back_key">12</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Prevent Long Exposure Motion Blur (Faster Shutter Control) -->
+<string name="pref_max_exposure_time_key">1</string> <!-- Prevents slow shutter drops like 1/4s -->
+<string name="frame_count_b_photo_0">9</string>        <!-- Reduced from 15 to 9 to prevent hand-shake misalignment -->
+<string name="frame_count_b_ns_0">15</string>
+
+<!-- LibPatcher: Boost Sharpness & Clarity to Counter Blur -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.25</string>           <!-- Sharpness boosted for micro-details -->
+<string name="ptchr_sharp_radius_small_0">1.2</string>
+<string name="ptchr_sharp_radius_medium_0">1.1</string>
+<string name="ptchr_sharp_outline_0">1.0</string>
+
+<!-- Noise Reduction Tuning -->
+<string name="ptchr_luma_denoise_0">0.875</string>        <!-- Lowered luma denoise so details aren't smudged -->
+<string name="ptchr_chroma_denoise_0">1.0</string>
+<string name="ptchr_spatial_denoise_0">0.875</string>
+
+<!-- Color & Dynamics -->
+<string name="ptchr_saturation_0">1.10</string>
+<string name="ptchr_contrast_0">1.05</string>
+<string name="ptchr_dehaze_0">1.05</string>
+
+<!-- Standard IMX682 Black Levels -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

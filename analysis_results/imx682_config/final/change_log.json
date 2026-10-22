@@ -1,0 +1,87 @@
+{
+  "generated": "2026-10-19T17:54:30.554737",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "final": {
+    "file": "LXX521_IMX682_SuperCrisp.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\final\\LXX521_IMX682_SuperCrisp.xml",
+    "sha256": "7b5ece32b2e6e98c9bf88198d0d004b0ce9d8964f49c8b9f204db0a8c5dd6288",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean across 50 LMC images (target <4.0). Conservative reduction."
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Edge density 0.0296 mean (target >0.10). Best MTF50 0.1438 cyc/px at EV 6.8."
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Complement to sharpnessb increase for detail retention."
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Micro-sharpening for fine detail preservation without halos."
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight micro-contrast boost for texture definition."
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight micro-contrast boost for texture definition."
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "2",
+      "new": "3",
+      "evidence": "Slightly higher ISO noise handling for low-light captures."
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise to control noise without crushing detail."
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise for cleaner shadows."
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise reduction."
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlight detail in HDR processing."
+    }
+  ],
+  "unchanged_keys": 2629,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "status": "UNVERIFIED - no A/B test performed yet"
+}

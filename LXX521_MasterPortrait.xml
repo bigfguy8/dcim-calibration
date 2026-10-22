@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Master Portrait Config for Lava Play Ultra (Sony IMX682) -->
+<string name="pref_config_nickname_key">LXX521_MasterPortrait</string>
+
+<!-- Active Main Camera ID -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Pixel 7 Pro Base & AWB (Realistic Skin Science) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_enable_awb_key">1</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Frame Stacking (Fast Capture for Human Subjects) -->
+<string name="frame_count_b_photo_0">7</string>
+
+<!-- LibPatcher: Natural Skin Texture & Soft Edges -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.18</string>
+<string name="ptchr_sharp_radius_small_0">1.05</string>
+<string name="ptchr_sharp_outline_0">0.95</string>
+
+<!-- Smooth Contrast & Natural Saturation -->
+<string name="ptchr_contrast_0">1.02</string>
+<string name="ptchr_dehaze_0">1.01</string>
+<string name="ptchr_saturation_0">1.04</string>
+
+<!-- Clean Denoise for Smooth Shadows on Face -->
+<string name="ptchr_luma_denoise_0">0.95</string>
+<string name="ptchr_chroma_denoise_0">1.15</string>
+
+<!-- Hardware Black Levels -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

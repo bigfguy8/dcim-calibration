@@ -1,0 +1,48 @@
+LAVA CRISP & CLEAR CONFIG - ROLLBACK PROCEDURE
+==============================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+LAVA CRISP & CLEAR CONFIG:
+  File: Lava_Crisp_Clear.xml
+  SHA-256: a545c2adfefbfa83e9a21d229b622da265ce40007f393a5bcb9842acaa26a001
+  Location: analysis_results/imx682_config/lava/ (local)
+
+CHANGES FROM BASELINE (crisp & clear profile):
+  cw_rg_key: 0.5925 -> 0.4000 (warm cast reduction)
+  lib_sharpnessb_key: 0 -> 4 (strong sharpening)
+  lib_sharpgain_key: 0 -> 3 (higher sharpening gain)
+  lib_sharpmini_key: 0 -> 3 (higher micro-sharpening)
+  lib_contrast_1_key: 0 -> 2 (stronger contrast)
+  lib_contrast_2_key: 0 -> 2 (stronger contrast)
+  pref_iso_noise_key: 2 -> 3 (ISO noise handling)
+  lib_denoise_key: 0 -> 1 (light denoise)
+  lib_lumadenoise_key: 0 -> 1 (light luma denoise)
+  lib_lumanoise_key: 0 -> 1 (light luma noise)
+
+WARNING: Higher sharpening (4) may introduce halos on fine textures.
+WARNING: Higher contrast (2) may crush shadows in low light.
+Test thoroughly before committing to this config.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/Lava_Crisp_Clear.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push Lava_Crisp_Clear.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select Lava_Crisp_Clear.xml
+  5. Capture test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/lava/default_working_backup.xml

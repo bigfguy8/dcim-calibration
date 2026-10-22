@@ -1,0 +1,440 @@
+{
+  "requested_path": "/sdcard/DCIM/Camera",
+  "exists": true,
+  "resolved_path": "/storage/emulated/0/DCIM/Camera",
+  "mode": "INVENTORY_ONLY",
+  "image_count_before": 103,
+  "image_bytes_before": 659904652,
+  "non_image_or_preserved_count": 2,
+  "nested_directory_count": 0,
+  "images": [
+    {
+      "path": "/sdcard/DCIM/Camera/IMG_20261020_214416_1_HDR.jpg",
+      "size_bytes": 3996286
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/IMG_20261020_214537_1_HDR.jpg",
+      "size_bytes": 3759954
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_214546_lmc_8.4.jpg",
+      "size_bytes": 2487081
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_214425_lmc_8.4.jpg",
+      "size_bytes": 3567095
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/IMG_20261020_231423_1_HDR.jpg",
+      "size_bytes": 6740815
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_231429_lmc_8.4.jpg",
+      "size_bytes": 5755837
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_221706_lmc_8.4.jpg",
+      "size_bytes": 2462365
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261020_221745_LXX521_IMX682_AllInOne_V3.jpg",
+      "size_bytes": 7631599
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261020_221827_LXX521_UltraSharp_Detail.jpg",
+      "size_bytes": 7433803
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_230829_lmc_8.4.jpg",
+      "size_bytes": 3058805
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_231000_lmc_8.4.jpg",
+      "size_bytes": 2676104
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261020_231008_lmc_8.4.jpg",
+      "size_bytes": 3302801
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120333_lmc_8.4.jpg",
+      "size_bytes": 8515403
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_121019_lmc_8.4.jpg",
+      "size_bytes": 7554880
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_012007_lmc_8.4.NIGHT.jpg",
+      "size_bytes": 3005558
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_093134_lmc_8.4.jpg",
+      "size_bytes": 7638110
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_093157_lmc_8.4.jpg",
+      "size_bytes": 7478058
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_093215_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7221409
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_101347_lmc_8.4.jpg",
+      "size_bytes": 7775329
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_101357_lmc_8.4.jpg",
+      "size_bytes": 7778978
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_101400_lmc_8.4.jpg",
+      "size_bytes": 7479489
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104516_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 12061124
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104524_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11697189
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104526_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11715132
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104528_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11721380
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104531_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11713643
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104540_lmc_8.4.jpg",
+      "size_bytes": 12220672
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104544_lmc_8.4.jpg",
+      "size_bytes": 11458719
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104547_lmc_8.4.jpg",
+      "size_bytes": 11986797
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104549_lmc_8.4.jpg",
+      "size_bytes": 12270994
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104551_lmc_8.4.jpg",
+      "size_bytes": 12267233
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_104647_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7664223
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_104706_lmc_8.4.jpg",
+      "size_bytes": 7741312
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_110921_lmc_8.4.jpg",
+      "size_bytes": 9255413
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_111447_lmc_8.4.jpg",
+      "size_bytes": 7425384
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_111843_lmc_8.4.jpg",
+      "size_bytes": 8466550
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_111853_lmc_8.4.jpg",
+      "size_bytes": 6705658
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_111952_lmc_8.4.jpg",
+      "size_bytes": 8084939
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_113233_lmc_8.4.jpg",
+      "size_bytes": 8285004
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_113615_lmc_8.4.jpg",
+      "size_bytes": 7929423
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_114511_lmc_8.4.jpg",
+      "size_bytes": 7607890
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_114529_lmc_8.4.jpg",
+      "size_bytes": 12001308
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_114553_lmc_8.4.jpg",
+      "size_bytes": 11798945
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_114604_lmc_8.4.jpg",
+      "size_bytes": 7186393
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120139_lmc_8.4.jpg",
+      "size_bytes": 7047280
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120142_lmc_8.4.jpg",
+      "size_bytes": 8228504
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120146_lmc_8.4.jpg",
+      "size_bytes": 7843507
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120155_lmc_8.4.jpg",
+      "size_bytes": 7799310
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120207_lmc_8.4.jpg",
+      "size_bytes": 7738278
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120304_lmc_8.4.jpg",
+      "size_bytes": 7695376
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120320_lmc_8.4.jpg",
+      "size_bytes": 11469099
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120326_lmc_8.4.jpg",
+      "size_bytes": 5913891
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_121034_lmc_8.4.jpg",
+      "size_bytes": 9304933
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_121037_lmc_8.4.jpg",
+      "size_bytes": 7550000
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_120330_lmc_8.4.jpg",
+      "size_bytes": 7660692
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120528_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7379721
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120544_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11577153
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120549_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7739686
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120555_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 8669970
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120603_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7301665
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120834_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7593684
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120843_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7694130
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120853_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 9089216
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120856_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 5778364
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_120901_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 11481413
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_121028_lmc_8.4.jpg",
+      "size_bytes": 7346669
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_121040_lmc_8.4.jpg",
+      "size_bytes": 11661335
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121347_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 9668864
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121351_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7386099
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121356_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7465344
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121412_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7767614
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121418_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 8039560
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/020261021_121428_LXX521_IMX682_V8_ProBalanced.jpg",
+      "size_bytes": 7885970
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/20261021_123955_lmc_8.4.jpg",
+      "size_bytes": 8026049
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795030726-IMG_20261020_010832_HDR.jpg",
+      "size_bytes": 4601601
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081694-AGC_20261020_133720727.jpg",
+      "size_bytes": 3221835
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081688-PXL_20261020_134015452.jpg",
+      "size_bytes": 1379621
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081693-PXL_20261020_133903951.MV.jpg",
+      "size_bytes": 3743824
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795030645-IMG_20261020_010652_1_HDR.jpg",
+      "size_bytes": 4999494
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795030808-20261020_010950_lmc_8.4.jpg",
+      "size_bytes": 3662509
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795032198-IMG_20261020_013303_1.jpg",
+      "size_bytes": 2259934
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081673-PXL_20261020_151634084.MV.jpg",
+      "size_bytes": 5128271
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081675-PXL_20261020_151616786.MV.jpg",
+      "size_bytes": 4503940
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081691-PXL_20261020_133913155_exported_803_1792486784499.jpg",
+      "size_bytes": 94149
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081856-PXL_20261020_152003713.jpg",
+      "size_bytes": 1397029
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081858-PXL_20261020_151913358.jpg",
+      "size_bytes": 1370910
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081890-PXL_20261020_152114521.jpg",
+      "size_bytes": 1335174
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081895-PXL_20261020_152020424.jpg",
+      "size_bytes": 1554705
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082018-PXL_20261020_152213108.jpg",
+      "size_bytes": 1141362
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082024-PXL_20261020_152235364.jpg",
+      "size_bytes": 1267914
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082039-PXL_20261020_152313135.NIGHT.jpg",
+      "size_bytes": 1051852
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081851-PXL_20261020_151735886.jpg",
+      "size_bytes": 1317820
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082094-PXL_20261020_152433812.NIGHT.jpg",
+      "size_bytes": 1119157
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081687-PXL_20261020_134102552.MV.jpg",
+      "size_bytes": 2336351
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081859-PXL_20261020_151858698.jpg",
+      "size_bytes": 1542339
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081690-PXL_20261020_133913155.MV.jpg",
+      "size_bytes": 3456440
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082233-SGCAM_20261020_133408951.jpg",
+      "size_bytes": 3247834
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082022-PXL_20261020_152240910.NIGHT.jpg",
+      "size_bytes": 1269064
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081696-20261020_133604_lmc_8.4.jpg",
+      "size_bytes": 3780688
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081679-PXL_20261020_151703000.jpg",
+      "size_bytes": 1080714
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081685-PXL_20261020_134102552.MV~2.jpg",
+      "size_bytes": 707757
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795081849-PXL_20261020_151835568.jpg",
+      "size_bytes": 1218328
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.trashed-1795082168-PXL_20261020_152553475.jpg",
+      "size_bytes": 1725576
+    }
+  ],
+  "preserved": [
+    {
+      "path": "/sdcard/DCIM/Camera/.pending-1793054512-_PXL_55915788257521_1792449712745_55915788735598.mp4",
+      "size_bytes": 0,
+      "reason": "not identified as image"
+    },
+    {
+      "path": "/sdcard/DCIM/Camera/.pending-1793091425-_PXL_92828735790013_1792486625685_92828736780782.mp4",
+      "size_bytes": 0,
+      "reason": "not identified as image"
+    }
+  ],
+  "errors": [],
+  "deleted": [],
+  "delete_errors": [],
+  "remaining_image_count_after": null
+}

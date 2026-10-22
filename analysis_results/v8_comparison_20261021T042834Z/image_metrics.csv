@@ -1,0 +1,1 @@
+path,filename,size_bytes,sha256,format,mode,width,height,decode_status,mean_luma_srgb_proxy,median_luma_srgb_proxy,std_luma_srgb_proxy,p01_luma,p05_luma,p95_luma,p99_luma,near_black_fraction_lt_0_02,near_white_fraction_gt_0_98,mean_saturation_srgb,highlight_fraction_ge_0_98,metric_note,error

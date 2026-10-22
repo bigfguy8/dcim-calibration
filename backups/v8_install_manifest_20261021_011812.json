@@ -1,0 +1,24 @@
+{
+  "time_local": "2026-10-21T01:18:12.297293+05:30",
+  "project": "/data/data/com.termux/files/home/dcim_calibration",
+  "device_deployed": false,
+  "source_files_modified": false,
+  "profiles": [
+    {
+      "path": "/data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_ProBalanced.xml",
+      "sha256": "b8c4331e894a2a8a9cf2771fa89c080d1084b629cb291032d31b2e7bef80db14",
+      "bytes": 1359,
+      "entries": 26,
+      "unique_keys": 26,
+      "root": "map"
+    },
+    {
+      "path": "/data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_FullAllRounder_Q100.xml",
+      "sha256": "f5fe70f8b292d7127dc1326279c732ddead8d8eae1b56f74d7aee45fa026db70",
+      "bytes": 141567,
+      "entries": 2641,
+      "unique_keys": 2641,
+      "root": "map"
+    }
+  ]
+}

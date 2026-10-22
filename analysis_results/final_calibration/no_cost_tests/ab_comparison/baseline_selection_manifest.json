@@ -1,0 +1,135 @@
+{
+  "total_images": 33,
+  "selected_count": 18,
+  "extras_count": 19,
+  "excluded_count": 5,
+  "scenes": {
+    "Fine texture": {
+      "count": 2,
+      "target": 3,
+      "shortfall": 1,
+      "images": [
+        "20261019_172202_lmc_8.4.jpg",
+        "20261019_172207_lmc_8.4.jpg"
+      ]
+    },
+    "Foliage": {
+      "count": 3,
+      "target": 3,
+      "shortfall": 0,
+      "images": [
+        "20261019_172106_lmc_8.4.jpg",
+        "20261019_172103_lmc_8.4.jpg",
+        "20261019_172231_lmc_8.4.jpg"
+      ]
+    },
+    "Text": {
+      "count": 3,
+      "target": 3,
+      "shortfall": 0,
+      "images": [
+        "20261019_172126_lmc_8.4.jpg",
+        "20261019_172124_lmc_8.4.jpg",
+        "20261019_172044_lmc_8.4.jpg"
+      ]
+    },
+    "Indoor mixed": {
+      "count": 3,
+      "target": 3,
+      "shortfall": 0,
+      "images": [
+        "20261019_172024_lmc_8.4.jpg",
+        "20261019_172038_lmc_8.4.jpg",
+        "20261019_172134_lmc_8.4.jpg"
+      ]
+    },
+    "Neutral objects": {
+      "count": 0,
+      "target": 3,
+      "shortfall": 3,
+      "images": []
+    },
+    "Bright highlights": {
+      "count": 2,
+      "target": 3,
+      "shortfall": 1,
+      "images": [
+        "20261019_172034_lmc_8.4.jpg",
+        "20261019_172116_lmc_8.4.jpg"
+      ]
+    },
+    "Low light": {
+      "count": 2,
+      "target": 3,
+      "shortfall": 1,
+      "images": [
+        "20261019_172512_lmc_8.4.jpg",
+        "20261019_172513_lmc_8.4.jpg"
+      ]
+    },
+    "Skin tone": {
+      "count": 3,
+      "target": 3,
+      "shortfall": 0,
+      "images": [
+        "20261019_172452_lmc_8.4.jpg",
+        "20261019_172454_lmc_8.4.jpg",
+        "20261019_172451_lmc_8.4.jpg"
+      ]
+    }
+  },
+  "selected": [
+    "20261019_172202_lmc_8.4.jpg",
+    "20261019_172207_lmc_8.4.jpg",
+    "20261019_172106_lmc_8.4.jpg",
+    "20261019_172103_lmc_8.4.jpg",
+    "20261019_172231_lmc_8.4.jpg",
+    "20261019_172126_lmc_8.4.jpg",
+    "20261019_172124_lmc_8.4.jpg",
+    "20261019_172044_lmc_8.4.jpg",
+    "20261019_172024_lmc_8.4.jpg",
+    "20261019_172038_lmc_8.4.jpg",
+    "20261019_172134_lmc_8.4.jpg",
+    "20261019_172034_lmc_8.4.jpg",
+    "20261019_172116_lmc_8.4.jpg",
+    "20261019_172512_lmc_8.4.jpg",
+    "20261019_172513_lmc_8.4.jpg",
+    "20261019_172452_lmc_8.4.jpg",
+    "20261019_172454_lmc_8.4.jpg",
+    "20261019_172451_lmc_8.4.jpg"
+  ],
+  "extras": [
+    "20261019_172234_lmc_8.4.jpg",
+    "20261019_172101_lmc_8.4.jpg",
+    "20261019_172225_lmc_8.4__1_.jpg",
+    "20261019_172226_lmc_8.4.jpg",
+    "20261019_172225_lmc_8.4.jpg",
+    "20261019_172224_lmc_8.4.jpg",
+    "20261019_172137_lmc_8.4.jpg",
+    "20261019_172514_lmc_8.4__1_.jpg",
+    "20261019_172453_lmc_8.4.jpg",
+    "20261019_172101_lmc_8.4.jpg",
+    "20261019_172137_lmc_8.4.jpg",
+    "20261019_172224_lmc_8.4.jpg",
+    "20261019_172225_lmc_8.4.jpg",
+    "20261019_172225_lmc_8.4__1_.jpg",
+    "20261019_172226_lmc_8.4.jpg",
+    "20261019_172234_lmc_8.4.jpg",
+    "20261019_172453_lmc_8.4.jpg",
+    "20261019_172514_lmc_8.4.jpg",
+    "20261019_172514_lmc_8.4__1_.jpg"
+  ],
+  "excluded": [
+    "20261019_172306_lmc_8.4.jpg",
+    "20261019_172334_lmc_8.4.jpg",
+    "20261019_172342_lmc_8.4.jpg",
+    "20261019_172405_lmc_8.4.jpg",
+    "20261019_172422_lmc_8.4.jpg"
+  ],
+  "shortfalls": [
+    "Fine texture: 2/3 (shortfall 1)",
+    "Neutral objects: 0/3 (shortfall 3)",
+    "Bright highlights: 2/3 (shortfall 1)",
+    "Low light: 2/3 (shortfall 1)"
+  ]
+}

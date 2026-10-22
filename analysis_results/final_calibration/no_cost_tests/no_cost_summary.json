@@ -1,0 +1,29 @@
+{
+  "total_images": 71,
+  "lmc_images": 50,
+  "stock_images": 19,
+  "lmc_warm_cast_rg": {
+    "min": -0.3091850280761719,
+    "max": 9.772814432779938,
+    "mean": 5.675988540649416
+  },
+  "stock_warm_cast_rg": {
+    "min": 0.9409128824869697,
+    "max": 12.150492350260421,
+    "mean": 6.047747561806125
+  },
+  "lmc_black_clip_mean": 10.641387939453127,
+  "stock_black_clip_mean": 18.343654431794818,
+  "lmc_white_clip_mean": 5.3562469482421875,
+  "stock_white_clip_mean": 15.819977877432839,
+  "monitor_moire_range": [
+    580.7482484101039,
+    3131.759125356338
+  ],
+  "monitor_checkerboard_count": 0,
+  "config_comparison": {
+    "desktop_baseline_hash": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "optimized_corrected_hash": "a5d98309bdacad6a1f640fb016d4423036a2b85682545c5002f9b8677d4785cd",
+    "keys_changed": 4
+  }
+}

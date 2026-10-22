@@ -1,0 +1,155 @@
+[
+  {
+    "filename": "_  20261019_121034_lmc_8.4.jpg",
+    "geometry": {
+      "dark_frac": 0.42285000000000006,
+      "bright_frac": 0.27512499999999995,
+      "mid_frac": 0.302025,
+      "bimodal_score": 0.697975,
+      "checkerboard_ratio": 0.2375,
+      "h_edges": 2317,
+      "v_edges": 2009,
+      "hv_balance": 0.8670694864048338,
+      "block_var_cv": 1.5894335017954058,
+      "block_var_mean": 1153.33902875
+    },
+    "slanted_edges": {
+      "strong_edge_count": 7940,
+      "slanted_edge_count": 1254,
+      "slanted_fraction": 0.1579345088161209,
+      "mean_orientation": 45.62238553551115
+    },
+    "moire": {
+      "moire_score": 0.004494545934919031,
+      "top_fft_peaks": [
+        {
+          "x": 12,
+          "y": 0,
+          "magnitude": 168194.55733417234
+        },
+        {
+          "x": -12,
+          "y": 0,
+          "magnitude": 168194.5573341723
+        },
+        {
+          "x": 0,
+          "y": 11,
+          "magnitude": 133571.60848493443
+        },
+        {
+          "x": 0,
+          "y": -11,
+          "magnitude": 133571.60848493443
+        },
+        {
+          "x": -16,
+          "y": 0,
+          "magnitude": 112796.39731548546
+        }
+      ]
+    }
+  },
+  {
+    "filename": "_  20261019_121039_lmc_8.4.jpg",
+    "geometry": {
+      "dark_frac": 0.433925,
+      "bright_frac": 0.24245000000000003,
+      "mid_frac": 0.323625,
+      "bimodal_score": 0.6763750000000001,
+      "checkerboard_ratio": 0.23,
+      "h_edges": 2158,
+      "v_edges": 2089,
+      "hv_balance": 0.9680259499536608,
+      "block_var_cv": 1.5231143820311466,
+      "block_var_mean": 1175.487556
+    },
+    "slanted_edges": {
+      "strong_edge_count": 7953,
+      "slanted_edge_count": 1275,
+      "slanted_fraction": 0.16031686156167485,
+      "mean_orientation": 45.81142967388627
+    },
+    "moire": {
+      "moire_score": 0.003942582445633031,
+      "top_fft_peaks": [
+        {
+          "x": 12,
+          "y": 0,
+          "magnitude": 144426.6436400091
+        },
+        {
+          "x": -12,
+          "y": 0,
+          "magnitude": 144426.64364000908
+        },
+        {
+          "x": -11,
+          "y": 0,
+          "magnitude": 119833.64476878829
+        },
+        {
+          "x": 11,
+          "y": 0,
+          "magnitude": 119833.64476878826
+        },
+        {
+          "x": 0,
+          "y": 11,
+          "magnitude": 109615.9924920031
+        }
+      ]
+    }
+  },
+  {
+    "filename": "_  20261019_121043_lmc_8.4.jpg",
+    "geometry": {
+      "dark_frac": 0.4657,
+      "bright_frac": 0.294325,
+      "mid_frac": 0.239975,
+      "bimodal_score": 0.760025,
+      "checkerboard_ratio": 0.2125,
+      "h_edges": 2017,
+      "v_edges": 1893,
+      "hv_balance": 0.9385225582548339,
+      "block_var_cv": 1.6695113872505718,
+      "block_var_mean": 1153.66511075
+    },
+    "slanted_edges": {
+      "strong_edge_count": 7943,
+      "slanted_edge_count": 1329,
+      "slanted_fraction": 0.16731713458391037,
+      "mean_orientation": 45.72153173695941
+    },
+    "moire": {
+      "moire_score": 0.003809337029002819,
+      "top_fft_peaks": [
+        {
+          "x": 0,
+          "y": 10,
+          "magnitude": 133181.48825908126
+        },
+        {
+          "x": 0,
+          "y": -10,
+          "magnitude": 133181.48825908126
+        },
+        {
+          "x": 0,
+          "y": 13,
+          "magnitude": 126972.41699182945
+        },
+        {
+          "x": 0,
+          "y": -13,
+          "magnitude": 126972.41699182945
+        },
+        {
+          "x": -13,
+          "y": 0,
+          "magnitude": 123391.64395904564
+        }
+      ]
+    }
+  }
+]

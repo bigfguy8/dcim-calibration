@@ -1,0 +1,21 @@
+{
+  "source": "/data/data/com.termux/files/home/dcim_calibration",
+  "included_files": 472,
+  "included_bytes": 25281455,
+  "excluded_file_entries": 226,
+  "excluded_bytes": 1221021399,
+  "excluded_reasons": {
+    "MEDIA_OR_BINARY_OR_UNALLOWLISTED_TYPE": 226
+  },
+  "included_extensions": {
+    ".md": 80,
+    ".py": 79,
+    ".xml": 89,
+    ".sh": 4,
+    ".json": 84,
+    ".csv": 67,
+    ".txt": 68,
+    ".yaml": 1
+  },
+  "max_individual_file_bytes": 26214400
+}

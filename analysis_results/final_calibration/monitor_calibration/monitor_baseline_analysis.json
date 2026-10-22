@@ -1,0 +1,342 @@
+[
+  {
+    "filename": "20261019_170217_lmc_8.4.jpg",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170217_lmc_8.4.jpg",
+    "width": 4624,
+    "height": 3468,
+    "sha256": "6e6d8e53b2f3c33097cd27b388a73c53c05a6e1532778629534322ec83815875",
+    "iso": 746,
+    "exposure_s": 0.05,
+    "ev": 1.423,
+    "f_number": "1.89",
+    "focal_length": "5.43",
+    "software": "HDR+ 1.0.414775603zdy",
+    "datetime": "2026:10:19 17:02:17",
+    "make": "LAVA",
+    "model": "LAVA LXX521",
+    "white_balance": "0",
+    "flash": "16",
+    "exposure_program": "2",
+    "scene_capture": "0",
+    "color_space": "1",
+    "lum_mean": 115.41100056966145,
+    "lum_std": 106.2738435612288,
+    "lum_p5": 1.0,
+    "lum_p95": 254.0,
+    "r_mean": 119.60587819417317,
+    "g_mean": 113.23581059773763,
+    "b_mean": 115.43634541829427,
+    "rb_ratio": 1.0361197572633665,
+    "rg_diff": 6.370067596435547,
+    "gb_diff": -2.2005348205566406,
+    "edge_density": 0.027950286865234375,
+    "black_clip_pct": 10.83997090657552,
+    "white_clip_pct": 21.50599161783854,
+    "checkerboard_detected": false,
+    "checkerboard_pattern": null,
+    "corner_count": 0,
+    "classification": "natural_scene",
+    "mtf50_cyc_px": 0.0009775171065493646,
+    "moire_score": 2026.821195521458,
+    "moire_peaks": [
+      {
+        "x": -7,
+        "y": -5,
+        "magnitude": 19483472.901057098
+      },
+      {
+        "x": 7,
+        "y": 5,
+        "magnitude": 19483472.901057094
+      },
+      {
+        "x": -7,
+        "y": 5,
+        "magnitude": 19273924.380853515
+      },
+      {
+        "x": 7,
+        "y": -5,
+        "magnitude": 19273924.380853515
+      },
+      {
+        "x": -8,
+        "y": 5,
+        "magnitude": 10490775.984748414
+      }
+    ],
+    "annotated_path": null
+  },
+  {
+    "filename": "20261019_170227_lmc_8.4.jpg",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170227_lmc_8.4.jpg",
+    "width": 4624,
+    "height": 3468,
+    "sha256": "7e47c793433d417bc2f3247b39b3fbc27ad132658ac7e2de5de82f081a6bbced",
+    "iso": 340,
+    "exposure_s": 0.029985,
+    "ev": 3.294,
+    "f_number": "1.89",
+    "focal_length": "5.43",
+    "software": "HDR+ 1.0.414775603zdy",
+    "datetime": "2026:10:19 17:02:27",
+    "make": "LAVA",
+    "model": "LAVA LXX521",
+    "white_balance": "0",
+    "flash": "16",
+    "exposure_program": "2",
+    "scene_capture": "0",
+    "color_space": "1",
+    "lum_mean": 94.02920023600261,
+    "lum_std": 49.19840618753893,
+    "lum_p5": 4.0,
+    "lum_p95": 167.0,
+    "r_mean": 97.19334665934245,
+    "g_mean": 92.16834386189778,
+    "b_mean": 95.35457611083984,
+    "rb_ratio": 1.0192835060832868,
+    "rg_diff": 5.025002797444671,
+    "gb_diff": -3.186232248942062,
+    "edge_density": 0.017031351725260418,
+    "black_clip_pct": 5.803807576497396,
+    "white_clip_pct": 0.0,
+    "checkerboard_detected": false,
+    "checkerboard_pattern": null,
+    "corner_count": 0,
+    "classification": "natural_scene",
+    "mtf50_cyc_px": 0.0009775171065493646,
+    "moire_score": 831.145345502163,
+    "moire_peaks": [
+      {
+        "x": 0,
+        "y": 5,
+        "magnitude": 3721982.2600146635
+      },
+      {
+        "x": 0,
+        "y": -9,
+        "magnitude": 2205222.477861498
+      },
+      {
+        "x": 0,
+        "y": 9,
+        "magnitude": 2205222.4778614976
+      },
+      {
+        "x": 0,
+        "y": 8,
+        "magnitude": 2203427.190765811
+      },
+      {
+        "x": 0,
+        "y": -8,
+        "magnitude": 2203427.190765811
+      }
+    ],
+    "annotated_path": null
+  },
+  {
+    "filename": "20261019_170236_lmc_8.4.jpg",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170236_lmc_8.4.jpg",
+    "width": 4624,
+    "height": 3468,
+    "sha256": "0a2fd8891ccee511f39a01d66461721c6ff632c665169392f11f7868076b1233",
+    "iso": 662,
+    "exposure_s": 0.020015,
+    "ev": 2.916,
+    "f_number": "1.89",
+    "focal_length": "5.43",
+    "software": "HDR+ 1.0.414775603zdy",
+    "datetime": "2026:10:19 17:02:36",
+    "make": "LAVA",
+    "model": "LAVA LXX521",
+    "white_balance": "0",
+    "flash": "16",
+    "exposure_program": "2",
+    "scene_capture": "0",
+    "color_space": "1",
+    "lum_mean": 124.94838460286458,
+    "lum_std": 82.28197006200507,
+    "lum_p5": 9.0,
+    "lum_p95": 235.0,
+    "r_mean": 129.71371205647787,
+    "g_mean": 123.02154922485352,
+    "b_mean": 122.3035036722819,
+    "rb_ratio": 1.0605886843933103,
+    "rg_diff": 6.692162831624358,
+    "gb_diff": 0.7180455525716098,
+    "edge_density": 0.016704559326171875,
+    "black_clip_pct": 1.2317657470703125,
+    "white_clip_pct": 0.0,
+    "checkerboard_detected": false,
+    "checkerboard_pattern": null,
+    "corner_count": 0,
+    "classification": "natural_scene",
+    "mtf50_cyc_px": 0.0009775171065493646,
+    "moire_score": 1273.6800777172793,
+    "moire_peaks": [
+      {
+        "x": 0,
+        "y": -6,
+        "magnitude": 6372366.455926896
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "magnitude": 6372366.455926896
+      },
+      {
+        "x": 0,
+        "y": -11,
+        "magnitude": 4089407.2368976604
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "magnitude": 4089407.23689766
+      },
+      {
+        "x": 0,
+        "y": 5,
+        "magnitude": 3868889.2793958983
+      }
+    ],
+    "annotated_path": null
+  },
+  {
+    "filename": "20261019_170241_lmc_8.4.jpg",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170241_lmc_8.4.jpg",
+    "width": 4624,
+    "height": 3468,
+    "sha256": "26a9f97d9776270e163948daef328d368ac210ef7da09cd43d6554525d5b926f",
+    "iso": 655,
+    "exposure_s": 0.020015,
+    "ev": 2.931,
+    "f_number": "1.89",
+    "focal_length": "5.43",
+    "software": "HDR+ 1.0.414775603zdy",
+    "datetime": "2026:10:19 17:02:41",
+    "make": "LAVA",
+    "model": "LAVA LXX521",
+    "white_balance": "0",
+    "flash": "16",
+    "exposure_program": "2",
+    "scene_capture": "0",
+    "color_space": "1",
+    "lum_mean": 113.41327794392903,
+    "lum_std": 87.70410919385029,
+    "lum_p5": 3.0,
+    "lum_p95": 220.0,
+    "r_mean": 117.83153533935547,
+    "g_mean": 111.58190663655598,
+    "b_mean": 111.26892598470052,
+    "rb_ratio": 1.0589797133078944,
+    "rg_diff": 6.249628702799484,
+    "gb_diff": 0.31298065185546875,
+    "edge_density": 0.024361928304036457,
+    "black_clip_pct": 12.845357259114584,
+    "white_clip_pct": 0.0,
+    "checkerboard_detected": false,
+    "checkerboard_pattern": null,
+    "corner_count": 0,
+    "classification": "natural_scene",
+    "mtf50_cyc_px": 0.0009775171065493646,
+    "moire_score": 580.7482484101039,
+    "moire_peaks": [
+      {
+        "x": 0,
+        "y": 5,
+        "magnitude": 6253922.475592445
+      },
+      {
+        "x": -6,
+        "y": 0,
+        "magnitude": 4550616.06511225
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "magnitude": 4550616.06511225
+      },
+      {
+        "x": 0,
+        "y": 6,
+        "magnitude": 3940601.932196135
+      },
+      {
+        "x": 0,
+        "y": -6,
+        "magnitude": 3940601.9321961347
+      }
+    ],
+    "annotated_path": null
+  },
+  {
+    "filename": "20261019_170249_lmc_8.4.jpg",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170249_lmc_8.4.jpg",
+    "width": 4624,
+    "height": 3468,
+    "sha256": "2f9e393def4742225b6278314a40881dbca3279076964c6f7a59e4752ca2229a",
+    "iso": 653,
+    "exposure_s": 0.020015,
+    "ev": 2.936,
+    "f_number": "1.89",
+    "focal_length": "5.43",
+    "software": "HDR+ 1.0.414775603zdy",
+    "datetime": "2026:10:19 17:02:49",
+    "make": "LAVA",
+    "model": "LAVA LXX521",
+    "white_balance": "0",
+    "flash": "16",
+    "exposure_program": "2",
+    "scene_capture": "0",
+    "color_space": "1",
+    "lum_mean": 136.03946431477866,
+    "lum_std": 84.35513429861722,
+    "lum_p5": 5.0,
+    "lum_p95": 224.0,
+    "r_mean": 139.91463343302408,
+    "g_mean": 134.52942657470703,
+    "b_mean": 133.6455510457357,
+    "rb_ratio": 1.0469082759451005,
+    "rg_diff": 5.385206858317048,
+    "gb_diff": 0.8838755289713447,
+    "edge_density": 0.011684417724609375,
+    "black_clip_pct": 5.631256103515625,
+    "white_clip_pct": 0.0,
+    "checkerboard_detected": false,
+    "checkerboard_pattern": null,
+    "corner_count": 0,
+    "classification": "natural_scene",
+    "mtf50_cyc_px": 0.0009775171065493646,
+    "moire_score": 946.0897216700091,
+    "moire_peaks": [
+      {
+        "x": 0,
+        "y": 5,
+        "magnitude": 5261982.653952834
+      },
+      {
+        "x": 5,
+        "y": 0,
+        "magnitude": 3746753.361728788
+      },
+      {
+        "x": -6,
+        "y": 0,
+        "magnitude": 3232488.2946100673
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "magnitude": 3232488.294610067
+      },
+      {
+        "x": 0,
+        "y": -6,
+        "magnitude": 3068344.2382857115
+      }
+    ],
+    "annotated_path": null
+  }
+]

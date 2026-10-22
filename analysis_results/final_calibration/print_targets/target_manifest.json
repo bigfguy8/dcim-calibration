@@ -1,0 +1,58 @@
+{
+  "generated": "2026-10-19T16:44:50.096983",
+  "dpi": 300,
+  "page_size": "A4 (8.27 x 11.69 in)",
+  "targets": [
+    {
+      "name": "Checkerboard",
+      "file": "checkerboard_9x6_20mm.pdf",
+      "internal_corners": "9x6",
+      "squares": "10x7",
+      "nominal_square_mm": 20.0,
+      "nominal_square_in": 0.7874,
+      "board_width_in": 7.874,
+      "board_height_in": 5.5118,
+      "purpose": "Camera intrinsics, distortion calibration",
+      "note": "Measure actual square dimensions after printing"
+    },
+    {
+      "name": "Slanted-Edge",
+      "file": "slanted_edge_iso12233.pdf",
+      "slant_angle_deg": 5.0,
+      "edge_blocks": 4,
+      "block_size_in": 2.0,
+      "purpose": "MTF50, sharpness analysis",
+      "note": "Print at 100% scale, measure block dimensions"
+    },
+    {
+      "name": "Siemens Star",
+      "file": "siemens_star_36spoke.pdf",
+      "spokes": 36,
+      "diameter_in": 6.0,
+      "purpose": "Resolution limit, aliasing detection",
+      "note": "Print at 100% scale, measure diameter"
+    },
+    {
+      "name": "Grayscale Step Wedge",
+      "file": "grayscale_step_wedge.pdf",
+      "steps": 11,
+      "step_width_in": 1.5,
+      "purpose": "Relative tonal response, exposure analysis",
+      "note": "Print at 100% scale; values are 0-255 sRGB nominal"
+    }
+  ],
+  "print_instructions": {
+    "scale": "100% (no fit-to-page, no auto-scale)",
+    "paper": "Matte cardstock, 200-300 gsm",
+    "color_mode": "sRGB",
+    "dpi": 300,
+    "verification": "Measure printed dimensions with calipers after printing"
+  },
+  "calibration_limitations": [
+    "All dimensions are NOMINAL (designed), not measured",
+    "Physical print dimensions must be verified with calipers",
+    "Color patches are NOT verified ColorChecker references",
+    "No absolute color accuracy claim without verified reference values",
+    "MTF50 from printed targets includes printer resolution effects"
+  ]
+}

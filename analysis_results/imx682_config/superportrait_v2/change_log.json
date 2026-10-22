@@ -1,0 +1,173 @@
+{
+  "generated": "2026-10-19T18:21:28.086286",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "superportrait_v2": {
+    "file": "LXX521_IMX682_SuperPortrait_HDR_V2.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\superportrait_v2\\LXX521_IMX682_SuperPortrait_HDR_V2.xml",
+    "sha256": "f1d087df19df1a1a1dd9b57371662558123ec905a0cab1309364887288aa6365",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "source": "our_analysis",
+      "evidence": "Warm cast R-G +5.68 mean; portrait R-G +2.3 to +10.9"
+    },
+    {
+      "key": "cw_rg_key_2-5",
+      "old": "0.5925",
+      "new": "0.5200",
+      "source": "evidence_v1.3",
+      "evidence": "Community config reduces secondary camera warm cast"
+    },
+    {
+      "key": "pref_awb_key",
+      "old": "0",
+      "new": "1",
+      "source": "evidence_v1.3",
+      "evidence": "Daylight AWB preset for consistent portrait WB"
+    },
+    {
+      "key": "pref_awbrec_key",
+      "old": "0",
+      "new": "1",
+      "source": "evidence_v1.3",
+      "evidence": "AWB recording for consistent portrait color"
+    },
+    {
+      "key": "pref_color_key",
+      "old": "0",
+      "new": "-2",
+      "source": "evidence_v1.3",
+      "evidence": "Slight saturation reduction for natural skin"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "source": "our_analysis",
+      "evidence": "Moderate sharpening for facial texture without halos"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "source": "our_analysis",
+      "evidence": "Complement to sharpnessb"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "source": "our_analysis",
+      "evidence": "Micro-sharpening for fine detail"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Micro-contrast for facial detail"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Micro-contrast"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "2",
+      "new": "3",
+      "source": "our_analysis",
+      "evidence": "ISO noise handling for portrait ISO range"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light denoise, avoid plastic smoothing"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light luma noise"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Preserve highlights"
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "source": "our_analysis",
+      "evidence": "HDR+ enhanced for highlight recovery"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "6",
+      "source": "evidence_v1.3",
+      "evidence": "HDR region adjustment (Evidence v1.3 value)"
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "12",
+      "source": "our_analysis",
+      "evidence": "HDR frame count for multi-frame"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "source": "our_analysis",
+      "evidence": "Gamma curve for natural skin tones"
+    }
+  ],
+  "unchanged_keys": 2621,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Portrait + HDR optimization V2.0",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "limitations": [
+    "No visual inspection of portrait captures performed",
+    "Warm cast on skin tones may be sensor-level (MT6878 ISP)",
+    "HDR enhanced mode may increase processing time",
+    "Moderate sharpening may still introduce subtle halos",
+    "No ColorChecker reference for absolute skin tone accuracy",
+    "Portrait mode may use different processing pipeline (np suffix)",
+    "ndy capture mode detected - investigate before attributing results",
+    "pref_color_key=-2 from Evidence v1.3 may reduce saturation too much"
+  ],
+  "improvements_over_v1": [
+    "Added daylight AWB (pref_awb_key=1) from Evidence v1.3",
+    "Added color adjustment (pref_color_key=-2) from Evidence v1.3",
+    "Adjusted HDR region to 6 (Evidence v1.3 value, was 8)",
+    "Reduced cw_rg_key_2-5 to 0.52 (Evidence v1.3 value for secondary cameras)",
+    "Kept moderate sharpening (2) to avoid halos on skin",
+    "Kept light denoise (1) to avoid plastic smoothing"
+  ]
+}

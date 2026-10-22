@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- HDR Video Experimental Config -->
+<string name="pref_config_nickname_key">LXX521_HDR_Video_Test</string>
+
+<!-- Active Main Camera Mapping -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Enable HDR Video Pipeline & Bitrate Boost -->
+<boolean name="pref_video_hdr_key">true</boolean>
+
+<!-- Enable Video Stabilization & Standard Video Stream -->
+<boolean name="pref_video_stabilization_key">true</boolean>
+<string name="pref_video_encoder_key">1</string>
+<string name="pref_video_bitrate_key">0</string>
+
+<!-- Model Base Profile -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_enable_awb_key">1</string>
+</map>

@@ -1,0 +1,21 @@
+{
+  "xml_well_formed": true,
+  "schema_compatible": true,
+  "key_count_match": true,
+  "no_missing_keys": true,
+  "no_extra_keys": true,
+  "changed_keys_count": 19,
+  "hash_differs_from_baseline": true,
+  "device_compatible": true,
+  "status": "UNVERIFIED",
+  "notes": [
+    "Config derived from genuine device working baseline (default .xml)",
+    "19 verified tuning keys changed (All-Rounder Master V1.0)",
+    "All other 2621 keys identical to working baseline",
+    "No undocumented or invented keys",
+    "Balanced approach across all scenarios",
+    "HDR at auto (not enhanced) for conservative processing",
+    "Ready for LMC 8.4 import via Settings -> Config -> Import",
+    "STATUS: UNVERIFIED - no A/B test performed"
+  ]
+}

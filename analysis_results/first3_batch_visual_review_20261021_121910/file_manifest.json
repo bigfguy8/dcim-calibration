@@ -1,0 +1,122 @@
+[
+  {
+    "batch": "01",
+    "profile": "V9_ConservativeBalanced",
+    "filename": "20261021_120304_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_120304_lmc_8.4.jpg",
+    "sha256": "ac4102e41df6b77eed464f1565348cfa32820bd2aa98f68d3eb69776776b7882"
+  },
+  {
+    "batch": "01",
+    "profile": "V9_ConservativeBalanced",
+    "filename": "20261021_120320_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_120320_lmc_8.4.jpg",
+    "sha256": "68593cf5fd91138be3c35f904fe5a34284aec70a8f7c1e24a3f9fcb3a85b6ebe"
+  },
+  {
+    "batch": "01",
+    "profile": "V9_ConservativeBalanced",
+    "filename": "20261021_120326_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_120326_lmc_8.4.jpg",
+    "sha256": "fd29e80c04d6fff223cd34b228c6ea85a78ac4ddfea8769eefbb277b4bfad6f1"
+  },
+  {
+    "batch": "01",
+    "profile": "V9_ConservativeBalanced",
+    "filename": "20261021_120330_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_120330_lmc_8.4.jpg",
+    "sha256": "36baf7a32e529afda79adfdb66a45f084f7cc881e542bf327680345eb63feaf0"
+  },
+  {
+    "batch": "01",
+    "profile": "V9_ConservativeBalanced",
+    "filename": "20261021_120333_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_120333_lmc_8.4.jpg",
+    "sha256": "44d6b96806977727b052f77a9e39d8458664da41e8f198849d01e68811991ea0"
+  },
+  {
+    "batch": "02",
+    "profile": "V8_ProBalanced",
+    "filename": "020261021_120834_LXX521_IMX682_V8_ProBalanced.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/020261021_120834_LXX521_IMX682_V8_ProBalanced.jpg",
+    "sha256": "646733591b54938f79b0a03f489e652f663d604b78b0c686c0df4c42812de941"
+  },
+  {
+    "batch": "02",
+    "profile": "V8_ProBalanced",
+    "filename": "020261021_120843_LXX521_IMX682_V8_ProBalanced.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/020261021_120843_LXX521_IMX682_V8_ProBalanced.jpg",
+    "sha256": "6ffd0ffb490031d25d4042994c080c8e79da81c8aa4b622ac51a709580cdb30a"
+  },
+  {
+    "batch": "02",
+    "profile": "V8_ProBalanced",
+    "filename": "020261021_120853_LXX521_IMX682_V8_ProBalanced.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/020261021_120853_LXX521_IMX682_V8_ProBalanced.jpg",
+    "sha256": "7cb806f691f2f0c2acf9b0ea515246ab654b0ed533ea43c2d65f812d50eef0a3"
+  },
+  {
+    "batch": "02",
+    "profile": "V8_ProBalanced",
+    "filename": "020261021_120856_LXX521_IMX682_V8_ProBalanced.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/020261021_120856_LXX521_IMX682_V8_ProBalanced.jpg",
+    "sha256": "93095914fa33172346937fcb5da669cfd5aec7775e515087f94745912a9811df"
+  },
+  {
+    "batch": "02",
+    "profile": "V8_ProBalanced",
+    "filename": "020261021_120901_LXX521_IMX682_V8_ProBalanced.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/020261021_120901_LXX521_IMX682_V8_ProBalanced.jpg",
+    "sha256": "61f75514abd66af2ff0c87b7e92173bdd0ec951899e5c552d83cff2464d2b064"
+  },
+  {
+    "batch": "03",
+    "profile": "V8_FullAllRounder_Q100",
+    "filename": "20261021_121019_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_121019_lmc_8.4.jpg",
+    "sha256": "d70cebe27b76f7398c06ba78439dac1bf94029b6680ac74b7948762170fb37d6"
+  },
+  {
+    "batch": "03",
+    "profile": "V8_FullAllRounder_Q100",
+    "filename": "20261021_121028_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_121028_lmc_8.4.jpg",
+    "sha256": "67df38567c4f20ce1676c9034e79470658d2780be6207d26edb046f667e26ece"
+  },
+  {
+    "batch": "03",
+    "profile": "V8_FullAllRounder_Q100",
+    "filename": "20261021_121034_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_121034_lmc_8.4.jpg",
+    "sha256": "40ba3b3ce08f18444e3ab1dec10fdf92aec55d8925029519f0cbcc9edaa587b2"
+  },
+  {
+    "batch": "03",
+    "profile": "V8_FullAllRounder_Q100",
+    "filename": "20261021_121037_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_121037_lmc_8.4.jpg",
+    "sha256": "153dff476c6446861a516001cd025de4579aae4d76f1e86af3a87b3068b12443"
+  },
+  {
+    "batch": "03",
+    "profile": "V8_FullAllRounder_Q100",
+    "filename": "20261021_121040_lmc_8.4.jpg",
+    "status": "ANALYZED",
+    "path": "/storage/emulated/0/DCIM/Camera/20261021_121040_lmc_8.4.jpg",
+    "sha256": "f0efbbddb248ac7e5f64285a3e96aa949e85d141399261c284e58e29ec43d3c0"
+  }
+]

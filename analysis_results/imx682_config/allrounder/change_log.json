@@ -1,0 +1,158 @@
+{
+  "generated": "2026-10-19T18:39:35.206732",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "allrounder": {
+    "file": "LXX521_IMX682_AllRounder_Master_V1.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\allrounder\\LXX521_IMX682_AllRounder_Master_V1.xml",
+    "sha256": "a556856cdaf77fccec92de7d43f1ff804d7b0f2513c879eeab5102ba0cced2e0",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean"
+    },
+    {
+      "key": "cw_rg_key_2-5",
+      "old": "0.5925",
+      "new": "0.5200",
+      "source": "evidence_v1.3",
+      "evidence": "Secondary cameras"
+    },
+    {
+      "key": "pref_awb_key",
+      "old": "0",
+      "new": "1",
+      "source": "evidence_v1.3",
+      "evidence": "Daylight AWB"
+    },
+    {
+      "key": "pref_awbrec_key",
+      "old": "0",
+      "new": "1",
+      "source": "evidence_v1.3",
+      "evidence": "AWB recording"
+    },
+    {
+      "key": "pref_color_key",
+      "old": "0",
+      "new": "-1",
+      "evidence": "Slight color adjustment"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate sharpening"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Sharpening gain"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Micro-sharpening"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "4",
+      "new": "3",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlights"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "evidence": "Gamma curve"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "6",
+      "source": "evidence_v1.3",
+      "evidence": "HDR region"
+    },
+    {
+      "key": "pref_hdrregion_key_2-5",
+      "old": "5",
+      "new": "6",
+      "source": "evidence_v1.3",
+      "evidence": "HDR region (secondary)"
+    },
+    {
+      "key": "pref_hdrregion_key_front",
+      "old": "5",
+      "new": "6",
+      "source": "evidence_v1.3",
+      "evidence": "HDR region (front)"
+    }
+  ],
+  "unchanged_keys": 2621,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "All-Rounder (balanced everyday profile)",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "design_philosophy": [
+    "Balanced across all scenarios (daylight, portrait, indoor, night, video)",
+    "Conservative sharpening (2) to avoid halos",
+    "Light denoise (1) to preserve detail",
+    "HDR at auto (not enhanced) to avoid over-processing",
+    "Moderate warm cast reduction (0.45)",
+    "Evidence-based changes only (no speculative tuning)",
+    "Incorporates Evidence v1.3 community insights where compatible"
+  ],
+  "limitations": [
+    "No A/B test performed",
+    "Balanced approach may not excel in any single scenario",
+    "HDR at auto may underperform vs enhanced in extreme DR scenes",
+    "Warm cast may be sensor-level (MT6878 ISP)",
+    "No physical chart targets for MTF validation"
+  ]
+}

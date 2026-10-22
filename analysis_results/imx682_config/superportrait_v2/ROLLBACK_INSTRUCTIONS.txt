@@ -1,0 +1,87 @@
+SUPERPORTRAIT HDR V2.0 CONFIG - ROLLBACK PROCEDURE
+==================================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+SUPERPORTRAIT HDR V2.0 CONFIG:
+  File: LXX521_IMX682_SuperPortrait_HDR_V2.xml
+  SHA-256: f1d087df19df1a1a1dd9b57371662558123ec905a0cab1309364887288aa6365
+  Location: analysis_results/imx682_config/superportrait_v2/ (local)
+
+CHANGES FROM BASELINE (Portrait + HDR V2.0):
+  Based on: Our analysis + Evidence v1.3 community config insights
+
+  White Balance:
+    cw_rg_key: 0.5925 -> 0.4500 (reduce orange skin / warm cast)
+    cw_rg_key_2-5: 0.5925 -> 0.5200 (secondary cameras, Evidence v1.3)
+    pref_awb_key: 0 -> 1 (daylight AWB, Evidence v1.3)
+    pref_awbrec_key: 0 -> 1 (AWB recording, Evidence v1.3)
+    pref_color_key: 0 -> -2 (slight saturation reduction, Evidence v1.3)
+
+  Sharpness (moderate for portrait):
+    lib_sharpnessb_key: 0 -> 2 (moderate sharpening)
+    lib_sharpgain_key: 0 -> 2 (sharpening gain)
+    lib_sharpmini_key: 0 -> 2 (micro-sharpening)
+
+  Contrast (micro-contrast for facial detail):
+    lib_contrast_1_key: 0 -> 1
+    lib_contrast_2_key: 0 -> 1
+
+  Noise Control (light, preserve skin texture):
+    pref_iso_noise_key: 2 -> 3
+    lib_denoise_key: 0 -> 1
+    lib_lumadenoise_key: 0 -> 1
+    lib_lumanoise_key: 0 -> 1
+
+  HDR (highlight recovery, shadow detail):
+    lib_preservinghigh_key: 0 -> 1
+    pref_camera_hdr_plus_key: auto -> enhanced
+    pref_hdrregion_key: 5 -> 6 (Evidence v1.3)
+    pref_frames_hdr_key: 0 -> 12
+    pref_gamma_curve_mode_key: -1 -> 0
+
+EVIDENCE BASE:
+  Warm cast R-G +5.68 mean across 50 LMC images (target <4.0)
+  Portrait captures show R-G +2.3 to +10.9 (variable warm cast)
+  Skin tone center regions show R-G +22.7 (very warm)
+  LMC black clip: 1.4-2.2% (V2 Release) vs stock 4.7-44%
+  LMC white clip: 0.45-6.3% (V2 Release) vs stock up to 54.66%
+  HDR+ confirmed active via EXIF: HDR+ 1.0.414775603zdy
+  Evidence v1.3 community config: daylight AWB, color=-2, hdrregion=6
+  cw_rg_key_2-5 reduced to 0.52 in Evidence v1.3 (vs 0.5925 baseline)
+
+IMPROVEMENTS OVER PREVIOUS PORTRAIT CONFIG:
+  - Added daylight AWB (pref_awb_key=1) from Evidence v1.3
+  - Added color adjustment (pref_color_key=-2) from Evidence v1.3
+  - Adjusted HDR region to 6 (Evidence v1.3 value)
+  - Reduced cw_rg_key_2-5 to 0.52 (Evidence v1.3 value for secondary cameras)
+  - Kept moderate sharpening (2) to avoid halos on skin
+  - Kept light denoise (1) to avoid plastic smoothing
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: Portrait processing may use different pipeline than standard.
+WARNING: np capture mode detected - investigate before attributing results.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_SuperPortrait_HDR_V2.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_SuperPortrait_HDR_V2.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_SuperPortrait_HDR_V2.xml
+  5. Capture portrait test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/superportrait_v2/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

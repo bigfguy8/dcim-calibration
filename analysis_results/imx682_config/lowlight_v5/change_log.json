@@ -1,0 +1,204 @@
+{
+  "generated": "2026-10-19T18:31:01.125845",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "lowlight_v5": {
+    "file": "LXX521_IMX682_LowLight_Shot_V5.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\lowlight_v5\\LXX521_IMX682_LowLight_Shot_V5.xml",
+    "sha256": "b246c2ce881eb541c9973b87fee395f961c901fdb75c87de28252e6e825e8226",
+    "key_count": 2640
+  },
+  "v3_hash": "9e7bbfb1ab70cdffe5e0f20d379b539afbee80f219be97d2960f73bcf0187ad8",
+  "v4_hash": "9e7bbfb1ab70cdffe5e0f20d379b539afbee80f219be97d2960f73bcf0187ad8",
+  "v5_differs_from_v3": true,
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "source": "our_analysis",
+      "evidence": "Warm cast R-G +5.68 mean"
+    },
+    {
+      "key": "cw_rg_key_2-5",
+      "old": "0.5925",
+      "new": "0.5200",
+      "source": "evidence_v1.3",
+      "evidence": "Secondary cameras"
+    },
+    {
+      "key": "lib_night_mode_gain_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Slight night gain"
+    },
+    {
+      "key": "lib_nightmodeexposition_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Slight night exposure"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "3",
+      "source": "our_analysis",
+      "evidence": "Increased from V3/V4 (2) to 3 for extreme ISO 15K-25K"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "3",
+      "source": "our_analysis",
+      "evidence": "Increased from V3/V4 (2) to 3"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "3",
+      "source": "our_analysis",
+      "evidence": "Increased from V3/V4 (2) to 3"
+    },
+    {
+      "key": "lib_denoisesmoothing_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light smoothing"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "4",
+      "new": "3",
+      "source": "our_analysis",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_darkenlight_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Shadow detail"
+    },
+    {
+      "key": "lib_exposure_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Slight exposure boost"
+    },
+    {
+      "key": "lib_hdrbrightness_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "HDR brightness"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Preserve highlights"
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "source": "research",
+      "evidence": "HDR+ enhanced"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "6",
+      "source": "evidence_v1.3",
+      "evidence": "HDR region"
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "8",
+      "source": "research",
+      "evidence": "Moderate HDR frames"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "source": "our_analysis",
+      "evidence": "Gamma curve"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light sharpening"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light sharpening gain"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Light micro-sharpening"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "source": "our_analysis",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "pref_awb_key",
+      "old": "0",
+      "new": "1",
+      "source": "evidence_v1.3",
+      "evidence": "Daylight AWB"
+    },
+    {
+      "key": "pref_color_key",
+      "old": "0",
+      "new": "-1",
+      "source": "our_analysis",
+      "evidence": "Slight color adjustment"
+    }
+  ],
+  "unchanged_keys": 2616,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Low-light shot optimization V5.0",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "v3_v4_identical": true,
+  "improvement_over_v3_v4": "Increased denoise from 2 to 3 for extreme ISO (15K-25K) night captures",
+  "limitations": [
+    "No A/B test performed",
+    "Night mode may increase processing time",
+    "Denoise level 3 may reduce fine detail in very dark scenes",
+    "No physical chart targets for MTF validation",
+    "Warm cast may be sensor-level (MT6878 ISP)",
+    "HDR enhanced mode may increase processing time",
+    "Research values are community-sourced, not device-verified"
+  ]
+}

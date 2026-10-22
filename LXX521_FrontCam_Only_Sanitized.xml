@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- ================================================================= -->
+<!--  FRONT CAMERA (ID 1) SANITIZED - ALL AUX ALIASES DISABLED        -->
+<!-- ================================================================= -->
+<string name="pref_config_nickname_key">LXX521_FrontCam_Sanitized_V2</string>
+
+<!-- Primary Front Lens ID Assignment -->
+<string name="active_cam_id_front_key">1</string>
+<string name="pref_camera_id_front_key">1</string>
+
+<!-- Strip Duplicate Aux Front Lens Mapping Collision -->
+<string name="pref_manual_cameraid_front_2_key">0</string>
+<string name="pref_manual_cameraid_front_3_key">0</string>
+<string name="pref_manual_cameraid_front_4_key">0</string>
+<string name="pref_manual_cameraid_front_5_key">0</string>
+
+<!-- Disable Focus Engine Requests (Fixes Fixed-Focus HAL Exception) -->
+<string name="pref_af_mode_front">0</string>
+
+<!-- Fallback Stream & Processing Settings -->
+<string name="pref_stream_config_front_key">0</string>
+<string name="pref_viewfinder_format_key">0</string>
+<string name="pref_camera_interface_key">15</string>
+
+<!-- Disable Hardware Engine Overrides on Front Sensor -->
+<string name="pref_hdrnet_front_key">0</string>
+<string name="pref_sabre_front_key">0</string>
+<string name="pref_hexagon_front_key">0</string>
+<string name="pref_sabre_key">0</string>
+<string name="pref_hexagon_ns_key">0</string>
+
+<!-- Conservative Frame Buffer Allocation -->
+<string name="frame_count_b_photo_1">7</string>
+<string name="frame_count_b_ns_1">10</string>
+
+<string name="pref_qjpg_key">100</string>
+</map>

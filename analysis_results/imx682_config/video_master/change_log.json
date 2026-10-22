@@ -1,0 +1,193 @@
+{
+  "generated": "2026-10-19T18:33:30.891194",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "video_master_v1": {
+    "file": "LXX521_IMX682_Video_Master_V1.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\video_master\\LXX521_IMX682_Video_Master_V1.xml",
+    "sha256": "afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "pref_video_resolution",
+      "old": "RES_1080P",
+      "new": "RES_1080P",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_video_fps_4k_key",
+      "old": "FPS_30",
+      "new": "FPS_30",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_video_fps_cm_key",
+      "old": "FPS_30",
+      "new": "FPS_30",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_video_fps_p2018_key",
+      "old": "FPS_AUTO",
+      "new": "FPS_AUTO",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_vffps_high_key",
+      "old": "30",
+      "new": "30",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_vffps_low_key",
+      "old": "15",
+      "new": "15",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_video_aspect_ratio",
+      "old": "SIXTEEN_BY_NINE",
+      "new": "SIXTEEN_BY_NINE",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_video_hevc_setting_key",
+      "old": "0",
+      "new": "0",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "pref_bitrate_key",
+      "old": "0",
+      "new": "0",
+      "note": "Already at baseline value"
+    },
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate sharpening for video"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Sharpening gain"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Micro-sharpening"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise for video"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "4",
+      "new": "3",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlights in video"
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "evidence": "HDR+ enhanced for video DR"
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "8",
+      "evidence": "HDR region for video"
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "12",
+      "evidence": "HDR frames for video"
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "evidence": "Gamma curve for video"
+    }
+  ],
+  "unchanged_keys": 2625,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Videography optimization V1.0",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "video_analysis": {
+    "videos_analyzed": 3,
+    "resolutions": [
+      "1080x1920",
+      "2160x3840"
+    ],
+    "fps": 29.95,
+    "sharpness_cv_range": "0.586-0.700",
+    "brightness_std_range": "13.0-18.3",
+    "focus_issues": "Severe focus hunting on all 3 videos",
+    "recommendations": [
+      "Use tap-to-focus before recording",
+      "Lock focus if available",
+      "Avoid rapid panning",
+      "Use higher shutter speed for moving subjects",
+      "Ensure adequate lighting for reliable AF",
+      "Clean lens before recording"
+    ]
+  },
+  "limitations": [
+    "No A/B test performed",
+    "No focus-related XML keys exist for LMC 8.4",
+    "Focus is controlled by camera app, not XML config",
+    "HDR enhanced mode may increase processing time during recording",
+    "No video quality metrics available (no matched comparison)",
+    "Research values are community-sourced, not device-verified"
+  ]
+}

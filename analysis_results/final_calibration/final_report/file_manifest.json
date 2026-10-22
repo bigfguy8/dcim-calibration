@@ -1,0 +1,1276 @@
+{
+  "generated": "2026-10-19T17:34:55.927985",
+  "total_files": 254,
+  "files": [
+    {
+      "path": "analysis_results\\analysis.log",
+      "size": 33686,
+      "sha256": "b711ed369e60c04e30a618fcb8417b41e90dcc41c49f1b1583a260876d7af6cf"
+    },
+    {
+      "path": "analysis_results\\calibration_chart_IMX682.png",
+      "size": 250162,
+      "sha256": "bfcd998d37b0260e5fa1b19a5ca8fc2fcc1abb8bb4fbecf30b171c0926ee2035"
+    },
+    {
+      "path": "analysis_results\\calibration_verification.json",
+      "size": 3770,
+      "sha256": "1ae51d7728fe082e11d9e7627f9b94f90a8c30fc1a8cc0c2a3764bf8f7456dd7"
+    },
+    {
+      "path": "analysis_results\\color_results.json",
+      "size": 9214,
+      "sha256": "40dab76aa1af3f90f0d50350a29f6fb0fb6074f73a20992bcabd56126dcca67b"
+    },
+    {
+      "path": "analysis_results\\distortion_results.json",
+      "size": 873,
+      "sha256": "227d73d65c30be869f1dee5bb3f02de475be069b98c9a93a753dbf3e6e1113ff"
+    },
+    {
+      "path": "analysis_results\\image_metrics.csv",
+      "size": 1470,
+      "sha256": "25a24f84332ffaeb7d882176bd3e8c8d5c06dfe72c814c6401784d0a4987515d"
+    },
+    {
+      "path": "analysis_results\\image_metrics_full.json",
+      "size": 55188,
+      "sha256": "b248259924202ab9b24e808df6aa47ed299f92b622cbee882e325dd154440383"
+    },
+    {
+      "path": "analysis_results\\IMX682_audit_report.md",
+      "size": 8365,
+      "sha256": "7e144700acba20ccbeddf941f0a5377c96e0add5e4ad086c4c637fc5f7b8e3ea"
+    },
+    {
+      "path": "analysis_results\\IMX682_full_audit_report.md",
+      "size": 7465,
+      "sha256": "b7fb5f3ba46bd89e9d110d18fe1321fd9d4dfa5fb98160762f14ec167242b8ab"
+    },
+    {
+      "path": "analysis_results\\mtf_results.csv",
+      "size": 825,
+      "sha256": "e7abed0ab92f43dd9eebf2158e8b5a5af5e61498643a6b8fa121b6eea05afe12"
+    },
+    {
+      "path": "analysis_results\\summary_report.md",
+      "size": 8859,
+      "sha256": "b01fcdda15ddd44df5abaae830634c065fca6c05863807f46750b2e93f6f8724"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\analyze_dcim.py",
+      "size": 9295,
+      "sha256": "649726f6a7e384289f1ec71373ae6933ced0eb5f9d53088ab7e4f7a64811be91"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\analyze_exif.py",
+      "size": 3784,
+      "sha256": "e3d5417ad76b44f1928ba647d0bf5e4e87dac48b53fb6534cd5fb5ba47768eab"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\analyze_opencv.py",
+      "size": 7422,
+      "sha256": "9f1717f73505f22f9091fcc8c808eec8bab6415e7197645aaf2d35a53def281d"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\DCIM_CHART_AUDIT_REPORT.md",
+      "size": 7951,
+      "sha256": "5f144e7b937378f37a015c1df82be6f64feb9a674f4b162866eb3f395ce0b564"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\dcim_exif_inventory.csv",
+      "size": 14365,
+      "sha256": "39a3b7dca4b096f83cccf1ed83f50a61651d29c37fdadcdefb7b946a09f33cd2"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\dcim_exif_inventory.json",
+      "size": 34061,
+      "sha256": "b505bfb33e1eed2a06c7db9ea88540bb01cd540a77db431721cb4bf31cb10f2d"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\dcim_full_analysis.csv",
+      "size": 23191,
+      "sha256": "d8fcba3f9d123c35715204ca12ea773b9102bd218da4bdc9a49cf84d506900e5"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\dcim_full_analysis.json",
+      "size": 56384,
+      "sha256": "9ec0b24fbb58b1e5248f8686415de6adef8d932994fb37e593a1eae6a90e9f28"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\generate_plots.py",
+      "size": 5046,
+      "sha256": "18c284b2b23fd239a28895e9e1b26a0562d879989df5cc98f410832d4c05bb8c"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\annotated\\IMG_20261019_134758_1.jpg.annotated.jpg",
+      "size": 115165,
+      "sha256": "1050f86f3ea9b762db7c53f35b70f364e9efa020d6ae230bd76ce1f5afa4d9bc"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133814_LavaPlayUltra_IMX682_Pro.jpg",
+      "size": 6140088,
+      "sha256": "674fc49bf5371eceb9fc6b019bdad7a1833dfdf6a6671e954860890c60178c0b"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133816_LavaPlayUltra_IMX682_Pro.jpg",
+      "size": 4897114,
+      "sha256": "2df2d19b6abfb4661fab58bd3cd7d0da3eedc21e74173004884cd5d77cc42a87"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133819_LavaPlayUltra_IMX682_Pro.jpg",
+      "size": 4564443,
+      "sha256": "874db740051bcf7eaac7917caff219b5f691eedc25be36d1708096db1419ca18"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133821_LavaPlayUltra_IMX682_Pro.jpg",
+      "size": 5155700,
+      "sha256": "b63125d51eff2c46bafb80191be615df6c2c723aa22a6606fb2c3ef90bd77007"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133843_lmc_8.4.jpg",
+      "size": 7241599,
+      "sha256": "6b7d72cbcc03a20c611a4096e2735018fcb4d25a1911330aea878564672a6ab3"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\020261019_133846_lmc_8.4.jpg",
+      "size": 6323057,
+      "sha256": "3f0cb17118f5ea462a76c574a356334292efd427426f5b0ae5f78222668aa36c"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_140214_lmc_8.4.jpg",
+      "size": 7787650,
+      "sha256": "2c96c853743332af5c40bc76d1aab2eab64683d5e5c259557b636a3dbca8c1e3"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_141010_lmc_8.4.jpg",
+      "size": 6496062,
+      "sha256": "1161addeecf0568f4ee16c78d78e08379e793c12dc1bca13b894c362b44c1199"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_141014_lmc_8.4.jpg",
+      "size": 7183605,
+      "sha256": "b4ef1ba7743040f8fa847e85e78871996c783f9e6548e950a5f2e536fe236f2c"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_145500_lmc_8.4.jpg",
+      "size": 8294399,
+      "sha256": "4df17d1e9a238be049f2e9578f496a4557f03d74e108d7c9fd8263d013f08497"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_145510_lmc_8.4.jpg",
+      "size": 8441845,
+      "sha256": "d57f26922879171d0a94749fa98ddcaad2a0fdaa3c5952a30c68d5be22865066"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_160214_lmc_8.4.jpg",
+      "size": 5782516,
+      "sha256": "746d3c7e31fbe039ab8f47d85e7f674bc02f11e5fa90116645e02b635231202d"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\20261019_160216_lmc_8.4.jpg",
+      "size": 7385669,
+      "sha256": "fa9f47f7e06d4951bb37c7651b17e592c3abb8069be5f39ff8a46de94873a811"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_133141_1_HDR.jpg",
+      "size": 4725169,
+      "sha256": "457c5987a80493606a6e24c8013e7b0e4dd5a8b876b39c48421e2ef5045421a6"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134401_1.jpg",
+      "size": 4434954,
+      "sha256": "b41b228568e908d40cf643f2d0422de4e7d784e2405a7370cfd1177b6ab179cd"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134408_1.jpg",
+      "size": 5468255,
+      "sha256": "380b4aa45a8c167b37cc29c97c9de2c3baed8eea6c9994e355396aca6e04810d"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134414_1.jpg",
+      "size": 5680598,
+      "sha256": "25c8fbeb6ba4f6b3ab66511113d24683311e192cbf2609f3245dfe804b50e566"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134420_1.jpg",
+      "size": 5062218,
+      "sha256": "15763839e8b7e33bcf02c526b2a2030876398489c2dc14a85c26356c25fade96"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134758_1.jpg",
+      "size": 2064758,
+      "sha256": "ae37c1ba4fa76c54e01980dea4ca8b6bea772cd63e0b2665bb11edb929d6c99b"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134804_1.jpg",
+      "size": 2435380,
+      "sha256": "3491422a861767ae4b3ecaebb2f8d7044f752c4465cad70fe842e28f29d5789b"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134814_1.jpg",
+      "size": 3755707,
+      "sha256": "89bcfe2d82533465705a9a1c23810fae50036d1b8c3ae013aef60c1fe2b40006"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_134816_1.jpg",
+      "size": 3279972,
+      "sha256": "da0433fc33d116c17fda39bd705aba7f17e8f0ce7743b18c8ae0c70edd493ce8"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142620_HDR.jpg",
+      "size": 4274041,
+      "sha256": "00115d441c276c0f35e8f7f9691799facfea536228be4f0ed039198650c518d5"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142622.jpg",
+      "size": 5638542,
+      "sha256": "13848a8ac0e7b1b0724e9ed593d8df38f80af6be4ac204434b212b2f6c2bd482"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142629_1.jpg",
+      "size": 5110398,
+      "sha256": "740057831eb438af9a54e12d1fd72a5452c48352ee35df637ad48da3b6490b00"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142631_1.jpg",
+      "size": 3080822,
+      "sha256": "b6a6817d73bd76cc913d25178540b2293b2457156ee01e7a9a4e00ddf6ffc7a5"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142632_1.jpg",
+      "size": 4841757,
+      "sha256": "c7b4c42e6113ecc29addcd1c227e5e82f0d7aebb848eb6ad68879b95e9c81086"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142635_1.jpg",
+      "size": 3063046,
+      "sha256": "6f3d621ecc494dd314966694b77005f745b93a3cd8c147f8b7656cf78ddf8cb5"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142639_1.jpg",
+      "size": 4679287,
+      "sha256": "187d7fda319a71f0041e2d4257718a34721091051eb3308b847c58da41f66874"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142642_1.jpg",
+      "size": 5428796,
+      "sha256": "a7f8c86faaac53c08a3f556f021a23cc9a2e5afbb2feb01c3397d8c35c6c2086"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142644_1.jpg",
+      "size": 3769063,
+      "sha256": "d917407b298540e0066f34c977b5574e90232e0016eff4de6e6da7053fc56c1d"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142647_1.jpg",
+      "size": 2271961,
+      "sha256": "8a06c8399e1f8af9c815c624a58d951fd1730c50034f8f9f43885aac9939a2ef"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142649_1.jpg",
+      "size": 5214757,
+      "sha256": "4474fefb49dc4a59674254795877db42d118d6b56c3eb24084f523c86aea475a"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\IMG_20261019_142650_1.jpg",
+      "size": 6242148,
+      "sha256": "558c70bea81ea5fd1dbe48fc87974dbde45e015fb962042b50f201e837fd7f21"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\_  20261019_132920_lmc_8.4.jpg",
+      "size": 4550774,
+      "sha256": "623e275c10edf55f7e7c73e34737082bb52dd80565ba670dcd8011c8c23872fb"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\_  20261019_132923_lmc_8.4.jpg",
+      "size": 10000417,
+      "sha256": "bcf696e75ca8feeed40ae8d9a36fd09d00293b04119712596792dcb0fcbcfe9c"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\_  20261019_132924_lmc_8.4.jpg",
+      "size": 8525795,
+      "sha256": "454b62c6522a9ce42109d29e36b926084a2420825ca1e8ba1824a551b241b567"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\_  20261019_133147_lmc_8.4.jpg",
+      "size": 6738508,
+      "sha256": "5833366bd9e815ac0a61d2ecba47907a707ecab5228d3e298b1221cee4e1685b"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\device_pulls\\_  20261019_133152_lmc_8.4.jpg",
+      "size": 6466652,
+      "sha256": "b061b5389526b57da7d54467e443831bc7ed876e97863c673a1aa3165dc58e7b"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\plots\\black_clip_vs_ev.png",
+      "size": 46870,
+      "sha256": "9a3c1ce013704f414584577ec6d710a6c76052be318cd854363ae8d48eb30e26"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\plots\\edge_density_all.png",
+      "size": 107172,
+      "sha256": "273435357064a3f1a2e221ccd7aad80a5b83bf11759c6a443de4787422f87bb5"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\plots\\iso_vs_ev.png",
+      "size": 38887,
+      "sha256": "88eefcd18e11f394a36741cc307722b84c3828ef9f699653398bea5577559666"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\plots\\mtf50_all.png",
+      "size": 110598,
+      "sha256": "3ae80ce1819a98a63da6b20f08c516874df7527a3b9df535db1b7e37a077e917"
+    },
+    {
+      "path": "analysis_results\\dcim_chart_audit\\plots\\rb_vs_ev.png",
+      "size": 50683,
+      "sha256": "e3beda01d93456872ace45799a44fafba62da8fd9a15b725ff32ea0c1ddaccd5"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\capture_checklist.md",
+      "size": 7008,
+      "sha256": "82371edb032b7e786444eefd58e723c80e0a639102f6a40af80a5f1934fe286f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\chart_inspection.md",
+      "size": 5739,
+      "sha256": "cac967df53c52935379af9844496257d5107bdfee68aba457c309b663f6b2b20"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\equipment_acquisition_plan.md",
+      "size": 7463,
+      "sha256": "897c965568bdde53417765b67579da9786e398bcb8f5425b970f4acde12b8d95"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\equipment_audit.md",
+      "size": 4579,
+      "sha256": "1401017b803e1aaf2786337dbac2a5f091f677c8d27c1bc1b2152b7b90f4f553"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\final_report\\generate_final_report.py",
+      "size": 8104,
+      "sha256": "eaa642a0168a7b6c5e3cc589cf42b623483a92fbaee41347dbfad2f998b69fc7"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\final_report\\verification_results.json",
+      "size": 3480,
+      "sha256": "70bd082cb4f2d3a4698c0bd1018b9a59c1f15c70d8a80a1436dd23505c81d742"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\analyze_all_monitor.py",
+      "size": 13875,
+      "sha256": "95723c4d510c5f5e566dee5d8d2fb6b28d8aeb25464b7b9abeb3fa524038bb80"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\analyze_monitor_baseline.py",
+      "size": 13101,
+      "sha256": "dacbffdc3f6d5e8fc6496ef50291c2b81d8833ab336ee04370073dda756244a8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\baseline_capture_analysis.md",
+      "size": 7513,
+      "sha256": "15eb0e106ba86bbc94f5a8370f156f7a7601034b12adca30e549780141022d46"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\generate_monitor_charts.py",
+      "size": 9004,
+      "sha256": "ebad569a3e71f127e26840cd728985de2e6c92d323b81952666e1ce1122a4927"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_all_captures_analysis.csv",
+      "size": 28673,
+      "sha256": "61e4d7a681b27e9f12eb3235d1209931ad5a98f212c31c3ff8dd07a67a78d3ab"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_all_captures_analysis.json",
+      "size": 61833,
+      "sha256": "50ce8010ccc0c37ec2bfd0665c1bc0ffe8ebeaaa4962716b0f2ef496fd78e983"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_baseline_analysis.csv",
+      "size": 4798,
+      "sha256": "5221a5c51efde444a56aa80df997cb650891feca82643ad646003687cbcc426f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_baseline_analysis.json",
+      "size": 9635,
+      "sha256": "d59506b2d716ce2b28646ea9fde977955877a4056e263035fa83f679be81b4bc"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_baseline_capture_session.md",
+      "size": 4064,
+      "sha256": "dad3444d7d64adc01327d856172377aa2325a7c8aa3f0dd2a52de4f6ac7793c8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\monitor_calibration_report.md",
+      "size": 6552,
+      "sha256": "15e869067a1e0a6f505fc483efbbe813ae87f2beaf621da3428b7bbf4869239b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\pull_new.py",
+      "size": 1539,
+      "sha256": "c1ab38ed473f29f5b70d56df76e85ccf648d9a90075b0e3414feefad0eb0c8be"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170217_lmc_8.4.jpg",
+      "size": 2629333,
+      "sha256": "6e6d8e53b2f3c33097cd27b388a73c53c05a6e1532778629534322ec83815875"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170227_lmc_8.4.jpg",
+      "size": 7622832,
+      "sha256": "7e47c793433d417bc2f3247b39b3fbc27ad132658ac7e2de5de82f081a6bbced"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170236_lmc_8.4.jpg",
+      "size": 6615530,
+      "sha256": "0a2fd8891ccee511f39a01d66461721c6ff632c665169392f11f7868076b1233"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170241_lmc_8.4.jpg",
+      "size": 5463906,
+      "sha256": "26a9f97d9776270e163948daef328d368ac210ef7da09cd43d6554525d5b926f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures\\20261019_170249_lmc_8.4.jpg",
+      "size": 7982115,
+      "sha256": "2f9e393def4742225b6278314a40881dbca3279076964c6f7a59e4752ca2229a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170753_lmc_8.4.jpg",
+      "size": 1925165,
+      "sha256": "831387f3ec928fca39844caa926bb2c68a55cfc84013a644fe003e3afdf16e3e"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170755_lmc_8.4.jpg",
+      "size": 1969896,
+      "sha256": "4098b84ac378c9537d15b417437f26e9d078383ccef5078e6b4d5724f04e1619"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170755_lmc_8.4__1_.jpg",
+      "size": 2021599,
+      "sha256": "81ce5f7641b0ee4b5178c1af80ff943f8af2dc78c2e8ec7be5bd9ea2690b9fe5"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170755_lmc_8.4__2_.jpg",
+      "size": 1915507,
+      "sha256": "d5133bef67b9f6e00174ac5e274b7ee769f5204b214edc68b0c8835f771a57be"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170755_lmc_8.4__3_.jpg",
+      "size": 1941876,
+      "sha256": "fe666f4c15ece80f309e707d6634736b540a2a61bca081c555d22b7d654b7d66"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170755_lmc_8.4__4_.jpg",
+      "size": 1936480,
+      "sha256": "a3364996bf92e645d15307a7ce1d3c7e99087a006bdfde391f94f8afeb664f3b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170756_lmc_8.4.jpg",
+      "size": 1945904,
+      "sha256": "31be1ee81693b515270901023a02cf98511579d7dbe643fe11c09a417d6af553"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170801_lmc_8.4.jpg",
+      "size": 4167852,
+      "sha256": "88dfade31d9a0c34ec989c9fcf317699888b20b1eb1ec5ec20f9eddc3b4a7382"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170802_lmc_8.4.jpg",
+      "size": 5378013,
+      "sha256": "103f5684706e68593ac50afad366fc6bae0c5711bb5f8e44f6135e17455fa4fc"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170802_lmc_8.4__1_.jpg",
+      "size": 4517089,
+      "sha256": "4903f2a3b20c3d8b2f81be4decf13c83e70b94fa5abbf3ac47a860a09ea24b4b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170803_lmc_8.4.jpg",
+      "size": 4156657,
+      "sha256": "dd0e0ecd25c492e47b6a4ec8845d7c771fe685db27a9088f764f436f829c808d"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170803_lmc_8.4__1_.jpg",
+      "size": 5115860,
+      "sha256": "88a8e26a99d91307f6fb1d3a119b85fc8c472b7a3d00e44a18c6e737d330a2b9"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170808_lmc_8.4.jpg",
+      "size": 4870816,
+      "sha256": "8757b5a39f7dbab5cba81986151d29c5c647a95bea9909836afca24102f9db84"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170809_lmc_8.4.jpg",
+      "size": 4096672,
+      "sha256": "18a0e08a9b5bac90e999675c4b6f348a12bcc484a440acb09d630a17cc3b87bb"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170810_lmc_8.4.jpg",
+      "size": 5042317,
+      "sha256": "da2c6327a24028c095f2e507441461612510018478ed22cec7df8e10966d0e38"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170810_lmc_8.4__1_.jpg",
+      "size": 5055506,
+      "sha256": "1012b44b052b5182a6a1a690376a16a9b19ebfc8e4f41e45805fb07a2859c5dd"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170811_lmc_8.4.jpg",
+      "size": 5176178,
+      "sha256": "c949027b222b202c2c7abc174bbf4d98e3cd6b7973143a65f9d487be8f674c1f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170816_lmc_8.4.jpg",
+      "size": 5373681,
+      "sha256": "953015c0a7f2467d236fd48cc9b0b0950c913345c35051376395c5c7940ac681"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170816_lmc_8.4__1_.jpg",
+      "size": 4340189,
+      "sha256": "6e72763a7429752ee3deb1c8ab67e6b628525c8b361e24fb64f9445b760830da"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170817_lmc_8.4.jpg",
+      "size": 5767469,
+      "sha256": "dbb7fe024b602a5749494ec5aef890fd4f0359bcf95c57e21d4556a895f58859"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170817_lmc_8.4__1_.jpg",
+      "size": 4113808,
+      "sha256": "533986ef53c43c6065f986d2a33bfafc6ac7806f77259f94cebe233a0379dbe9"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170818_lmc_8.4.jpg",
+      "size": 5811712,
+      "sha256": "b021d724d8f32c13577bfcfe1ee431355f7994fb72910d6641fbda3121e77f38"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170823_lmc_8.4.jpg",
+      "size": 4963353,
+      "sha256": "1d542cce8a0589067f0f785ee5cf58810285cd4db8eef170b01553d1c102407c"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170824_lmc_8.4.jpg",
+      "size": 5605852,
+      "sha256": "b4a9f743de7a428bc7f688a566c6a4818335c79ea8edc5e642d58939043030b1"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170824_lmc_8.4__1_.jpg",
+      "size": 6417301,
+      "sha256": "aa2306dbbb9b29a685fff3c009751e88923725a925b2c47b429c9b0ab7b3ea4a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170825_lmc_8.4.jpg",
+      "size": 7032216,
+      "sha256": "93b55ecb43b691f4ae46b36970ac13f9194574c480b30c5804cb67fcb5804439"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\captures2\\20261019_170825_lmc_8.4__1_.jpg",
+      "size": 6473157,
+      "sha256": "82170fde5a22f94ce52e378d2c7dc943583dc33e8294da702b72c2de9a88dc24"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\MONITOR_CAPTURE_INSTRUCTIONS.txt",
+      "size": 1248,
+      "sha256": "2f61627e4db4d822e198c67f1ef89058d0259fa1718acff83258ed68d8276768"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_chart_manifest.json",
+      "size": 1960,
+      "sha256": "0fc44a420020c687b9ca006660e16fbc9ec21e8153824d786be86b871e764dfe"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_checkerboard_15x8.png",
+      "size": 9009,
+      "sha256": "a22b9e3bacaa649a2855d3da07ec91484635b9629b00422b56b95a1a3e97c32a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_color_patches_24.png",
+      "size": 8788,
+      "sha256": "a4bf2d0aacc609df869d168eedafd3fdb9a6871f02b11fafb83afa83d66115c6"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_grayscale_wedge_11.png",
+      "size": 8713,
+      "sha256": "62be241c5d481a599b9b6f0f575659d1f2d1942b5402c0b9a07165a49c96e766"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_siemens_star_36.png",
+      "size": 134261,
+      "sha256": "69f995b9641eb04937391ae121a50285fe3bb4b815e2a6411522960a0eedd118"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\charts\\monitor_slanted_edge_5deg.png",
+      "size": 9006,
+      "sha256": "5595d45afc94934bd6669c8ef7ec9f89646c8be09c44535888ad2bb2e4f2950b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_all_clipping.png",
+      "size": 82085,
+      "sha256": "30d34a4e00384e93d31c1cf485b664d45e1a283512a83d7cec267896406d7e7d"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_all_moire.png",
+      "size": 85128,
+      "sha256": "7b5df64cc3b9fca8bf4f088e00990f8f2396329a7e8d2ef12cc6cbe50da3e48b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_all_mtf50.png",
+      "size": 84525,
+      "sha256": "54e5d58870c477ad046773126dde2f1507cd9f33e79d72f1dee458fda8928fda"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_all_wb.png",
+      "size": 84523,
+      "sha256": "a71c0707218026e3002797bc8a7d007ab2eaf7daf2918d9d325b9e72bd75e542"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_clipping.png",
+      "size": 35028,
+      "sha256": "aee534d5e3fed85960b77cd536027a04d314c985bb48e97931fdb328c30dea5e"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_mtf50.png",
+      "size": 32814,
+      "sha256": "cf3a6ea8685905cc85b425ceee9a37564bbf247788a6e36ede7e44937ac7d50c"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\monitor_calibration\\plots\\monitor_wb.png",
+      "size": 33799,
+      "sha256": "c80fc4e6bc64cf931a3046dc10bf7874d8b8a1907cb7992ca66e9a92fed826f6"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\analyze_no_cost.py",
+      "size": 14131,
+      "sha256": "f6430557ffbe5019f93ac826a8b3b614de5e2e5c7db674c743f0183d822d3009"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\no_cost_all_data.csv",
+      "size": 11974,
+      "sha256": "81c4452e941f39bf3bb4c48da2454257c12d90a31eacb7f588c48d89c9932712"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\no_cost_optimization_report.md",
+      "size": 9474,
+      "sha256": "9b764b6a6018455bafe0ece37cec78194338373037df7f799a314a56b4792c9d"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\no_cost_summary.json",
+      "size": 883,
+      "sha256": "aa4fa585b6554095075900dc622f02fa17010c305bfd9affb09fbe9431ef5450"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\ab_analyze.py",
+      "size": 10735,
+      "sha256": "08df4c27c8c66893a893a9d2f4c83e3bd22df35d70ceec4464af554c802e2592"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\ab_baseline_analysis.md",
+      "size": 6403,
+      "sha256": "b17efad9f6b21d2ea3bbab67238fc9502965bc16aab3168d17ef7cf675da76a0"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\ab_baseline_session.md",
+      "size": 4185,
+      "sha256": "70d1bae4ef4eb6c440a517f0d0ef1677699b9fda80c9dcadc920be9beeb03f33"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\ab_report.md",
+      "size": 5642,
+      "sha256": "ac5133ac1937a2119e5e0080ec4aa713b8e03de59e8ac530ee715f9b860e3ed1"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\ab_test_plan.md",
+      "size": 6473,
+      "sha256": "d4fa9bad0bdec0ef5e1468fa1f2aaea54ba653d1a4b8050a7e1196f1248b2404"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\analyze_qualified.py",
+      "size": 3109,
+      "sha256": "37b77fe6c7958f888b85e9033c45f9f12ff7afbe7db2f36f844ba93f507bd852"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_contact_sheet.png",
+      "size": 2563116,
+      "sha256": "38e888706913b111372994615ddc27df7ce31e02c57859037418f7953d2e5d87"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_inventory.json",
+      "size": 65800,
+      "sha256": "07c89ac503b704a4de1257ca0a8cc7dac972fa2a052c8356bbea78b7ad382f2a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_inventory_text.png",
+      "size": 76595,
+      "sha256": "0b1167382cdb43faeed048e29d41dd3f3942c557b75d69735030d22ccfab2e2a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified_results.csv",
+      "size": 5965,
+      "sha256": "71b4d95e223e02a3740289bf98ac33043af09671261103917250ea8bcaaa6c14"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified_results.json",
+      "size": 13241,
+      "sha256": "567716cfd7f76e12fdc3b52d2d0877374f3287ac084b26c25d0cde2d121ed047"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_reconciliation_report.md",
+      "size": 9342,
+      "sha256": "d691300d0805eca833517240ba462ae34d5bfc823417f7c91ffbb391994f399f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_results.json",
+      "size": 24191,
+      "sha256": "8b4b7bbc91e1518ffe774bdd0d15cb3cfe425993850c773793c9b7cb24505976"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_scene_selection_report.md",
+      "size": 5598,
+      "sha256": "c54e00f6a8e41dfff4e83a12d82a4da7a31c0d3d2e1c3c92d5e77e4e07ad0802"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_selected.txt",
+      "size": 522,
+      "sha256": "cc09a2be1e585f9fff218b170719d529f26d02ae0410e0f0375cb7ac5ce8e642"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_selection_manifest.json",
+      "size": 3561,
+      "sha256": "3c573f00bb1df44a656755c5c42e4e04915e7bf4ec3c5dffc55aba6c1dfd37ce"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\check_exif.py",
+      "size": 1023,
+      "sha256": "8813bcef2b7fddf96cee0bec31f5f425427b84e08bf597532815fd2076ba222c"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\check_manifest.py",
+      "size": 752,
+      "sha256": "4e8c982b7e1f2ec2ba0dccc35a1a4b110f4c8fcfa6fb603bbbc8c3c4c34a939a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\classify_scenes.py",
+      "size": 4835,
+      "sha256": "5ebb4f9e949190772d1121b45e53f236a4d5f8df66a1957006eb2f770288f432"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\make_contact_sheet.py",
+      "size": 1673,
+      "sha256": "dc22f556398e1883779069eb51d43d9c5c0e1eec69afa95366164530d7a12199"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\optimized_results.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\pull_baseline.py",
+      "size": 2067,
+      "sha256": "095c0ec063371c0fd8acc9880c08a5641c0b6ce45147f580ff72e3736afa10ea"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\reconcile_baseline.py",
+      "size": 4632,
+      "sha256": "7d597fd58b1f3da1cb7a01fac4d6d8f096292bf06a6a39f1292ff1eacc7cdd22"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\scene_assignments.json",
+      "size": 22066,
+      "sha256": "95f06540f6fa6047d16163e3dd4cf9e27cc0da9a53e0e744a1c908dc0b8e6e8b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\scene_features.json",
+      "size": 22729,
+      "sha256": "0ffbefad836ab3f55198c404b90115d453eb874ca928e04ae652058875649b41"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\select_baseline.py",
+      "size": 9983,
+      "sha256": "2215269947076fd857f3be9ff8759f9710991fbe0f76e2d636d974481404de89"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\select_baseline_v2.py",
+      "size": 9516,
+      "sha256": "e22d56d072e9d3b0d292f5d84c46062c92bb1d082f6bf6f9f0303d5542fae4d0"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172024_lmc_8.4.jpg",
+      "size": 3179717,
+      "sha256": "bb90c262d33452524e79e40df30678d05412d4e04293e54f5283482dfcbaf59a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172034_lmc_8.4.jpg",
+      "size": 3643947,
+      "sha256": "b722a8a5c39555b98ec821d3905f218ff305833891ac1ed03abc7e3b28b51198"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172038_lmc_8.4.jpg",
+      "size": 3077043,
+      "sha256": "aa64f91812244e33ad500bf6417119b49cf7bb83af7cf0ce88a367a98a2a3fea"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172044_lmc_8.4.jpg",
+      "size": 3667002,
+      "sha256": "0764ce73d02147b37bc03a09b34dd75c40779a3d1ada09c96413660c1e0a0144"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172101_lmc_8.4.jpg",
+      "size": 2726603,
+      "sha256": "72a5faca22a5afa0d1bab1677d35a556fa5c961a3480f7b224843deebdcb1cf7"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172103_lmc_8.4.jpg",
+      "size": 2998425,
+      "sha256": "b3b51bdef3995ec838378809e2967b4636ee8e71a223b6e51099b9d2902b08a8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172106_lmc_8.4.jpg",
+      "size": 3018800,
+      "sha256": "48f477381e99c2dec4c873fb99d15927c1de17ce6037206c0a99aae5d6e13496"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172116_lmc_8.4.jpg",
+      "size": 2601100,
+      "sha256": "a0472a023ff4fea911727abc026652d18a5fda6e86cf3bf307840601130794c7"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172124_lmc_8.4.jpg",
+      "size": 5852963,
+      "sha256": "295c930f1f09581dd69c86e8e94217e037b03ffc63f0a79f147ae9a5f261b724"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172126_lmc_8.4.jpg",
+      "size": 5966892,
+      "sha256": "92eaaf0a20b3c5768f36eef054a526b63e8b3b6819ce157cd1c3fca6cf5c5ef3"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172134_lmc_8.4.jpg",
+      "size": 3265327,
+      "sha256": "91aede2775daea1439aa9d15d64637a197fd46ce5715ad861e06c45b8982724b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172137_lmc_8.4.jpg",
+      "size": 3002436,
+      "sha256": "f33ffc7abac111dd7bec7281e3f9a574055319d1f642b9e2186eafc74baec79c"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172202_lmc_8.4.jpg",
+      "size": 4315024,
+      "sha256": "6e3a7b31e8cb6f39aa9c8e2f0891f5f5817dfd71b3210b057d9744a0d25ff587"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172207_lmc_8.4.jpg",
+      "size": 4399320,
+      "sha256": "0dbdefad4024be5971f63c1c8bba20193faa80dd824ca9950db068616af4f838"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172224_lmc_8.4.jpg",
+      "size": 3118109,
+      "sha256": "e534b32c6ea67a81164e8607df40364f732d3818f5f27e884f040bd797cd6bf5"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172225_lmc_8.4.jpg",
+      "size": 3092680,
+      "sha256": "d40e7cee7798ccdb4c869060a9497d81b2325cd49fbbb2916cda8faf9d8f1092"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172225_lmc_8.4__1_.jpg",
+      "size": 3509144,
+      "sha256": "3db93c65c6d8b3f53737b7837c2e1d67deea93f31849cd22fc37355b9eef5770"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172226_lmc_8.4.jpg",
+      "size": 3310131,
+      "sha256": "00180609864019cffd4854718b7246d0f50c43ea12008cc6608ff2a04c6b1404"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172231_lmc_8.4.jpg",
+      "size": 3850958,
+      "sha256": "b1b465b871e38f07b503f2ff60646eadb16f8b4e6845b91003cdbc49058b2acd"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172234_lmc_8.4.jpg",
+      "size": 3901575,
+      "sha256": "541a46d9c2995c31dd385f0d81c980abc74edc1910f602c242bab89f06e72466"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172306_lmc_8.4.jpg",
+      "size": 2474394,
+      "sha256": "a3d4a91def9098d7c4ac67541811cd009579a757eda8acc571247b8d8355a3de"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172334_lmc_8.4.jpg",
+      "size": 2629088,
+      "sha256": "6a25e55254a885f55648d0273acaf1001199765b7d88a509fca68e0b5c6224ba"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172342_lmc_8.4.jpg",
+      "size": 2626020,
+      "sha256": "9adcef1e376576bf8c0071eebbb08fcc804226cd2acd5eeab44f3b9df553d9ea"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172405_lmc_8.4.jpg",
+      "size": 2740781,
+      "sha256": "087d07f7284187f1db941ce887a4afbae4018975a7c7e82cf77bf63ecc6de0e5"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172422_lmc_8.4.jpg",
+      "size": 3014489,
+      "sha256": "57cf55c57d14a36d893cbeeaf30c364f927857ce4d603fa68a386f03130a11d4"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172451_lmc_8.4.jpg",
+      "size": 8114182,
+      "sha256": "6ed3d08966a6d0113674915d7ce770ec523b5ef3d932c6e01ed6a75e220a40c3"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172452_lmc_8.4.jpg",
+      "size": 8983403,
+      "sha256": "e4191d637566b96a456a012e64a695ec54bb636844e990309a44cd22c4af81ae"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172453_lmc_8.4.jpg",
+      "size": 9463029,
+      "sha256": "a9f94d5b96225d88683698ec81968d22217e4d5a8a70aaa4939302188a223a26"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172454_lmc_8.4.jpg",
+      "size": 9422723,
+      "sha256": "76bb4ee2af8736c7bb6a51beae3b7c27ec95fbcac9d431aeb8d620dd2b966be2"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172512_lmc_8.4.jpg",
+      "size": 3223695,
+      "sha256": "9fcb179b4d9cc760e4c63ad48591087b283eb32b6bf248d6eb98db16140492f8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172513_lmc_8.4.jpg",
+      "size": 2950962,
+      "sha256": "9d15f541f305ade6b77d182792d77751b91dac2c43cd0ad0df8f9e7326f60133"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172514_lmc_8.4.jpg",
+      "size": 3944084,
+      "sha256": "cdedca2928fa7f2f8ef6a4270788b1c04b5a11107115fe791ec3e25fc8f7ecb8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline\\20261019_172514_lmc_8.4__1_.jpg",
+      "size": 3070912,
+      "sha256": "b23a6d5f4f5549591ce968d7d6b59d4e1a6e90e067f90b863c14ab9f67c10417"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172024_lmc_8.4.jpg",
+      "size": 3179717,
+      "sha256": "bb90c262d33452524e79e40df30678d05412d4e04293e54f5283482dfcbaf59a"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172034_lmc_8.4.jpg",
+      "size": 3643947,
+      "sha256": "b722a8a5c39555b98ec821d3905f218ff305833891ac1ed03abc7e3b28b51198"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172038_lmc_8.4.jpg",
+      "size": 3077043,
+      "sha256": "aa64f91812244e33ad500bf6417119b49cf7bb83af7cf0ce88a367a98a2a3fea"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172044_lmc_8.4.jpg",
+      "size": 3667002,
+      "sha256": "0764ce73d02147b37bc03a09b34dd75c40779a3d1ada09c96413660c1e0a0144"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172103_lmc_8.4.jpg",
+      "size": 2998425,
+      "sha256": "b3b51bdef3995ec838378809e2967b4636ee8e71a223b6e51099b9d2902b08a8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172106_lmc_8.4.jpg",
+      "size": 3018800,
+      "sha256": "48f477381e99c2dec4c873fb99d15927c1de17ce6037206c0a99aae5d6e13496"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172116_lmc_8.4.jpg",
+      "size": 2601100,
+      "sha256": "a0472a023ff4fea911727abc026652d18a5fda6e86cf3bf307840601130794c7"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172124_lmc_8.4.jpg",
+      "size": 5852963,
+      "sha256": "295c930f1f09581dd69c86e8e94217e037b03ffc63f0a79f147ae9a5f261b724"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172126_lmc_8.4.jpg",
+      "size": 5966892,
+      "sha256": "92eaaf0a20b3c5768f36eef054a526b63e8b3b6819ce157cd1c3fca6cf5c5ef3"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172134_lmc_8.4.jpg",
+      "size": 3265327,
+      "sha256": "91aede2775daea1439aa9d15d64637a197fd46ce5715ad861e06c45b8982724b"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172202_lmc_8.4.jpg",
+      "size": 4315024,
+      "sha256": "6e3a7b31e8cb6f39aa9c8e2f0891f5f5817dfd71b3210b057d9744a0d25ff587"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172207_lmc_8.4.jpg",
+      "size": 4399320,
+      "sha256": "0dbdefad4024be5971f63c1c8bba20193faa80dd824ca9950db068616af4f838"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172231_lmc_8.4.jpg",
+      "size": 3850958,
+      "sha256": "b1b465b871e38f07b503f2ff60646eadb16f8b4e6845b91003cdbc49058b2acd"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172451_lmc_8.4.jpg",
+      "size": 8114182,
+      "sha256": "6ed3d08966a6d0113674915d7ce770ec523b5ef3d932c6e01ed6a75e220a40c3"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172452_lmc_8.4.jpg",
+      "size": 8983403,
+      "sha256": "e4191d637566b96a456a012e64a695ec54bb636844e990309a44cd22c4af81ae"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172454_lmc_8.4.jpg",
+      "size": 9422723,
+      "sha256": "76bb4ee2af8736c7bb6a51beae3b7c27ec95fbcac9d431aeb8d620dd2b966be2"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172512_lmc_8.4.jpg",
+      "size": 3223695,
+      "sha256": "9fcb179b4d9cc760e4c63ad48591087b283eb32b6bf248d6eb98db16140492f8"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\baseline_qualified\\20261019_172513_lmc_8.4.jpg",
+      "size": 2950962,
+      "sha256": "9d15f541f305ade6b77d182792d77751b91dac2c43cd0ad0df8f9e7326f60133"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\ab_comparison\\__pycache__\\ab_analyze.cpython-314.pyc",
+      "size": 18184,
+      "sha256": "8622246fb628f55663133be39c6b352e32baa0e3cf0ad6b6d96eb294ee36d10f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\plots\\black_clip_vs_ev.png",
+      "size": 49937,
+      "sha256": "d17bcca8c1f1b77d12b39c1414d605bed67db5abf4407fe34eaab77aa0a41b47"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\plots\\edge_density_distribution.png",
+      "size": 36593,
+      "sha256": "373b5280efb55d0bebacda5fcbf6a837799a1c9c897009ed652e248a680b5bc6"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\plots\\iso_vs_blackclip.png",
+      "size": 43909,
+      "sha256": "ba0d734498f03c0b2ef25b676fc18b18e516a3526f149726b09c8564f29e4c52"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\plots\\moire_distribution.png",
+      "size": 33995,
+      "sha256": "c4e3fd4dbe0906471b95da45d97d944d7c24691ef29ca09fa4e75c58cb5e7343"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\no_cost_tests\\plots\\warm_cast_distribution.png",
+      "size": 37327,
+      "sha256": "eb9753f8b4bc7cd190b1a8536389c6e32d8e4b14630019b48de862319bfa4cf3"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\checkerboard_9x6_20mm.pdf",
+      "size": 33910,
+      "sha256": "77839b21aa5a68f4d6cdaca81d3d25c2a16a877e57fda0bbeefd0e41496619b9"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\generate_targets.py",
+      "size": 14018,
+      "sha256": "272658fd5e3aa8b5f6d886cff2b7b68e1714b9928c107324a34d46304c2df422"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\grayscale_step_wedge.pdf",
+      "size": 35337,
+      "sha256": "2f02b9bf5e0f9d8a150ebf2012f4ea010c08cf26da5aa3c74b47ad552e146490"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\PRINT_INSTRUCTIONS.txt",
+      "size": 1668,
+      "sha256": "c2fd5d7284990a3a3d4f6de56827d2e41a7b2c763f619105688cd93528335e41"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\siemens_star_36spoke.pdf",
+      "size": 32843,
+      "sha256": "b0b9b935a434b3172f1c116d909de066ebe86afb4e4118b0a598d2a47504056f"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\slanted_edge_iso12233.pdf",
+      "size": 34757,
+      "sha256": "799e3333953d4e55d916ae4bd34b2fb9c71082321c40582e53e8881b1fc47b52"
+    },
+    {
+      "path": "analysis_results\\final_calibration\\print_targets\\target_manifest.json",
+      "size": 1979,
+      "sha256": "4fb26657c1ba2029fe8661dd98efc715d6e2095485d2a03dadbf34782d5c3ff3"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\apply_variants.py",
+      "size": 2886,
+      "sha256": "9b991a3e76b28c62e04a08860a27b5e911e170c671bfcf64632a62e36278b50c"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\audit_variants.py",
+      "size": 827,
+      "sha256": "3415fbe9c520ece42a10e5d4bac09b8f2d8fb1bfd1d380e9bef0fe791310aded"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\balanced.xml",
+      "size": 143969,
+      "sha256": "d592bed3fe5c7f79cb0109f3ea27335bc8ab6e011d7e224c9d518e9aefc08102"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\config_change_log.md",
+      "size": 3394,
+      "sha256": "94fee34d1ef026405402de9f951870c295390c7baf2a29eca2cf4561b5375c04"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\config_change_log_corrected.md",
+      "size": 3368,
+      "sha256": "8e4a0a72141b0ac9c9a3450ad6a374d4b198cbed98b40d48161dcc667a708709"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\config_validation_report.md",
+      "size": 2675,
+      "sha256": "ece8ec7995e12d57e19fece3b61b5480039d01bbeb0e677a3f9319eef628d427"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\config_validation_report_corrected.md",
+      "size": 2734,
+      "sha256": "c5caaed1bbae98113ea3fb46084497e6919c5e4f295a5248152608b53e5eaa1a"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\detail.xml",
+      "size": 143969,
+      "sha256": "a17bb889946ef604093cad54e68aa6e874b678a1590c511dbe93030661764a26"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\generate_corrected.py",
+      "size": 3266,
+      "sha256": "6a1adcccafda7e41df92e8f91a8e96099c30258239fed0a1d160040a8c0329e2"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\generate_optimized.py",
+      "size": 3466,
+      "sha256": "9d12feb035134444ab722f40dbad66a497b2622945e0c9293362c11815e23ab7"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\IMX682_full_calibration_report.md",
+      "size": 5509,
+      "sha256": "04a702d48a5dc9465eb476886ac5ac48e1789fa33906d400f274db40b1f08b51"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\list_keys.py",
+      "size": 486,
+      "sha256": "2e8c176d5bbdd708125294444a2822fa474bea27a1156c182672a4564f9dd688"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\lowlight.xml",
+      "size": 143969,
+      "sha256": "e285e9e0159acf816263bd11617b9148fead81b3bf9e561755c48ad7ec572f76"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\LXX521_LMC84_Optimized.xml",
+      "size": 143967,
+      "sha256": "f08ae28f1d86c15a1c85819777b73e4451383696da487448f056eb289ce110bb"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\LXX521_LMC84_Optimized_Corrected.xml",
+      "size": 143961,
+      "sha256": "a5d98309bdacad6a1f640fb016d4423036a2b85682545c5002f9b8677d4785cd"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\measurement_to_setting_table.md",
+      "size": 3071,
+      "sha256": "338620bdb6e1f8fa244175381425130ae19a73a0144ddb826410d8a8efb8f329"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\original_V2_Release_Day.xml",
+      "size": 143969,
+      "sha256": "d592bed3fe5c7f79cb0109f3ea27335bc8ab6e011d7e224c9d518e9aefc08102"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\verify_changes.py",
+      "size": 1198,
+      "sha256": "db7efaf533e8601a529ddd5a2ab2b2982280f11f0b32dc042d5ac2c34fbb56b3"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\verify_configs.py",
+      "size": 553,
+      "sha256": "a330e004471d0844f644b9b67cbfdd1d0a2d6e0c200a3b888e5068fd680b50fd"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\verify_corrected.py",
+      "size": 1752,
+      "sha256": "7b6ea0cdec46accc52924f0cb1f08f26a5bf5487ce9a55b618e4a03caa3d93d6"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\verify_optimized.py",
+      "size": 498,
+      "sha256": "20d3bd404dc032dc8d21c2cec2671b0eeaaf7ab0b921eac26a9395142477b6a3"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\device_tests\\ab_test_report.md",
+      "size": 2214,
+      "sha256": "186e3916e394483e75e3ac0a6fc69f165e6ddfc2aa96bccf9550f910987f98ca"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\device_tests\\test_image_inventory.csv",
+      "size": 324,
+      "sha256": "c6574f44edb2b16276b5b95057bf88d53fd2349e2934268e30d4cf3a5fcbcdd8"
+    },
+    {
+      "path": "analysis_results\\imx682_config\\device_tests\\warm_cast_analysis.md",
+      "size": 2311,
+      "sha256": "db618218adaf3bd8079eff5ff2a96e9f7f3a6625e7a19222cb4a9629ff00f6af"
+    },
+    {
+      "path": "analysis_results\\target_1210\\_  20261019_121034_lmc_8.4.jpg",
+      "size": 7699232,
+      "sha256": "88aba757b6ba0b7f4dfec88a82b7f045fae7b3cbd81e570c642ace2031336edf"
+    },
+    {
+      "path": "analysis_results\\target_1210\\_  20261019_121039_lmc_8.4.jpg",
+      "size": 7827413,
+      "sha256": "b06c96ac15d8df403ac77b4154de58c6298939eb7e34b95cb479d8d120c1f2f5"
+    },
+    {
+      "path": "analysis_results\\target_1210\\_  20261019_121043_lmc_8.4.jpg",
+      "size": 7629440,
+      "sha256": "b35b2ae34b185e03cd3713452875cb9144972236fcaf7095fc7d6908fb7df837"
+    },
+    {
+      "path": "analysis_results\\target_1210\\analysis\\analysis.log",
+      "size": 2169,
+      "sha256": "3723ddbdeca040327f2ed261350117b2a64b25b8c18809ab2865d924a82b2122"
+    },
+    {
+      "path": "analysis_results\\target_1210\\analysis\\analysis_results.json",
+      "size": 4134,
+      "sha256": "ad1d628343274cb0d00c8e1f317e89dc8c0b4f34f421c28d394c3b15c52a1eba"
+    },
+    {
+      "path": "analysis_results\\target_1210\\analysis\\summary.csv",
+      "size": 544,
+      "sha256": "14620c0a824f0096bafd746975dc62dc10653bee009271c9c85b59197cfd5141"
+    },
+    {
+      "path": "analysis_results\\target_1210\\analysis\\summary_report.md",
+      "size": 2135,
+      "sha256": "75e2c0e4461c9aa32e13f086b5432864cfc1184deee4f3383be034861d5d0ec2"
+    }
+  ]
+}

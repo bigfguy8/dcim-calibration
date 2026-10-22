@@ -1,0 +1,84 @@
+ALL-ROUNDER MASTER V1.0 CONFIG - ROLLBACK PROCEDURE
+====================================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+ALL-ROUNDER MASTER V1.0 CONFIG:
+  File: LXX521_IMX682_AllRounder_Master_V1.xml
+  SHA-256: a556856cdaf77fccec92de7d43f1ff804d7b0f2513c879eeab5102ba0cced2e0
+  Location: analysis_results/imx682_config/allrounder/ (local)
+
+BALANCED CHANGES FROM BASELINE:
+  White Balance:
+    cw_rg_key: 0.5925 -> 0.4500 (warm cast reduction)
+    cw_rg_key_2-5: 0.5925 -> 0.5200 (secondary cameras)
+    pref_awb_key: 0 -> 1 (daylight AWB)
+    pref_awbrec_key: 0 -> 1 (AWB recording)
+    pref_color_key: 0 -> -1 (slight color adjustment)
+
+  Sharpness (moderate):
+    lib_sharpnessb_key: 0 -> 2
+    lib_sharpgain_key: 0 -> 2
+    lib_sharpmini_key: 0 -> 2
+
+  Contrast (micro-contrast):
+    lib_contrast_1_key: 0 -> 1
+    lib_contrast_2_key: 0 -> 1
+
+  Noise Control (light):
+    pref_iso_noise_key: 4 -> 3
+    lib_denoise_key: 0 -> 1
+    lib_lumadenoise_key: 0 -> 1
+    lib_lumanoise_key: 0 -> 1
+
+  HDR (conservative):
+    lib_preservinghigh_key: 0 -> 1 (preserve highlights)
+    pref_camera_hdr_plus_key: auto (unchanged - baseline)
+    pref_gamma_curve_mode_key: -1 -> 0 (gamma curve)
+
+DESIGN PHILOSOPHY:
+  - Balanced across all scenarios (daylight, portrait, indoor, night, video)
+  - Conservative sharpening (2) to avoid halos
+  - Light denoise (1) to preserve detail
+  - HDR at auto (not enhanced) to avoid over-processing
+  - Moderate warm cast reduction (0.45)
+  - Evidence-based changes only (no speculative tuning)
+  - Incorporates Evidence v1.3 community insights where compatible
+
+EVIDENCE BASE:
+  Warm cast R-G +5.68 mean across 50 LMC images (target <4.0)
+  LMC black clip: 1.4-2.2% (V2 Release) vs stock 4.7-44%
+  LMC white clip: 0.45-6.3% (V2 Release) vs stock up to 54.66%
+  HDR+ confirmed active via EXIF: HDR+ 1.0.414775603zdy
+  Evidence v1.3: daylight AWB, color=-2, hdrregion=6, cw_rg_2-5=0.52
+  Edge density 0.0296 mean (target >0.10)
+  Portrait captures: R-G +2.3 to +10.9 (variable warm cast)
+  Video: 3 videos, sharpness CV 0.586-0.700 (focus hunting)
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: Balanced approach may not excel in any single scenario.
+WARNING: HDR at auto may underperform vs enhanced in extreme DR scenes.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_AllRounder_Master_V1.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_AllRounder_Master_V1.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_AllRounder_Master_V1.xml
+  5. Capture test photos in various lighting conditions
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/allrounder/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

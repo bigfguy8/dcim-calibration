@@ -1,0 +1,48 @@
+LXX521_IMX682_SUPERCRISP - ROLLBACK PROCEDURE
+=============================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+SUPERCRISP FINAL CONFIG:
+  File: LXX521_IMX682_SuperCrisp.xml
+  SHA-256: 7b5ece32b2e6e98c9bf88198d0d004b0ce9d8964f49c8b9f204db0a8c5dd6288
+  Location: analysis_results/imx682_config/final/ (local)
+
+CHANGES FROM BASELINE (super-crisp profile):
+  cw_rg_key: 0.5925 -> 0.4500 (warm cast reduction)
+  lib_sharpnessb_key: 0 -> 2 (moderate sharpening)
+  lib_sharpgain_key: 0 -> 2 (sharpening gain)
+  lib_sharpmini_key: 0 -> 2 (micro-sharpening)
+  lib_contrast_1_key: 0 -> 1 (micro-contrast boost)
+  lib_contrast_2_key: 0 -> 1 (micro-contrast boost)
+  pref_iso_noise_key: 2 -> 3 (ISO noise handling)
+  lib_denoise_key: 0 -> 1 (light denoise)
+  lib_lumadenoise_key: 0 -> 1 (light luma denoise)
+  lib_lumanoise_key: 0 -> 1 (light luma noise)
+  lib_preservinghigh_key: 0 -> 1 (preserve highlights)
+
+STATUS: UNVERIFIED - no A/B test performed
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_SuperCrisp.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_SuperCrisp.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_SuperCrisp.xml
+  5. Capture test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/final/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

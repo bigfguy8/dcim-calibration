@@ -1,0 +1,5 @@
+name,path,size_bytes,mtime,sha256,readable,xml_status,root_tag,key_count,duplicate_paths,error,xml_error
+LXX521_IMX682_V8_ProBalanced.xml,/data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_ProBalanced.xml,1359,2026-10-20T14:16:24+00:00,b8c4331e894a2a8a9cf2771fa89c080d1084b629cb291032d31b2e7bef80db14,True,PASS,map,26,[],,
+LXX521_IMX682_V8_ProBalanced.xml,/sdcard/Download/LXX521_IMX682_V8_ProBalanced.xml,1359,2026-10-20T19:47:27.776965+00:00,b8c4331e894a2a8a9cf2771fa89c080d1084b629cb291032d31b2e7bef80db14,True,PASS,map,26,[],,
+LXX521_IMX682_V8_FullAllRounder_Q100.xml,/data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_FullAllRounder_Q100.xml,141567,2026-10-20T14:16:24+00:00,f5fe70f8b292d7127dc1326279c732ddead8d8eae1b56f74d7aee45fa026db70,True,PASS,map,2644,[],,
+LXX521_IMX682_V8_FullAllRounder_Q100.xml,/sdcard/Download/LXX521_IMX682_V8_FullAllRounder_Q100.xml,141567,2026-10-20T19:47:31.852965+00:00,f5fe70f8b292d7127dc1326279c732ddead8d8eae1b56f74d7aee45fa026db70,True,PASS,map,2644,[],,

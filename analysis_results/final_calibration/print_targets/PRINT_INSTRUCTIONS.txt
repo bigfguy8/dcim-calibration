@@ -1,0 +1,40 @@
+IMX682 CALIBRATION TARGET PRINT INSTRUCTIONS
+============================================
+
+FILES:
+  checkerboard_9x6_20mm.pdf      - 9x6 internal corners, 20mm nominal squares
+  slanted_edge_iso12233.pdf      - 5 deg slanted edges for MTF50
+  siemens_star_36spoke.pdf       - 36-spoke Siemens star
+  grayscale_step_wedge.pdf       - 11-step grayscale (0-255)
+  target_manifest.json           - Target specifications and hashes
+
+PRINT SETTINGS (CRITICAL):
+  - Scale: 100% (DO NOT use "fit to page" or "auto scale")
+  - DPI: 300 minimum
+  - Paper: Matte cardstock, 200-300 gsm
+  - Color mode: sRGB
+  - Quality: High/Best
+
+AFTER PRINTING:
+  1. Measure checkerboard square dimensions with digital calipers
+  2. Record actual square size in mm (±0.01mm precision)
+  3. Verify chart geometry (measure multiple squares for consistency)
+  4. Document all measurements in capture log
+  5. Do NOT assume printer scaling is accurate
+  6. Use only measured dimensions for calibration
+
+VERIFICATION CHECKLIST:
+  [ ] Checkerboard squares measured and recorded
+  [ ] Slanted-edge block dimensions measured
+  [ ] Siemens star diameter measured
+  [ ] Grayscale step widths measured
+  [ ] Chart mounted on flat rigid board
+  [ ] Lighting verified even, no glare
+  [ ] Camera distance measured and recorded
+
+CALIBRATION LIMITATIONS:
+  - All dimensions are NOMINAL (designed), not measured
+  - Physical print dimensions MUST be verified with calipers
+  - Color patches are NOT verified ColorChecker references
+  - No absolute color accuracy claim without verified reference values
+  - MTF50 from printed targets includes printer resolution effects

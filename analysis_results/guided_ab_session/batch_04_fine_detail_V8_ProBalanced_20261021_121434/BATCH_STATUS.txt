@@ -1,0 +1,1 @@
+INVALID BATCH: expected 5 new/changed files, detected 6. The session did NOT advance. Do not delete anything; check the camera folder and rerun this same step after resolving the issue. If the intended images already exist, use a fresh batch with exactly the required new captures.

@@ -1,0 +1,3 @@
+filename,config,scene,iso,exposure_s,ev,f_number,focal_length,lum_mean,lum_std,edge_density,black_clip_pct,white_clip_pct,rb_ratio,rg_diff,mtf50,notes
+# Template — fill after capture
+# Example: IMG_20261019_150000_balanced.jpg,balanced,indoor_gray,200,0.02,7.5,1.89,5.43mm,120.0,80.0,0.06,2.0,0.0,1.08,5.0,0.01,first test

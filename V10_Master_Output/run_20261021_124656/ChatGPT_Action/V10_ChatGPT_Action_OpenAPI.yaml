@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: DCIM Calibration Project Status API
+  version: 1.0.0
+  description: Read-only project status and logged effort for LXX521 / IMX682. Does not capture photos, delete files, edit XML, or publish to Telegram.
+servers:
+  - url: https://YOUR_PUBLIC_HTTPS_DOMAIN
+    description: Replace with a trusted HTTPS endpoint or secured HTTPS tunnel.
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      operationId: getServiceHealth
+      summary: Check that the local project API is running
+      security: []
+      responses:
+        '200':
+          description: Service status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: {type: string}
+                  service: {type: string}
+  /project/status:
+    get:
+      operationId: getProjectStatus
+      summary: Read the latest V10 audit and release state
+      responses:
+        '200':
+          description: Latest project state
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: {type: string}
+                  project_root: {type: string}
+                  baseline_found: {type: boolean}
+                  source_profile: {type: string}
+                  xml_parse_ok: {type: boolean}
+                  runtime_compatibility: {type: string}
+                  image_quality_claim: {type: string}
+                  package_integrity: {type: string}
+                  generated_at: {type: string}
+  /project/time:
+    get:
+      operationId: getProjectLoggedTime
+      summary: Read measured/logged project time, not unrecorded historical effort
+      responses:
+        '200':
+          description: Logged project time
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_logged_seconds: {type: integer}
+                  total_logged: {type: string}
+                  historical_unlogged_time_known: {type: boolean}
+                  note: {type: string}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API key

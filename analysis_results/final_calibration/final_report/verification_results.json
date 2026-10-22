@@ -1,0 +1,132 @@
+{
+  "xml_verification": {
+    "desktop_baseline": {
+      "path": "C:\\Users\\l\\Desktop\\default .xml",
+      "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+      "key_count": 2640
+    },
+    "optimized_corrected": {
+      "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\LXX521_LMC84_Optimized_Corrected.xml",
+      "sha256": "a5d98309bdacad6a1f640fb016d4423036a2b85682545c5002f9b8677d4785cd",
+      "key_count": 2640
+    },
+    "original_v2_release": {
+      "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\original_V2_Release_Day.xml",
+      "sha256": "d592bed3fe5c7f79cb0109f3ea27335bc8ab6e011d7e224c9d518e9aefc08102",
+      "key_count": 2640
+    },
+    "schema_compatible": true,
+    "missing_keys": 0,
+    "extra_keys": 0,
+    "changed_keys": 4,
+    "changed_key_details": [
+      {
+        "key": "lib_sharpnessb_key",
+        "old": "0",
+        "new": "2"
+      },
+      {
+        "key": "lib_sharpgain_key",
+        "old": "0",
+        "new": "2"
+      },
+      {
+        "key": "lib_sharpmini_key",
+        "old": "0",
+        "new": "2"
+      },
+      {
+        "key": "cw_rg_key",
+        "old": "0.5925",
+        "new": "0.45"
+      }
+    ]
+  },
+  "baseline_dataset": {
+    "total_images_pulled": 33,
+    "qualified_images": 18,
+    "excluded_night_mode": 5,
+    "extras": 10,
+    "shortfall": 6,
+    "target_scenes": 8,
+    "complete_scenes": 4,
+    "partial_scenes": 3,
+    "missing_scenes": 1
+  },
+  "baseline_metrics": {
+    "R-G (warm cast)": {
+      "median": -5.497001647949219,
+      "min": -17.86766815185547,
+      "max": 10.893156687418625,
+      "mean": -3.917977650960285,
+      "n": 18
+    },
+    "R/B ratio": {
+      "median": 1.0783251487606846,
+      "min": 0.7803989916884391,
+      "max": 1.4070708071210651,
+      "mean": 1.0853122703235991,
+      "n": 18
+    },
+    "Edge density": {
+      "median": 0.09990374247233072,
+      "min": 0.020940144856770832,
+      "max": 0.22056070963541666,
+      "mean": 0.11244314688223381,
+      "n": 18
+    },
+    "Black clip %": {
+      "median": 0.648816426595052,
+      "min": 0.0965118408203125,
+      "max": 12.33050028483073,
+      "mean": 3.008496319806135,
+      "n": 18
+    },
+    "White clip %": {
+      "median": 0.09797414143880208,
+      "min": 0.0,
+      "max": 6.829071044921875,
+      "mean": 0.5254109700520835,
+      "n": 18
+    },
+    "Lum noise (std)": {
+      "median": 55.58916384940504,
+      "min": 38.37173646267654,
+      "max": 89.32430814491653,
+      "mean": 60.041903968466194,
+      "n": 18
+    },
+    "Halo score": {
+      "median": 415.0558471295551,
+      "min": 264.1968962724581,
+      "max": 743.3687106511989,
+      "mean": 461.2248486868484,
+      "n": 18
+    }
+  },
+  "lmc_vs_stock": {
+    "lmc_images": 50,
+    "stock_images": 19,
+    "lmc_warm_cast_rg_mean": 5.675988540649416,
+    "stock_warm_cast_rg_mean": 6.047747561806125,
+    "lmc_black_clip_mean": 10.641387939453127,
+    "stock_black_clip_mean": 18.343654431794818,
+    "lmc_white_clip_mean": 5.3562469482421875,
+    "stock_white_clip_mean": 15.819977877432839,
+    "lmc_edge_density_mean": 0.029616775512695308,
+    "stock_edge_density_mean": 0.05155054728190104,
+    "lmc_rb_ratio_mean": 1.0409268187265521,
+    "stock_rb_ratio_mean": 1.0471201650094784,
+    "lmc_mtf50_mean": 0.0011730969959510144,
+    "stock_mtf50_mean": 0.0010804136440808764
+  },
+  "monitor_moire": {
+    "images": 32,
+    "moire_range": [
+      580.7482484101039,
+      3131.759125356338
+    ],
+    "checkerboard_detected": 0,
+    "usable_for_calibration": false
+  }
+}

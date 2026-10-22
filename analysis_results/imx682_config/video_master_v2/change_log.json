@@ -1,0 +1,106 @@
+{
+  "generated": "2026-10-19T18:36:48.223489",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "video_master_v2": {
+    "file": "LXX521_IMX682_Video_Master_V2.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\video_master_v2\\LXX521_IMX682_Video_Master_V2.xml",
+    "sha256": "fbf87e08e796e7a566b78fcefac78ebc08655992291c6b898d471ce57a71b3c9",
+    "key_count": 2640
+  },
+  "v1_hash": "afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc",
+  "v2_differs_from_v1": true,
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean"
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate sharpening for video"
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Sharpening gain"
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Micro-sharpening"
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise for video"
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise"
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise"
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "4",
+      "new": "3",
+      "evidence": "ISO noise handling"
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Slight contrast"
+    }
+  ],
+  "removed_from_v1": [
+    "lib_preservinghigh_key: 1 -> 0 (reverted, still-photo setting)",
+    "pref_camera_hdr_plus_key: enhanced -> auto (reverted, still-photo setting)",
+    "pref_hdrregion_key: 8 -> 5 (reverted, still-photo setting)",
+    "pref_frames_hdr_key: 12 -> 0 (reverted, still-photo setting)",
+    "pref_gamma_curve_mode_key: 0 -> -1 (reverted, still-photo setting)"
+  ],
+  "unchanged_keys": 2630,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Videography optimization V2.0",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "research_basis": [
+    "Do not assume HDR+ Enhanced improves video (reverted to auto)",
+    "Do not assume HDR region helps video (reverted to baseline)",
+    "Do not assume frame-count settings help video (reverted to 0)",
+    "Keep only evidence-supported image quality settings",
+    "Video settings (resolution, FPS, bitrate) at baseline values",
+    "Focus is app-controlled, not XML-configurable"
+  ],
+  "limitations": [
+    "No A/B test performed",
+    "No focus-related XML keys exist for LMC 8.4",
+    "Focus is controlled by camera app, not XML config",
+    "No video quality metrics available (no matched comparison)",
+    "Research values are community-sourced, not device-verified"
+  ]
+}

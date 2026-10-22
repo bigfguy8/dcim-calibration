@@ -1,0 +1,30 @@
+{
+  "next_batch_index": 3,
+  "created_local": "2026-10-21T12:00:10+05:30",
+  "completed": [
+    {
+      "batch_index": 1,
+      "scene_id": "bright_window",
+      "profile_label": "V9_ConservativeBalanced",
+      "report_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_120344",
+      "batch_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/guided_ab_session/batch_01_bright_window_V9_ConservativeBalanced_20261021_120343",
+      "completed_local": "2026-10-21T12:03:57+05:30"
+    },
+    {
+      "batch_index": 2,
+      "scene_id": "bright_window",
+      "profile_label": "V8_ProBalanced",
+      "report_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_120908",
+      "batch_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/guided_ab_session/batch_02_bright_window_V8_ProBalanced_20261021_120908",
+      "completed_local": "2026-10-21T12:09:22+05:30"
+    },
+    {
+      "batch_index": 3,
+      "scene_id": "bright_window",
+      "profile_label": "V8_FullAllRounder_Q100",
+      "report_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_121046",
+      "batch_dir": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/guided_ab_session/batch_03_bright_window_V8_FullAllRounder_Q100_20261021_121045",
+      "completed_local": "2026-10-21T12:11:00+05:30"
+    }
+  ]
+}

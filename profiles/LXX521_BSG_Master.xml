@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Optimized BSG MGC Master Config for Lava Play Ultra (IMX682) -->
+<string name="pref_config_nickname_key">LXX521_BSG_Pro</string>
+
+<!-- Main Camera ID Selection -->
+<string name="camera_id_back">0</string>
+
+<!-- Pixel Model Base & AWB Profile (Pixel 7 Pro Color Science) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<boolean name="pref_enable_awb_key">true</boolean>
+
+<!-- High Quality JPG & Balanced Sharpness -->
+<string name="pref_quality_key">100</string>
+<string name="pref_sharpness_key">1.25</string>
+
+<!-- HDR+ Enhanced Frame Count for Clean Noise & Sharp Details -->
+<string name="pref_hdr_plus_frames_key">9</string>
+
+<!-- Advanced Noise Reduction & Shadow Tunings -->
+<string name="pref_luma_denoise_key">0.92</string>
+<string name="pref_chroma_denoise_key">1.15</string>
+
+<!-- Contrast & Shadow Correction for IMX682 -->
+<string name="pref_contrast_key">1.04</string>
+<string name="pref_shadow_brightness_key">1.02</string>
+</map>

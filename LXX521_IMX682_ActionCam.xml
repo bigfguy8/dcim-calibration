@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Config Identifier -->
+<string name="pref_config_nickname_key">LXX521_IMX682_ActionCam</string>
+
+<!-- Active Main Camera ID -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Model Base & AWB -->
+<string name="pref_camera_model_back_key">12</string>
+<string name="pref_awb_back_key">12</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- FORCE SHUTTER SPEED SPEED CEILING (Cap at ~1/20s - 1/33s max) -->
+<string name="pref_max_exposure_time_key">50000</string>
+<string name="pref_shutter_command_back_key">1</string>
+<string name="pref_shutter_back_key">1/20</string>
+<string name="pref_exp_back_key">0</string>
+
+<!-- Fast Frame Stacking (Fast processing, zero motion blur) -->
+<string name="frame_count_b_photo_0">7</string>
+<string name="frame_count_b_ns_0">12</string>
+
+<!-- LibPatcher Sharpness & Detail Boost -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.35</string>
+<string name="ptchr_sharp_radius_small_0">1.2</string>
+<string name="ptchr_sharp_radius_medium_0">1.1</string>
+<string name="ptchr_sharp_outline_0">1.0</string>
+
+<!-- Clean Denoise Engine -->
+<string name="ptchr_luma_denoise_0">0.85</string>
+<string name="ptchr_chroma_denoise_0">1.0</string>
+<string name="ptchr_spatial_denoise_0">0.85</string>
+
+<!-- Dynamic Range & Color -->
+<string name="ptchr_saturation_0">1.10</string>
+<string name="ptchr_contrast_0">1.05</string>
+<string name="ptchr_dehaze_0">1.05</string>
+
+<!-- Standard IMX682 Black Levels -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

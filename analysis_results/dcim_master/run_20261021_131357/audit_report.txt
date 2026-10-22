@@ -1,0 +1,133 @@
+DCIM CALIBRATION — LXX521 / IMX682
+Tool: 2.0.0
+Created: 2026-10-21T13:14:01+05:30
+Root: /data/data/com.termux/files/home/dcim_calibration
+
+SUMMARY
+  Files: 736
+  Python scripts: 78 (syntax passed 78, failed 0)
+  XML files: 84 (parsed 84, failed 0)
+  Documents: 133
+  Exact duplicate groups: 96 (XML-only: 14)
+  Image files: 252 (949.73 MiB total)
+  Generated-output image candidates: 41 (2.70 MiB; heuristic, review before deletion)
+  Selected cleanup set for this run: 41 (2.70 MiB; nothing deleted unless confirmed)
+
+V10 CANDIDATE
+  Status: STARTER_BASELINE_COPY_NOT_TUNED_NOT_DEVICE_VALIDATED
+  Source: profiles/LXX521_IMX682_LMC84_AllRounder.xml
+  Important: candidate is copied unchanged; no tuning values were invented or changed.
+
+WORKFLOW ENTRY-POINT CANDIDATES (not authoritative)
+  - V10_Termux_Master.py
+  - lxx521_imx682_v8_audit.py
+  - run_crisp_pipeline.py
+  - workflow_master.py
+  - workflow_master_v4.py
+  - analysis_results/imx682_config/hdr_master/generate_hdr.py
+  - analysis_results/imx682_config/video_master/generate_video_master.py
+  - analysis_results/imx682_config/video_master_v2/generate_video_master_v2.py
+
+LARGEST IMAGE FILES (top 30; inventory only)
+      9.54 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/_  20261019_132923_lmc_8.4.jpg
+      9.54 MiB | KEEP/REVIEW | recapture_1329/_  20261019_132923_lmc_8.4.jpg
+      9.54 MiB | KEEP/REVIEW | recapture_v12/Camera/_  20261019_132923_lmc_8.4.jpg
+      9.02 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline/20261019_172453_lmc_8.4.jpg
+      8.99 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline/20261019_172454_lmc_8.4.jpg
+      8.99 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline_qualified/20261019_172454_lmc_8.4.jpg
+      8.57 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline/20261019_172452_lmc_8.4.jpg
+      8.57 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline_qualified/20261019_172452_lmc_8.4.jpg
+      8.13 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/_  20261019_132924_lmc_8.4.jpg
+      8.13 MiB | KEEP/REVIEW | recapture_1329/_  20261019_132924_lmc_8.4.jpg
+      8.13 MiB | KEEP/REVIEW | recapture_v12/Camera/_  20261019_132924_lmc_8.4.jpg
+      8.05 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/20261019_145510_lmc_8.4.jpg
+      7.91 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/20261019_145500_lmc_8.4.jpg
+      7.74 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline/20261019_172451_lmc_8.4.jpg
+      7.74 MiB | KEEP/REVIEW | analysis_results/final_calibration/no_cost_tests/ab_comparison/baseline_qualified/20261019_172451_lmc_8.4.jpg
+      7.61 MiB | KEEP/REVIEW | analysis_results/final_calibration/monitor_calibration/captures/20261019_170249_lmc_8.4.jpg
+      7.46 MiB | KEEP/REVIEW | analysis_results/target_1210/_  20261019_121039_lmc_8.4.jpg
+      7.43 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/20261019_140214_lmc_8.4.jpg
+      7.43 MiB | KEEP/REVIEW | recapture_v12/Camera/20261019_140214_lmc_8.4.jpg
+      7.34 MiB | KEEP/REVIEW | analysis_results/target_1210/_  20261019_121034_lmc_8.4.jpg
+      7.34 MiB | KEEP/REVIEW | analysis_results/final_calibration/final_report/new_captures2/IMG_20261019_175329_1_HDR.jpg
+      7.31 MiB | KEEP/REVIEW | new_captures/IMG_20261019_132013_1.jpg
+      7.28 MiB | KEEP/REVIEW | analysis_results/target_1210/_  20261019_121043_lmc_8.4.jpg
+      7.27 MiB | KEEP/REVIEW | analysis_results/final_calibration/monitor_calibration/captures/20261019_170227_lmc_8.4.jpg
+      7.04 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/20261019_160216_lmc_8.4.jpg
+      6.91 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/020261019_133843_lmc_8.4.jpg
+      6.91 MiB | KEEP/REVIEW | monitor_test_1338/020261019_133843_lmc_8.4.jpg
+      6.91 MiB | KEEP/REVIEW | recapture_v12/Camera/020261019_133843_lmc_8.4.jpg
+      6.85 MiB | KEEP/REVIEW | analysis_results/dcim_chart_audit/device_pulls/20261019_141014_lmc_8.4.jpg
+      6.85 MiB | KEEP/REVIEW | recapture_v12/Camera/20261019_141014_lmc_8.4.jpg
+
+EXACT DUPLICATE XML GROUPS
+  SHA256 15eec8037b7cd173997020da293ffec14ba3a3648d9fa6289083c682cc4085bd
+    - LXX521_IMX682_Super_AllInOne_V4.xml
+    - profiles/LXX521_IMX682_Super_AllInOne_V4.xml
+  SHA256 b80d5fb3823861773119c130cf3b97293dc7f88f48d4cedb1da29251342ea553
+    - V10_Backups/V9_Backup_b80d5fb38238.xml
+    - V10_Master_Output/run_20261021_124656/V10_Final_Release/V10_Final.xml
+    - V10_Master_Output/run_20261021_124656/V10_Final_Release/V9_Backup.xml
+    - backups/LXX521_IMX682_V9_ConservativeBalanced_20261021_114246.xml
+    - profiles/LXX521_IMX682_V9_ConservativeBalanced.xml
+  SHA256 2118c905a247a5534dadfb82530638659e7d39c54ea3cf8dd622baf145bebc9a
+    - analysis_results/imx682_config/balanced.xml
+    - analysis_results/imx682_config/original_V2_Release_Day.xml
+  SHA256 f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+    - analysis_results/imx682_config/allrounder/default_working_backup.xml
+    - analysis_results/imx682_config/final/default_working_backup.xml
+    - analysis_results/imx682_config/hdr_master/default_working_backup.xml
+    - analysis_results/imx682_config/hdr_video/default_working_backup.xml
+    - analysis_results/imx682_config/lava/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v3/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v4/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v5/default_working_backup.xml
+    - analysis_results/imx682_config/special/default_working_backup.xml
+    - analysis_results/imx682_config/supercrisp/default_working_backup.xml
+    - analysis_results/imx682_config/superportrait_hdr/default_working_backup.xml
+    - analysis_results/imx682_config/superportrait_v2/default_working_backup.xml
+    - analysis_results/imx682_config/telegram/default_working_backup.xml
+    - analysis_results/imx682_config/video/default_working_backup.xml
+    - analysis_results/imx682_config/video_master/default_working_backup.xml
+    - analysis_results/imx682_config/video_master_v2/default_working_backup.xml
+    - profiles/LXX521_IMX682_LMC84_AllRounder.xml
+  SHA256 afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc
+    - analysis_results/imx682_config/hdr_master/LXX521_IMX682_HDR_Master.xml
+    - analysis_results/imx682_config/hdr_video/Lava_HDR_Video.xml
+    - analysis_results/imx682_config/superportrait_hdr/LXX521_IMX682_SuperPortrait_HDR.xml
+    - analysis_results/imx682_config/video_master/LXX521_IMX682_Video_Master_V1.xml
+  SHA256 9e7bbfb1ab70cdffe5e0f20d379b539afbee80f219be97d2960f73bcf0187ad8
+    - analysis_results/imx682_config/lowlight_v3/LXX521_IMX682_LowLight_Shot_V3.xml
+    - analysis_results/imx682_config/lowlight_v4/LXX521_IMX682_LowLight_Shot_V4.xml
+  SHA256 fbf87e08e796e7a566b78fcefac78ebc08655992291c6b898d471ce57a71b3c9
+    - analysis_results/imx682_config/video/Lava_Videography.xml
+    - analysis_results/imx682_config/video_master_v2/LXX521_IMX682_Video_Master_V2.xml
+  SHA256 0d8385f495ed74552611cf25ee72bf8bcfd68610337bcecc40e318f25fcf8f97
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Master.xml
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Pro.xml
+    - profiles/LXX521_BSG_Master.xml
+    - profiles/LXX521_BSG_Pro.xml
+  SHA256 642fd418d7c8ecd3ce4e5c4a1355d7401d7b19de6a6ad805bc945107cccddbf7
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V2.xml
+    - profiles/LXX521_IMX682_AllInOne_V2.xml
+  SHA256 8be6d35dcd137074d3c2343db7534f4f2d1099c39ed11734f70eb9d63a33c7f8
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V3.xml
+    - profiles/LXX521_IMX682_AllInOne_V3.xml
+  SHA256 085323aff48fe602293532b82d8ac0c32bdbca39cd4af6e50912435a9290161b
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_HDR_Video_Test.xml
+    - profiles/LXX521_IMX682_HDR_Video_Test.xml
+  SHA256 b59f8744122b776b548136675d4943e49cc5ce36e62f51970c60a0abb02a38a5
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_NightPro.xml
+    - profiles/LXX521_IMX682_NightPro.xml
+  SHA256 07141128e51bb4a08b0f477cb15db127ad4edf458e2516f43b7e902d548815d9
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_UltimateMaster.xml
+    - profiles/LXX521_IMX682_UltimateMaster.xml
+  SHA256 f4ffd9e0af157feb7ebf764692e63ce7285acc56c74bb446ae3b46e013936f25
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_MasterPortrait_Pro.xml
+    - profiles/LXX521_MasterPortrait_Pro.xml
+
+SAFETY
+  Default run never deletes files.
+  Cleanup can only target files beneath project root; no full SD card scan.
+  Source images, datasets, reference captures and backups are excluded from generated cleanup.
+  XML parse success does not establish camera compatibility or image-quality improvement.

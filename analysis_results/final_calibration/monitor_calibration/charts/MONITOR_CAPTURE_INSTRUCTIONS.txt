@@ -1,0 +1,33 @@
+MONITOR CALIBRATION CAPTURE INSTRUCTIONS
+========================================
+
+DISPLAY SETTINGS (Acer Monitor):
+  - Native resolution: 1920x1080 @ 120Hz
+  - Estimated DPI: ~93 (53x29cm physical)
+  - Disable: HDR, dynamic contrast, night mode, auto-brightness
+  - Set brightness to fixed level (record value)
+  - Set color temperature to 6500K if available
+
+CHART DISPLAY:
+  - Display each PNG full-screen (no scaling, no fit-to-screen)
+  - Use image viewer in full-screen mode
+  - Verify no taskbar/overlays visible
+  - Record monitor brightness/contrast settings
+
+CAPTURE PROCEDURE:
+  1. Position phone perpendicular to screen, centered
+  2. Record distance from phone to screen (cm)
+  3. Dim room lighting (screen as sole light source)
+  4. Avoid reflections, glare, moire
+  5. Focus on chart center
+  6. Capture 3 images per chart
+  7. Record EXIF: ISO, shutter, aperture, EV
+  8. Repeat for each chart
+
+CONFIG: Baseline (default .xml) - verify active before each capture
+
+LIMITATIONS:
+  - Monitor pixels create moire with camera sensor
+  - Display color is not calibrated (no verified reference)
+  - All measurements are comparative, not absolute
+  - Do not claim true sensor MTF or absolute color accuracy

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Clean ID 1 Mapping -->
+<string name="active_cam_id_front_key">1</string>
+<string name="pref_camera_id_front_key">1</string>
+
+<!-- Disable Aux Front Lens Conflicts -->
+<string name="pref_manual_cameraid_front_2_key">0</string>
+<string name="pref_manual_cameraid_front_3_key">0</string>
+<string name="pref_manual_cameraid_front_4_key">0</string>
+<string name="pref_manual_cameraid_front_5_key">0</string>
+
+<!-- Viewfinder & Stream Unfreeze -->
+<string name="pref_stream_config_front_key">0</string>
+<string name="pref_viewfinder_format_key">0</string>
+<string name="pref_af_mode_front">0</string>
+
+<!-- Frame Count Limits -->
+<string name="frame_count_b_photo_1">7</string>
+<string name="frame_count_b_ns_1">10</string>
+</map>

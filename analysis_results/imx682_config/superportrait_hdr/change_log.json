@@ -1,0 +1,120 @@
+{
+  "generated": "2026-10-19T18:11:18.148585",
+  "baseline": {
+    "file": "default .xml (Desktop/Device working config)",
+    "path": "C:\\Users\\l\\Desktop\\default .xml",
+    "sha256": "f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49",
+    "key_count": 2640
+  },
+  "superportrait_hdr": {
+    "file": "LXX521_IMX682_SuperPortrait_HDR.xml",
+    "path": "C:\\Users\\l\\AppData\\Local\\Temp\\opencode\\dcim_calibration\\analysis_results\\imx682_config\\superportrait_hdr\\LXX521_IMX682_SuperPortrait_HDR.xml",
+    "sha256": "afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc",
+    "key_count": 2640
+  },
+  "changes": [
+    {
+      "key": "cw_rg_key",
+      "old": "0.5925",
+      "new": "0.4500",
+      "evidence": "Warm cast R-G +5.68 mean; portrait captures show R-G +8.7 to +10.9 (very warm). Reduce orange skin."
+    },
+    {
+      "key": "lib_sharpnessb_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Moderate sharpening for facial texture without halos. Edge density 0.0296 mean."
+    },
+    {
+      "key": "lib_sharpgain_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Complement to sharpnessb for detail retention."
+    },
+    {
+      "key": "lib_sharpmini_key",
+      "old": "0",
+      "new": "2",
+      "evidence": "Micro-sharpening for fine detail without plastic smoothing."
+    },
+    {
+      "key": "lib_contrast_1_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast for facial detail without harshness."
+    },
+    {
+      "key": "lib_contrast_2_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Micro-contrast for facial detail."
+    },
+    {
+      "key": "pref_iso_noise_key",
+      "old": "2",
+      "new": "3",
+      "evidence": "ISO noise handling for portrait captures (ISO 557-3878 observed)."
+    },
+    {
+      "key": "lib_denoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light denoise to control noise without plastic smoothing."
+    },
+    {
+      "key": "lib_lumadenoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma denoise for cleaner skin tones."
+    },
+    {
+      "key": "lib_lumanoise_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Light luma noise reduction."
+    },
+    {
+      "key": "lib_preservinghigh_key",
+      "old": "0",
+      "new": "1",
+      "evidence": "Preserve highlights in HDR portrait processing."
+    },
+    {
+      "key": "pref_camera_hdr_plus_key",
+      "old": "auto",
+      "new": "enhanced",
+      "evidence": "HDR+ enhanced for better highlight recovery in portraits."
+    },
+    {
+      "key": "pref_hdrregion_key",
+      "old": "5",
+      "new": "8",
+      "evidence": "HDR region adjustment for better face exposure."
+    },
+    {
+      "key": "pref_frames_hdr_key",
+      "old": "0",
+      "new": "12",
+      "evidence": "HDR frame count for multi-frame portrait processing."
+    },
+    {
+      "key": "pref_gamma_curve_mode_key",
+      "old": "-1",
+      "new": "0",
+      "evidence": "Gamma curve mode for natural skin tone rendering."
+    }
+  ],
+  "unchanged_keys": 2625,
+  "schema": "map with string name/value entries",
+  "compatibility": "LMC 8.4 Iris R18F1 v8.4.300.414775575.18",
+  "focus": "Portrait + HDR optimization",
+  "status": "UNVERIFIED - no A/B test performed yet",
+  "limitations": [
+    "No visual inspection of portrait captures performed",
+    "Warm cast on skin tones may be sensor-level (MT6878 ISP)",
+    "HDR enhanced mode may increase processing time",
+    "Moderate sharpening may still introduce subtle halos",
+    "No ColorChecker reference for absolute skin tone accuracy",
+    "Portrait mode may use different processing pipeline"
+  ]
+}

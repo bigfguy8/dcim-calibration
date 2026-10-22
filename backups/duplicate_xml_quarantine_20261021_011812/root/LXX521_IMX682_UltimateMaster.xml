@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Ultimate Master Config for Lava Play Ultra (IMX682) -->
+<string name="pref_config_nickname_key">LXX521_UltimateMaster</string>
+
+<!-- Active Main Camera ID (Sony IMX682) -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Color Science & Model (Pixel 7 Pro Base + AWB Lock) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_enable_awb_key">1</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Frame Stacking (Fast & Motion-Blur Free) -->
+<string name="frame_count_b_photo_0">7</string>
+<string name="frame_count_b_ns_0">12</string>
+
+<!-- Video Recording Black Screen & Stabilization Fix -->
+<boolean name="pref_video_stabilization_key">false</boolean>
+<string name="pref_video_encoder_key">0</string>
+<string name="pref_stream_config_video_key">0</string>
+
+<!-- LibPatcher: Sharpness & Details -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.30</string>
+<string name="ptchr_sharp_radius_small_0">1.1</string>
+<string name="ptchr_sharp_outline_0">1.0</string>
+
+<!-- Contrast & Denoise -->
+<string name="ptchr_contrast_0">1.04</string>
+<string name="ptchr_dehaze_0">1.03</string>
+<string name="ptchr_luma_denoxic_0">0.90</string>
+<string name="ptchr_luma_denoise_0">0.90</string>
+<string name="ptchr_chroma_denoise_0">1.10</string>
+
+<!-- Hardware Black Levels -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

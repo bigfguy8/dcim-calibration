@@ -1,0 +1,77 @@
+VIDEO MASTER V1.0 CONFIG - ROLLBACK PROCEDURE
+===========================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+VIDEO MASTER V1.0 CONFIG:
+  File: LXX521_IMX682_Video_Master_V1.xml
+  SHA-256: afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc
+  Location: analysis_results/imx682_config/video_master/ (local)
+
+VIDEO SETTINGS:
+  Resolution: 1080P
+  FPS: 30 (auto for p2018)
+  Aspect ratio: 16:9
+  HEVC: 0 (default)
+  Bitrate: 0 (auto)
+
+IMAGE QUALITY (for video):
+  cw_rg_key: 0.45 (warm cast reduction)
+  Sharpness: 2 (moderate)
+  Contrast: 1 (slight boost)
+  NR: 1 (light)
+  ISO noise: 3
+
+HDR (for video):
+  HDR+: enhanced
+  HDR region: 8
+  HDR frames: 12
+  Gamma curve: 0
+  Preserve highlights: 1
+
+DIFFERENCES FROM EXISTING VIDEO CONFIGS:
+  vs Videography: +5 HDR keys (preservinghigh, hdr_plus, hdrregion, frames_hdr, gamma)
+  vs HDR Video: +0 (identical 15 changes + 5 video settings already in baseline)
+  Note: HDR Video and Video Master have same changes; Video Master adds explicit video settings
+
+EVIDENCE:
+  Video analysis: 3 videos, sharpness CV 0.586-0.700 (focus hunting)
+  Brightness std: 13.0-18.3 (exposure instability)
+  Video resolutions: 1080x1920 and 2160x3840
+  Video FPS: 29.95 (consistent)
+  HDR+ confirmed active via EXIF on photos
+  LMC significantly outperforms stock on clipping
+
+VIDEO QUALITY RECOMMENDATIONS:
+  - Use tap-to-focus before recording
+  - Lock focus if available
+  - Avoid rapid panning
+  - Ensure adequate lighting for reliable AF
+  - Clean lens before recording
+  - Use tripod for stability
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: HDR enhanced mode may increase processing time during recording.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_Video_Master_V1.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_Video_Master_V1.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_Video_Master_V1.xml
+  5. Record test video in consistent lighting
+  6. Compare with baseline video
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/video_master/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

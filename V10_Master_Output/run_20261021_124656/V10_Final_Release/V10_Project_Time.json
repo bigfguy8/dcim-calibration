@@ -1,0 +1,8 @@
+{
+  "total_logged_seconds": 2,
+  "total_logged": "00h 00m 02s",
+  "run_seconds": 2.8,
+  "manual_minutes": 0,
+  "historical_unlogged_time_known": false,
+  "note": "Includes measured audit/build workflow time up to release readiness plus explicitly supplied/logged sessions. It excludes any later Telegram network time; unrecorded historical hands-on work cannot be inferred from file timestamps."
+}

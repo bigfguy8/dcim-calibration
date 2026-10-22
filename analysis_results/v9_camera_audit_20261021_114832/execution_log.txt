@@ -1,0 +1,14 @@
+2026-10-21 11:48:32,191 INFO Starting read-only V9 camera audit
+2026-10-21 11:48:32,192 INFO Input directory: /storage/emulated/0/DCIM/Camera
+2026-10-21 11:48:32,192 INFO Project directory: /data/data/com.termux/files/home/dcim_calibration
+2026-10-21 11:48:32,192 INFO Output directory: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_114832
+2026-10-21 11:48:32,192 INFO Profile label: V9_ConservativeBalanced (user-declared; not verified from EXIF)
+2026-10-21 11:48:32,192 INFO Pillow version: 13.0.0; NumPy version: 2.5.4; Python: 3.14.8
+2026-10-21 11:48:32,211 INFO Image files selected: 4
+2026-10-21 11:48:32,211 INFO File selection uses filesystem modification time, not guaranteed EXIF capture time.
+2026-10-21 11:48:32,211 INFO [1/4] Analyzing 20261021_114604_lmc_8.4.jpg
+2026-10-21 11:48:35,016 INFO [2/4] Analyzing 20261021_114553_lmc_8.4.jpg
+2026-10-21 11:48:37,835 INFO [3/4] Analyzing 20261021_114529_lmc_8.4.jpg
+2026-10-21 11:48:40,599 INFO [4/4] Analyzing 20261021_114511_lmc_8.4.jpg
+2026-10-21 11:48:43,332 INFO Audit complete. Success=4 Failure=0 Duplicate groups=0
+2026-10-21 11:48:43,333 INFO Writing output SHA-256 manifest

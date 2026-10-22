@@ -1,0 +1,59 @@
+{
+  "generated": "2026-10-19T16:54:04.947438",
+  "monitor": {
+    "brand": "Acer (ACR0FDD)",
+    "resolution": "1920x1080",
+    "refresh_rate": "120 Hz",
+    "physical_size_cm": "53x29",
+    "estimated_dpi": 93,
+    "bits_per_pixel": 32
+  },
+  "charts": [
+    {
+      "name": "Checkerboard",
+      "file": "monitor_checkerboard_15x8.png",
+      "pixels": "1920x1080",
+      "squares": "6x4",
+      "square_px": "128x135",
+      "sha256": "a22b9e3bacaa649a2855d3da07ec91484635b9629b00422b56b95a1a3e97c32a"
+    },
+    {
+      "name": "Slanted-Edge",
+      "file": "monitor_slanted_edge_5deg.png",
+      "pixels": "1920x1080",
+      "slant_deg": 5.0,
+      "sha256": "5595d45afc94934bd6669c8ef7ec9f89646c8be09c44535888ad2bb2e4f2950b"
+    },
+    {
+      "name": "Siemens Star",
+      "file": "monitor_siemens_star_36.png",
+      "pixels": "1920x1080",
+      "spokes": 36,
+      "radius_px": 490,
+      "sha256": "69f995b9641eb04937391ae121a50285fe3bb4b815e2a6411522960a0eedd118"
+    },
+    {
+      "name": "Grayscale Wedge",
+      "file": "monitor_grayscale_wedge_11.png",
+      "pixels": "1920x1080",
+      "steps": 11,
+      "sha256": "62be241c5d481a599b9b6f0f575659d1f2d1942b5402c0b9a07165a49c96e766"
+    },
+    {
+      "name": "Color Patches",
+      "file": "monitor_color_patches_24.png",
+      "pixels": "1920x1080",
+      "patches": 24,
+      "sha256": "a4bf2d0aacc609df869d168eedafd3fdb9a6871f02b11fafb83afa83d66115c6",
+      "note": "Synthetic colors, NOT verified ColorChecker references"
+    }
+  ],
+  "limitations": [
+    "Monitor pixel structure (RGB subpixels) affects measurements",
+    "Moir\u00e9 between monitor and camera sensor is present",
+    "Display color accuracy depends on monitor calibration",
+    "All measurements are comparative estimates, not absolute",
+    "No physical dimension verification possible",
+    "Color patches are synthetic, not verified reference values"
+  ]
+}

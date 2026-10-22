@@ -1,0 +1,14 @@
+2026-10-21 10:16:25,207 INFO Project root: /data/data/com.termux/files/home/dcim_calibration
+2026-10-21 10:16:25,207 INFO Output directory: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v8_comparison_20261021T044625Z
+2026-10-21 10:16:25,207 INFO Read-only audit; no source profiles or images will be changed.
+2026-10-21 10:16:29,840 INFO Skipping duplicate content for profile ProBalanced: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/020261021_093215_LXX521_IMX682_V8_ProBalanced.jpg
+2026-10-21 10:16:32,152 INFO Skipping duplicate content for profile ProBalanced: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/20261021_093157_lmc_8.4.jpg
+2026-10-21 10:16:34,487 INFO Skipping duplicate content for profile ProBalanced: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/20261021_093134_lmc_8.4.jpg
+2026-10-21 10:16:36,832 INFO Skipping duplicate content for profile FullAllRounder_Q100: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/20261021_101400_lmc_8.4.jpg
+2026-10-21 10:16:39,163 INFO Skipping duplicate content for profile FullAllRounder_Q100: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/20261021_101357_lmc_8.4.jpg
+2026-10-21 10:16:41,536 INFO Skipping duplicate content for profile FullAllRounder_Q100: /data/data/com.termux/files/home/storage/shared/DCIM/Camera/20261021_101347_lmc_8.4.jpg
+2026-10-21 10:16:42,838 INFO Audit complete. Output directory: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v8_comparison_20261021T044625Z
+2026-10-21 10:16:42,839 INFO Decision: INCONCLUSIVE
+2026-10-21 10:16:42,839 INFO Profiles found: {'LXX521_IMX682_V8_ProBalanced.xml': 'FOUND', 'LXX521_IMX682_V8_FullAllRounder_Q100.xml': 'FOUND'}
+2026-10-21 10:16:42,839 INFO Images found/analyzed: 6
+2026-10-21 10:16:42,839 INFO Read original inputs only; output files created in new directory.

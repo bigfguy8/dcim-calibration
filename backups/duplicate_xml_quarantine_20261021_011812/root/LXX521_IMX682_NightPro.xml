@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<string name="pref_config_nickname_key">LXX521_IMX682_NightPro</string>
+
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_enable_awb_key">1</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Night: more frames = less noise -->
+<string name="frame_count_b_photo_0">8</string>
+<string name="frame_count_b_ns_0">15</string>
+
+<string name="pref_show_hdr_button_key">1</string>
+<string name="pref_show_exp_button_key">1</string>
+
+<!-- Softer sharpening so noise isn't amplified -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.12</string>
+<string name="ptchr_sharp_radius_small_0">1.0</string>
+<string name="ptchr_sharp_outline_0">0.9</string>
+
+<!-- Gentler contrast/dehaze/saturation: lifts less shadow noise -->
+<string name="ptchr_contrast_0">1.02</string>
+<string name="ptchr_contrast2_0">1.0</string>
+<string name="ptchr_dehaze_0">1.0</string>
+<string name="ptchr_hdr_effect_0">1.0</string>
+<string name="ptchr_saturation_0">1.05</string>
+
+<!-- Stronger denoise -->
+<string name="ptchr_luma_denoise_0">1.10</string>
+<string name="ptchr_chroma_denoise_0">1.30</string>
+
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

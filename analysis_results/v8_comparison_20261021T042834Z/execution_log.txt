@@ -1,0 +1,11 @@
+2026-10-21 09:58:34,003 INFO Project root: /data/data/com.termux/files/home/dcim_calibration
+2026-10-21 09:58:34,004 INFO Output directory: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v8_comparison_20261021T042834Z
+2026-10-21 09:58:34,004 INFO Read-only audit; no source profiles or images will be changed.
+2026-10-21 09:58:36,096 WARNING MISSING IMAGE: 2706.jpg
+2026-10-21 09:58:36,103 WARNING MISSING IMAGE: 2708.jpg
+2026-10-21 09:58:36,108 WARNING MISSING IMAGE: 2710.jpg
+2026-10-21 09:58:36,927 INFO Audit complete. Output directory: /data/data/com.termux/files/home/dcim_calibration/analysis_results/v8_comparison_20261021T042834Z
+2026-10-21 09:58:36,927 INFO Decision: INCONCLUSIVE
+2026-10-21 09:58:36,927 INFO Profiles found: {'LXX521_IMX682_V8_ProBalanced.xml': 'FOUND', 'LXX521_IMX682_V8_FullAllRounder_Q100.xml': 'FOUND'}
+2026-10-21 09:58:36,927 INFO Images found/analyzed: 0
+2026-10-21 09:58:36,928 INFO Read original inputs only; output files created in new directory.

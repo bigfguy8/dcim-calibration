@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Fix Manual Camera ID List (Remove ID 1 from Rear Aux List) -->
+<string name="pref_camera_list_key">0,3</string>
+<boolean name="pref_camera_list_toggle_key">false</boolean>
+
+<!-- Primary Lens Routing -->
+<string name="active_cam_id_front_key">1</string>
+<string name="pref_camera_id_front_key">1</string>
+
+<!-- Disable All Extra Front Aux Slots -->
+<string name="pref_manual_cameraid_front_2_key">0</string>
+<string name="pref_manual_cameraid_front_3_key">0</string>
+<string name="pref_manual_cameraid_front_4_key">0</string>
+<string name="pref_manual_cameraid_front_5_key">0</string>
+
+<!-- Viewfinder & Interface Sync -->
+<string name="pref_stream_config_front_key">0</string>
+<string name="pref_viewfinder_format_key">0</string>
+<string name="pref_camera_interface_key">15</string>
+<string name="pref_af_mode_front">0</string>
+
+<!-- Disable Hardware Engine Crashes -->
+<string name="pref_hdrnet_front_key">0</string>
+<string name="pref_sabre_front_key">0</string>
+<string name="pref_hexagon_front_key">0</string>
+
+<!-- Safe Frame Stacking -->
+<string name="frame_count_b_photo_1">7</string>
+<string name="frame_count_b_ns_1">10</string>
+</map>

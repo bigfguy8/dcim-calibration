@@ -1,0 +1,14 @@
+parameter,configured_or_expected,observed_value,evidence_source,verification_status,limitation
+LMC version,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+Android version,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+device model,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+active camera ID,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+active profile,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+HDR/HDR+ state,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+exposure time,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+ISO,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+white balance,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+focus state,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+output resolution,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+zoom,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.
+flash state,,,Not available to this script,UNVERIFIABLE,Must be recorded on the phone during capture.

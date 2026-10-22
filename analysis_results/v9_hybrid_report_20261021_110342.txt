@@ -1,0 +1,43 @@
+LXX521 IMX682 V9 Hybrid Configuration Report
+Base profile: /data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_FullAllRounder_Q100.xml
+Overlay profile: /data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V8_ProBalanced.xml
+Output: /data/data/com.termux/files/home/dcim_calibration/profiles/LXX521_IMX682_V9_ConservativeBalanced.xml
+Base entries: 2641
+Overlay entries: 26
+Shared keys: 5
+ProBalanced-only keys added: 21
+Final entries: 2662
+Output SHA256: b80d5fb3823861773119c130cf3b97293dc7f88f48d4cedb1da29251342ea553
+XML parsing: PASS
+Duplicate named keys: NONE
+ProBalanced overlay verification: PASS
+Runtime/import validation: NOT PERFORMED
+
+Added ProBalanced-only keys:
+  pref_config_nickname_key = LXX521_IMX682_V8_ProBalanced
+  active_cam_id_back_key = 0
+  pref_camera_id_back_key = 0
+  pref_camera_model_back_key = 18
+  pref_awb_back_key = 18
+  pref_enable_awb_key = 1
+  frame_count_b_photo_0 = 9
+  frame_count_b_ns_0 = 12
+  pref_show_hdr_button_key = 1
+  pref_show_exp_button_key = 1
+  ptchr_lib_key_0 = 0
+  ptchr_sharpness_0 = 1.10
+  ptchr_sharp_radius_small_0 = 1.05
+  ptchr_sharp_outline_0 = 0.93
+  ptchr_contrast_0 = 1.00
+  ptchr_contrast2_0 = 1.0
+  ptchr_dehaze_0 = 1.0
+  ptchr_hdr_effect_0 = 1.0
+  ptchr_saturation_0 = 0.97
+  ptchr_luma_denoise_0 = 1.05
+  ptchr_chroma_denoise_0 = 1.22
+
+Changed shared entries:
+  bl0_key_main: string '64' -> string '64.0'
+  bl1_key_main: string '64' -> string '63.0'
+  bl3_key_main: string '64' -> string '64.0'
+  bl2_key_main: string '64' -> string '63.0'

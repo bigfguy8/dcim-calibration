@@ -1,0 +1,62 @@
+SUPERPORTRAIT HDR CONFIG - ROLLBACK PROCEDURE
+============================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+SUPERPORTRAIT HDR CONFIG:
+  File: LXX521_IMX682_SuperPortrait_HDR.xml
+  SHA-256: afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc
+  Location: analysis_results/imx682_config/superportrait_hdr/ (local)
+
+PORTRAIT + HDR CHANGES:
+  cw_rg_key: 0.5925 -> 0.4500 (reduce orange skin / warm cast)
+  lib_sharpnessb_key: 0 -> 2 (moderate sharpening, avoid halos)
+  lib_sharpgain_key: 0 -> 2 (sharpening gain)
+  lib_sharpmini_key: 0 -> 2 (micro-sharpening, preserve skin texture)
+  lib_contrast_1_key: 0 -> 1 (micro-contrast for facial detail)
+  lib_contrast_2_key: 0 -> 1 (micro-contrast)
+  pref_iso_noise_key: 2 -> 3 (ISO noise handling)
+  lib_denoise_key: 0 -> 1 (light denoise, avoid plastic smoothing)
+  lib_lumadenoise_key: 0 -> 1 (light luma denoise)
+  lib_lumanoise_key: 0 -> 1 (light luma noise)
+  lib_preservinghigh_key: 0 -> 1 (preserve highlights)
+  pref_camera_hdr_plus_key: auto -> enhanced (HDR+ enhanced)
+  pref_hdrregion_key: 5 -> 8 (HDR region adjustment)
+  pref_frames_hdr_key: 0 -> 12 (HDR frame count)
+  pref_gamma_curve_mode_key: -1 -> 0 (gamma curve)
+
+EVIDENCE:
+  Warm cast R-G +5.68 mean (target <4.0) - cw_rg_key reduction helps
+  LMC black clip: 1.4-2.2% (V2 Release) - better than stock 4.7-44%
+  LMC white clip: 0.45-6.3% (V2 Release) - HDR+ working
+  HDR+ confirmed active via EXIF: HDR+ 1.0.414775603zdy
+  Portrait captures show R-G +2.3 to +9.3 (variable warm cast)
+  Skin tone images: R-G +8.7 to +10.9 (very warm)
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: HDR enhanced mode may increase processing time.
+WARNING: Higher sharpening may introduce halos on fine textures.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_SuperPortrait_HDR.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_SuperPortrait_HDR.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_SuperPortrait_HDR.xml
+  5. Capture portrait test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/superportrait_hdr/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

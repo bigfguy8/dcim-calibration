@@ -1,0 +1,10 @@
+V10 CANDIDATE — NOT A VERIFIED RELEASE
+
+1. Preserve this baseline and its SHA-256.
+2. Review XML keys against the exact LMC 8.4 build.
+3. Make parameter changes only with a documented hypothesis and change log.
+4. Capture repeatable baseline/candidate pairs under matched lighting, exposure, lens and focus.
+5. Evaluate detail, noise, color, exposure and artifacts.
+6. Roll back if any critical metric regresses.
+
+This starter contains no tuning changes and proves no image-quality improvement.

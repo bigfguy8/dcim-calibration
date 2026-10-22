@@ -1,0 +1,356 @@
+DCIM CALIBRATION — LXX521 / IMX682
+Audit tool: 1.0.0
+Created: 2026-10-21T12:56:57+05:30
+Project root: /data/data/com.termux/files/home/dcim_calibration
+
+FILE SUMMARY
+  All files: 731
+  Python scripts: 78
+  XML files: 84
+  Documentation files: 131
+
+VALIDATION
+  Python parse: 78 passed; 0 failed
+  XML parse: 84 passed; 0 failed
+  Exact duplicate XML groups: 14
+  Exact duplicate groups across all files: 96
+
+WORKFLOW ENTRY-POINT CANDIDATES (not authoritative)
+  - V10_Termux_Master.py
+  - analysis_results/imx682_config/hdr_master/generate_hdr.py
+  - analysis_results/imx682_config/video_master/generate_video_master.py
+  - analysis_results/imx682_config/video_master_v2/generate_video_master_v2.py
+  - lxx521_imx682_v8_audit.py
+  - run_crisp_pipeline.py
+  - workflow_master.py
+  - workflow_master_v4.py
+
+PYTHON SYNTAX ERRORS
+  None
+
+XML PARSE ERRORS
+  None
+
+EXACT DUPLICATE XML GROUPS
+  SHA256 15eec8037b7cd173997020da293ffec14ba3a3648d9fa6289083c682cc4085bd
+    - LXX521_IMX682_Super_AllInOne_V4.xml
+    - profiles/LXX521_IMX682_Super_AllInOne_V4.xml
+  SHA256 b80d5fb3823861773119c130cf3b97293dc7f88f48d4cedb1da29251342ea553
+    - V10_Backups/V9_Backup_b80d5fb38238.xml
+    - V10_Master_Output/run_20261021_124656/V10_Final_Release/V10_Final.xml
+    - V10_Master_Output/run_20261021_124656/V10_Final_Release/V9_Backup.xml
+    - backups/LXX521_IMX682_V9_ConservativeBalanced_20261021_114246.xml
+    - profiles/LXX521_IMX682_V9_ConservativeBalanced.xml
+  SHA256 f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+    - analysis_results/imx682_config/allrounder/default_working_backup.xml
+    - analysis_results/imx682_config/final/default_working_backup.xml
+    - analysis_results/imx682_config/hdr_master/default_working_backup.xml
+    - analysis_results/imx682_config/hdr_video/default_working_backup.xml
+    - analysis_results/imx682_config/lava/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v3/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v4/default_working_backup.xml
+    - analysis_results/imx682_config/lowlight_v5/default_working_backup.xml
+    - analysis_results/imx682_config/special/default_working_backup.xml
+    - analysis_results/imx682_config/supercrisp/default_working_backup.xml
+    - analysis_results/imx682_config/superportrait_hdr/default_working_backup.xml
+    - analysis_results/imx682_config/superportrait_v2/default_working_backup.xml
+    - analysis_results/imx682_config/telegram/default_working_backup.xml
+    - analysis_results/imx682_config/video/default_working_backup.xml
+    - analysis_results/imx682_config/video_master/default_working_backup.xml
+    - analysis_results/imx682_config/video_master_v2/default_working_backup.xml
+    - profiles/LXX521_IMX682_LMC84_AllRounder.xml
+  SHA256 2118c905a247a5534dadfb82530638659e7d39c54ea3cf8dd622baf145bebc9a
+    - analysis_results/imx682_config/balanced.xml
+    - analysis_results/imx682_config/original_V2_Release_Day.xml
+  SHA256 afb5f9506a5ef76eb4e0146073b71f0f569b81aed0684ff74745378634567dcc
+    - analysis_results/imx682_config/hdr_master/LXX521_IMX682_HDR_Master.xml
+    - analysis_results/imx682_config/hdr_video/Lava_HDR_Video.xml
+    - analysis_results/imx682_config/superportrait_hdr/LXX521_IMX682_SuperPortrait_HDR.xml
+    - analysis_results/imx682_config/video_master/LXX521_IMX682_Video_Master_V1.xml
+  SHA256 9e7bbfb1ab70cdffe5e0f20d379b539afbee80f219be97d2960f73bcf0187ad8
+    - analysis_results/imx682_config/lowlight_v3/LXX521_IMX682_LowLight_Shot_V3.xml
+    - analysis_results/imx682_config/lowlight_v4/LXX521_IMX682_LowLight_Shot_V4.xml
+  SHA256 fbf87e08e796e7a566b78fcefac78ebc08655992291c6b898d471ce57a71b3c9
+    - analysis_results/imx682_config/video/Lava_Videography.xml
+    - analysis_results/imx682_config/video_master_v2/LXX521_IMX682_Video_Master_V2.xml
+  SHA256 0d8385f495ed74552611cf25ee72bf8bcfd68610337bcecc40e318f25fcf8f97
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Master.xml
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Pro.xml
+    - profiles/LXX521_BSG_Master.xml
+    - profiles/LXX521_BSG_Pro.xml
+  SHA256 642fd418d7c8ecd3ce4e5c4a1355d7401d7b19de6a6ad805bc945107cccddbf7
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V2.xml
+    - profiles/LXX521_IMX682_AllInOne_V2.xml
+  SHA256 8be6d35dcd137074d3c2343db7534f4f2d1099c39ed11734f70eb9d63a33c7f8
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V3.xml
+    - profiles/LXX521_IMX682_AllInOne_V3.xml
+  SHA256 085323aff48fe602293532b82d8ac0c32bdbca39cd4af6e50912435a9290161b
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_HDR_Video_Test.xml
+    - profiles/LXX521_IMX682_HDR_Video_Test.xml
+  SHA256 b59f8744122b776b548136675d4943e49cc5ce36e62f51970c60a0abb02a38a5
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_NightPro.xml
+    - profiles/LXX521_IMX682_NightPro.xml
+  SHA256 07141128e51bb4a08b0f477cb15db127ad4edf458e2516f43b7e902d548815d9
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_UltimateMaster.xml
+    - profiles/LXX521_IMX682_UltimateMaster.xml
+  SHA256 f4ffd9e0af157feb7ebf764692e63ce7285acc56c74bb446ae3b46e013936f25
+    - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_MasterPortrait_Pro.xml
+    - profiles/LXX521_MasterPortrait_Pro.xml
+
+PYTHON FILE OPERATIONS TO REVIEW (static hints; not necessarily unsafe)
+  - V10_Termux_Master.py:326: write_text()
+  - V10_Termux_Master.py:400: write_text()
+  - V10_Termux_Master.py:404: write_text()
+  - V10_Termux_Master.py:641: write_text()
+  - V10_Termux_Master.py:656: write_text()
+  - V10_Termux_Master.py:663: write_text()
+  - V10_Termux_Master.py:722: write_text()
+  - V10_Termux_Master.py:759: write_text()
+  - V10_Termux_Master.py:776: write_text()
+  - V10_Termux_Master.py:601: write_text()
+  - V10_Termux_Master.py:624: write()
+  - V10_Termux_Master.py:422: write()
+  - V10_Termux_Master.py:588: write_bytes()
+  - V10_Termux_Master.py:626: write()
+  - V10_Termux_Master.py:265: unlink()
+  - V10_Termux_Master.py:700: write()
+  - V10_Termux_Master.py:704: write()
+  - V10_Termux_Master.py:739: write()
+  - V10_Termux_Master.py:742: write()
+  - V10_Termux_Master.py:594: write_bytes()
+  - V10_Termux_Master.py:596: copy2()
+  - analysis_results/dcim_chart_audit/analyze_dcim.py:138: copy()
+  - analysis_results/dcim_chart_audit/analyze_opencv.py:98: copy()
+  - analysis_results/final_calibration/final_report/video_focus_analysis.py:140: replace()
+  - analysis_results/final_calibration/monitor_calibration/analyze_all_monitor.py:71: copy()
+  - analysis_results/final_calibration/monitor_calibration/analyze_all_monitor.py:169: copy()
+  - analysis_results/final_calibration/monitor_calibration/analyze_monitor_baseline.py:73: copy()
+  - analysis_results/final_calibration/monitor_calibration/analyze_monitor_baseline.py:178: copy()
+  - analysis_results/final_calibration/monitor_calibration/generate_monitor_charts.py:243: write()
+  - analysis_results/final_calibration/monitor_calibration/pull_new.py:29: replace()
+  - analysis_results/final_calibration/monitor_calibration/pull_new.py:29: replace()
+  - analysis_results/final_calibration/monitor_calibration/pull_new.py:29: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/ab_analyze.py:254: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/ab_analyze.py:254: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/ab_analyze.py:254: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/ab_analyze.py:254: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/analyze_qualified.py:65: copy()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/make_contact_sheet.py:25: copy()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:30: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:40: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:30: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:40: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:30: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/pull_baseline.py:40: replace()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/select_baseline.py:274: write()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/select_baseline.py:203: write()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/select_baseline_v2.py:249: write()
+  - analysis_results/final_calibration/no_cost_tests/ab_comparison/select_baseline_v2.py:156: write()
+  - analysis_results/final_calibration/print_targets/generate_targets.py:357: write()
+  - analysis_results/imx682_config/allrounder/generate_allrounder.py:91: write()
+  - analysis_results/imx682_config/allrounder/generate_allrounder.py:107: copy2()
+  - analysis_results/imx682_config/allrounder/generate_allrounder.py:198: write()
+  - analysis_results/imx682_config/apply_variants.py:19: write()
+  - analysis_results/imx682_config/final/generate_final.py:57: write()
+  - analysis_results/imx682_config/final/generate_final.py:73: copy2()
+  - analysis_results/imx682_config/final/generate_final.py:193: write()
+  - analysis_results/imx682_config/final/generate_final_config.py:53: write()
+  - analysis_results/imx682_config/final/generate_final_config.py:80: copy2()
+  - analysis_results/imx682_config/final/generate_final_config.py:176: write()
+  - analysis_results/imx682_config/generate_corrected.py:55: write()
+  - analysis_results/imx682_config/generate_optimized.py:69: write()
+  - analysis_results/imx682_config/hdr_master/generate_hdr.py:61: write()
+  - analysis_results/imx682_config/hdr_master/generate_hdr.py:77: copy2()
+  - analysis_results/imx682_config/hdr_master/generate_hdr.py:145: write()
+  - analysis_results/imx682_config/hdr_video/generate_hdr_video.py:71: write()
+  - analysis_results/imx682_config/hdr_video/generate_hdr_video.py:86: copy2()
+  - analysis_results/imx682_config/hdr_video/generate_hdr_video.py:139: write()
+  - analysis_results/imx682_config/lava/generate_lava.py:55: write()
+  - analysis_results/imx682_config/lava/generate_lava.py:71: copy2()
+  - analysis_results/imx682_config/lava/generate_lava.py:126: write()
+  - analysis_results/imx682_config/lowlight_v3/generate_lowlight_v3.py:83: write()
+  - analysis_results/imx682_config/lowlight_v3/generate_lowlight_v3.py:99: copy2()
+  - analysis_results/imx682_config/lowlight_v3/generate_lowlight_v3.py:199: write()
+  - analysis_results/imx682_config/lowlight_v4/generate_lowlight_v4.py:86: write()
+  - analysis_results/imx682_config/lowlight_v4/generate_lowlight_v4.py:102: copy2()
+  - analysis_results/imx682_config/lowlight_v4/generate_lowlight_v4.py:209: write()
+  - analysis_results/imx682_config/lowlight_v5/generate_lowlight_v5.py:86: write()
+  - analysis_results/imx682_config/lowlight_v5/generate_lowlight_v5.py:108: copy2()
+  - analysis_results/imx682_config/lowlight_v5/generate_lowlight_v5.py:176: write()
+  - analysis_results/imx682_config/special/generate_special.py:52: write()
+  - analysis_results/imx682_config/special/generate_special.py:68: copy2()
+  - analysis_results/imx682_config/special/generate_special.py:116: write()
+  - analysis_results/imx682_config/supercrisp/generate_supercrisp.py:56: write()
+  - analysis_results/imx682_config/supercrisp/generate_supercrisp.py:72: copy2()
+  - analysis_results/imx682_config/supercrisp/generate_supercrisp.py:129: write()
+  - analysis_results/imx682_config/superportrait_hdr/generate_superportrait.py:66: write()
+  - analysis_results/imx682_config/superportrait_hdr/generate_superportrait.py:82: copy2()
+  - analysis_results/imx682_config/superportrait_hdr/generate_superportrait.py:151: write()
+  - analysis_results/imx682_config/superportrait_v2/generate_v2.py:88: write()
+  - analysis_results/imx682_config/superportrait_v2/generate_v2.py:108: copy2()
+  - analysis_results/imx682_config/superportrait_v2/generate_v2.py:202: write()
+  - analysis_results/imx682_config/telegram/generate_telegram.py:69: write()
+  - analysis_results/imx682_config/telegram/generate_telegram.py:85: copy2()
+  - analysis_results/imx682_config/telegram/generate_telegram.py:133: write()
+  - analysis_results/imx682_config/video/generate_video.py:74: write()
+  - analysis_results/imx682_config/video/generate_video.py:90: copy2()
+  - analysis_results/imx682_config/video/generate_video.py:138: write()
+  - analysis_results/imx682_config/video_master/generate_video_master.py:73: write()
+  - analysis_results/imx682_config/video_master/generate_video_master.py:97: copy2()
+  - analysis_results/imx682_config/video_master/generate_video_master.py:181: write()
+  - analysis_results/imx682_config/video_master_v2/generate_video_master_v2.py:73: write()
+  - analysis_results/imx682_config/video_master_v2/generate_video_master_v2.py:95: copy2()
+  - analysis_results/imx682_config/video_master_v2/generate_video_master_v2.py:192: write()
+  - analyze_first3_batches.py:209: write_text()
+  - analyze_first3_batches.py:239: write_text()
+  - analyze_first3_batches.py:92: copy()
+  - analyze_first3_batches.py:245: write()
+  - create_allrounder.py:79: write()
+  - create_v5.py:36: write_text()
+  - create_v5.py:46: copy2()
+  - create_v5.py:34: replace()
+  - create_v5.py:42: unlink()
+  - create_v6.py:46: replace()
+  - create_v6.py:79: write_text()
+  - create_v6.py:90: copy2()
+  - create_v6.py:76: copy2()
+  - create_v6.py:87: copy2()
+  - create_v7.py:42: copy2()
+  - create_v7.py:52: write()
+  - dcim_calibration_audit.py:401: write_text()
+  - dcim_calibration_audit.py:580: write_text()
+  - dcim_calibration_audit.py:147: replace()
+  - guided_v9_ab_test.py:91: write_text()
+  - guided_v9_ab_test.py:92: replace()
+  - guided_v9_ab_test.py:261: write_text()
+  - guided_v9_ab_test.py:214: write_text()
+  - guided_v9_ab_test.py:126: write_bytes()
+  - imx682_opencv_calibration.py:186: copy()
+  - lxx521_imx682_v8_audit.py:73: replace()
+  - lxx521_imx682_v8_audit.py:240: write_text()
+  - lxx521_imx682_v8_audit.py:241: write_text()
+  - lxx521_imx682_v8_audit.py:255: write_text()
+  - lxx521_imx682_v8_audit.py:73: replace()
+  - lxx521_imx682_v8_audit.py:186: copyfile()
+  - lxx521_imx682_v8_audit.py:190: unlink()
+  - lxx521_imx682_v8_audit.py:193: replace()
+  - make_candidate_c.py:57: write()
+  - make_candidate_c.py:77: copy2()
+  - make_candidate_c.py:68: unlink()
+  - make_candidate_c.py:73: unlink()
+  - make_candidate_d.py:50: write()
+  - make_candidate_d.py:60: unlink()
+  - manage_noise_models.py:55: write()
+  - patch_dcim.py:97: replace()
+  - patch_dcim.py:98: write_text()
+  - patch_dcim.py:95: replace()
+  - run_crisp_pipeline.py:80: copy()
+  - run_v8_comparison.py:406: write_text()
+  - run_v8_comparison.py:436: write_text()
+  - run_v8_comparison.py:442: write_text()
+  - run_v8_comparison.py:469: write_text()
+  - run_v8_comparison.py:495: write_text()
+  - run_v8_comparison.py:500: write_text()
+  - v9_camera_audit.py:292: write_text()
+  - v9_camera_audit.py:400: write_text()
+  - v9_camera_audit.py:451: write_text()
+  - v9_camera_audit.py:484: write_text()
+  - v9_camera_audit.py:351: write_text()
+  - workflow_master.py:44: copy()
+  - workflow_master_v4.py:62: copy2()
+  - workflow_master_v4.py:60: copy2()
+
+PROFILE PURPOSE HINTS (filename only; verify documentation/device compatibility)
+  - LXX521_FrontCam_Only_Sanitized.xml: Front-camera profile (filename-based hint)
+  - LXX521_FrontCam_Sanitized_V2.xml: Front-camera profile (filename-based hint)
+  - LXX521_FrontCam_Sanitized_V3.xml: Front-camera profile (filename-based hint)
+  - LXX521_IMX682_ActionCam.xml: Action/motion profile (filename-based hint)
+  - LXX521_IMX682_AllInOne_Master.xml: All-in-one profile (filename-based hint)
+  - LXX521_IMX682_FastShutter.xml: Fast-shutter profile (filename-based hint)
+  - LXX521_IMX682_ISO_Boost.xml: Purpose not inferred; inspect XML and documentation
+  - LXX521_IMX682_Master_PhotoVideo.xml: Video-oriented profile (filename-based hint)
+  - LXX521_IMX682_MaxQuality.xml: Quality-oriented profile (filename-based hint)
+  - LXX521_IMX682_PerfectNight.xml: Night/low-light profile (filename-based hint)
+  - LXX521_IMX682_Super_AllInOne_V4.xml: All-in-one profile (filename-based hint)
+  - LXX521_IMX682_TunedPro.xml: Purpose not inferred; inspect XML and documentation
+  - LXX521_MasterPortrait.xml: Portrait-oriented profile (filename-based hint)
+  - LXX521_UltraSharp_Detail.xml: Purpose not inferred; inspect XML and documentation
+  - V10_Backups/V9_Backup_b80d5fb38238.xml: Purpose not inferred; inspect XML and documentation
+  - V10_Master_Output/run_20261021_124656/V10_Final_Release/V10_Final.xml: Purpose not inferred; inspect XML and documentation
+  - V10_Master_Output/run_20261021_124656/V10_Final_Release/V9_Backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/LXX521_CleanZoomAndCrisp.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/LXX521_LMC84_Optimized_Corrected.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/LXX521_UltimateSpeedCrisp.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/allrounder/LXX521_IMX682_AllRounder_Master_V1.xml: General-purpose profile (filename-based hint)
+  - analysis_results/imx682_config/allrounder/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/balanced.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/detail.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/final/LXX521_IMX682_SuperCrisp.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/final/LXX521_LMC84_Optimized_Final.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/final/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/hdr_master/LXX521_IMX682_HDR_Master.xml: HDR test/profile (filename-based hint)
+  - analysis_results/imx682_config/hdr_master/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/hdr_video/Lava_HDR_Video.xml: Video-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/hdr_video/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lava/Lava_Crisp_Clear.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lava/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v3/LXX521_IMX682_LowLight_Shot_V3.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v3/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v4/LXX521_IMX682_LowLight_Shot_V4.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v4/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v5/LXX521_IMX682_LowLight_Shot_V5.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/lowlight_v5/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/original_V2_Release_Day.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/special/LXX521_LMC84_Special.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/special/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/supercrisp/LXX521_IMX682_SuperCrisp.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/supercrisp/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/superportrait_hdr/LXX521_IMX682_SuperPortrait_HDR.xml: Portrait-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/superportrait_hdr/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/superportrait_v2/LXX521_IMX682_SuperPortrait_HDR_V2.xml: Portrait-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/superportrait_v2/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/telegram/LXX521_IMX682_Telegram.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/telegram/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/video/Lava_Videography.xml: Video-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/video/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/video_master/LXX521_IMX682_Video_Master_V1.xml: Video-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/video_master/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - analysis_results/imx682_config/video_master_v2/LXX521_IMX682_Video_Master_V2.xml: Video-oriented profile (filename-based hint)
+  - analysis_results/imx682_config/video_master_v2/default_working_backup.xml: Purpose not inferred; inspect XML and documentation
+  - backups/LXX521_IMX682_V9_ConservativeBalanced_20261021_114246.xml: Purpose not inferred; inspect XML and documentation
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Master.xml: BSG-named profile; exact purpose needs documentation
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_BSG_Pro.xml: BSG-named profile; exact purpose needs documentation
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V2.xml: All-in-one profile (filename-based hint)
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_AllInOne_V3.xml: All-in-one profile (filename-based hint)
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_HDR_Video_Test.xml: Video-oriented profile (filename-based hint)
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_NightPro.xml: Night/low-light profile (filename-based hint)
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_IMX682_UltimateMaster.xml: Master/baseline candidate (filename-based hint)
+  - backups/duplicate_xml_quarantine_20261021_011812/root/LXX521_MasterPortrait_Pro.xml: Portrait-oriented profile (filename-based hint)
+  - profiles/LXX521_BSG_Master.xml: BSG-named profile; exact purpose needs documentation
+  - profiles/LXX521_BSG_Pro.xml: BSG-named profile; exact purpose needs documentation
+  - profiles/LXX521_IMX682_AllInOne_V2.xml: All-in-one profile (filename-based hint)
+  - profiles/LXX521_IMX682_AllInOne_V3.xml: All-in-one profile (filename-based hint)
+  - profiles/LXX521_IMX682_AllRounder_NaturalBalanced.xml: General-purpose profile (filename-based hint)
+  - profiles/LXX521_IMX682_HDR_Video_Test.xml: Video-oriented profile (filename-based hint)
+  - profiles/LXX521_IMX682_LMC84_AllRounder.xml: General-purpose profile (filename-based hint)
+  - profiles/LXX521_IMX682_NightPro.xml: Night/low-light profile (filename-based hint)
+  - profiles/LXX521_IMX682_Super_AllInOne_V4.xml: All-in-one profile (filename-based hint)
+  - profiles/LXX521_IMX682_Super_AllInOne_V5_BalancedLowLight.xml: All-in-one profile (filename-based hint)
+  - profiles/LXX521_IMX682_Super_AllInOne_V6_NaturalDetail.xml: All-in-one profile (filename-based hint)
+  - profiles/LXX521_IMX682_Super_AllInOne_V6_NightIndoor.xml: Night/low-light profile (filename-based hint)
+  - profiles/LXX521_IMX682_Super_AllInOne_V7_NaturalNight.xml: Night/low-light profile (filename-based hint)
+  - profiles/LXX521_IMX682_UltimateMaster.xml: Master/baseline candidate (filename-based hint)
+  - profiles/LXX521_IMX682_V8_FullAllRounder_Q100.xml: General-purpose profile (filename-based hint)
+  - profiles/LXX521_IMX682_V8_ProBalanced.xml: Purpose not inferred; inspect XML and documentation
+  - profiles/LXX521_IMX682_V9_ConservativeBalanced.xml: Purpose not inferred; inspect XML and documentation
+  - profiles/LXX521_MasterPortrait_Pro.xml: Portrait-oriented profile (filename-based hint)
+
+LIMITATIONS
+  - This is a static audit; project scripts were not executed.
+  - Valid XML is not proof of LMC 8.4/device compatibility.
+  - No profile was declared best and no image-quality gain was inferred.
+  - Source files were not edited or deleted by the audit.
+
+Detailed JSON: /data/data/com.termux/files/home/dcim_calibration/analysis_results/audit_20261021_125653/audit_report.json
+Hash manifest: /data/data/com.termux/files/home/dcim_calibration/analysis_results/audit_20261021_125653/SHA256SUMS.txt

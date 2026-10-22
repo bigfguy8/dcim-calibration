@@ -1,0 +1,41 @@
+LAVA VIDEOGRAPHY CONFIG - ROLLBACK PROCEDURE
+===========================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+VIDEOGRAPHY CONFIG:
+  File: Lava_Videography.xml
+  SHA-256: fbf87e08e796e7a566b78fcefac78ebc08655992291c6b898d471ce57a71b3c9
+  Location: analysis_results/imx682_config/video/ (local)
+
+VIDEO SETTINGS:
+  Resolution: 1080P
+  FPS: 30 (auto for p2018)
+  Aspect ratio: 16:9
+  HEVC: 0 (default)
+  Bitrate: 0 (auto)
+  Sharpening: 2 (moderate)
+  Contrast: 1 (slight boost)
+  NR: 1 (light)
+  Warm cast: cw_rg_key 0.45
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/Lava_Videography.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push Lava_Videography.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select Lava_Videography.xml
+  5. Record test video in consistent lighting
+  6. Compare with baseline video
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted

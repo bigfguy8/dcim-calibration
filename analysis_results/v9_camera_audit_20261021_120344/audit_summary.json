@@ -1,0 +1,71 @@
+{
+  "audit_name": "LXX521 IMX682 V9 Camera Audit",
+  "created_local": "2026-10-21T12:03:57",
+  "input_directory": "/storage/emulated/0/DCIM/Camera",
+  "project_directory": "/data/data/com.termux/files/home/dcim_calibration",
+  "output_directory": "/data/data/com.termux/files/home/dcim_calibration/analysis_results/v9_camera_audit_20261021_120344",
+  "selection_rule": {
+    "recursive": false,
+    "limit": 5,
+    "since_local": "2026-10-21 12:02:18",
+    "time_filter_basis": "filesystem modification time; not guaranteed EXIF capture time"
+  },
+  "profile_label": "V9_ConservativeBalanced",
+  "profile_attribution_status": "USER-DECLARED LABEL; not independently verified by EXIF/runtime evidence",
+  "files_selected": 5,
+  "images_decoded_successfully": 5,
+  "images_failed": 0,
+  "exact_duplicate_hash_groups": 0,
+  "dependencies": {
+    "python": "3.14.8",
+    "pillow": "13.0.0",
+    "numpy": "2.5.4"
+  },
+  "aggregate_metrics_for_descriptive_use_only": {
+    "mean_encoded_luma_proxy": {
+      "n": 5,
+      "mean": 0.431526,
+      "median": 0.447184,
+      "sample_stddev": 0.067499
+    },
+    "median_encoded_luma_proxy": {
+      "n": 5,
+      "mean": 0.414149,
+      "median": 0.466989,
+      "sample_stddev": 0.147785
+    },
+    "std_encoded_luma_proxy": {
+      "n": 5,
+      "mean": 0.263912,
+      "median": 0.225347,
+      "sample_stddev": 0.082544
+    },
+    "near_black_luma_lt_0_02_pct": {
+      "n": 5,
+      "mean": 1.624298,
+      "median": 2.06989,
+      "sample_stddev": 0.99032
+    },
+    "near_white_luma_gt_0_98_pct": {
+      "n": 5,
+      "mean": 6.06634,
+      "median": 0.03907,
+      "sample_stddev": 13.448007
+    },
+    "mean_saturation_proxy": {
+      "n": 5,
+      "mean": 0.411839,
+      "median": 0.458846,
+      "sample_stddev": 0.134444
+    }
+  },
+  "limitations": [
+    "EXIF does not prove that an XML profile was loaded or applied by LMC.",
+    "The profile label is supplied by the user and is not automatically verified.",
+    "Pixel statistics are calculated from rendered encoded RGB pixels.",
+    "These metrics do not establish true sensor dynamic range, sensor noise, color accuracy, or MTF50.",
+    "Scene matching, lighting, framing, and capture order must be verified separately.",
+    "A file modification timestamp may differ from the actual capture time."
+  ],
+  "failed_files": []
+}

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Config Identifier -->
+<string name="pref_config_nickname_key">LXX521_IMX682_MaxQuality</string>
+
+<!-- Active Main Camera ID (Sony IMX682) -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Color Science & Model Base (Pixel 6 Pro) -->
+<string name="pref_camera_model_back_key">12</string>
+<string name="pref_awb_back_key">12</string>
+
+<!-- Maximum JPEG Quality (No Compression) -->
+<string name="pref_qjpg_key">100</string>
+
+<!-- Stream Configuration & Core Pipeline -->
+<string name="pref_use_c2api_key">1</string>
+<string name="pref_stream_config_back_key">0</string>
+<string name="pref_raw_sensor_key">1</string>
+
+<!-- Frame Stacking (Dimensity 7300 Tuned) -->
+<string name="frame_count_b_photo_0">15</string>
+<string name="frame_count_b_ns_0">21</string>
+
+<!-- Sharpness & Micro-details -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">0.875</string>
+<string name="ptchr_sharp_radius_small_0">1.0</string>
+<string name="ptchr_sharp_radius_medium_0">1.0</string>
+<string name="ptchr_sharp_outline_0">0.85</string>
+
+<!-- Noise Reduction -->
+<string name="ptchr_luma_denoise_0">1.0</string>
+<string name="ptchr_chroma_denoise_0">1.125</string>
+<string name="ptchr_spatial_denoise_0">1.0</string>
+
+<!-- Color, Saturation & Contrast Boost -->
+<string name="ptchr_saturation_0">1.10</string>
+<string name="ptchr_saturation2_0">1.05</string>
+<string name="ptchr_contrast_0">1.02</string>
+<string name="ptchr_contrast2_0">1.0</string>
+
+<!-- Dynamic Range & Dehaze -->
+<string name="ptchr_dehaze_0">1.025</string>
+<string name="ptchr_hdr_effect_0">1.0</string>
+
+<!-- Black Levels (IMX682 Baseline) -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

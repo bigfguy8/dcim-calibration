@@ -1,0 +1,13 @@
+{
+  "status": "AUDITED_REVISION_NO_SETTINGS_CHANGED",
+  "project_root": "/data/data/com.termux/files/home/dcim_calibration",
+  "baseline_found": true,
+  "source_profile": "LXX521_IMX682_V9_ConservativeBalanced.xml",
+  "xml_parse_ok": true,
+  "runtime_compatibility": "not verified",
+  "image_quality_claim": "not established",
+  "package_integrity": "PASS",
+  "generated_at": "2026-10-21T12:46:59+05:30",
+  "project_time_logged": "00h 00m 02s",
+  "package_sha256": "30132f6ac92c2ac3c6cb53a20972a2389583715bf25b7f9a90a8b9aa96ad7c39"
+}

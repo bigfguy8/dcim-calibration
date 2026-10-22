@@ -1,0 +1,90 @@
+VIDEO MASTER V2.0 CONFIG - ROLLBACK PROCEDURE
+============================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+VIDEO MASTER V2.0 CONFIG:
+  File: LXX521_IMX682_Video_Master_V2.xml
+  SHA-256: fbf87e08e796e7a566b78fcefac78ebc08655992291c6b898d471ce57a71b3c9
+  Location: analysis_results/imx682_config/video_master_v2/ (local)
+
+V2 CHANGES FROM V1:
+  REMOVED (still-photo settings that may not help video):
+    - pref_camera_hdr_plus_key: enhanced -> auto (reverted to baseline)
+    - pref_hdrregion_key: 8 -> 5 (reverted to baseline)
+    - pref_frames_hdr_key: 12 -> 0 (reverted to baseline)
+    - pref_gamma_curve_mode_key: 0 -> -1 (reverted to baseline)
+    - lib_preservinghigh_key: 1 -> 0 (reverted to baseline)
+  KEPT (video-relevant image quality):
+    - cw_rg_key: 0.45 (warm cast reduction)
+    - Sharpness: 2 (moderate)
+    - Denoise: 1 (light)
+    - Contrast: 1 (slight)
+    - ISO noise: 3
+
+RESEARCH BASIS (V2.0):
+  - Do not assume HDR+ Enhanced improves video (reverted)
+  - Do not assume HDR region helps video (reverted)
+  - Do not assume frame-count settings help video (reverted)
+  - Keep only evidence-supported image quality settings
+  - Video settings (resolution, FPS, bitrate) at baseline values
+  - Focus is app-controlled, not XML-configurable
+
+VIDEO SETTINGS (at baseline):
+  Resolution: 1080P
+  FPS: 30 (auto for p2018)
+  Aspect ratio: 16:9
+  HEVC: 0 (default)
+  Bitrate: 0 (auto)
+
+IMAGE QUALITY (conservative for video):
+  cw_rg_key: 0.45 (warm cast reduction)
+  Sharpness: 2 (moderate, avoid halos)
+  Denoise: 1 (light, avoid waxy textures)
+  Contrast: 1 (slight, preserve DR)
+  ISO noise: 3
+
+EVIDENCE:
+  Video analysis: 3 videos, sharpness CV 0.586-0.700 (focus hunting)
+  Brightness std: 13.0-18.3 (exposure instability)
+  Video resolutions: 1080x1920 and 2160x3840
+  Video FPS: 29.95 (consistent)
+  LMC significantly outperforms stock on clipping
+  Research: HDR+ Enhanced is for still scenes, not video
+  Research: Excessive sharpening creates bright outlines
+  Research: Excessive NR removes skin texture, hair, leaves
+
+VIDEO QUALITY RECOMMENDATIONS:
+  - Use tap-to-focus before recording
+  - Lock focus if available
+  - Avoid rapid panning
+  - Use higher shutter speed for moving subjects
+  - Ensure adequate lighting for reliable AF
+  - Clean lens before recording
+  - Use tripod for stability
+
+WARNING: This config is UNVERIFIED - no A/B test performed.
+WARNING: Focus issues are app-level, not XML-configurable.
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_IMX682_Video_Master_V2.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_IMX682_Video_Master_V2.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_IMX682_Video_Master_V2.xml
+  5. Record test video in consistent lighting
+  6. Compare with baseline video
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/video_master_v2/default_working_backup.xml
+  - STATUS: UNVERIFIED - no A/B test performed

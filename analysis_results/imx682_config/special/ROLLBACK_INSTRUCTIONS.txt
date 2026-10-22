@@ -1,0 +1,41 @@
+SPECIAL CONFIG - ROLLBACK PROCEDURE
+====================================
+
+WORKING BASELINE (DO NOT DELETE):
+  File: default .xml
+  SHA-256: f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49
+  Location: /sdcard/LMC8.4/default .xml (device) and Desktop (local)
+
+SPECIAL CONFIG:
+  File: LXX521_LMC84_Special.xml
+  SHA-256: d72d678edf668b406f058c8f0711b49002551d81491adc4df62b9a7c11448601
+  Location: analysis_results/imx682_config/special/ (local)
+
+CHANGES FROM BASELINE:
+  cw_rg_key: 0.5925 -> 0.4000 (more aggressive warm cast reduction)
+  lib_sharpnessb_key: 0 -> 2 (moderate sharpening)
+  lib_sharpgain_key: 0 -> 2 (sharpening gain)
+  lib_sharpmini_key: 0 -> 2 (micro-sharpening)
+  lib_contrast_1_key: 0 -> 1 (slight contrast boost)
+  lib_contrast_2_key: 0 -> 1 (slight contrast boost)
+  pref_iso_noise_key: 2 -> 3 (slightly higher ISO noise handling)
+
+ROLLBACK STEPS:
+  1. On device: Settings -> LMC -> Delete config
+  2. Or via ADB: adb shell rm /sdcard/LMC8.4/LXX521_LMC84_Special.xml
+  3. Re-import baseline: adb push default .xml /sdcard/LMC8.4/
+  4. Restart LMC app
+  5. Verify: check EXIF Software field for HDR+ 1.0.414775603zdy
+
+DEPLOYMENT STEPS (When Authorized):
+  1. Connect device via ADB
+  2. Push config: adb push LXX521_LMC84_Special.xml /sdcard/LMC8.4/
+  3. Open LMC app -> Settings -> Load config
+  4. Select LXX521_LMC84_Special.xml
+  5. Capture test photos in consistent lighting
+  6. Pull photos and run ab_analyze.py to compare metrics
+
+SAFETY:
+  - Original baseline preserved at all times
+  - No existing files overwritten or deleted
+  - Backup available at analysis_results/imx682_config/special/default_working_backup.xml
