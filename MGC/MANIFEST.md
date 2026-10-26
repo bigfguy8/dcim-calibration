@@ -24,13 +24,37 @@ Source: `$HOME/dcim_calibration/MGC_AllInOne_Output/20261026_174142/`
   (`94103_method.txt`, `98102_method.txt`, `*_stream.txt`), `mgc_entries.txt`,
   `SOURCE_HASHES.txt`, aapt badging + dumpsys attempt records.
 
+### MGC/20261026_190044/
+Source: `$HOME/dcim_calibration/MGC_AllInOne_Output/20261026_190044/`
+- `MGC_9_4_103_AllInOne.xml`, `MGC_9_4_103_SpecialNight.xml` — both
+  byte-identical to native (`911b27…c288`); 0 deltas.
+- `MGC_Front_Camera_Crash_Analysis_v2.md`, `MGC_Validation_Report.md`,
+  `MGC_Version_Compatibility_Matrix.md`, `SHA256SUMS.txt`.
+- `backup/` — native config copy, `19-00-07` log window (0 FATAL, no MGC
+  markers), backup sums.
+- `evidence/` — dex string pools (`pool_94103.txt`, `pool_98102.txt`), `keys.txt`.
+
+### MGC/20261026_195747_BEST/
+Source: `$HOME/dcim_calibration/MGC_AllInOne_Output/20261026_195747_BEST/`
+- `MGC_9_4_103_BEST_AllInOne.xml` and `MGC_9_4_103_BEST_Night.xml` —
+  byte-identical to each other (SHA-256 `b3705a…6ae1fc6226`); exactly ONE
+  delta vs native over 181 keys: `pref_camera_resolution` `medium` → `full`.
+  NOT verified to fix the front-camera crash; no runtime test performed.
+- `MGC_9_4_103_BEST_Change_Report.md`, `SHA256SUMS.txt`, `backup/`.
+
 ### MGC/shared_MGC_CONFIG_9_4_103/
-Source: `$HOME/storage/shared/Download/MGC_CONFIG/9.4.103/`
+Source: `$HOME/storage/shared/Download/MGC_CONFIG/9.4.103/` (mirrors the MGC
+config folder in Downloads; 8 XMLs total)
 - `mgc.xml` — verified native MGC config (SHA-256 `911b27…c288`).
 - `LXX521_MGC94103_AllInOne_NativeRestore_CANDIDATE.xml` — labeled standalone
   candidate (native entries + XML comment label header; SHA-256
   `09c41d212425f3a951b3abaf32004062f561149ee9294ec9af418c4c89e03789`).
 - `LXX521_MGC94103_AllInOne_CHANGE_REPORT.md` — change report.
+- `LXX521_MGC_AllInOne_CANDIDATE_20261026_{170524,174142}.xml` — native-identical.
+- `MGC_9_4_103_{AllInOne,SpecialNight}_20261026_190044.xml` — native-identical.
+- `MGC_9_4_103_BEST_{AllInOne,Night}_20261026_195747.xml` — BEST copies
+  (`pref_camera_resolution` `medium`→`full`); not a crash fix.
+- `CONFIG_FILES_INDEX.txt` — inventory of the folder with hashes and labels.
 - `backup/mgc_xml_backup_20261026_195816.xml` — pre-modification backup copy.
 
 ## Evidence notes (runtime)

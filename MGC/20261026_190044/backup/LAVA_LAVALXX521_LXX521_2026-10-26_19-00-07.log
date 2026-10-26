@@ -1,0 +1,197 @@
+--------- beginning of events
+[ 10-26 18:58:25.977  6741: 6741 I/wm_on_create_called ]
+[6883145,com.android.camera.CameraLauncher,performCreate,154]
+
+[ 10-26 18:58:25.982  6741: 6741 I/wm_on_start_called ]
+[6883145,com.android.camera.CameraLauncher,handleStartActivity,4]
+
+[ 10-26 18:58:25.985  6741: 6741 I/wm_on_resume_called ]
+[6883145,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 18:58:26.093  6741: 6741 I/wm_on_top_resumed_gained_called ]
+[6883145,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 18:58:26.274  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 18:58:27.712  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 18:58:28.086  6741: 7012 I/jank_cuj_events_end_request ]
+[81,1793021308086103000,346629340915291,208006029397705]
+
+[ 10-26 18:58:31.298  6741: 7012 I/jank_cuj_events_begin_request ]
+[81,1793021311287463000,346632542276214,208009230759013,1@1@com.android.MGC_9_8_102]
+
+[ 10-26 18:58:31.649  6741: 7012 I/jank_cuj_events_end_request ]
+[81,1793021311641358000,346632896170675,208009584652551]
+
+[ 10-26 18:58:31.735  6741: 6741 I/wm_on_top_resumed_lost_called ]
+[6883145,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 18:58:33.406  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:58:33.406  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:58:33.406  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 18:58:33.639  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:58:33.640  6741: 6741 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:58:33.849  6741: 6741 I/wm_on_paused_called ]
+[6883145,com.android.camera.CameraLauncher,performPause,419]
+
+[ 10-26 18:58:34.715  6741: 6741 I/wm_on_stop_called ]
+[6883145,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,326]
+
+--------- beginning of main
+[ 10-26 19:00:07.987 10554:10554 E/FOUND_LENSES ]
+ [ 0 1 2 ]
+
+[ 10-26 19:00:07.987 10554:10554 E/AFTER_BLACK_LIST_LENSES ]
+ [ 0 1 2 ]
+
+[ 10-26 19:00:07.987 10554:10554 E/SORTS_LENSES ]
+ [ 2 0 1 ]
+
+[ 10-26 19:00:07.987 10554:10554 E/AFTER_HIDING_LENSES ]
+ [ 2 0 1 ]
+
+[ 10-26 19:00:07.994 10554:10554 E/TOGGLE_DISTRIBUTION_BACK_LENSES ]
+ [ 2 0 ]
+
+[ 10-26 19:00:07.995 10554:10554 E/TOGGLE_DISTRIBUTION_FRONT_LENSES ]
+ [ 1 ]
+
+--------- beginning of system
+[ 10-26 19:00:08.014 10554:10554 D/MbrainDebugManagerImpl ]
+getService failed
+
+[ 10-26 19:00:08.090 10554:10554 D/nativeloader ]
+Load libpowerhalwrap_jni.so using system ns (caller=/system_ext/framework/mediatek-framework.jar): ok
+
+[ 10-26 19:00:08.096 10554:10554 I/PowerHalWrapper ]
+PowerHalWrapper.getInstance 
+
+[ 10-26 19:00:08.097 10554:10554 I/M-ProMotion ]
+M-ProMotion is disabled
+
+[ 10-26 19:00:08.107 10554:10612 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 0
+
+[ 10-26 19:00:08.107 10554:10612 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 1
+
+[ 10-26 19:00:08.107 10554:10612 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 2
+
+[ 10-26 19:00:08.107 10554:10612 I/CameraManagerGlobal ]
+mDeviceId :0  mPackageNames: com.android.MGC_9_8_102
+
+[ 10-26 19:00:08.107 10554:10612 I/CameraManagerGlobal ]
+camera num :2
+
+[ 10-26 19:00:08.171 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 19:00:08.193 10554:10617 D/CompatChangeReporter ]
+Compat change id reported: 311402873; UID 10257; state: ENABLED
+
+[ 10-26 19:00:08.193 10554:10617 D/CompatChangeReporter ]
+Compat change id reported: 323349338; UID 10257; state: ENABLED
+
+[ 10-26 19:00:08.221 10554:10612 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 0
+
+[ 10-26 19:00:08.226 10554:10612 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:00:08.226 10554:10612 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:00:08.227 10554:10612 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:00:08.227 10554:10612 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4625x3473
+
+[ 10-26 19:00:08.227 10554:10612 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.624x3.472
+
+[ 10-26 19:00:08.300 10554:10612 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 19:00:08.470 10554:10657 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 1
+
+[ 10-26 19:00:08.471 10554:10657 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4208, 3120)
+
+[ 10-26 19:00:08.472 10554:10657 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 19:00:08.472 10554:10657 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 19:00:08.472 10554:10657 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4033x3025
+
+[ 10-26 19:00:08.472 10554:10657 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.032x3.024
+
+[ 10-26 19:00:08.507 10554:10611 W/native   ]
+W0000 00:00:1793021408.506818   10611 commandlineflags.cc:1184] util/process/subprocess.cc:143 Ignoring RegisterValidateFunction() for flag address 0x71275ea8d8: no flag found at that address
+
+
+[ 10-26 19:00:08.545 10554:10611 D/nativeloader ]
+Load /data/app/~~718Q-UNGNo3uqtDeoHzIpg==/com.android.MGC_9_8_102-dx8vGGpwm3qgkQ5ykgkL7A==/lib/arm64/libgcastartup.so using class loader ns clns-7 (caller=/data/app/~~718Q-UNGNo3uqtDeoHzIpg==/com.android.MGC_9_8_102-dx8vGGpwm3qgkQ5ykgkL7A==/base.apk!classes2.dex): ok
+
+[ 10-26 19:00:08.567 10554:10657 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 19:00:08.590 10554:10611 E/StartLibAddreses ]
+711f01d000
+
+[ 10-26 19:00:08.595 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 19:00:08.595 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 19:00:08.596 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 19:00:08.596 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 19:00:08.596 10554:10616 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 19:00:08.603 10554:10611 E/StartLibAddreses ]
+711f01d000
+
+[ 10-26 19:00:08.606 10554:10611 E/StartLibAddreses ]
+711f01d000
+
+[ 10-26 19:00:08.611 10554:10616 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:00:08.612 10554:10616 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:00:08.612 10554:10616 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:00:08.612 10554:10616 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:00:09.243 10554:10616 W/CAM_fjk  ]
+Failed to throttle the executor!
+
+
