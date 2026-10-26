@@ -1,0 +1,154 @@
+.method public static loadConfinesExposureISO()V
+goto/32 :goto_8
+const v0, 0x2b5
+goto/32 :goto_9b
+const/high16 v4, 0x447a0000 # 1000.0f
+goto/32 :goto_e0
+sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_EXPOSURE_TIME_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+goto/32 :goto_1ea
+invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+move-result-object v2
+goto/32 :goto_193
+invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+move-result-object v2
+goto/32 :goto_8c
+invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+move-result-object v0
+goto/32 :goto_cb
+move/from16 v1, v0
+goto/32 :goto_64
+div-float/2addr v2, v4
+goto/32 :goto_16
+sput v1, Lcom/a;->sMax_Analog_gain:F
+goto/32 :goto_2c7
+invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+move-result-wide v2
+goto/32 :goto_1bf
+sput v2, Lcom/a;->sMin_Exposure_time_ms:F
+goto/32 :goto_3a
+check-cast v2, Ljava/lang/Long;
+goto/32 :goto_73
+sub-int v1, v0, v0
+goto/32 :goto_2b6
+check-cast v1, Landroid/util/Range;
+goto/32 :goto_233
+sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_SENSITIVITY_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+goto/32 :goto_23d
+move/from16 v2, v4
+goto/32 :goto_270
+int-to-float v1, v1
+goto/32 :goto_1ad
+sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+goto/32 :goto_133
+const v4, 0x49742400 # 1000000.0f
+goto/32 :goto_165
+cmpl-float v5, v2, v4
+goto/32 :goto_14b
+int-to-float v1, v1
+goto/32 :goto_1fa
+int-to-float v2, v2
+goto/32 :goto_225
+goto/16 :goto_1a0
+:catchall_103
+goto/32 :goto_199
+cmpl-float v2, v1, v0
+goto/32 :goto_116
+if-ltz v2, :cond_120
+goto/32 :goto_56
+goto/32 :goto_52
+check-cast v1, Landroid/util/Range;
+goto/32 :goto_2f
+invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+move-result-object v1
+goto/32 :goto_a6
+sget-object v1, Lcom/CameraLensesScan;->sActiveCamIDValue:Ljava/lang/String;
+goto/32 :goto_46
+if-gtz v5, :cond_15a
+goto/32 :goto_bf
+goto/32 :goto_b9
+goto/32 :goto_18b
+div-float/2addr v2, v4
+goto/32 :goto_81
+invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+move-result v2
+goto/32 :goto_f1
+invoke-virtual {v1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+move-result-object v2
+goto/32 :goto_28a
+goto/32 :goto_2c9
+goto/32 :goto_2ad
+check-cast v2, Ljava/lang/Integer;
+goto/32 :goto_170
+const/16 v1, 0x184
+goto/32 :goto_c3
+check-cast v1, Ljava/lang/Integer;
+goto/32 :goto_2a2
+sget v0, Lcom/a;->sMin_Analog_gain:F
+goto/32 :goto_259
+sput v2, Lcom/a;->sMax_All_gain:F
+goto/32 :goto_2c2
+long-to-float v2, v2
+goto/32 :goto_5b
+int-to-float v1, v1
+goto/32 :goto_205
+invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+move-result v1
+goto/32 :goto_ea
+const/high16 v0, 0x3f800000 # 1.0f
+goto/32 :goto_10b
+invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+move-result-object v1
+goto/32 :goto_247
+const/high16 v2, 0x42c80000 # 100.0f
+goto/32 :goto_292
+sput v1, Lcom/a;->sMin_Analog_gain:F
+:try_start_20b
+sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_MAX_ANALOG_SENSITIVITY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+move-result-object v1
+check-cast v1, Ljava/lang/Integer;
+invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+move-result v1
+:try_end_220
+.catchall {:try_start_20b .. :try_end_220} :catchall_103
+goto/32 :goto_fc
+invoke-virtual {v1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+move-result-object v1
+goto/32 :goto_1a4
+invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+move-result-object v1
+goto/32 :goto_24e
+invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+move-result-object v1
+goto/32 :goto_128
+check-cast v1, Landroid/util/Range;
+goto/32 :goto_17b
+check-cast v1, Ljava/lang/Integer;
+goto/32 :goto_1d4
+div-float/2addr v2, v0
+goto/32 :goto_1b6
+sput v1, Lcom/a;->sMax_Post_raw_digital_gain:F
+goto/32 :goto_20
+sput v2, Lcom/a;->sMax_Exposure_time_ms:F
+goto/32 :goto_ae
+long-to-float v2, v2
+goto/32 :goto_d8
+check-cast v2, Ljava/lang/Long;
+goto/32 :goto_299
+div-float/2addr v1, v2
+goto/32 :goto_264
+invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+move-result-wide v2
+goto/32 :goto_27f
+invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+move-result v1
+goto/32 :goto_1c8
+sget-object v0, Lcom/CameraLensesScan;->sCameraManager:Landroid/hardware/camera2/CameraManager;
+goto/32 :goto_142
+if-nez v1, :cond_2be
+goto/32 :goto_18b
+goto/32 :goto_187
+div-float/2addr v1, v0
+goto/32 :goto_1e0
+return-void
+goto/32 :goto_161

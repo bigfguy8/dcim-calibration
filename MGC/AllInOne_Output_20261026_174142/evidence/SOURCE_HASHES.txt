@@ -1,0 +1,4 @@
+SOURCE ARTIFACT HASHES (recorded Mon Oct 26 19:19:34 IST 2026)
+3985244c1edc19607132954b6e1c13c3b28c65d41fd1d72d4009c291bb99be69  /data/data/com.termux/files/home/storage/shared/Download/MGC_9.4.103_V41_MGC.apk
+b15dc553247405079cb3bf7b8a0983f716ccd690af52ca77c60bd316d9b8f8ac  /data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC.apk
+911b27d929072bac13a86e354e20e27960ca2aabc7ddf2fbbcf4e63a3ec8c288  /data/data/com.termux/files/home/storage/shared/Download/MGC_CONFIG/9.4.103/mgc.xml

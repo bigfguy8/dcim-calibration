@@ -1,0 +1,424 @@
+--------- beginning of system
+[ 10-26 16:15:48.489 11912:11912 D/MbrainDebugManagerImpl ]
+getService failed
+
+--------- beginning of events
+[ 10-26 16:15:48.757 11912:11912 I/wm_on_create_called ]
+[35754355,com.android.camera.CameraLauncher,performCreate,253]
+
+[ 10-26 16:15:48.760 11912:11912 I/wm_on_start_called ]
+[35754355,com.android.camera.CameraLauncher,handleStartActivity,2]
+
+[ 10-26 16:15:48.762 11912:11912 I/wm_on_resume_called ]
+[35754355,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 16:15:48.776 11912:11912 I/wm_on_top_resumed_gained_called ]
+[35754355,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:15:48.982 11912:11912 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:15:49.067 11912:11912 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:15:49.067 11912:11912 I/wm_on_top_resumed_lost_called ]
+[35754355,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:15:49.069 11912:11912 I/wm_on_paused_called ]
+[35754355,com.android.camera.CameraLauncher,performPause,1]
+
+[ 10-26 16:15:49.089 11912:11971 I/jank_cuj_events_cancel_request ]
+[81,1793011549089850000,336870344670031,202598670808537]
+
+[ 10-26 16:15:49.089 11912:11971 I/jank_cuj_events_end_request ]
+[81,1793011549089916000,336870344727800,202598670866152]
+
+[ 10-26 16:15:49.614 11912:11971 I/jank_cuj_events_end_request ]
+[81,1793011549614816000,336870869630339,202599195768921]
+
+[ 10-26 16:15:53.159 11912:11912 I/wm_on_activity_result_called ]
+[35754355,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 16:15:53.160 11912:11912 I/wm_on_resume_called ]
+[35754355,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 16:15:53.160 11912:11912 I/wm_on_top_resumed_gained_called ]
+[35754355,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 16:15:54.663 11912:11912 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:15:57.987 11912:11971 I/jank_cuj_events_begin_request ]
+[81,1793011557987337000,336879242149724,202607568288614,1@1@com.android.MGC_9_4_103]
+
+[ 10-26 16:15:58.338 11912:11971 I/jank_cuj_events_end_request ]
+[81,1793011558338321000,336879593138339,202607919277153]
+
+--------- beginning of crash
+[ 10-26 16:15:59.974 11912:11912 E/AndroidRuntime ]
+FATAL EXCEPTION: main
+Process: com.android.MGC_9_4_103, PID: 11912
+mmt: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Comparable android.util.Range.getUpper()' on a null object reference
+	at lrn.run(PG:1304)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8758)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:601)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:962)
+Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Comparable android.util.Range.getUpper()' on a null object reference
+	at com.a.loadConfinesExposureISO(a.java:716)
+	at qbh.SetVALUES(PG:1680)
+	at ndv.<init>(PG:380)
+	at mrp.a(PG:230)
+	at gle.a(PG:60)
+	at iqr.close(PG:87)
+	at mnp.a(PG:29)
+	at mnp.b(PG:174)
+	at mmm.close(PG:91)
+	at inq.a(PG:142)
+	at ioa.run(PG:1631)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+	at pxo.a(PG:29)
+	at pwt.run(PG:317)
+	at pxp.run(PG:24)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:323)
+	at mnb.run(PG:102)
+	at mna.run(PG:91)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:1571)
+	at mme.run(PG:71)
+
+
+--------- beginning of main
+[ 10-26 16:16:12.938 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.949 12709:12745 W/native   ]
+W0000 00:00:1793011572.949114   12745 commandlineflags.cc:1167] util/process/subprocess.cc:150 Ignoring RegisterValidateFunction() for flag address 0x712e910c18: no flag found at that address
+
+
+[ 10-26 16:16:12.949 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.950 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.950 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.950 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.956 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.967 12709:12745 D/nativeloader ]
+Load /data/app/~~kJBWMsdDlSCBC74uTt84Fw==/com.android.MGC_9_4_103-WF0OQ4QCF4kJEqXBF5OJCQ==/lib/arm64/libgcastartup.so using class loader ns clns-7 (caller=/data/app/~~kJBWMsdDlSCBC74uTt84Fw==/com.android.MGC_9_4_103-WF0OQ4QCF4kJEqXBF5OJCQ==/base.apk!classes2.dex): ok
+
+[ 10-26 16:16:12.968 12709:12739 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 16:16:12.968 12709:12739 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 16:16:12.968 12709:12739 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 16:16:12.968 12709:12745 E/StartLibAddreses ]
+7127002000
+
+[ 10-26 16:16:12.969 12709:12739 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 16:16:12.969 12709:12739 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 16:16:12.974 12709:12739 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:16:12.974 12709:12739 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:16:12.974 12709:12739 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:16:12.974 12709:12745 E/StartLibAddreses ]
+7127002000
+
+[ 10-26 16:16:12.974 12709:12739 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:16:12.974 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.990 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.991 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:12.991 12709:12739 D/CompatChangeReporter ]
+Compat change id reported: 253665015; UID 10255; state: ENABLED
+
+[ 10-26 16:16:12.998 12709:12745 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 0
+
+[ 10-26 16:16:13.000 12709:12745 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:16:13.000 12709:12745 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:16:13.000 12709:12745 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:16:13.000 12709:12745 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4625x3473
+
+[ 10-26 16:16:13.000 12709:12745 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.624x3.472
+
+[ 10-26 16:16:13.032 12709:12745 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 16:16:13.055 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:13.055 12709:12709 E/oid.MGC_9_4_103 ]
+Invalid resource ID 0x00000000.
+
+[ 10-26 16:16:13.063 12709:12709 I/wm_on_create_called ]
+[187035481,com.android.camera.CameraLauncher,performCreate,203]
+
+[ 10-26 16:16:13.066 12709:12709 I/wm_on_start_called ]
+[187035481,com.android.camera.CameraLauncher,handleStartActivity,2]
+
+[ 10-26 16:16:13.069 12709:12709 I/wm_on_resume_called ]
+[187035481,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 16:16:13.071 12709:12745 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 1
+
+[ 10-26 16:16:13.072 12709:12745 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4208, 3120)
+
+[ 10-26 16:16:13.072 12709:12745 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 16:16:13.072 12709:12745 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 16:16:13.072 12709:12745 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4033x3025
+
+[ 10-26 16:16:13.072 12709:12745 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.032x3.024
+
+[ 10-26 16:16:13.082 12709:12739 W/Glide    ]
+Failed to find GeneratedAppGlideModule. You should include an annotationProcessor compile dependency on com.github.bumptech.glide:compiler in your application and a @GlideModule annotated AppGlideModule implementation or LibraryGlideModules will be silently ignored
+
+[ 10-26 16:16:13.084 12709:12745 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 16:16:13.085 12709:12709 D/nativeloader ]
+Load libpowerhalwrap_jni.so using system ns (caller=/system_ext/framework/mediatek-framework.jar): ok
+
+[ 10-26 16:16:13.085 12709:12709 I/PowerHalWrapper ]
+PowerHalWrapper.getInstance 
+
+[ 10-26 16:16:13.086 12709:12709 I/M-ProMotion ]
+M-ProMotion is disabled
+
+[ 10-26 16:16:13.087 12709:12709 D/ActivityThread ]
+handleResumeActivity#3 r.window=nulla.mFinished = falsewillBeVisible = true
+
+[ 10-26 16:16:13.087 12709:12709 D/ActivityThread ]
+handleResumeActivity#4 addView a.mVisibleFromClient=truea.mWindowAdded=falsedecor=DecorView@587f549[]
+
+[ 10-26 16:16:13.087 12709:12709 D/ActivityThread ]
+handleResumeActivity#5 addView decor=DecorView@587f549[]
+
+[ 10-26 16:16:13.087 12709:12709 I/SurfaceFactory ]
+[static] sSurfaceFactory = com.mediatek.view.impl.SurfaceFactoryImpl@c5f9b6f
+
+[ 10-26 16:16:13.088 12709:12759 I/PowerHalWrapper ]
+PowerHalWrapper.getInstance 
+
+[ 10-26 16:16:13.090 12709:12709 D/MbrainDebugManagerImpl ]
+getService failed
+
+[ 10-26 16:16:13.093 12709:12709 W/HWUI     ]
+Unknown dataspace 0
+
+[ 10-26 16:16:13.094 12709:12709 D/VRI[CameraLauncher] ]
+hardware acceleration = true, forceHwAccelerated = false
+
+[ 10-26 16:16:13.099 12709:12709 D/InputEventReceiver ]
+Input log is disabled in InputEventReceiver.
+
+[ 10-26 16:16:13.099 12709:12709 I/wm_on_top_resumed_gained_called ]
+[187035481,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:16:13.123 12709:12709 E/oid.MGC_9_4_103 ]
+hiddenapi: Accessing hidden method Landroid/content/res/Resources$Theme;->getKey()Landroid/content/res/Resources$ThemeKey; (runtime_flags=0, domain=platform, api=max-target-o) from Leel; (domain=app, TargetSdkVersion=34) using reflection: denied
+
+[ 10-26 16:16:13.125 12709:12764 D/skia     ]
+SkJpegCodec::onGetPixels + (1156, 868)
+
+[ 10-26 16:16:13.130 12709:12764 I/DMABUFHEAPS ]
+Using DMA-BUF heap named: mtk_mm
+
+[ 10-26 16:16:13.136 12709:12764 D/skia     ]
+stream getLength() not supported, use temp buffer for loading stream, buffer addr 0x711d6b7000 length 3109961
+
+
+[ 10-26 16:16:13.138 12709:12764 D/skia     ]
+LoadInputStreamToMem va 0x711d6b7000  size 3112192
+
+[ 10-26 16:16:13.139 12709:12764 D/libjpeg-alpha ]
+Huffman Builder run in subthread
+
+
+[ 10-26 16:16:13.139 12709:12764 D/libjpeg-alpha ]
+Tile Decoder (#thread:4, size:1280 1280 1024 1040x880, alignment:256x16)
+
+
+[ 10-26 16:16:13.159 12709:12709 D/BufferQueueConsumer ]
+[](id:31a500000000,api:0,p:-1,c:12709) connect: controlledByApp=false
+
+[ 10-26 16:16:13.161 12709:12709 D/BLASTBufferQueue ]
+[VRI[CameraLauncher]#0](f:0,a:0) constructor()
+
+[ 10-26 16:16:13.161 12709:12709 D/BLASTBufferQueue ]
+[VRI[CameraLauncher]#0](f:0,a:0) update width=1080 height=2400 format=-1 mTransformHint=0
+
+[ 10-26 16:16:13.163 12709:12709 E/FBI      ]
+Can't load library: dlopen failed: library "libmagtsync.so" not found
+
+[ 10-26 16:16:13.164 12709:12742 D/libMEOW  ]
+meow new tls: 0xb40000740aedf090
+
+[ 10-26 16:16:13.164 12709:12742 D/libMEOW  ]
+applied 1 plugins for [com.android.MGC_9_4_103]:
+
+[ 10-26 16:16:13.164 12709:12742 D/libMEOW  ]
+  plugin 1: [libMEOW_gift.so]:
+
+[ 10-26 16:16:13.202 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.focusindicator.FocusIndicatorRingView{d1cd555 V.ED..... ......ID 0,0-1920,1920 #7f0b0189 app:id/focus_indicator_ring} during layout: running second layout pass
+
+[ 10-26 16:16:13.202 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.focusindicator.FocusIndicatorAccessoryView{304eb6a IFED..C.. ......I. 900,0-1020,120 #7f0b018b app:id/focus_lock_view} during layout: running second layout pass
+
+[ 10-26 16:16:13.202 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.focusindicator.FocusIndicatorAccessoryView{6ceb85b IFED..C.. ......I. 900,0-1020,120 #7f0b018c app:id/focus_taxi_view} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.ui.views.FadingEdgeLayout{39268f8 V.E...... ......ID 105,168-975,312 #7f0b0107 app:id/countdown_slider_frame} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by otb{bc5c4c4 V.ED..... ......ID 0,0-82,144 #7f0b007c app:id/auto_value_label} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by otb{6c233d7 V.ED..... ......ID 0,0-82,144 #7f0b025a app:id/min_value_label} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by otb{8c0afad V.ED..... ......ID 0,0-82,144 #7f0b024c app:id/max_value_label} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by otb{c5fb2e2 V.ED..... ......ID 0,0-82,144 #7f0b0075 app:id/astro_value_label} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.bottombar.SideButtonContainer{92271d1 V.E...... ......ID 0,222-156,378 #7f0b0206 app:id/left_placeholder_container} during layout: running second layout pass
+
+[ 10-26 16:16:13.203 12709:12709 W/View     ]
+requestLayout() improperly called by android.widget.Space{afe5436 I.ED..... ......I. 0,0-0,0 #7f0b0209 app:id/left_space} during layout: running second layout pass
+
+[ 10-26 16:16:13.204 12709:12709 W/View     ]
+requestLayout() improperly called by android.widget.FrameLayout{3b67f37 V.E...... ......ID -152,147-154,453 #7f0b00cc app:id/center_placeholder} during layout: running second layout pass
+
+[ 10-26 16:16:13.204 12709:12709 W/View     ]
+requestLayout() improperly called by android.widget.Space{b011ca4 I.ED..... ......I. 0,0-0,0 #7f0b034a app:id/right_space} during layout: running second layout pass
+
+[ 10-26 16:16:13.204 12709:12709 W/View     ]
+requestLayout() improperly called by com.google.android.apps.camera.bottombar.SideButtonContainer{10b5a0d V.E...... ......ID -155,222-0,378 #7f0b0348 app:id/right_placeholder_container} during layout: running second layout pass
+
+[ 10-26 16:16:13.218 12709:12764 D/skia     ]
+SkJpegCodec::onGetPixels -
+
+[ 10-26 16:16:13.240 12709:12742 W/libc     ]
+Access denied finding property "vendor.mbrain.enabled"
+
+[ 10-26 16:16:13.240 12709:12742 D/oid.MGC_9_4_103 ]
+MBrain is disabled
+
+[ 10-26 16:16:13.240 12709:12742 D/oid.MGC_9_4_103 ]
+initMbrain failed
+
+[ 10-26 16:16:13.276 12709:12742 I/GrallocExtra ]
+gralloc_extra_query:is_SW3D 0
+
+[ 10-26 16:16:13.276 12709:12742 D/BLASTBufferQueue ]
+[VRI[CameraLauncher]#0](f:0,a:1) acquireNextBufferLocked size=1080x2400 mFrameNumber=1 applyTransaction=true mTimestamp=202622856195076(auto) mPendingTransactions.size=0 graphicBufferId=54584739364866 transform=0
+
+[ 10-26 16:16:13.276 12709:12742 W/libc     ]
+Access denied finding property "vendor.mbrain.enabled"
+
+[ 10-26 16:16:13.276 12709:12742 D/oid.MGC_9_4_103 ]
+MBrain is disabled
+
+[ 10-26 16:16:13.276 12709:12742 D/oid.MGC_9_4_103 ]
+initMbrain failed
+
+[ 10-26 16:16:13.279 12709:12709 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:16:13.344 12709:12709 I/wm_on_top_resumed_lost_called ]
+[187035481,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:16:13.347 12709:12709 I/wm_on_paused_called ]
+[187035481,com.android.camera.CameraLauncher,performPause,2]
+
+[ 10-26 16:16:13.366 12709:12709 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:16:13.372 12709:12781 W/InteractionJankMonitor ]
+Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.android.MGC_9_4_103
+
+[ 10-26 16:16:13.372 12709:12783 I/jank_cuj_events_cancel_request ]
+[81,1793011573372436000,336894627258648,202622953397153]
+
+[ 10-26 16:16:13.372 12709:12783 I/jank_cuj_events_end_request ]
+[81,1793011573372508000,336894627320186,202622953458461]
+
+[ 10-26 16:16:13.392 12709:12709 I/view_enqueue_input_event ]
+[Motion - Cancel,com.android.MGC_9_4_103/com.android.camera.CameraLauncher]
+
+[ 10-26 16:16:14.125 12709:12709 D/VRI[CameraLauncher] ]
+visibilityChanged oldVisibility=true newVisibility=false
+
+[ 10-26 16:16:14.157 12709:12709 D/BLASTBufferQueue ]
+[VRI[CameraLauncher]#0](f:0,a:4) destructor()
+
+[ 10-26 16:16:14.157 12709:12709 D/BufferQueueConsumer ]
+[VRI[CameraLauncher]#0(BLAST Consumer)0](id:31a500000000,api:0,p:-1,c:12709) disconnect
+
+[ 10-26 16:16:14.166 12709:12709 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 16:16:14.217 12709:12709 I/wm_on_stop_called ]
+[187035481,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,22]
+
+[ 10-26 16:16:16.868 12709:12745 W/CAM_enl  ]
+Readiness chain timed out. Falling back.
+
+
+[ 10-26 16:16:16.902 12709:12739 W/CAM_CameraDeviceVerifie ]
+Tag CameraDeviceVerifier is 1 chars longer than limit.
+

@@ -1,0 +1,1 @@
+/data/data/com.termux/files/usr/bin/bash: line 3: dumpsys: command not found

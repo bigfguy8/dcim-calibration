@@ -1,0 +1,418 @@
+--------- beginning of events
+[ 10-26 18:59:31.096  8922: 8922 I/wm_on_create_called ]
+[73293917,com.android.camera.CameraLauncher,performCreate,166]
+
+[ 10-26 18:59:31.099  8922: 8922 I/wm_on_start_called ]
+[73293917,com.android.camera.CameraLauncher,handleStartActivity,1]
+
+[ 10-26 18:59:31.102  8922: 8922 I/wm_on_resume_called ]
+[73293917,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 18:59:31.120  8922: 8922 I/wm_on_top_resumed_gained_called ]
+[73293917,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 18:59:31.297  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 18:59:31.342  8922: 8922 I/wm_on_top_resumed_lost_called ]
+[73293917,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 18:59:31.348  8922: 8922 I/wm_on_paused_called ]
+[73293917,com.android.camera.CameraLauncher,performPause,6]
+
+[ 10-26 18:59:31.420  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 18:59:31.427  8922: 8980 I/jank_cuj_events_cancel_request ]
+[81,1793021371427171000,346692681997525,208069370479863]
+
+[ 10-26 18:59:31.427  8922: 8980 I/jank_cuj_events_end_request ]
+[81,1793021371427236000,346692682047679,208069370529478]
+
+[ 10-26 18:59:31.586  8922: 8922 I/wm_on_activity_result_called ]
+[73293917,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 18:59:31.587  8922: 8922 I/wm_on_resume_called ]
+[73293917,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 18:59:31.589  8922: 8922 I/wm_on_top_resumed_gained_called ]
+[73293917,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 18:59:31.937  8922: 8980 I/jank_cuj_events_end_request ]
+[81,1793021371936982000,346693191794448,208069880276247]
+
+[ 10-26 18:59:36.215  8922: 8980 I/jank_cuj_events_begin_request ]
+[81,1793021376215643000,346697470455679,208074158937786,1@1@com.android.MGC_9_4_103]
+
+[ 10-26 18:59:36.592  8922: 8980 I/jank_cuj_events_end_request ]
+[81,1793021376574471000,346697829283295,208074517765171]
+
+[ 10-26 18:59:39.431  8922: 8922 I/wm_on_top_resumed_lost_called ]
+[73293917,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 18:59:39.464  8922: 8922 I/wm_on_paused_called ]
+[73293917,com.android.camera.CameraLauncher,performPause,33]
+
+[ 10-26 18:59:40.300  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:59:40.301  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:59:40.301  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 18:59:40.353  8922: 8922 I/wm_on_stop_called ]
+[73293917,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,35]
+
+[ 10-26 18:59:40.379  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:59:40.787  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:59:55.297  8922: 8922 I/wm_on_restart_called ]
+[73293917,com.android.camera.CameraLauncher,performRestart,1]
+
+[ 10-26 18:59:55.381  8922: 8922 I/wm_on_start_called ]
+[73293917,com.android.camera.CameraLauncher,handleStartActivity,84]
+
+[ 10-26 18:59:55.410  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 18:59:55.491  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Canceling draw. cancelDueToPreDrawListener=true cancelDueToSync=false]
+
+[ 10-26 18:59:55.587  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Draw frame after cancel]
+
+[ 10-26 18:59:55.737  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 18:59:56.104  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Canceling draw. cancelDueToPreDrawListener=true cancelDueToSync=false]
+
+[ 10-26 18:59:56.146  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Draw frame after cancel]
+
+[ 10-26 18:59:56.262  8922: 8922 I/wm_on_activity_result_called ]
+[73293917,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 18:59:56.319  8922: 8922 I/wm_on_resume_called ]
+[73293917,com.android.camera.CameraLauncher,RESUME_ACTIVITY,53]
+
+[ 10-26 18:59:56.320  8922: 8922 I/wm_on_top_resumed_gained_called ]
+[73293917,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 19:00:00.267  8922: 8980 I/jank_cuj_events_begin_request ]
+[81,1793021400267190000,346721522010758,208098210494326,1@1@com.android.MGC_9_4_103]
+
+[ 10-26 19:00:00.631  8922: 8980 I/jank_cuj_events_end_request ]
+[81,1793021400631375000,346721886190373,208098574672787]
+
+[ 10-26 19:00:06.004  8922:10374 I/liblog   ]
+2
+
+[ 10-26 19:00:06.004  8922:10374 I/liblog   ]
+2
+
+[ 10-26 19:00:06.005  8922:10374 I/liblog   ]
+40
+
+[ 10-26 19:00:06.005  8922:10374 I/liblog   ]
+2
+
+[ 10-26 19:00:06.005  8922:10374 I/liblog   ]
+1
+
+[ 10-26 19:00:06.005  8922:10374 I/liblog   ]
+1
+
+[ 10-26 19:00:06.007  8922:10374 I/liblog   ]
+26
+
+[ 10-26 19:00:06.007  8922:10374 I/liblog   ]
+7
+
+[ 10-26 19:00:06.007  8922:10374 I/liblog   ]
+12
+
+[ 10-26 19:00:06.008  8922:10374 I/liblog   ]
+5
+
+[ 10-26 19:00:13.676  8922: 8922 I/wm_on_top_resumed_lost_called ]
+[73293917,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:00:13.754  8922: 8922 I/wm_on_paused_called ]
+[73293917,com.android.camera.CameraLauncher,performPause,76]
+
+[ 10-26 19:00:14.383  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 19:00:14.384  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 19:00:14.384  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 19:00:14.419  8922: 8922 I/wm_on_stop_called ]
+[73293917,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,26]
+
+[ 10-26 19:00:14.433  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 19:00:18.573  8922: 8922 I/wm_on_restart_called ]
+[73293917,com.android.camera.CameraLauncher,performRestart,0]
+
+[ 10-26 19:00:18.600  8922: 8922 I/wm_on_start_called ]
+[73293917,com.android.camera.CameraLauncher,handleStartActivity,27]
+
+[ 10-26 19:00:18.601  8922: 8922 I/wm_on_activity_result_called ]
+[73293917,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 19:00:18.604  8922: 8922 I/wm_on_resume_called ]
+[73293917,com.android.camera.CameraLauncher,RESUME_ACTIVITY,3]
+
+[ 10-26 19:00:18.605  8922: 8922 I/wm_on_top_resumed_gained_called ]
+[73293917,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 19:00:18.610  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],applyTransactionOnDraw applyImmediately]
+
+[ 10-26 19:00:18.683  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Start draw after previous draw not visible]
+
+[ 10-26 19:00:18.700  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 19:00:18.765  8922: 8922 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 19:00:19.061  8922: 8980 I/jank_cuj_events_end_request ]
+[80,1793021419059351000,346740314163067,208117002645096]
+
+[ 10-26 19:00:19.331  8922: 8922 I/view_enqueue_input_event ]
+[Motion - Cancel,com.android.MGC_9_4_103/com.android.camera.CameraLauncher]
+
+[ 10-26 19:00:20.050  8922: 8922 I/view_enqueue_input_event ]
+[Motion - Cancel,com.android.MGC_9_4_103/com.android.camera.CameraLauncher]
+
+[ 10-26 19:00:20.146  8922: 8922 I/wm_on_top_resumed_lost_called ]
+[73293917,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:00:20.151  8922: 8922 I/wm_on_paused_called ]
+[73293917,com.android.camera.CameraLauncher,performPause,3]
+
+[ 10-26 19:11:42.111 15241:15241 I/wm_on_create_called ]
+[232669758,com.android.camera.CameraLauncher,performCreate,155]
+
+[ 10-26 19:11:42.113 15241:15241 I/wm_on_start_called ]
+[232669758,com.android.camera.CameraLauncher,handleStartActivity,2]
+
+[ 10-26 19:11:42.116 15241:15241 I/wm_on_resume_called ]
+[232669758,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 19:11:42.134 15241:15241 I/wm_on_top_resumed_gained_called ]
+[232669758,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:11:42.267 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 19:11:42.332 15241:15241 I/wm_on_top_resumed_lost_called ]
+[232669758,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:11:42.334 15241:15241 I/wm_on_paused_called ]
+[232669758,com.android.camera.CameraLauncher,performPause,1]
+
+[ 10-26 19:11:42.363 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 19:11:42.368 15241:15382 I/jank_cuj_events_cancel_request ]
+[81,1793022102368016000,347423622843415,208800311325752]
+
+[ 10-26 19:11:42.368 15241:15382 I/jank_cuj_events_end_request ]
+[81,1793022102368483000,347423623295030,208800311776906]
+
+[ 10-26 19:11:42.530 15241:15241 I/wm_on_activity_result_called ]
+[232669758,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 19:11:42.531 15241:15241 I/wm_on_resume_called ]
+[232669758,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 19:11:42.532 15241:15241 I/wm_on_top_resumed_gained_called ]
+[232669758,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 19:11:42.921 15241:15382 I/jank_cuj_events_end_request ]
+[81,1793022102918806000,347424173623338,208800862105214]
+
+[ 10-26 19:11:44.094 15241:15241 I/wm_on_top_resumed_lost_called ]
+[232669758,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:11:44.145 15241:15241 I/view_enqueue_input_event ]
+[Motion - Cancel,com.android.MGC_9_4_103/com.android.camera.CameraLauncher]
+
+[ 10-26 19:11:45.028 15241:15241 I/wm_on_paused_called ]
+[232669758,com.android.camera.CameraLauncher,performPause,14]
+
+[ 10-26 19:11:45.125 15241:15241 I/wm_on_stop_called ]
+[232669758,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,15]
+
+[ 10-26 19:11:45.240 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 19:11:47.364 15241:15241 I/wm_on_restart_called ]
+[232669758,com.android.camera.CameraLauncher,performRestart,0]
+
+[ 10-26 19:11:47.410 15241:15241 I/wm_on_start_called ]
+[232669758,com.android.camera.CameraLauncher,handleStartActivity,46]
+
+[ 10-26 19:11:47.439 15241:15241 I/wm_on_resume_called ]
+[232669758,com.android.camera.CameraLauncher,RESUME_ACTIVITY,5]
+
+[ 10-26 19:11:47.440 15241:15241 I/wm_on_top_resumed_gained_called ]
+[232669758,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 19:11:47.490 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Start draw after previous draw not visible]
+
+[ 10-26 19:11:47.525 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 19:11:47.882 15241:15382 I/jank_cuj_events_end_request ]
+[81,1793022107882505000,347429137316954,208805825798983]
+
+[ 10-26 19:11:48.972 15241:15241 I/view_enqueue_input_event ]
+[Motion - Cancel,com.android.MGC_9_4_103/com.android.camera.CameraLauncher]
+
+[ 10-26 19:11:49.105 15241:15241 I/wm_on_top_resumed_lost_called ]
+[232669758,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 19:11:49.135 15241:15241 I/wm_on_paused_called ]
+[232669758,com.android.camera.CameraLauncher,performPause,16]
+
+[ 10-26 19:11:50.074 15241:15241 I/viewroot_draw_event ]
+[VRI[CameraLauncher],Not drawing due to not visible. Reason=!mAppVisible && !mForceDecorViewVisibility]
+
+[ 10-26 19:11:50.239 15241:15241 I/wm_on_stop_called ]
+[232669758,com.android.camera.CameraLauncher,STOP_ACTIVITY_ITEM,155]
+
+--------- beginning of main
+[ 10-26 19:12:03.280 16755:16755 D/nativeloader ]
+Load libpowerhalwrap_jni.so using system ns (caller=/system_ext/framework/mediatek-framework.jar): ok
+
+[ 10-26 19:12:03.280 16755:16755 I/PowerHalWrapper ]
+PowerHalWrapper.getInstance 
+
+[ 10-26 19:12:03.281 16755:16755 I/M-ProMotion ]
+M-ProMotion is disabled
+
+[ 10-26 19:12:03.289 16755:16802 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 0
+
+[ 10-26 19:12:03.289 16755:16802 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 1
+
+[ 10-26 19:12:03.289 16755:16802 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 2
+
+[ 10-26 19:12:03.289 16755:16802 I/CameraManagerGlobal ]
+mDeviceId :0  mPackageNames: com.android.MGC_9_4_103
+
+[ 10-26 19:12:03.289 16755:16802 I/CameraManagerGlobal ]
+camera num :2
+
+[ 10-26 19:12:03.323 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 19:12:03.438 16755:16802 W/native   ]
+W0000 00:00:1793022123.438501   16802 commandlineflags.cc:1167] util/process/subprocess.cc:150 Ignoring RegisterValidateFunction() for flag address 0x7129716c18: no flag found at that address
+
+
+[ 10-26 19:12:03.478 16755:16802 D/nativeloader ]
+Load /data/app/~~RP61L3yf3YPA49E0mdY67Q==/com.android.MGC_9_4_103-e6ixquGhBZomQu4QiWpAAA==/lib/arm64/libgcastartup.so using class loader ns clns-7 (caller=/data/app/~~RP61L3yf3YPA49E0mdY67Q==/com.android.MGC_9_4_103-e6ixquGhBZomQu4QiWpAAA==/base.apk!classes2.dex): ok
+
+[ 10-26 19:12:03.481 16755:16802 E/StartLibAddreses ]
+7121e08000
+
+[ 10-26 19:12:03.486 16755:16802 E/StartLibAddreses ]
+7121e08000
+
+[ 10-26 19:12:03.489 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 19:12:03.490 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 19:12:03.490 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 19:12:03.490 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 19:12:03.490 16755:16792 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 19:12:03.496 16755:16792 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:12:03.497 16755:16792 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:12:03.497 16755:16792 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:12:03.497 16755:16792 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 19:12:03.507 16755:16792 D/CompatChangeReporter ]
+Compat change id reported: 253665015; UID 10256; state: ENABLED
+
+[ 10-26 19:12:03.526 16755:16792 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 0
+
+[ 10-26 19:12:03.528 16755:16792 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:12:03.528 16755:16792 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:12:03.528 16755:16792 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 19:12:03.528 16755:16792 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4625x3473
+
+[ 10-26 19:12:03.529 16755:16792 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.624x3.472
+
+[ 10-26 19:12:03.531 16755:16802 W/CAM_CameraDeviceVerifie ]
+Tag CameraDeviceVerifier is 1 chars longer than limit.
+
+[ 10-26 19:12:03.574 16755:16792 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 19:12:03.646 16755:16792 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 1
+
+[ 10-26 19:12:03.648 16755:16792 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4208, 3120)
+
+[ 10-26 19:12:03.648 16755:16792 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 19:12:03.648 16755:16792 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 19:12:03.648 16755:16792 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4033x3025
+
+[ 10-26 19:12:03.649 16755:16792 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.032x3.024
+
+[ 10-26 19:12:03.684 16755:16792 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 19:12:04.119 16755:16802 W/CAM_eog  ]
+Failed to throttle the executor!
+
+

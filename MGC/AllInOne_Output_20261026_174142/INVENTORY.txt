@@ -1,0 +1,53 @@
+PHASE A INVENTORY — 2026-10-26 17:41:55 IST
+Device: LAVA LXX521 / Android 15 / Termux
+
+=== A1. APKs ===
+SIZE=326061819 MTIME=2026-10-26 16:15:27.984838337 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_9.4.103_V41_MGC.apk
+3985244c1edc19607132954b6e1c13c3b28c65d41fd1d72d4009c291bb99be69  /data/data/com.termux/files/home/storage/shared/Download/MGC_9.4.103_V41_MGC.apk
+SIZE=323938309 MTIME=2026-10-26 17:14:07.084838547 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC.apk
+b15dc553247405079cb3bf7b8a0983f716ccd690af52ca77c60bd316d9b8f8ac  /data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC.apk
+SIZE=323938309 MTIME=2026-10-26 17:15:07.804838551 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC (1).apk
+b15dc553247405079cb3bf7b8a0983f716ccd690af52ca77c60bd316d9b8f8ac  /data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC (1).apk
+
+=== A2. Native MGC config ===
+SIZE=10650 MTIME=2026-10-26 17:01:34.188838502 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CONFIG/9.4.103/mgc.xml
+911b27d929072bac13a86e354e20e27960ca2aabc7ddf2fbbcf4e63a3ec8c288  /data/data/com.termux/files/home/storage/shared/Download/MGC_CONFIG/9.4.103/mgc.xml
+
+=== A3. Crash logs ===
+SIZE=10788 MTIME=2026-10-26 16:02:33.444838291 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.7.047/LAVA_LAVALXX521_LXX521_2026-10-26_16-02-33.log
+SIZE=17845 MTIME=2026-10-26 16:16:16.896838340 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_16-16-12.log
+SIZE=635140 MTIME=2026-10-26 16:59:48.472838496 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_16-21-09.log
+SIZE=2986171 MTIME=2026-10-26 17:01:44.636838503 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_17-00-45.log
+SIZE=2828518 MTIME=2026-10-26 17:18:26.844838563 +0530 PATH=/data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.8.102/LAVA_LAVALXX521_LXX521_2026-10-26_17-16-50.log
+cb86070f714277d7471c810bfee163b9d3b9a393d7b3f0cb4a0a78378de7e60c  /data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.7.047/LAVA_LAVALXX521_LXX521_2026-10-26_16-02-33.log
+bad1e0ff5fdbe1906960fe7d605b31e145a7f8679f7002b6431ad588252606f6  /data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_16-16-12.log
+c5a491223bc8a592693376209257c60215e2ad452d947b5c8c7d6475e6cc7b22  /data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_16-21-09.log
+24119ae467a02003f638746bafbf3c57f6cc37218220983e7c56c529f5803ddf  /data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.4.103/LAVA_LAVALXX521_LXX521_2026-10-26_17-00-45.log
+f5a6b97191656f9d10a934650173e4cb9a75ecf7e3cd39f96858d3baee256e47  /data/data/com.termux/files/home/storage/shared/Download/MGC_CRASH_LOG/9.8.102/LAVA_LAVALXX521_LXX521_2026-10-26_17-16-50.log
+
+=== A4. Existing MGC outputs / candidates / reports ===
+SIZE=17845 MTIME=2026-10-26 16:16:16.896838340 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/LAVA_LAVALXX521_LXX521_2026-10-26_16-16-12.log
+SIZE=289930 MTIME=2026-10-26 16:22:32.736838363 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/LAVA_LAVALXX521_LXX521_2026-10-26_16-21-09.log
+SIZE=10788 MTIME=2026-10-26 16:02:33.444838291 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/LAVA_LAVALXX521_LXX521_2026-10-26_16-02-33.log
+SIZE=1068 MTIME=2026-10-20 14:56:32.000000000 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/LXX521_BSG_Pro.xml
+SIZE=1068 MTIME=2026-10-20 14:56:32.000000000 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/LXX521_BSG_Master.xml
+SIZE=512 MTIME=2026-10-26 16:37:55.088838418 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/backup_evidence/SHA256SUMS_backup.txt
+SIZE=8138 MTIME=2026-10-26 16:39:47.788838424 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/MGC_Configuration_Audit.md
+SIZE=8672 MTIME=2026-10-26 16:41:56.380838432 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/MGC_Front_Camera_Crash_Analysis.md
+SIZE=3916 MTIME=2026-10-26 16:42:22.244838434 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/MGC_Validation_Report.md
+SIZE=1719 MTIME=2026-10-26 16:42:37.092838435 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/MGC_AllInOne_Config_CANDIDATE.BLOCKED
+SIZE=1974 MTIME=2026-10-26 16:42:52.068838435 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/verify_mgc_evidence.sh
+SIZE=478 MTIME=2026-10-26 16:43:14.440838437 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_163754/SHA256SUMS.txt
+SIZE=10650 MTIME=2026-10-26 17:01:34.188838502 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/backup/mgc_native_source.xml
+SIZE=88 MTIME=2026-10-26 17:05:24.176838516 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/backup/SHA256SUMS_backup.txt
+SIZE=10650 MTIME=2026-10-26 17:06:21.972838520 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/LXX521_MGC_AllInOne_CANDIDATE.xml
+SIZE=7573 MTIME=2026-10-26 17:07:05.644838522 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/MGC_Native_Config_Analysis.md
+SIZE=5845 MTIME=2026-10-26 17:07:35.928838524 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/MGC_AllInOne_Change_Report.md
+SIZE=3852 MTIME=2026-10-26 17:08:06.804838526 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/MGC_Validation_Report.md
+SIZE=383 MTIME=2026-10-26 17:08:37.884838528 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_170524/SHA256SUMS.txt
+SIZE=3269 MTIME=2026-10-26 17:41:56.785474919 +0530 PATH=/data/data/com.termux/files/home/dcim_calibration/MGC_AllInOne_Output/20261026_174142/INVENTORY.txt
+
+=== A5. Other MGC-related local files ===
+/data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC.apk
+/data/data/com.termux/files/home/storage/shared/Download/MGC_9.4.103_V41_MGC.apk
+/data/data/com.termux/files/home/storage/shared/Download/MGC_9.8.102_V0_MGC (1).apk

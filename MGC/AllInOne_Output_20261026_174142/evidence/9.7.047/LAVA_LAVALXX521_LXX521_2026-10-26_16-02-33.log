@@ -1,0 +1,270 @@
+--------- beginning of events
+[ 10-26 16:02:03.833  2710: 2710 I/wm_on_create_called ]
+[48443488,com.android.camera.CameraLauncher,performCreate,295]
+
+[ 10-26 16:02:03.842  2710: 2710 I/wm_on_start_called ]
+[48443488,com.android.camera.CameraLauncher,handleStartActivity,7]
+
+[ 10-26 16:02:03.846  2710: 2710 I/wm_on_resume_called ]
+[48443488,com.android.camera.CameraLauncher,RESUME_ACTIVITY,2]
+
+[ 10-26 16:02:03.910  2710: 2710 I/wm_on_top_resumed_gained_called ]
+[48443488,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:02:04.607  2710: 2710 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:04.638  2710: 2710 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:04.733  2710: 2710 I/wm_on_top_resumed_lost_called ]
+[48443488,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:02:04.736  2710: 2710 I/wm_on_paused_called ]
+[48443488,com.android.camera.CameraLauncher,performPause,2]
+
+[ 10-26 16:02:04.767  2710: 2821 I/jank_cuj_events_cancel_request ]
+[81,1793010724767169000,336046021992059,201774348130641]
+
+[ 10-26 16:02:04.767  2710: 2821 I/jank_cuj_events_end_request ]
+[81,1793010724767251000,336046022062597,201774348201103]
+
+[ 10-26 16:02:04.930  2710: 2821 I/jank_cuj_events_begin_request ]
+[81,1793010724930309000,336046185120982,201774511259564,1@0@com.ss.android.ugc.aweme]
+
+[ 10-26 16:02:05.287  2710: 2821 I/jank_cuj_events_end_request ]
+[81,1793010725287181000,336046541996443,201774868135334]
+
+[ 10-26 16:02:08.244  2710: 2710 I/wm_on_activity_result_called ]
+[48443488,com.android.camera.CameraLauncher,ACTIVITY_RESULT]
+
+[ 10-26 16:02:08.246  2710: 2710 I/wm_on_resume_called ]
+[48443488,com.android.camera.CameraLauncher,RESUME_ACTIVITY,2]
+
+[ 10-26 16:02:08.247  2710: 2710 I/wm_on_top_resumed_gained_called ]
+[48443488,com.android.camera.CameraLauncher,topWhenResuming]
+
+[ 10-26 16:02:10.095  2710: 2710 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:10.218  2710: 2710 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:13.819  2710: 2821 I/jank_cuj_events_begin_request ]
+[81,1793010733818663000,336055073479521,201783399618719,1@1@com.ss.android.ugc.aweme]
+
+[ 10-26 16:02:14.181  2710: 2821 I/jank_cuj_events_end_request ]
+[81,1793010734180039000,336055434851828,201783760990334]
+
+[ 10-26 16:02:22.100  3399: 3399 I/wm_on_create_called ]
+[229263861,com.android.camera.CameraLauncher,performCreate,274]
+
+[ 10-26 16:02:22.107  3399: 3399 I/wm_on_start_called ]
+[229263861,com.android.camera.CameraLauncher,handleStartActivity,6]
+
+[ 10-26 16:02:22.112  3399: 3399 I/wm_on_resume_called ]
+[229263861,com.android.camera.CameraLauncher,RESUME_ACTIVITY,1]
+
+[ 10-26 16:02:22.156  3399: 3399 I/wm_on_top_resumed_gained_called ]
+[229263861,com.android.camera.CameraLauncher,topStateChangedWhenResumed]
+
+[ 10-26 16:02:22.549  3399: 3399 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:24.088  3399: 3399 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:25.199  3399: 3399 I/viewroot_draw_event ]
+[VRI[CameraLauncher],reportDrawFinished seqId=0]
+
+[ 10-26 16:02:25.245  3399: 3879 I/jank_cuj_events_cancel_request ]
+[81,1793010745237614000,336066492426598,201794818565412]
+
+[ 10-26 16:02:25.245  3399: 3879 I/jank_cuj_events_end_request ]
+[81,1793010745237708000,336066492519752,201794818658104]
+
+--------- beginning of crash
+[ 10-26 16:02:31.389  3399: 3399 E/AndroidRuntime ]
+FATAL EXCEPTION: main
+Process: com.ss.android.ugc.aweme, PID: 3399
+pjj: Exception while executing runnable phj@d6a52cd
+	at phj.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:738)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8758)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:601)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:962)
+Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Comparable android.util.Range.getUpper()' on a null object reference
+	at com.a.loadConfinesExposureISO(a.java:654)
+	at tks.SetVALUES(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:2600)
+	at pue.<init>(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:377)
+	at pig.a(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:312)
+	at kid.b(dex-id-7781328bb4087289eb9afe2071dc50d00067f7bb:292)
+	at ppq.m483094659737b73d90f80a8a4(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:118)
+	at ppq.b(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:143)
+	at pps.b(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:934)
+	at phk.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:2854)
+	at prz.c(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:251)
+	at pru.b(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:337)
+	at pru.e(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:2198)
+	at pqw.d(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:253)
+	at pkm.d(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:41)
+	at plc.a(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:9)
+	at ple.m17e9c4556cc19f457ddc41af8(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:300)
+	at ple.d(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:279)
+	at plr.d(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:6)
+	at plc.a(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:9)
+	at ple.e(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:53)
+	at phj.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:3603)
+	at tdm.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:19)
+	at tdn.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:327)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:1571)
+	at pcw.run(dex-id-8e1fc46b10a0f04e599f184406739dc685191f41:15)
+
+
+--------- beginning of main
+[ 10-26 16:02:33.174  4400: 4400 E/FOUND_LENSES ]
+ [ 0 1 2 ]
+
+[ 10-26 16:02:33.174  4400: 4400 E/AFTER_BLACK_LIST_LENSES ]
+ [ 0 1 2 ]
+
+[ 10-26 16:02:33.175  4400: 4400 E/SORTS_LENSES ]
+ [ 2 0 1 ]
+
+[ 10-26 16:02:33.175  4400: 4400 E/AFTER_HIDING_LENSES ]
+ [ 2 0 1 ]
+
+[ 10-26 16:02:33.183  4400: 4400 E/TOGGLE_DISTRIBUTION_BACK_LENSES ]
+ [ 2 0 ]
+
+[ 10-26 16:02:33.183  4400: 4400 E/TOGGLE_DISTRIBUTION_FRONT_LENSES ]
+ [ 1 ]
+
+--------- beginning of system
+[ 10-26 16:02:33.194  4400: 4400 D/MbrainDebugManagerImpl ]
+getService failed
+
+[ 10-26 16:02:33.208  4400: 4421 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 0
+
+[ 10-26 16:02:33.208  4400: 4421 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 1
+
+[ 10-26 16:02:33.208  4400: 4421 I/CameraManagerGlobal ]
+currentDeviceId :0  mCameraId: 2
+
+[ 10-26 16:02:33.208  4400: 4421 I/CameraManagerGlobal ]
+mDeviceId :0  mPackageNames: com.ss.android.ugc.aweme
+
+[ 10-26 16:02:33.208  4400: 4421 I/CameraManagerGlobal ]
+camera num :2
+
+[ 10-26 16:02:33.241  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 16:02:33.250  4400: 4421 D/CompatChangeReporter ]
+Compat change id reported: 311402873; UID 10253; state: ENABLED
+
+[ 10-26 16:02:33.250  4400: 4421 D/CompatChangeReporter ]
+Compat change id reported: 323349338; UID 10253; state: ENABLED
+
+[ 10-26 16:02:33.260  4400: 4422 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 0
+
+[ 10-26 16:02:33.262  4400: 4422 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:02:33.263  4400: 4422 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:02:33.263  4400: 4422 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4624, 3472)
+
+[ 10-26 16:02:33.263  4400: 4422 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4625x3473
+
+[ 10-26 16:02:33.263  4400: 4422 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.624x3.472
+
+[ 10-26 16:02:33.321  4400: 4417 W/native   ]
+W0000 00:00:1793010753.321472    4417 commandlineflags.cc:1167] util/process/subprocess.cc:152 Ignoring RegisterValidateFunction() for flag address 0x712cc24e08: no flag found at that address
+
+
+[ 10-26 16:02:33.332  4400: 4422 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
+[ 10-26 16:02:33.340  4400: 4417 D/nativeloader ]
+Load /data/app/~~DsGdaAvsp-Aa5W8s3TdNAg==/com.ss.android.ugc.aweme-QaUWm62eBX_2r9YeRJB-Pw==/lib/arm64/libgcastartup.so using class loader ns clns-7 (caller=/data/app/~~DsGdaAvsp-Aa5W8s3TdNAg==/com.ss.android.ugc.aweme-QaUWm62eBX_2r9YeRJB-Pw==/base.apk!classes2.dex): ok
+
+[ 10-26 16:02:33.355  4400: 4400 D/nativeloader ]
+Load libpowerhalwrap_jni.so using system ns (caller=/system_ext/framework/mediatek-framework.jar): ok
+
+[ 10-26 16:02:33.357  4400: 4400 I/PowerHalWrapper ]
+PowerHalWrapper.getInstance 
+
+[ 10-26 16:02:33.357  4400: 4417 E/StartLibAddreses ]
+7124a52000
+
+[ 10-26 16:02:33.358  4400: 4400 I/M-ProMotion ]
+M-ProMotion is disabled
+
+[ 10-26 16:02:33.362  4400: 4417 E/StartLibAddreses ]
+7124a52000
+
+[ 10-26 16:02:33.363  4400: 4417 E/StartLibAddreses ]
+7124a52000
+
+[ 10-26 16:02:33.363  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-dvi-ima
+
+[ 10-26 16:02:33.363  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 16:02:33.364  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/x-adpcm-ms
+
+[ 10-26 16:02:33.364  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 16:02:33.364  4400: 4416 W/AudioCapabilities ]
+Unsupported mime audio/alac
+
+[ 10-26 16:02:33.370  4400: 4416 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:02:33.370  4400: 4416 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:02:33.370  4400: 4416 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:02:33.371  4400: 4416 W/VideoCapabilities ]
+Unsupported mime image/vnd.android.heic
+
+[ 10-26 16:02:33.406  4400: 4441 E/HUAWEI_CAPTURE_RAW_STREAM_CONFIGURATIONS ]
+Not Support ID = 1
+
+[ 10-26 16:02:33.408  4400: 4441 E/FIX_Landroid/graphics/Rect; = SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4208, 3120)
+
+[ 10-26 16:02:33.408  4400: 4441 E/FIX_SENSOR_INFO_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 16:02:33.408  4400: 4441 E/FIX_SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE ]
+Rect(0, 0 - 4032, 3024)
+
+[ 10-26 16:02:33.409  4400: 4441 E/FIX_SENSOR_INFO_PIXEL_ARRAY_SIZE ]
+4033x3025
+
+[ 10-26 16:02:33.409  4400: 4441 E/FIX_SENSOR_INFO_PHYSICAL_SIZE ]
+4.032x3.024
+
+[ 10-26 16:02:33.446  4400: 4441 V/MandatoryStreamCombination ]
+Device is not able to output 10-bit!
+
