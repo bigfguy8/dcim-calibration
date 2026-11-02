@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Config Identifier -->
+<string name="pref_config_nickname_key">LXX521_IMX682_ISO_Boost</string>
+
+<!-- Active Main Camera ID -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Switch Sensor Model to Pixel 7 Pro (Forces higher base ISO exposure gain) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Enable Manual Exposure Controls in Viewfinder Header -->
+<string name="pref_show_hdr_button_key">1</string>
+<string name="pref_show_exp_button_key">1</string>
+
+<!-- Force Lower Frame Stacking (Fast Merging) -->
+<string name="frame_count_b_photo_0">5</string>
+<string name="frame_count_b_ns_0">10</string>
+
+<!-- Patcher: Sharpness & Micro-details -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.40</string>
+<string name="ptchr_sharp_radius_small_0">1.2</string>
+<string name="ptchr_sharp_outline_0">1.0</string>
+
+<!-- Denoise & Dynamic Range -->
+<string name="ptchr_luma_denoise_0">0.85</string>
+<string name="ptchr_chroma_denoise_0">1.0</string>
+<string name="ptchr_saturation_0">1.10</string>
+<string name="ptchr_contrast_0">1.05</string>
+
+<!-- Standard IMX682 Black Levels -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

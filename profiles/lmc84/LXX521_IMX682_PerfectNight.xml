@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Config Identifier -->
+<string name="pref_config_nickname_key">LXX521_IMX682_PerfectNight</string>
+
+<!-- Active Main Camera ID -->
+<string name="active_cam_id_back_key">0</string>
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Model Base & AWB (Pixel 7 Pro Color Profile) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Auto White Balance Lock to Prevent Purple Sky Tint -->
+<string name="pref_enable_awb_key">1</string>
+
+<!-- Frame Stacking for Clean Low-Light -->
+<string name="frame_count_b_photo_0">7</string>
+<string name="frame_count_b_ns_0">12</string>
+
+<!-- LibPatcher: Micro-detail & Denoise Balance -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.30</string>
+<string name="ptchr_sharp_radius_small_0">1.1</string>
+<string name="ptchr_sharp_outline_0">1.0</string>
+
+<!-- Denoise Tuning to Keep Sky Clean -->
+<string name="ptchr_luma_denoise_0">0.90</string>
+<string name="ptchr_chroma_denoise_0">1.10</string>
+
+<!-- Black Levels Calibration -->
+<string name="bl0_key_main">64.0</string>
+<string name="bl1_key_main">64.0</string>
+<string name="bl2_key_main">64.0</string>
+<string name="bl3_key_main">64.0</string>
+</map>

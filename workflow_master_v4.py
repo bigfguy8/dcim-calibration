@@ -1,16 +1,51 @@
 #!/usr/bin/env python3
 """Safe XML profile picker/deployer for the DCIM Calibration V4 pack."""
 from __future__ import annotations
+import argparse
 import shutil
 import sys
 import xml.etree.ElementTree as ET
-from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 PROFILE_DIRS = [BASE_DIR / "profiles", BASE_DIR / "analysis_results" / "imx682_config"]
-SDCARD_LMC_DIR = Path("/sdcard/LMC8.4")
+
+# Preferred Termux shared storage path (per project mission §12)
+TERMUX_DEFAULT_DIR = Path.home() / "storage/shared/Download/DCIM_Calibration"
+
+# Fallback: ~/.lcgc/ if preferred dir not available
+FALLBACK_DIR = Path("~/.lcgc").expanduser()
+
+# Android application config dirs (these are device-specific and must be
+# confirmed by the user; not auto-detected in Termux without ADB)
+ANDROID_LMC84_DIR = Path("/sdcard/LMC8.4")
+ANDROID_MGC_DIR = Path("/data/data/com.android.MGC_9_4_103/shared_prefs")
+
+# Backup directory relative to project root
 BACKUP_DIR = BASE_DIR / "backups"
+
+
+def parse_cli_args() -> argparse.Namespace:
+    """Parse command-line arguments for the deployer."""
+    parser = argparse.ArgumentParser(
+        description="Safe XML profile picker/deployer for DCIM Calibration V4 pack."
+    )
+    parser.add_argument(
+        "--dest",
+        default=None,
+        help=(
+            "Destination directory for profile deployment. "
+            "If not provided, uses Termux-preferred path "
+            "$HOME/storage/shared/Download/DCIM_Calibration, "
+            "or falls back to ~/.lcgc, or the Android /sdcard/LMC8.4 path."
+        ),
+    )
+    parser.add_argument(
+        "--list-dest",
+        action="store_true",
+        help="Show the resolved destination path and exit.",
+    )
+    return parser.parse_args()
 
 def banner(title: str) -> None:
     print("\n" + "=" * 68 + f"\n  {title}\n" + "=" * 68)
@@ -42,19 +77,61 @@ def validate_xml(path: Path):
         return False, "Duplicate keys: " + ", ".join(sorted(duplicates))
     return True, f"XML syntax OK; {len(list(root))} entries"
 
-def deploy(path: Path):
+def resolve_destination(dest_arg: any) -> Path:
+    """Resolve the deployment destination directory.
+
+    Priority order:
+    1. --dest CLI argument if provided and valid
+    2. Termux-preferred: $HOME/storage/shared/Download/DCIM_Calibration
+    3. Fallback: ~/.lcgc/
+    4. Android /sdcard/LMC8.4 (last resort)
+
+    Returns the resolved Path object.
+    """
+    # 1. CLI --dest argument
+    if dest_arg is not None:
+        p = Path(dest_arg).expanduser().resolve()
+        if p.is_dir() or p.parent.is_dir():
+            return p.resolve()
+        # If directory doesn't exist yet, still return it (will be created on deploy)
+
+    # 2. Termux-preferred path
+    termux_path = TERMUX_DEFAULT_DIR.expanduser().resolve()
+    if termux_path.is_dir():
+        return termux_path
+
+    # 3. Fallback
+    fallback_path = FALLBACK_DIR.resolve()
+    if fallback_path.is_dir():
+        return fallback_path
+
+    # 4. Android fallback (may not exist in Termux environment)
+    android_path = ANDROID_LMC84_DIR
+    return android_path
+
+
+def deploy(path: Path, dest_dir: Optional[Path] = None):
     ok, message = validate_xml(path)
     if not ok:
         print(f"[ERROR] {message}")
         return False
     print(f"[CHECK] {path.name}: {message}")
     print(f"[NOTE] XML syntax does not prove compatibility with your exact LMC/BSG build.")
-    dest_dir = SDCARD_LMC_DIR
+
+    # Resolve destination directory
+    if dest_dir is None:
+        dest_dir = resolve_destination(None)
+
     try:
         dest_dir.mkdir(parents=True, exist_ok=True)
-        dest = dest_dir / path.name
+    except OSError as exc:
+        print(f"[ERROR] Could not create destination directory: {exc}")
+        return False
+
+    dest = dest_dir / path.name
+    try:
+        BACKUP_DIR.mkdir(parents=True, exist_ok=True)
         if dest.exists():
-            BACKUP_DIR.mkdir(parents=True, exist_ok=True)
             stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
             backup = BACKUP_DIR / f"{dest.name}.{stamp}.bak"
             shutil.copy2(dest, backup)
@@ -69,8 +146,16 @@ def deploy(path: Path):
         return False
 
 def main():
+    args = parse_cli_args()
+
+    # Show destination info
+    dest_dir = resolve_destination(args.dest)
+    if args.list_dest:
+        print(f"Resolved destination: {dest_dir}")
+        sys.exit(0)
+
     banner("DCIM Calibration V4 — Safe Profile Manager")
-    print("Destination:", SDCARD_LMC_DIR)
+    print(f"Destination: {dest_dir}")
     profiles = collect_profiles()
     if not profiles:
         print("[ERROR] No XML files found in profiles/ or analysis_results/imx682_config/.")
@@ -92,11 +177,11 @@ def main():
             sys.exit(2)
         selected = profiles[choice - 1]
         print(f"\nSelected: {selected.name}")
-        confirm = input(f"Copy to {SDCARD_LMC_DIR}? Type YES to continue: ").strip()
+        confirm = input(f"Copy to {dest_dir}? Type YES to continue: ").strip()
         if confirm != "YES":
             print("Cancelled; no files copied.")
             return
-        deploy(selected)
+        deploy(selected, dest_dir=dest_dir)
     except (EOFError, KeyboardInterrupt):
         print("\nCancelled.")
 if __name__ == "__main__":

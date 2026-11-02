@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<!-- Master Portrait Pro Config for Lava Play Ultra (IMX682) -->
+<string name="pref_config_nickname_key">LXX521_MasterPortrait_Pro</string>
+
+<!-- Active Camera ID -->
+<string name="pref_camera_id_back_key">0</string>
+
+<!-- Pixel 7 Pro Color Science & AWB (Neutral Skin Tones) -->
+<string name="pref_camera_model_back_key">18</string>
+<string name="pref_awb_back_key">18</string>
+<string name="pref_enable_awb_key">1</string>
+<string name="pref_qjpg_key">100</string>
+
+<!-- Frame Stacking for Clean Portrait Shadows -->
+<string name="frame_count_b_photo_0">7</string>
+
+<!-- LibPatcher: Natural Skin Textures & Balanced Sharpness -->
+<string name="ptchr_lib_key_0">0</string>
+<string name="ptchr_sharpness_0">1.10</string>
+<string name="ptchr_sharp_radius_small_0">1.05</string>
+
+<!-- Denoise Adjustments to Smooth Skin without Losing Details -->
+<string name="ptchr_luma_denoise_0">0.95</string>
+<string name="ptchr_chroma_denoise_0">1.10</string>
+
+<!-- Contrast & Saturation for Realistic Skin Tones -->
+<string name="ptchr_contrast_0">1.02</string>
+<string name="ptchr_saturation_0">1.00</string>
+</map>

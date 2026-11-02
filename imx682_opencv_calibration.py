@@ -3,14 +3,37 @@
 IMX682 OpenCV Camera Calibration Pipeline
 Uses OpenCV for checkerboard detection, intrinsic calibration, distortion estimation.
 Falls back to PIL for images without cv2-compatible formats.
+OpenCV, numpy, and matplotlib are optional dependencies.
 """
+
+from __future__ import annotations
+
 import os, sys, json, csv, argparse, hashlib, glob
 from datetime import datetime
-import numpy as np
-import cv2
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+
+#
+# Optional dependencies — never crash the import or unrelated workflows.
+#
+try:
+    import cv2
+    CV2_AVAILABLE = True
+except ImportError:
+    CV2_AVAILABLE = False
+
+try:
+    import numpy as np
+    NP_AVAILABLE = True
+except ImportError:
+    NP_AVAILABLE = False
+
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    PLT_AVAILABLE = True
+except ImportError:
+    PLT_AVAILABLE = False
+
 from PIL import Image, ExifTags
 
 CALIB_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,42 +67,104 @@ def exif_val(exif, *keys):
 
 def compute_ev(iso, exp_s):
     try:
-        return np.log2(100.0 / iso / exp_s) if iso and exp_s and exp_s>0 else None
+        if NP_AVAILABLE:
+            return np.log2(100.0 / iso / exp_s) if iso and exp_s and exp_s>0 else None
+        else:
+            # Fallback: manual log2 computation without numpy
+            import math
+            return math.log2(100.0 / iso / exp_s) if iso and exp_s and exp_s>0 else None
     except: return None
 
 def classify_image(img_gray):
-    """Classify as checkerboard or natural scene using OpenCV."""
-    # Try to find checkerboard pattern
-    found, corners = cv2.findChessboardCorners(img_gray, (9,6), None)
-    if found:
-        return "checkerboard_9x6", corners
-    found, corners = cv2.findChessboardCorners(img_gray, (7,5), None)
-    if found:
-        return "checkerboard_7x5", corners
-    found, corners = cv2.findChessboardCorners(img_gray, (8,6), None)
-    if found:
-        return "checkerboard_8x6", corners
-    found, corners = cv2.findChessboardCorners(img_gray, (6,8), None)
-    if found:
-        return "checkerboard_6x8", corners
-    # Heuristic: high edge density + bimodal histogram = possible chart
-    edges = cv2.Canny(img_gray, 50, 150)
-    edge_density = np.sum(edges > 0) / edges.size
-    hist = cv2.calcHist([img_gray],[0],None,[256],[0,256]).flatten()
-    # bimodality: two peaks
-    peaks = []
-    for i in range(1,255):
-        if hist[i] > hist[i-1] and hist[i] > hist[i+1] and hist[i] > np.mean(hist)*2:
-            peaks.append(i)
-    is_chart = edge_density > 0.08 and len(peaks) >= 2
-    return ("possible_chart" if is_chart else "natural_scene"), None
+    """Classify as checkerboard or natural scene using OpenCV.
+
+    Falls back to a heuristic based on image statistics when OpenCV is
+    unavailable.  No new images are captured.
+    """
+    if CV2_AVAILABLE:
+        # Try to find checkerboard pattern
+        found, corners = cv2.findChessboardCorners(img_gray, (9,6), None)
+        if found:
+            return "checkerboard_9x6", corners
+        found, corners = cv2.findChessboardCorners(img_gray, (7,5), None)
+        if found:
+            return "checkerboard_7x5", corners
+        found, corners = cv2.findChessboardCorners(img_gray, (8,6), None)
+        if found:
+            return "checkerboard_8x6", corners
+        found, corners = cv2.findChessboardCorners(img_gray, (6,8), None)
+        if found:
+            return "checkerboard_6x8", corners
+        # Heuristic: high edge density + bimodal histogram = possible chart
+        edges = cv2.Canny(img_gray, 50, 150)
+        edge_density = np.sum(edges > 0) / edges.size
+        hist = cv2.calcHist([img_gray],[0],None,[256],[0,256]).flatten()
+        # bimodality: two peaks
+        peaks = []
+        for i in range(1,255):
+            if hist[i] > hist[i-1] and hist[i] > hist[i+1] and hist[i] > np.mean(hist)*2:
+                peaks.append(i)
+        is_chart = edge_density > 0.08 and len(peaks) >= 2
+        return ("possible_chart" if is_chart else "natural_scene"), None
+    else:
+        # Fallback without OpenCV: use PIL-based heuristics
+        try:
+            width, height = img_gray.shape
+            # Compute simple gradient magnitude
+            pixels = list(img_gray.getdata())
+            edge_count = 0
+            for y in range(1, height-1):
+                for x in range(1, width-1):
+                    p = pixels[y*width + x]
+                    left = pixels[y*width + (x-1)]
+                    right = pixels[y*width + (x+1)]
+                    top = pixels[(y-1)*width + x]
+                    bottom = pixels[(y+1)*width + x]
+                    g = abs(p - ((left + right + top + bottom) // 4))
+                    if g > 50:
+                        edge_count += 1
+            edge_density = edge_count / ((height-2) * (width-2)) if (height>2 and width>2) else 0
+            # Simple histogram bimodality
+            hist_vals = [0]*256
+            for p in pixels:
+                hist_vals[p] += 1
+            peaks = sum(1 for i in range(1,255) if hist_vals[i] > hist_vals[i-1] and hist_vals[i] > hist_vals[i+1] and hist_vals[i] > sum(hist_vals)//10)
+            is_chart = edge_density > 0.08 and peaks >= 2
+            return ("possible_chart" if is_chart else "natural_scene"), None
+        except Exception:
+            return "natural_scene", None
 
 def analyze_image(path):
-    img = cv2.imread(path, cv2.IMREAD_COLOR)
+    img = cv2.imread(path, cv2.IMREAD_COLOR) if CV2_AVAILABLE else None
     if img is None:
-        return None
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    h, w = gray.shape
+        # Try PIL fallback
+        try:
+            from PIL import Image
+            img = Image.open(path)
+            if img is None:
+                return None
+        except Exception:
+            return None
+
+    # Convert to grayscale if we have cv2
+    gray = None
+    if CV2_AVAILABLE and img is not None:
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) if hasattr(cv2, 'COLOR_BGR2GRAY') else None
+    elif img is not None and hasattr(img, 'convert'):
+        # PIL image
+        try:
+            gray = img.convert('L')
+        except Exception:
+            gray = None
+    else:
+        gray = None
+
+    h, w = 0, 0
+    if gray is not None:
+        h, w = gray.shape
+    elif img is not None:
+        w, h = img.size if hasattr(img, 'size') else (0, 0)
+
     exif = get_exif(path)
     iso = exif_val(exif, 'ISOSpeedRatings', 'PhotographicSensitivity')
     try: iso = int(iso) if iso else None
@@ -90,25 +175,77 @@ def analyze_image(path):
         else: exp_s = float(exp_str)
     except: exp_s = None
     ev = compute_ev(iso, exp_s)
-    # Metrics
-    lum = cv2.cvtColor(img, cv2.COLOR_BGR2YUV)[:,:,0]
-    lum_mean = float(np.mean(lum))
-    lum_std = float(np.std(lum))
-    edges = cv2.Canny(gray, 50, 150)
-    edge_density = float(np.sum(edges>0)/edges.size)
-    black_clip = float(np.sum(gray <= 5)/gray.size*100)
-    white_clip = float(np.sum(gray >= 250)/gray.size*100)
-    # Color
-    b,g,r = cv2.split(img)
-    rb_ratio = float(np.mean(r)/np.mean(b)) if np.mean(b)>0 else 0
-    rg_diff = float(np.mean(r)-np.mean(g))
-    # Classification
-    cls, corners = classify_image(gray)
+
+    # Metrics (all guarded)
+    lum_mean = None
+    lum_std = None
+    edge_density = None
+    black_clip = None
+    white_clip = None
+    rb_ratio = None
+    rg_diff = None
+
+    if CV2_AVAILABLE and gray is not None:
+        # Lum metrics
+        lum = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2YUV)[:,:,0] if img is not None else np.array(gray)
+        if NP_AVAILABLE and lum.size > 0:
+            lum_mean = float(np.mean(lum))
+            lum_std = float(np.std(lum))
+        # Edge metrics
+        edges = cv2.Canny(gray, 50, 150)
+        if NP_AVAILABLE:
+            edge_density = float(np.sum(edges>0)/edges.size)
+        if NP_AVAILABLE:
+            black_clip = float(np.sum(gray <= 5)/gray.size*100)
+            white_clip = float(np.sum(gray >= 250)/gray.size*100)
+        # Color metrics
+        b,g,r = cv2.split(img) if img is not None else (0,0,0)
+        if NP_AVAILABLE:
+            rb_ratio = float(np.mean(r)/np.mean(b)) if np.mean(b)>0 else 0
+            rg_diff = float(np.mean(r)-np.mean(g))
+    elif gray is not None and img is not None and hasattr(img, 'convert'):
+        # PIL fallback for lum/color
+        try:
+            lum_img = img.convert('L')
+            pixels = list(lum_img.getdata())
+            if pixels:
+                mean_val = sum(pixels) / len(pixels)
+                variance = sum((p - mean_val) ** 2 for p in pixels) / len(pixels)
+                lum_mean = mean_val
+                lum_std = variance ** 0.5
+        except Exception:
+            pass
+
+    # Color ratios from PIL if available
+    if img is not None and hasattr(img, 'convert'):
+        try:
+            img_rgb = img.convert('RGB')
+            pixels = list(img_rgb.getdata())
+            if pixels:
+                r_sum = g_sum = b_sum = 0
+                count = 0
+                for p in pixels:
+                    if isinstance(p, tuple) and len(p) >= 3:
+                        r_sum += p[0]
+                        g_sum += p[1]
+                        b_sum += p[2]
+                        count += 1
+                if count > 0:
+                    rb_ratio = float(r_sum / count) / float(g_sum / count) if float(g_sum / count) > 0 else 0
+                    rg_diff = float(r_sum / count) - float(g_sum / count)
+        except Exception:
+            pass
+
+    # Classification (uses guarded classify_image)
+    cls = "natural_scene"
+    corners = None
+    if gray is not None:
+        cls, corners = classify_image(gray)
+
     # MTF50 withheld: this is not a validated slanted-edge SFR method.
     mtf50 = None
-    mtf50_status = (
-        "NOT_MEASURED: validated slanted-edge SFR required"
-    )
+    mtf50_status = "NOT_MEASURED: validated slanted-edge SFR required"
+
     return {
         "filename": os.path.basename(path),
         "path": path,

@@ -1,0 +1,15 @@
+# Termux-safe core dependencies
+# All src/ modules use Python standard library only.
+# These packages are optional — install only for desktop analysis.
+
+# Optional desktop dependencies — not needed on Termux/device:
+# opencv-python   (cv2) — image processing, checkerboard detection
+# numpy           (np)  — numerical operations, statistics
+# matplotlib      (plt) — plotting, MTF50 visualizations
+# Pillow          (PIL) — image reading, EXIF, basic analysis
+
+# Project usage:
+# - src/ modules: stdlib only, no mandatory external deps
+# - imx682_opencv_calibration.py: optional cv2, numpy, matplotlib, PIL
+# - image_quality_analyzer.py: optional PIL for read-only analysis
+# - Termux: install nothing from this file; all stdlib scripts work out-of-the-box
