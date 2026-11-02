@@ -1,0 +1,46 @@
+{
+  "export_timestamp": "2026-11-02T09:40:09.893230",
+  "source_repository": "/root/dcim-calibration-upgrade",
+  "destination": "/storage/emulated/0/Download/DCIM_Calibration/",
+  "git_status_before": "## main...origin/main\n M README_V4.md\n M imx682_opencv_calibration.py\n M workflow_master_v4.py\n?? AUDIT_INTEGRITY_FINAL.md\n?? AUDIT_REPORT_MASTER.md\n?? DEPENDENCY_MAP.md\n?? DUPLICATE_CONFLICT_REPORT.md\n?? FINAL_RECONCILIATION_REPORT.md\n?? INDEPENDENT_FINAL_VERIFICATION.md\n?? PROFILE_COMPATIBILITY.md\n?? REPOSITORY_AUDIT.md\n?? REPOSITORY_INVENTORY.json\n?? SOURCE_INVENTORY.md\n?? STAGE2_EVIDENCE_RECONCILIATION.md\n?? STAGE3_FINAL_ACCEPTANCE_AUDIT.md\n?? STAGE3_IMPLEMENTATION_REPORT.md\n?? STAGE3_MIGRATION_PLAN.md\n?? STAGE3_TEST_REPORT.md\n?? TERMUX_INSTALL.sh\n?? TERMUX_RUN.sh\n?? TERMUX_USAGE.md\n?? TEST_REPORT.md\n?? UPGRADE_CHANGELOG.md\n?? VALIDATION_REPORT.md\n?? XML_DUPLICATE_REVIEW.md\n?? docs/\n?? output/\n?? profiles/lmc84/\n?? profiles/mgc_bsg/\n?? requirements.txt\n?? run.py\n?? src/\n?? tests/",
+  "candidates": [
+    {
+      "family": "LMC_8.4",
+      "source_filename": "profiles/lmc84/LXX521_IMX682_ActionCam.xml",
+      "source_path": "profiles/lmc84/LXX521_IMX682_ActionCam.xml",
+      "source_sha256": "7f543a4e928bb160d0a7e6bf72add2482c6a534807ef7986de76498e267ea360",
+      "candidate_filename": "llmc84_actioncam_candidate.xml",
+      "candidate_path": "output/LMC84_IMX682/llmc84_actioncam_candidate.xml",
+      "candidate_sha256": "7f543a4e928bb160d0a7e6bf72add2482c6a534807ef7986de76498e267ea360",
+      "exported_filename": "llmc84_actioncam_candidate.xml",
+      "exported_path": "/storage/emulated/0/Download/DCIM_Calibration/llmc84_actioncam_candidate.xml",
+      "exported_sha256": "7f543a4e928bb160d0a7e6bf72add2482c6a534807ef7986de76498e267ea360",
+      "byte_identical_source_candidate": true,
+      "byte_identical_export_source": true,
+      "xml_syntax_validated": true,
+      "schema_verified": true,
+      "validation_status": "XML_SYNTAX_VALIDATED",
+      "export_hash_verified": true,
+      "timestamp": "2026-11-02T09:40:10.055752"
+    },
+    {
+      "family": "BSG_MGC",
+      "source_filename": "profiles/mgc_bsg/mgc.xml",
+      "source_path": "profiles/mgc_bsg/mgc.xml",
+      "source_sha256": "911b27d929072bac13a86e354e20e27960ca2aabc7ddf2fbbcf4e63a3ec8c288",
+      "candidate_filename": "mgc_candidate.xml",
+      "candidate_path": "output/BSG_IMX682/mgc_candidate.xml",
+      "candidate_sha256": "911b27d929072bac13a86e354e20e27960ca2aabc7ddf2fbbcf4e63a3ec8c288",
+      "exported_filename": "mgc_candidate.xml",
+      "exported_path": "/storage/emulated/0/Download/DCIM_Calibration/mgc_candidate.xml",
+      "exported_sha256": "911b27d929072bac13a86e354e20e27960ca2aabc7ddf2fbbcf4e63a3ec8c288",
+      "byte_identical_source_candidate": true,
+      "byte_identical_export_source": true,
+      "xml_syntax_validated": true,
+      "schema_verified": true,
+      "validation_status": "XML_SYNTAX_VALIDATED",
+      "export_hash_verified": true,
+      "timestamp": "2026-11-02T09:40:10.064811"
+    }
+  ]
+}
