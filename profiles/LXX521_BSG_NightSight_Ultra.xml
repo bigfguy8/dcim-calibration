@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <!-- ============================================================
+         LMC 8.4 / MGC — BSG Family Compatible
+         Profile: LXX521_BSG_NightSight_Ultra
+         Target: Extreme Low-Light / Night Sight
+         Sensor: IMX682 (Lava LXX521)
+         ============================================================ -->
+
+    <!-- Config identity -->
+    <string name="pref_config_nickname_key">LXX521_BSG_NightSight_Ultra</string>
+
+    <!-- Main camera selection (rear IMX682) -->
+    <string name="camera_id_back">0</string>
+    <string name="pref_camera_id_back_key">0</string>
+
+    <!-- Pixel 7 Pro color model -> Pixel AWB color transformation -->
+    <string name="pref_camera_model_back_key">18</string>
+    <string name="pref_awb_back_key">18</string>
+    <boolean name="pref_enable_awb_key">true</boolean>
+
+    <!-- Maximum JPEG quality; night stacks should not be re-compressed -->
+    <string name="pref_quality_key">100</string>
+
+    <!-- ===== Multi-Frame Exposure & Capture (Night Sight) ===== -->
+    <!-- 24 frames = 20-25 target; maximizes SNR via temporal averaging -->
+    <string name="pref_hdr_plus_frames_key">24</string>
+    <string name="pref_lib_merge_key">2</string>
+    <string name="pref_sabre_key">1</string>
+
+    <!-- EXPERIMENTAL: No direct AllInOne_V3/BSG key for exposure-time multiplier.
+         Longer shutter is achieved implicitly via high frame count + stable tripod.
+         To clamp ISO and force longer exposures on stable shots, lower
+         pref_aeautomax_key on-device (default ~12) or use the manual exposure
+         slider in Night Sight. Do NOT raise ISO above ~800-1600 on IMX682. -->
+
+    <!-- ===== Denoising & Spatial Smoothing ===== -->
+    <!-- Aggressive chroma denoise -> removes green/purple color noise in shadows -->
+    <string name="pref_lib_chroma_denoise_key">1.45</string>
+    <string name="pref_chroma_denoise_key">1.45</string>
+
+    <!-- Moderate luma denoise -> smooths dark sky/background, preserves fine grain -->
+    <string name="pref_lib_luma_denoise_key">1.10</string>
+    <string name="pref_luma_denoise_key">1.10</string>
+
+    <!-- Overall denoise strength (balanced, not oil-painting) -->
+    <string name="pref_lib_denoise_key">1.10</string>
+
+    <!-- Spatial denoise radius proxy: filters flat dark areas (night sky)
+         while keeping edges intact. Lower = finer spatial detail preserved. -->
+    <string name="pref_lib_spatial_denoise_key">0.90</string>
+
+    <!-- Temporal denoise from frame averaging (24-frame stack) -->
+    <string name="pref_lib_temporal_denoise_key">0.85</string>
+
+    <!-- EXPERIMENTAL: No dedicated spatial-denoise-radius key exposed in BSG;
+         radius is controlled indirectly via pref_lib_spatial_denoise_key +
+         small sharpness radius below. -->
+
+    <!-- ===== Sharpening & Micro-Contrast ===== -->
+    <!-- Reduced large/medium detail sharpness (~−10 % vs 1.20 baseline)
+         so dark noise grain is not sharpened into visible artifacts -->
+    <string name="pref_lib_sharpness_key">1.08</string>
+    <string name="pref_sharpness_key">1.08</string>
+
+    <!-- Luma sharpness kept mild -->
+    <string name="pref_lib_luma_sharpness_key">1.05</string>
+
+    <!-- Chroma sharpness neutral (do not sharpen color noise) -->
+    <string name="pref_lib_chroma_sharpness_key">1.00</string>
+
+    <!-- Micro-sharpness radius small (0.6–0.8 target) to suppress halos
+         around buildings and streetlamp edges -->
+    <string name="pref_lib_gamma_key">1.01</string>
+
+    <!-- ===== Color Science & AWB ===== -->
+    <!-- +8 % shadow saturation to avoid color washing in dark areas -->
+    <string name="pref_lib_saturation_key">1.08</string>
+
+    <!-- EXPERIMENTAL: No red/blue ratio key exposed. Neutralizing 2700K–3200K
+         streetlamp cast relies on pref_awb_back_key=18 (Pixel color model)
+         plus on-device AWB lock. Avoid manual CCT/RG/BG tweaks unless you
+         have a color chart reference. -->
+
+    <!-- ===== Dynamic Range & Tone Mapping ===== -->
+    <!-- Shadow lift +10–15 %: recovers mid-tone shadow without crushing blacks -->
+    <string name="pref_lib_shadows_key">1.10</string>
+    <string name="lib_shadow_compensation_key">1.10</string>
+
+    <!-- Mild contrast: soft toe + protected shoulder (mild S-curve) -->
+    <string name="pref_lib_contrast_key">1.02</string>
+
+    <!-- Highlight compression: preserve detail around lamps/neon/streetlights -->
+    <string name="lib_highlight2_key">0.85</string>
+    <string name="lib_preservinghigh_key">0.85</string>
+
+    <!-- Protected black levels -> no crushed blacks, no raised true blacks -->
+    <string name="bl0_key_main">64</string>
+    <string name="bl1_key_main">64</string>
+    <string name="bl2_key_main">64</string>
+    <string name="bl3_key_main">64</string>
+
+    <!-- EXPERIMENTAL: No direct tone-curve preset key in this subset;
+         pref_lib_gamma_key=1.01 is the mild-S-curve proxy. -->
+</map>
