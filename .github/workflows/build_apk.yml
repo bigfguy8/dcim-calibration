@@ -1,3 +1,4 @@
+cat << 'EOF' > .github/workflows/build_apk.yml
 name: Build Android APK
 
 on:
@@ -27,7 +28,8 @@ jobs:
           buildozer -v android debug
 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dcim-profile-manager-apk
           path: dcim_apk_build/bin/*.apk
+EOF
