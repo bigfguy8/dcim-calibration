@@ -1,0 +1,312 @@
+[
+  {
+    "filename": "20261108_200554_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 28.689958150850046,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.015393084773090999,
+    "rb_ratio": 1.3461530048877914
+  },
+  {
+    "filename": "20261108_190831_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 44.668828417488136,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.02489319053491537,
+    "rb_ratio": 1.1952785944322013
+  },
+  {
+    "filename": "20261109_182448_LXX521_FrontCam_Sanitized_V3.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 767.8734980479119,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.11588851905508794,
+    "rb_ratio": 1.3124029630119862
+  },
+  {
+    "filename": "PXL_20261108_190538339.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 88.42996528012274,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.061454854102588746,
+    "rb_ratio": 1.6831311900775645
+  },
+  {
+    "filename": "PXL_20261109_182532712.MV.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 983.5786341762806,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.14986961645360758,
+    "rb_ratio": 1.3565968661969903
+  },
+  {
+    "filename": "20261108_190839_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 44.6771756232923,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.026185592545587336,
+    "rb_ratio": 1.2451271002451911
+  },
+  {
+    "filename": "20261108_190841_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 48.922485125300454,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.028490027957040743,
+    "rb_ratio": 1.2409511018395643
+  },
+  {
+    "filename": "20261108_190842_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 61.34535020520844,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.032666310468824206,
+    "rb_ratio": 1.2609604071789247
+  },
+  {
+    "filename": "20261108_200738_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 20.817900521462782,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.012831478510394592,
+    "rb_ratio": 1.1960027451349053
+  },
+  {
+    "filename": "PXL_20261108_191031596.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3264,
+    "height": 2448,
+    "laplacian_score": 46.88247495870955,
+    "mtf50_cyc_px": 0.0015313935681470138,
+    "edge_density": 0.039876990420351144,
+    "rb_ratio": 1.3244272265601764
+  },
+  {
+    "filename": "20261108_204826_lmc_8.4.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 91.22046478318453,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.027350905760227966,
+    "rb_ratio": 1.0440159914516787
+  },
+  {
+    "filename": "020261109_182502_LXX521_BSG_Astrophotography_Ultra.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 826.9537958581474,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.11860895513304039,
+    "rb_ratio": 1.2712004189378776
+  },
+  {
+    "filename": "020261109_182507_LXX521_BSG_Astrophotography_Ultra.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 899.4909108384564,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.13078328853422094,
+    "rb_ratio": 1.39167941415886
+  },
+  {
+    "filename": "020261109_182512_LXX521_BSG_Astrophotography_Ultra.PORTRAIT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 879.1286643239467,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.14477867586985774,
+    "rb_ratio": 1.408258367510989
+  },
+  {
+    "filename": "020261109_182526_LXX521_BSG_Astrophotography_Ultra.NIGHT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 185.46683186373926,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.10001096281174794,
+    "rb_ratio": 1.5658390556574953
+  },
+  {
+    "filename": "PXL_20261108_190557936_exported_701_1794145427030.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 1536,
+    "height": 2048,
+    "laplacian_score": 66.44900061993232,
+    "mtf50_cyc_px": 0.003257328990228013,
+    "edge_density": 0.05423386891682943,
+    "rb_ratio": 1.2577917287142732
+  },
+  {
+    "filename": "20261108_192322_lmc_8.4.PORTRAIT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 130.08748873457736,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.034262538246507754,
+    "rb_ratio": 1.0749139241451908
+  },
+  {
+    "filename": "PXL_20261108_192234016.PORTRAIT.ORIGINAL.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2160,
+    "height": 3840,
+    "laplacian_score": 49.659295878482936,
+    "mtf50_cyc_px": 0.0023148148148148147,
+    "edge_density": 0.02520531925154321,
+    "rb_ratio": 1.1586891753120683
+  },
+  {
+    "filename": "PXL_20261108_193916823.LONG_EXPOSURE.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3264,
+    "height": 2448,
+    "laplacian_score": 65.03733523893335,
+    "mtf50_cyc_px": 0.0015313935681470138,
+    "edge_density": 0.02134157635684993,
+    "rb_ratio": 1.8820047783135956
+  },
+  {
+    "filename": "20261108_202330_lmc_8.4.NIGHT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 253.14329046329775,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.047921518240921446,
+    "rb_ratio": 1.3729724387737718
+  },
+  {
+    "filename": "020261109_182519_LXX521_BSG_Astrophotography_Ultra.PORTRAIT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 39.07396856697518,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.04061714044277842,
+    "rb_ratio": 1.6142650411344857
+  },
+  {
+    "filename": "PXL_20261108_191306456.PORTRAIT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 35.93458231439447,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.027343624847814944,
+    "rb_ratio": 1.22643470122114
+  },
+  {
+    "filename": "PXL_20261108_190854868_exported_1201_1794145461110.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 127.68949817617786,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.0669272585463924,
+    "rb_ratio": 1.2634865070860222
+  },
+  {
+    "filename": "20261108_193634_lmc_8.4.PORTRAIT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 31.180429861655593,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.01763969987504806,
+    "rb_ratio": 0.8709973443580598
+  },
+  {
+    "filename": "PXL_20261108_192302185.PORTRAIT.ORIGINAL.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 50.67504282193258,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.02590337350217865,
+    "rb_ratio": 1.1455615660370213
+  },
+  {
+    "filename": "20261108_193641_lmc_8.4.NIGHT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 3468,
+    "height": 4624,
+    "laplacian_score": 210.21343116939286,
+    "mtf50_cyc_px": 0.001443001443001443,
+    "edge_density": 0.052392013186304445,
+    "rb_ratio": 0.8592507725383995
+  },
+  {
+    "filename": "20261108_193722_lmc_8.4.PORTRAIT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 44.54429648634539,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.015822740452390106,
+    "rb_ratio": 1.0821807749524266
+  },
+  {
+    "filename": "PXL_20261108_193748132.PORTRAIT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 14.152245504563604,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.007770073409265667,
+    "rb_ratio": 1.273970964163096
+  },
+  {
+    "filename": "PXL_20261108_193858115.PORTRAIT.jpg",
+    "config_type": "GCam_PXL_BSG",
+    "width": 3264,
+    "height": 2448,
+    "laplacian_score": 37.942074187200234,
+    "mtf50_cyc_px": 0.0015313935681470138,
+    "edge_density": 0.006833434456298859,
+    "rb_ratio": 1.1354268854504834
+  },
+  {
+    "filename": "20261108_202404_lmc_8.4.NIGHT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 4624,
+    "height": 3468,
+    "laplacian_score": 172.319226439071,
+    "mtf50_cyc_px": 0.001081081081081081,
+    "edge_density": 0.0500385631557732,
+    "rb_ratio": 0.9947307270978304
+  },
+  {
+    "filename": "20261108_202306_lmc_8.4.PORTRAIT.jpg",
+    "config_type": "LMC_8.4",
+    "width": 2448,
+    "height": 3264,
+    "laplacian_score": 120.3329969233577,
+    "mtf50_cyc_px": 0.002044989775051125,
+    "edge_density": 0.038386177591951814,
+    "rb_ratio": 1.3795367649758346
+  }
+]
