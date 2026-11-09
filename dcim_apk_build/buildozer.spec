@@ -1,4 +1,5 @@
 [app]
+android.accept_sdk_license = True
 title = DCIM Profile Manager
 package.name = dcimprofilemanager
 package.domain = org.imx682
