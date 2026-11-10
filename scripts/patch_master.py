@@ -3,13 +3,14 @@
 patch_master.py — Safely patch LXX521_IMX682_LMC84_AllInOne_Master.xml
 
 Compares the All-In-One Master profile against the proven-safe
-SkinTone_Perfect profile and lowers aggressive parameters that can
-cause pipeline crashes on the IMX682 sensor (high HDR stack sizes,
-forced AWB overrides, excessive sharpening/denoise).
+SkinTone_Perfect profile and applies SkinTone's stable values to all
+crash-critical parameters that can cause pipeline/viewfinder crashes
+on the IMX682 sensor (high HDR stack sizes, forced AWB overrides,
+excessive sharpening/denoise, aggressive color casts).
 
-The script retains all Master image-quality parameters that are not
-crash-critical, only overriding those where Master's value is more
-aggressive than SkinTone's proven-safe value.
+The script retains all Master image-quality parameters that are NOT
+crash-critical, only overriding those where SkinTone's value is the
+safe, proven-working boundary.
 
 Usage:
     python patch_master.py \
@@ -23,7 +24,6 @@ from __future__ import annotations
 import argparse
 import shutil
 import xml.etree.ElementTree as ET
-from datetime import datetime
 from pathlib import Path
 from typing import Dict
 
@@ -31,14 +31,15 @@ from typing import Dict
 # ---------------------------------------------------------------------------
 # Crash-critical parameter overrides.
 #
-# Each entry maps a Master parameter name to the safe SkinTone value it
-# should be lowered to. Only parameters where Master's value is more
-# aggressive (higher HDR stacks, forced AWB, stronger sharpening/denoise,
-# etc.) are included. Parameters where SkinTone is more aggressive than
-# Master are intentionally left at Master's value to retain image quality.
+# Every key here maps Master's aggressive value to SkinTone's proven-safe
+# value. ALL overrides are applied unconditionally — the only criterion
+# is that Master differs from SkinTone. We do NOT skip parameters where
+# SkinTone's value is numerically higher (e.g. cw_rg_key 0.42->0.5925),
+# because for color-temperature/WB keys the "safe" direction is not
+# simply "lower".
 # ---------------------------------------------------------------------------
 CRITICAL_OVERRIDES: Dict[str, str] = {
-    # --- High HDR stack sizes (crash risk) ---
+    # --- High HDR stack sizes (buffer overflow / viewfinder crash) ---
     "pref_frames_hdr_key": "0",           # Master=12 (large HDR burst)
     "pref_camera_hdr_plus_key": "auto",   # Master=enhanced (aggressive HDR+)
     "pref_hdrregion_key": "5",            # Master=8 (heavy HDR region map)
@@ -52,12 +53,12 @@ CRITICAL_OVERRIDES: Dict[str, str] = {
     "cw_rg_key_4": "0.5925",              # Master=0.4200
     "cw_rg_key_5": "0.5925",              # Master=0.4200
 
-    # --- Aggressive sharpening (can cause halos / crashes) ---
+    # --- Aggressive sharpening (halos / viewfinder crash) ---
     "lib_sharpgain_key": "0",             # Master=2 (high gain)
     "lib_sharpmini_key": "0",             # Master=2 (high micro-sharpening)
     "lib_sharpnessb_key": "1.02",         # Master=2 (high sharpness)
 
-    # --- Aggressive denoise / smoothing ---
+    # --- Aggressive denoise / smoothing (pipeline crash) ---
     "lib_denoise_key": "0",               # Master=1
     "lib_denoisesmoothing_key": "0",      # Master=2
     "lib_lumadenoise_key": "0",           # Master=1
@@ -94,13 +95,30 @@ def build_param_map(root: ET.Element) -> Dict[str, ET.Element]:
     return params
 
 
+def get_elem_value(elem: ET.Element) -> str:
+    """Get the value of an element (from 'value' attribute or text)."""
+    return elem.attrib.get("value", elem.text or "")
+
+
+def set_elem_value(elem: ET.Element, value: str) -> None:
+    """Set the value of an element, removing 'value' attribute if present."""
+    elem.text = value
+    if "value" in elem.attrib:
+        del elem.attrib["value"]
+
+
 def patch_master(
     master_path: Path,
     reference_path: Path,
     output_path: Path,
     dry_run: bool = False,
 ) -> None:
-    """Patch the Master XML with safe SkinTone values."""
+    """Patch the Master XML with safe SkinTone values.
+
+    Applies ALL crash-critical overrides from SkinTone to Master
+    unconditionally — no numeric comparison logic that could skip
+    valid overrides.
+    """
 
     # Load both files
     master_tree = parse_xml(master_path)
@@ -111,43 +129,19 @@ def patch_master(
     reference_root = reference_tree.getroot()
     reference_params = build_param_map(reference_root)
 
-    # Determine which overrides actually apply (Master has the param,
-    # and Master's value differs from the safe target)
+    # Determine which overrides to apply
     overrides_to_apply: Dict[str, str] = {}
     skipped_missing: list[str] = []
     skipped_same: list[str] = []
-    skipped_reference_higher: list[str] = []
 
     for key, safe_value in CRITICAL_OVERRIDES.items():
         if key not in master_params:
             skipped_missing.append(key)
             continue
-        current_value = master_params[key].attrib.get(
-            "value", master_params[key].text
-        )
+        current_value = get_elem_value(master_params[key])
         if current_value == safe_value:
             skipped_same.append(key)
             continue
-        # Only apply if Master's value is numerically more aggressive
-        # (higher) than SkinTone's. For WB/color keys we always apply
-        # since they represent cast overrides, not magnitude.
-        if key in master_params and key in reference_params:
-            ref_value = reference_params[key].attrib.get(
-                "value", reference_params[key].text
-            )
-            try:
-                cur_num = float(current_value)
-                ref_num = float(ref_value)
-                safe_num = float(safe_value)
-                # Only lower if Master > SkinTone reference
-                if cur_num <= ref_num:
-                    skipped_reference_higher.append(
-                        f"{key} (Master={current_value}, Ref={ref_value})"
-                    )
-                    continue
-            except (ValueError, TypeError):
-                pass  # Non-numeric: apply override unconditionally
-
         overrides_to_apply[key] = safe_value
 
     # Report plan
@@ -156,15 +150,12 @@ def patch_master(
     print(f"Overrides to apply:         {len(overrides_to_apply)}")
     print(f"Skipped (missing in Master): {len(skipped_missing)}")
     print(f"Skipped (already same):      {len(skipped_same)}")
-    print(f"Skipped (Ref >= Master):     {len(skipped_reference_higher)}")
     print()
 
     if skipped_missing:
         print("  Missing in Master:", ", ".join(skipped_missing))
     if skipped_same:
         print("  Already same:", ", ".join(skipped_same))
-    if skipped_reference_higher:
-        print("  Reference >= Master:", ", ".join(skipped_reference_higher))
     print()
 
     if not overrides_to_apply:
@@ -175,11 +166,8 @@ def patch_master(
     print("=== APPLYING OVERRIDES ===")
     for key, safe_value in sorted(overrides_to_apply.items()):
         elem = master_params[key]
-        old_value = elem.attrib.get("value", elem.text)
-        elem.text = safe_value
-        # Remove 'value' attribute if it existed, since we set text
-        if "value" in elem.attrib:
-            del elem.attrib["value"]
+        old_value = get_elem_value(elem)
+        set_elem_value(elem, safe_value)
         print(f"  {key}: {old_value!r} -> {safe_value!r}")
 
     # Write output
@@ -196,11 +184,10 @@ def patch_master(
     master_tree.write(output_path, encoding="utf-8", xml_declaration=True)
     print(f"Patched XML written: {output_path}")
 
-    # Validation
+    # Validation — re-read and verify every override
     print("\n=== VALIDATION ===")
     validate_tree = ET.parse(output_path)
-    validate_root = validate_tree.getroot()
-    validate_params = build_param_map(validate_root)
+    validate_params = build_param_map(validate_tree.getroot())
 
     all_applied = True
     for key, safe_value in overrides_to_apply.items():
@@ -209,12 +196,23 @@ def patch_master(
             print(f"  FAIL: {key} not found in output!")
             all_applied = False
         else:
-            actual_val = actual.attrib.get("value", actual.text)
+            actual_val = get_elem_value(actual)
             if actual_val != safe_value:
                 print(f"  FAIL: {key} = {actual_val!r}, expected {safe_value!r}")
                 all_applied = False
             else:
                 print(f"  OK: {key} = {actual_val!r}")
+
+    # Cross-check against SkinTone reference
+    print("\n=== CROSS-CHECK vs SkinTone Reference ===")
+    all_match_ref = True
+    for key, safe_value in overrides_to_apply.items():
+        ref_val = get_elem_value(reference_params.get(key, ET.Element("string")))
+        if ref_val != safe_value:
+            print(f"  WARN: {key} = {safe_value!r} but SkinTone has {ref_val!r}")
+            all_match_ref = False
+    if all_match_ref:
+        print("All patched values match SkinTone reference.")
 
     if all_applied:
         print("\nAll overrides applied successfully. Master XML is now crash-safe.")
@@ -230,7 +228,7 @@ def main() -> None:
         "--master",
         type=Path,
         default=Path("configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml"),
-        help="Path to the All-In-One Master XML (default: configs/xml/...)",
+        help="Path to the All-In-One Master XML",
     )
     parser.add_argument(
         "--reference",

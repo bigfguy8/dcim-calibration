@@ -16,13 +16,13 @@
     <string name="lib_gainlarge_key_2">0</string>
     <string name="lib_dehazedexpo_key_2">0</string>
     <string name="lib_dehazedexpo_key_3">0</string>
-    <string name="cw_rg_key_2">0.4200</string>
+    <string name="cw_rg_key_2">0.5925</string>
     <string name="lib_hightlight2_key_2">0</string>
     <string name="pref_switch_to_previous_mode_command_string">71</string>
-    <string name="cw_rg_key_4">0.4200</string>
-    <string name="cw_rg_key_3">0.4200</string>
+    <string name="cw_rg_key_4">0.5925</string>
+    <string name="cw_rg_key_3">0.5925</string>
     <string name="lib_dehazedexpo_key_4">0</string>
-    <string name="cw_rg_key_5">0.4200</string>
+    <string name="cw_rg_key_5">0.5925</string>
     <string name="lib_dehazedexpo_key_5">0</string>
     <string name="lib_smoothingnew_key_front">0</string>
     <string name="pref_gammacurve_preset_key_5">0</string>
@@ -81,7 +81,7 @@
     <string name="lib_lumadh_l3_pro_key">0</string>
     <string name="pref_raw_key_wide">0</string>
     <string name="lib_temporalbin_key_3">0</string>
-    <string name="pref_color_key">-4</string>
+    <string name="pref_color_key">0</string>
     <string name="lib_smoothingnew_key_2">0</string>
     <string name="lib_smoothingnew_key_3">0</string>
     <string name="lib_lutnoisefix_pro_key">0</string>
@@ -1037,7 +1037,7 @@
     <string name="pref_noise_modeler_manual_c_1_key_front">1.9878738E-12</string>
     <string name="gr_0_key">-0.148</string>
     <string name="lib_lumadhsabre_l4a_key">0</string>
-    <string name="cw_rg_key">0.4500</string>
+    <string name="cw_rg_key">0.5925</string>
     <string name="lib_spatialdenmi3_pro_key">0</string>
     <string name="lib_gainsmall_pro_key">0</string>
     <string name="lib_fixshastamerge_key_front">0</string>

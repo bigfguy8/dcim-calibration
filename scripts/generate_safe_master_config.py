@@ -1,36 +1,100 @@
 #!/usr/bin/env python3
 """
 generate_safe_master_config.py — Generate a crash-safe LMC 8.4 All-In-One
-Master XML by lowering only the most aggressive parameters to safe values.
+Master XML by adopting SkinTone_Perfect's proven-safe values for all
+crash-critical parameters.
 
-Overrides (proven-safe operational parameters):
-    pref_frames_hdr_key    : 3     (prevents buffer overflow crashes)
+Overrides (proven-safe operational parameters from SkinTone_Perfect):
+    pref_frames_hdr_key    : 0     (no HDR burst — prevents buffer overflow)
     pref_camera_hdr_plus_key: auto (stable HDR+ pipeline mode)
     pref_awb_key           : 0     (disables forced AWB override)
+    pref_awbrec_key        : 0     (disables AWB recording override)
+    cw_rg_key              : 0.5925  (natural white balance)
+    cw_rg_key_2            : 0.5925
+    cw_rg_key_3            : 0.5925
+    cw_rg_key_4            : 0.5925
+    cw_rg_key_5            : 0.5925
+    lib_sharpgain_key      : 0     (no aggressive sharpening gain)
+    lib_sharpmini_key      : 0     (no micro-sharpening)
+    lib_sharpnessb_key     : 1.02  (gentle sharpness)
+    lib_denoise_key        : 0     (no aggressive denoise)
+    lib_denoisesmoothing_key: 0   (no over-smoothing)
+    lib_lumadenoise_key    : 0
+    lib_lumanoise_key      : 0
+    lib_preservinghigh_key : 0
+    lib_spatiala_key       : 0
+    lib_spatialdenmi2_key  : 0
+    pref_color_key         : 0     (no strong color cast)
+    pref_gamma_curve_mode_key: -1
+    pref_noise_model_key   : 0
     pref_qjpg_key          : 97    (balanced JPEG compression)
+    pref_raw_key_main      : 0     (no raw output overhead)
 
 The output is ALWAYS written to /sdcard/LMC84/ so the LMC 8.4 app can
 load it directly.
 """
 from __future__ import annotations
 
-import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from typing import Dict
+
 
 # ---------------------------------------------------------------------------
-# Safe overrides — only the most aggressive crash-causing parameters.
+# Safe overrides — crash-critical parameters from SkinTone_Perfect.
 # ---------------------------------------------------------------------------
-SAFE_OVERRIDES = {
-    "pref_frames_hdr_key": "3",       # Prevents buffer overflow crashes
-    "pref_camera_hdr_plus_key": "auto",  # Stable HDR+ pipeline mode
-    "pref_awb_key": "0",              # Disables forced AWB override
-    "pref_qjpg_key": "97",            # Optimized balanced JPEG compression
+SAFE_OVERRIDES: Dict[str, str] = {
+    # --- High HDR stack sizes (buffer overflow risk) ---
+    "pref_frames_hdr_key": "0",
+    "pref_camera_hdr_plus_key": "auto",
+    "pref_hdrregion_key": "5",
+
+    # --- Forced AWB / white-balance overrides ---
+    "pref_awb_key": "0",
+    "pref_awbrec_key": "0",
+    "cw_rg_key": "0.5925",
+    "cw_rg_key_2": "0.5925",
+    "cw_rg_key_3": "0.5925",
+    "cw_rg_key_4": "0.5925",
+    "cw_rg_key_5": "0.5925",
+
+    # --- Aggressive sharpening ---
+    "lib_sharpgain_key": "0",
+    "lib_sharpmini_key": "0",
+    "lib_sharpnessb_key": "1.02",
+
+    # --- Aggressive denoise / smoothing ---
+    "lib_denoise_key": "0",
+    "lib_denoisesmoothing_key": "0",
+    "lib_lumadenoise_key": "0",
+    "lib_lumanoise_key": "0",
+
+    # --- Other aggressive processing ---
+    "lib_preservinghigh_key": "0",
+    "lib_spatiala_key": "0",
+    "lib_spatialdenmi2_key": "0",
+    "pref_color_key": "0",
+    "pref_gamma_curve_mode_key": "-1",
+    "pref_noise_model_key": "0",
+    "pref_qjpg_key": "97",
+    "pref_raw_key_main": "0",
 }
 
 # Deploy target — LMC 8.4 reads configs from this directory on the device
 LMC84_DIR = Path("/sdcard/LMC84")
+
+
+def get_elem_value(elem: ET.Element) -> str:
+    """Get the value of an element (from 'value' attribute or text)."""
+    return elem.attrib.get("value", elem.text or "")
+
+
+def set_elem_value(elem: ET.Element, value: str) -> None:
+    """Set the value of an element, removing 'value' attribute if present."""
+    elem.text = value
+    if "value" in elem.attrib:
+        del elem.attrib["value"]
 
 
 def generate_safe_master_config(
@@ -61,10 +125,7 @@ def generate_safe_master_config(
         found = False
         for elem in root.iter("string"):
             if elem.get("name") == key:
-                elem.text = safe_value
-                # Remove 'value' attribute if present; text is authoritative
-                if "value" in elem.attrib:
-                    del elem.attrib["value"]
+                set_elem_value(elem, safe_value)
                 applied += 1
                 found = True
                 break
