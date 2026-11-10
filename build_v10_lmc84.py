@@ -4,7 +4,7 @@ import hashlib
 import xml.etree.ElementTree as ET
 import sys
 
-ROOT = Path.home() / "dcim_calibration"
+ROOT = Path.home() / "dcim-calibration"
 SOURCE = ROOT / "profiles" / "LXX521_IMX682_LMC84_AllRounder.xml"
 DEST_DIR = Path.home() / "storage" / "shared" / "LMC8.4"
 
