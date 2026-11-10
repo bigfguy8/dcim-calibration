@@ -1492,7 +1492,7 @@
     <string name="pref_Copmode_night_key_2">0</string>
     <string name="pref_satCCT_R_key_5">0.95</string>
     <string name="pref_satCCT_R_key_4">0.95</string>
-    <string name="pref_camera_grid_lines_mode">0</string>
+    <string name="pref_camera_grid_lines_mode">2</string>
     <string name="lib_hardmerge_key_front">0</string>
     <string name="lib_sabrelnew_l5_key_front">0</string>
     <string name="lib_sabrelnewn_l8_key_front">0</string>

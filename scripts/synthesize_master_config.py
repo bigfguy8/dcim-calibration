@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
 synthesize_master_config.py — Generate a new synthesized LMC 8.4 All-In-One
-Master config by combining parameters from all configs in /sdcard/LMC84/.
+Master config by combining parameters from all configs in /sdcard/LMC8.4/.
 
 Strategy:
   - SkinTone_Perfect.xml is the SAFE REFERENCE (proven working values)
   - AllInOne_Master_PATCHED.xml is the SAFE BASE (already patched with 25 overrides)
   - For crash-critical parameters: use SkinTone_Perfect values
   - For all other parameters: use PATCHED values (retains Master's image quality)
-  - Result: crash-safe config that retains maximum image quality
+  - Additionally applies best-practice LMC 8.4 settings:
+      * Golden ratio grid lines (pref_camera_grid_lines_mode = "2")
+      * Camera shutter sound off (pref_camera_single_shot_sound_key = "0")
+  - Result: crash-safe config with best-practice composition and audio settings
 
-Output: LXX521_IMX682_LMC84_Synthesized_Master.xml deployed to /sdcard/LMC84/
+Output: LXX521_IMX682_LMC84_Synthesized_Master.xml deployed to /sdcard/LMC8.4/
 """
 from __future__ import annotations
 
@@ -19,7 +22,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict
 
-LMC84_DIR = Path("/sdcard/LMC84")
+LMC84_DIR = Path("/sdcard/LMC8.4")
 
 # Crash-critical parameters — must use SkinTone_Perfect values
 CRASH_CRITICAL: Dict[str, str] = {
@@ -53,6 +56,12 @@ CRASH_CRITICAL: Dict[str, str] = {
     "pref_noise_model_key": "0",
     "pref_qjpg_key": "97",
     "pref_raw_key_main": "0",
+}
+
+# Best-practice operational parameters
+BEST_PRACTICE: Dict[str, str] = {
+    "pref_camera_grid_lines_mode": "2",      # Golden ratio grid lines
+    "pref_camera_single_shot_sound_key": "0", # Camera shutter sound off
 }
 
 
@@ -93,8 +102,9 @@ def synthesize_master_config(
       - Load PATCHED.xml as base (Master image quality + 25 crash fixes)
       - Load SkinTone_Perfect.xml as safe reference
       - For crash-critical params: force SkinTone value
-      - For all other params: keep PATCHED value
-    Output deployed to /sdcard/LMC84/
+      - For best-practice params: set golden ratio grid + sound off
+      - For all other parameters: keep PATCHED values
+    Output deployed to /sdcard/LMC8.4/
     """
     patched_path = lmc84_dir / "LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml"
     skintone_path = lmc84_dir / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
@@ -128,13 +138,29 @@ def synthesize_master_config(
             params[key] = new_elem
             applied += 1
 
+    # Apply best-practice parameters (golden ratio grid + sound off)
+    bp_applied = 0
+    for key, bp_value in BEST_PRACTICE.items():
+        if key in params:
+            set_elem_value(params[key], bp_value)
+            bp_applied += 1
+        else:
+            # Key not in PATCHED — add it
+            new_elem = ET.Element("string")
+            new_elem.set("name", key)
+            new_elem.text = bp_value
+            root.append(new_elem)
+            params[key] = new_elem
+            bp_applied += 1
+
     print(f"Applied {applied}/{len(CRASH_CRITICAL)} crash-critical overrides.")
+    print(f"Applied {bp_applied}/{len(BEST_PRACTICE)} best-practice overrides.")
     print(f"Total parameters in synthesized config: {len(params)}")
 
     # Validate well-formedness
     ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
-    # Deploy to /sdcard/LMC84/
+    # Deploy to /sdcard/LMC8.4/
     lmc84_dir.mkdir(parents=True, exist_ok=True)
     deploy_path = lmc84_dir / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
