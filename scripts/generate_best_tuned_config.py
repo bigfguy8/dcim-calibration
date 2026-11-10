@@ -4,7 +4,7 @@ generate_best_tuned_config.py — Generate a clean, best-tuned LMC 8.4 All-In-On
 Master XML for Lava Play Ultra (LXX521) / Sony IMX682 sensor.
 
 Calibrated from DCIM capture analysis:
-- R/B ratio fix: AWB enabled, cw_rg=0.5725
+- R/B ratio fix: AWB enabled with neutral color temperature (cw_rg=0.5725)
 - Sharpness: lib_sharpgain_key=1.0, lib_sharpnessb_key=1.1, lib_sharpmini_key=0.5
 - Denoise: lib_denoise_key=1, lib_lumadenoise_key=1, pref_noise_model_key=1
 - Dynamic Range: pref_frames_hdr_key=2, pref_preservinghigh_key=1
