@@ -1,50 +1,45 @@
 #!/usr/bin/env python3
 """
-generate_best_tuned_config.py — Generate a clean, best-tuned LMC 8.4 All-In-One
-Master XML for Lava Play Ultra (LXX521) / Sony IMX682 sensor.
+Generate best-tuned LMC 8.4 calibration XML for LXX521 / IMX682.
 
-Calibrated from DCIM capture analysis:
-- R/B ratio fix: AWB enabled with neutral color temperature (cw_rg=0.5725)
-- Sharpness: lib_sharpgain_key=1.0, lib_sharpnessb_key=1.1, lib_sharpmini_key=0.5
-- Denoise: lib_denoise_key=1, lib_lumadenoise_key=1, pref_noise_model_key=1
-- Dynamic Range: pref_frames_hdr_key=2, pref_preservinghigh_key=1
-- JPEG quality: pref_qjpg_key=95
-- Golden ratio grid: pref_camera_grid_lines_mode=2
-- Camera shutter sound: pref_camera_single_shot_sound_key=0
-- Bokeh / Portrait mode: pref_Copmode_portrait_key=1, pref_opmode_portrait_key=1,
-  lib_depth1_key=1, lib_depth2_key=1, lib_sharpeningedge_key=1
+Based on DCIM capture analysis:
+- R/B ratio: 0.90 - 1.37 (warm bias → AWB auto, cw_rg ~0.5725)
+- Sharpness: 19.9 - 298.4 (inconsistent → balanced sharpening)
+- Black clip: up to 12.56% (crushed shadows → HDR + highlight preservation)
+- Edge density: 2% - 17% (low texture → moderate sharpness boost)
+- ISO: up to 6200 (moderate denoise needed)
 
-Output: LXX521_IMX682_LMC84_Best.xml deployed to /sdcard/LMC8.4/
+Output: LXX521_IMX682_LMC84_Best.xml → /sdcard/LMC8.4/
 """
 from __future__ import annotations
 
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Dict
 
 LMC84_DIR = Path("/sdcard/LMC8.4")
 
-BEST_TUNED_PARAMS: Dict[str, str] = {
-    # --- AWB / White Balance ---
-    "pref_awb_key": "1",
-    "pref_awbrec_key": "1",
-    "cw_rg_key": "0.5725",
+# Best-tuned parameters for IMX682 + LXX521 (calibrated from DCIM data)
+BEST_TUNED_PARAMS: dict[str, str] = {
+    # --- AWB / White Balance (fix warm cast: R/B up to 1.37) ---
+    "pref_awb_key": "1",            # Auto AWB
+    "pref_awbrec_key": "1",         # AWB recording
+    "cw_rg_key": "0.5725",          # Neutral-warm balance (was 0.5925)
     "cw_rg_key_2": "0.5725",
     "cw_rg_key_3": "0.5725",
     "cw_rg_key_4": "0.5725",
     "cw_rg_key_5": "0.5725",
-    # --- Sharpness ---
-    "lib_sharpgain_key": "1.0",
-    "lib_sharpmini_key": "0.5",
-    "lib_sharpnessb_key": "1.1",
-    # --- Denoise ---
+    # --- Sharpness (fix inconsistent 19.9-298.4) ---
+    "lib_sharpgain_key": "1.0",     # Balanced sharpness gain
+    "lib_sharpmini_key": "0.5",     # Light micro-sharpening
+    "lib_sharpnessb_key": "1.1",    # Balanced sharpness
+    # --- Denoise (fix high ISO noise up to ISO 6200) ---
     "lib_denoise_key": "1",
     "lib_denoisesmoothing_key": "1",
     "lib_lumadenoise_key": "1",
     "lib_lumanoise_key": "1",
     "pref_noise_model_key": "1",
-    # --- Dynamic Range ---
+    # --- Dynamic Range (fix black clip up to 12.56%) ---
     "pref_frames_hdr_key": "2",
     "pref_preservinghigh_key": "1",
     "lib_preservinghigh_key": "1",
@@ -52,8 +47,8 @@ BEST_TUNED_PARAMS: Dict[str, str] = {
     "pref_qjpg_key": "95",
     "pref_raw_key_main": "0",
     # --- Best-Practice: Composition & Audio ---
-    "pref_camera_grid_lines_mode": "2",
-    "pref_camera_single_shot_sound_key": "0",
+    "pref_camera_grid_lines_mode": "2",      # Golden ratio grid
+    "pref_camera_single_shot_sound_key": "0", # Camera sound off
     # --- Saturation & Contrast ---
     "lib_saturation_key": "0.95",
     "lib_saturation2_key": "0.95",
@@ -104,8 +99,8 @@ def parse_xml(path: Path) -> ET.ElementTree:
     return tree
 
 
-def build_param_map(root: ET.Element) -> Dict[str, ET.Element]:
-    params: Dict[str, ET.Element] = {}
+def build_param_map(root: ET.Element) -> dict[str, ET.Element]:
+    params: dict[str, ET.Element] = {}
     for elem in root.iter("string"):
         name = elem.attrib.get("name")
         if name:
@@ -123,7 +118,6 @@ def generate_best_tuned_config(
     base_path: Path,
     output_filename: str = "LXX521_IMX682_LMC84_Best.xml",
 ) -> Path:
-    """Generate the best-tuned LMC 8.4 Master config."""
     base_path = Path(base_path)
 
     if not base_path.is_file():
