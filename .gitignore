@@ -1,7 +1,18 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-analysis_results/
+
+# Transient execution artifacts (keep the dirs tracked via .gitkeep)
+logs/*
+runs/*
+!logs/.gitkeep
+!runs/.gitkeep
+
+# Image captures (transient, not source)
 *.png
 *.jpg
 *.jpeg
+
+# Superseded analysis output directories
+analysis_results/
+analysis_results_opencv/
