@@ -48,7 +48,7 @@ def deploy(path: Path):
         print(f"[ERROR] {message}")
         return False
     print(f"[CHECK] {path.name}: {message}")
-    print(f"[NOTE] XML syntax does not prove compatibility with your exact LMC/BSG build.")
+    print(f"[NOTE] XML syntax does not prove compatibility with your exact LMC 8.4 build.")
     dest_dir = SDCARD_LMC_DIR
     try:
         dest_dir.mkdir(parents=True, exist_ok=True)

@@ -1,24 +1,26 @@
-# LXX521 / Sony IMX682 — All-in-One Master (BSG format)
+# LXX521 / Sony IMX682 — All-in-One Master (LMC 8.4 format)
 
 - Status: `BUILT_UNVERIFIED_NOT_DEVICE_VALIDATED`
-- Generated: `2026-11-10T19:59:28+04:30`
-- Template: `LXX521_BSG_LMC_v2_AllInOne.xml` (BSG Config v2024.2)
-- Output: `LXX521_IMX682_LMC84_AllInOne_Master.xml`
-- Template SHA-256: `542b7ab1ef8052ad44cda4029ae2d0730ecddec46428c5902714eed3ac13dc9e`
-- Output SHA-256: `eaf395c2610706cb867a7e2651880412775303d64b81e582497eb247e9a2b7b9`
-- XML parsing: PASS (BSG format)
-- XML root: `<Config version='2024.2'>`
-- BSG elements changed: 6
+- Generated: `2026-11-10T20:03:56+04:30`
+- Base: `LXX521_IMX682_LMC84_AllRounder.xml` (2608 keys)
+- Output: `LXX521_IMX682_LMC84_AllInOne_Master.xml` (2640 keys)
+- Base SHA-256: `f5dde315f71bb4c28f72ea0b2a5cd3b5385f2e4aeb12b7463416174acb1b5f49`
+- Output SHA-256: `0bd398895fab2a64cb5c52182bbca7847f7bd69a7df9e16608d76f95d1a24a81`
+- XML parsing: PASS (LMC format)
+- XML root: `<map>`
+- Direct string entries: 2640
+- Duplicate direct string keys: 0
+- Keys changed: 102
 - Skin-tone keys (locked): 68
 - Low-light / night keys: 2533
+- Portrait & bokeh keys: 15
+- Sharpness & MTF50 keys: 15
 - Photo-mode ready: True
-- Has <LibAGC> AWB section: True
-- Has <Camera role='back_main'>: True
-- Deploy target: /sdcard/GCam/Configs
+- Deploy target: /sdcard/LMC8.4
 - Tuning changes: merged from 4 sub-profiles; see
   `analysis/reports/all_in_one_master_merge_diff.md`
 - Device validation: NOT PERFORMED.
 
-This is an all-in-one master candidate in BSG format, not a device-validated
+This is an all-in-one master candidate in LMC 8.4 format, not a device-validated
 calibration profile. Test in daylight, indoor, low-light, and
 portrait scenarios before deployment.
