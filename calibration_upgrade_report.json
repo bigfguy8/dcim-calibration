@@ -1,0 +1,956 @@
+[
+    {
+        "filename": "20261108_200554_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 28.69,
+        "color_balance": {
+            "R": 95.16,
+            "G": 96.07,
+            "B": 70.69
+        }
+    },
+    {
+        "filename": "20261108_190831_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 44.67,
+        "color_balance": {
+            "R": 110.35,
+            "G": 92.36,
+            "B": 92.32
+        }
+    },
+    {
+        "filename": "20261109_182448_LXX521_FrontCam_Sanitized_V3.jpg",
+        "sharpness_mtf_proxy": 767.87,
+        "color_balance": {
+            "R": 124.12,
+            "G": 124.22,
+            "B": 94.57
+        }
+    },
+    {
+        "filename": "PXL_20261108_190538339.jpg",
+        "sharpness_mtf_proxy": 88.43,
+        "color_balance": {
+            "R": 115.24,
+            "G": 94.41,
+            "B": 68.47
+        }
+    },
+    {
+        "filename": "PXL_20261109_212024193.MV.jpg",
+        "sharpness_mtf_proxy": 171.01,
+        "color_balance": {
+            "R": 99.39,
+            "G": 104.83,
+            "B": 52.56
+        }
+    },
+    {
+        "filename": "PXL_20261109_212033180.MV.jpg",
+        "sharpness_mtf_proxy": 169.43,
+        "color_balance": {
+            "R": 99.6,
+            "G": 104.44,
+            "B": 54.6
+        }
+    },
+    {
+        "filename": ".trashed-1796833132-PXL_20261109_214847084.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 34.81,
+        "color_balance": {
+            "R": 136.03,
+            "G": 126.27,
+            "B": 58.85
+        }
+    },
+    {
+        "filename": "PXL_20261109_212045425.MV.jpg",
+        "sharpness_mtf_proxy": 110.53,
+        "color_balance": {
+            "R": 100.39,
+            "G": 100.92,
+            "B": 61.2
+        }
+    },
+    {
+        "filename": ".trashed-1796833144-PXL_20261109_214900121.PORTRAIT.ORIGINAL.jpg",
+        "sharpness_mtf_proxy": 28.04,
+        "color_balance": {
+            "R": 79.31,
+            "G": 74.78,
+            "B": 36.79
+        }
+    },
+    {
+        "filename": ".trashed-1796833205-PXL_20261109_214954070.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 97.77,
+        "color_balance": {
+            "R": 152.43,
+            "G": 137.45,
+            "B": 55.21
+        }
+    },
+    {
+        "filename": "PXL_20261109_182532712.MV.jpg",
+        "sharpness_mtf_proxy": 983.58,
+        "color_balance": {
+            "R": 110.66,
+            "G": 110.3,
+            "B": 81.57
+        }
+    },
+    {
+        "filename": "20261108_190839_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 44.68,
+        "color_balance": {
+            "R": 109.4,
+            "G": 88.12,
+            "B": 87.87
+        }
+    },
+    {
+        "filename": "20261108_190841_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 48.92,
+        "color_balance": {
+            "R": 111.43,
+            "G": 92.52,
+            "B": 89.8
+        }
+    },
+    {
+        "filename": "20261108_190842_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 61.35,
+        "color_balance": {
+            "R": 111.75,
+            "G": 92.49,
+            "B": 88.62
+        }
+    },
+    {
+        "filename": "20261108_200738_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 20.82,
+        "color_balance": {
+            "R": 88.53,
+            "G": 91.16,
+            "B": 74.02
+        }
+    },
+    {
+        "filename": "PXL_20261108_191031596.jpg",
+        "sharpness_mtf_proxy": 46.88,
+        "color_balance": {
+            "R": 116.33,
+            "G": 101.77,
+            "B": 87.84
+        }
+    },
+    {
+        "filename": "20261108_204826_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 91.22,
+        "color_balance": {
+            "R": 77.44,
+            "G": 74.93,
+            "B": 74.17
+        }
+    },
+    {
+        "filename": "020261109_182502_LXX521_BSG_Astrophotography_Ultra.jpg",
+        "sharpness_mtf_proxy": 826.95,
+        "color_balance": {
+            "R": 129.0,
+            "G": 126.94,
+            "B": 101.48
+        }
+    },
+    {
+        "filename": "020261109_182507_LXX521_BSG_Astrophotography_Ultra.jpg",
+        "sharpness_mtf_proxy": 899.49,
+        "color_balance": {
+            "R": 126.37,
+            "G": 115.81,
+            "B": 90.8
+        }
+    },
+    {
+        "filename": "020261109_182512_LXX521_BSG_Astrophotography_Ultra.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 879.13,
+        "color_balance": {
+            "R": 127.68,
+            "G": 123.17,
+            "B": 90.66
+        }
+    },
+    {
+        "filename": "020261109_182526_LXX521_BSG_Astrophotography_Ultra.NIGHT.jpg",
+        "sharpness_mtf_proxy": 185.47,
+        "color_balance": {
+            "R": 111.7,
+            "G": 108.85,
+            "B": 71.34
+        }
+    },
+    {
+        "filename": "PXL_20261109_220959308.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 8.07,
+        "color_balance": {
+            "R": 119.27,
+            "G": 94.52,
+            "B": 46.85
+        }
+    },
+    {
+        "filename": "PXL_20261108_190557936_exported_701_1794145427030.jpg",
+        "sharpness_mtf_proxy": 66.45,
+        "color_balance": {
+            "R": 100.71,
+            "G": 94.58,
+            "B": 80.07
+        }
+    },
+    {
+        "filename": "PXL_20261109_221015968.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 20.68,
+        "color_balance": {
+            "R": 140.89,
+            "G": 115.96,
+            "B": 19.44
+        }
+    },
+    {
+        "filename": "PXL_20261109_221016930.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 38.85,
+        "color_balance": {
+            "R": 145.88,
+            "G": 121.44,
+            "B": 19.08
+        }
+    },
+    {
+        "filename": "IMG_20261109_222948_1.jpg",
+        "sharpness_mtf_proxy": 201.32,
+        "color_balance": {
+            "R": 156.87,
+            "G": 118.77,
+            "B": 83.45
+        }
+    },
+    {
+        "filename": ".trashed-1796834449-IMG_20261109_221038_1.jpg",
+        "sharpness_mtf_proxy": 29.85,
+        "color_balance": {
+            "R": 140.03,
+            "G": 124.6,
+            "B": 43.02
+        }
+    },
+    {
+        "filename": ".trashed-1796834714-PXL_20261109_221423016.MV.jpg",
+        "sharpness_mtf_proxy": 107.4,
+        "color_balance": {
+            "R": 148.36,
+            "G": 149.23,
+            "B": 91.78
+        }
+    },
+    {
+        "filename": "020261109_221111_LXX521_IMX682_Best_NightBokeh_Video_Still.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 109.63,
+        "color_balance": {
+            "R": 135.07,
+            "G": 121.72,
+            "B": 98.91
+        }
+    },
+    {
+        "filename": "20261108_192322_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 130.09,
+        "color_balance": {
+            "R": 102.96,
+            "G": 109.2,
+            "B": 95.79
+        }
+    },
+    {
+        "filename": "PXL_20261108_192234016.PORTRAIT.ORIGINAL.jpg",
+        "sharpness_mtf_proxy": 49.66,
+        "color_balance": {
+            "R": 86.11,
+            "G": 88.16,
+            "B": 74.31
+        }
+    },
+    {
+        "filename": "PXL_20261108_193916823.LONG_EXPOSURE.jpg",
+        "sharpness_mtf_proxy": 65.04,
+        "color_balance": {
+            "R": 164.17,
+            "G": 136.31,
+            "B": 87.23
+        }
+    },
+    {
+        "filename": "20261108_202330_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 253.14,
+        "color_balance": {
+            "R": 66.72,
+            "G": 54.35,
+            "B": 48.6
+        }
+    },
+    {
+        "filename": "020261109_221328_LXX521_BSG_NightSight_Ultra.jpg",
+        "sharpness_mtf_proxy": 33.9,
+        "color_balance": {
+            "R": 98.79,
+            "G": 94.21,
+            "B": 73.72
+        }
+    },
+    {
+        "filename": ".trashed-1796834498-020261109_221119_LXX521_IMX682_Best_NightBokeh_Video_Still.NIGHT.jpg",
+        "sharpness_mtf_proxy": 131.09,
+        "color_balance": {
+            "R": 129.26,
+            "G": 118.0,
+            "B": 96.01
+        }
+    },
+    {
+        "filename": ".trashed-1796834540-020261109_221212_LXX521_BSG_NightBokeh_AllInOne_Ultra.jpg",
+        "sharpness_mtf_proxy": 36.93,
+        "color_balance": {
+            "R": 99.31,
+            "G": 105.39,
+            "B": 91.36
+        }
+    },
+    {
+        "filename": ".trashed-1796834555-020261109_221227_LXX521_BSG_NightBokeh_AllInOne_Ultra.jpg",
+        "sharpness_mtf_proxy": 130.33,
+        "color_balance": {
+            "R": 124.45,
+            "G": 120.34,
+            "B": 91.84
+        }
+    },
+    {
+        "filename": "PXL_20261109_221423016_exported_1451_1794242695817.jpg",
+        "sharpness_mtf_proxy": 105.6,
+        "color_balance": {
+            "R": 141.27,
+            "G": 141.61,
+            "B": 85.98
+        }
+    },
+    {
+        "filename": "20261109_222958_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 136.7,
+        "color_balance": {
+            "R": 113.41,
+            "G": 81.61,
+            "B": 58.8
+        }
+    },
+    {
+        "filename": "20261109_223059_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 1.76,
+        "color_balance": {
+            "R": 5.36,
+            "G": 1.86,
+            "B": 1.2
+        }
+    },
+    {
+        "filename": "20261109_223458_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 199.8,
+        "color_balance": {
+            "R": 107.3,
+            "G": 87.77,
+            "B": 85.19
+        }
+    },
+    {
+        "filename": "20261109_223050_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 4.71,
+        "color_balance": {
+            "R": 34.96,
+            "G": 13.99,
+            "B": 6.53
+        }
+    },
+    {
+        "filename": ".trashed-1796835946-PXL_20261109_223540814.NIGHT.jpg",
+        "sharpness_mtf_proxy": 111.3,
+        "color_balance": {
+            "R": 92.83,
+            "G": 84.36,
+            "B": 64.35
+        }
+    },
+    {
+        "filename": "20261109_223813_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 101.32,
+        "color_balance": {
+            "R": 144.63,
+            "G": 118.06,
+            "B": 88.97
+        }
+    },
+    {
+        "filename": "20261109_223839_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 703.84,
+        "color_balance": {
+            "R": 112.43,
+            "G": 84.68,
+            "B": 65.78
+        }
+    },
+    {
+        "filename": "PXL_20261109_223741417.NIGHT.jpg",
+        "sharpness_mtf_proxy": 298.42,
+        "color_balance": {
+            "R": 98.37,
+            "G": 89.18,
+            "B": 92.56
+        }
+    },
+    {
+        "filename": "IMG_20261109_224049_1.jpg",
+        "sharpness_mtf_proxy": 257.48,
+        "color_balance": {
+            "R": 140.96,
+            "G": 122.3,
+            "B": 99.59
+        }
+    },
+    {
+        "filename": "20261109_224458_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 266.85,
+        "color_balance": {
+            "R": 139.23,
+            "G": 74.28,
+            "B": 56.04
+        }
+    },
+    {
+        "filename": "20261109_223851_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 573.84,
+        "color_balance": {
+            "R": 104.49,
+            "G": 91.14,
+            "B": 80.76
+        }
+    },
+    {
+        "filename": "20261109_224542_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 850.87,
+        "color_balance": {
+            "R": 139.77,
+            "G": 79.79,
+            "B": 50.22
+        }
+    },
+    {
+        "filename": "20261109_224635_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 337.19,
+        "color_balance": {
+            "R": 147.24,
+            "G": 77.69,
+            "B": 48.42
+        }
+    },
+    {
+        "filename": "IMG_20261109_224704_1.jpg",
+        "sharpness_mtf_proxy": 86.15,
+        "color_balance": {
+            "R": 156.78,
+            "G": 95.92,
+            "B": 53.44
+        }
+    },
+    {
+        "filename": "20261109_224549_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 352.41,
+        "color_balance": {
+            "R": 139.48,
+            "G": 75.33,
+            "B": 51.27
+        }
+    },
+    {
+        "filename": "20261109_224559_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 458.7,
+        "color_balance": {
+            "R": 138.85,
+            "G": 76.47,
+            "B": 50.69
+        }
+    },
+    {
+        "filename": "20261109_224743_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 349.33,
+        "color_balance": {
+            "R": 143.5,
+            "G": 79.7,
+            "B": 52.44
+        }
+    },
+    {
+        "filename": "20261109_224807_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 808.04,
+        "color_balance": {
+            "R": 147.0,
+            "G": 89.0,
+            "B": 66.64
+        }
+    },
+    {
+        "filename": "20261109_224858_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 234.41,
+        "color_balance": {
+            "R": 119.25,
+            "G": 68.1,
+            "B": 48.77
+        }
+    },
+    {
+        "filename": ".trashed-1796843204-20261110_003524_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 29.54,
+        "color_balance": {
+            "R": 92.07,
+            "G": 85.15,
+            "B": 68.37
+        }
+    },
+    {
+        "filename": ".trashed-1796843269-20261110_003653_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 31.2,
+        "color_balance": {
+            "R": 100.99,
+            "G": 101.71,
+            "B": 79.09
+        }
+    },
+    {
+        "filename": "020261109_182519_LXX521_BSG_Astrophotography_Ultra.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 39.07,
+        "color_balance": {
+            "R": 122.07,
+            "G": 111.98,
+            "B": 75.62
+        }
+    },
+    {
+        "filename": "PXL_20261108_191306456.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 35.93,
+        "color_balance": {
+            "R": 130.61,
+            "G": 115.68,
+            "B": 106.49
+        }
+    },
+    {
+        "filename": "PXL_20261109_221002054.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 5.85,
+        "color_balance": {
+            "R": 147.24,
+            "G": 112.68,
+            "B": 57.49
+        }
+    },
+    {
+        "filename": "PXL_20261108_190854868_exported_1201_1794145461110.jpg",
+        "sharpness_mtf_proxy": 127.69,
+        "color_balance": {
+            "R": 110.12,
+            "G": 93.07,
+            "B": 87.16
+        }
+    },
+    {
+        "filename": "PXL_20261109_221017917.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 19.93,
+        "color_balance": {
+            "R": 138.67,
+            "G": 114.5,
+            "B": 14.65
+        }
+    },
+    {
+        "filename": ".trashed-1796834542-020261109_221121_LXX521_IMX682_Best_NightBokeh_Video_Still.NIGHT.jpg",
+        "sharpness_mtf_proxy": 44.8,
+        "color_balance": {
+            "R": 121.19,
+            "G": 110.0,
+            "B": 86.23
+        }
+    },
+    {
+        "filename": "IMG_20261109_222906_1.jpg",
+        "sharpness_mtf_proxy": 81.34,
+        "color_balance": {
+            "R": 162.07,
+            "G": 112.25,
+            "B": 76.94
+        }
+    },
+    {
+        "filename": "20261108_193634_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 31.18,
+        "color_balance": {
+            "R": 64.93,
+            "G": 121.0,
+            "B": 74.55
+        }
+    },
+    {
+        "filename": "PXL_20261108_192302185.PORTRAIT.ORIGINAL.jpg",
+        "sharpness_mtf_proxy": 50.68,
+        "color_balance": {
+            "R": 83.43,
+            "G": 88.36,
+            "B": 72.83
+        }
+    },
+    {
+        "filename": "20261108_193641_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 210.21,
+        "color_balance": {
+            "R": 72.57,
+            "G": 128.97,
+            "B": 84.46
+        }
+    },
+    {
+        "filename": "20261108_193722_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 44.54,
+        "color_balance": {
+            "R": 79.6,
+            "G": 104.07,
+            "B": 73.55
+        }
+    },
+    {
+        "filename": "PXL_20261108_193748132.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 14.15,
+        "color_balance": {
+            "R": 66.41,
+            "G": 75.54,
+            "B": 52.13
+        }
+    },
+    {
+        "filename": "PXL_20261108_193858115.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 37.94,
+        "color_balance": {
+            "R": 153.93,
+            "G": 146.92,
+            "B": 135.57
+        }
+    },
+    {
+        "filename": ".trashed-1796834586-020261109_221259_LXX521_IMX682_NightSight_AllInOne_V4_AutoTuned.jpg",
+        "sharpness_mtf_proxy": 28.65,
+        "color_balance": {
+            "R": 89.85,
+            "G": 85.82,
+            "B": 59.16
+        }
+    },
+    {
+        "filename": "020261109_221341_LXX521_BSG_NightSight_Ultra.jpg",
+        "sharpness_mtf_proxy": 58.0,
+        "color_balance": {
+            "R": 105.77,
+            "G": 94.72,
+            "B": 77.52
+        }
+    },
+    {
+        "filename": "20261108_202404_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 172.32,
+        "color_balance": {
+            "R": 49.71,
+            "G": 91.15,
+            "B": 49.97
+        }
+    },
+    {
+        "filename": "20261108_202306_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 120.33,
+        "color_balance": {
+            "R": 99.16,
+            "G": 75.61,
+            "B": 71.88
+        }
+    },
+    {
+        "filename": ".trashed-1796834512-020261109_221100_LXX521_IMX682_Best_NightBokeh_Video_Still.jpg",
+        "sharpness_mtf_proxy": 24.69,
+        "color_balance": {
+            "R": 144.67,
+            "G": 134.18,
+            "B": 90.09
+        }
+    },
+    {
+        "filename": ".trashed-1796834544-020261109_221115_LXX521_IMX682_Best_NightBokeh_Video_Still.NIGHT.jpg",
+        "sharpness_mtf_proxy": 98.9,
+        "color_balance": {
+            "R": 129.18,
+            "G": 116.78,
+            "B": 97.21
+        }
+    },
+    {
+        "filename": "020261109_221402_LXX521_BSG_NightSight_Ultra.jpg",
+        "sharpness_mtf_proxy": 44.7,
+        "color_balance": {
+            "R": 97.86,
+            "G": 94.95,
+            "B": 67.38
+        }
+    },
+    {
+        "filename": "PXL_20261109_221423016_exported_1451_1794242706561.jpg",
+        "sharpness_mtf_proxy": 105.6,
+        "color_balance": {
+            "R": 141.27,
+            "G": 141.61,
+            "B": 85.98
+        }
+    },
+    {
+        "filename": ".trashed-1796834722-PXL_20261109_221425739.MV.jpg",
+        "sharpness_mtf_proxy": 68.05,
+        "color_balance": {
+            "R": 146.9,
+            "G": 148.58,
+            "B": 90.86
+        }
+    },
+    {
+        "filename": "20261109_223041_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 23.46,
+        "color_balance": {
+            "R": 28.67,
+            "G": 16.52,
+            "B": 9.24
+        }
+    },
+    {
+        "filename": "20261109_223506_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 537.83,
+        "color_balance": {
+            "R": 88.21,
+            "G": 65.59,
+            "B": 54.81
+        }
+    },
+    {
+        "filename": "IMG_20261109_224008_1.jpg",
+        "sharpness_mtf_proxy": 276.85,
+        "color_balance": {
+            "R": 147.12,
+            "G": 129.71,
+            "B": 101.18
+        }
+    },
+    {
+        "filename": "20261109_223047_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 2.97,
+        "color_balance": {
+            "R": 22.61,
+            "G": 7.63,
+            "B": 3.48
+        }
+    },
+    {
+        "filename": "20261109_223106_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 5.49,
+        "color_balance": {
+            "R": 20.86,
+            "G": 9.16,
+            "B": 5.93
+        }
+    },
+    {
+        "filename": "20261109_223752_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 157.51,
+        "color_balance": {
+            "R": 113.6,
+            "G": 108.49,
+            "B": 98.54
+        }
+    },
+    {
+        "filename": "20261109_223910_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 678.46,
+        "color_balance": {
+            "R": 137.97,
+            "G": 107.42,
+            "B": 82.03
+        }
+    },
+    {
+        "filename": ".trashed-1796836200-IMG_20261109_223954_1.jpg",
+        "sharpness_mtf_proxy": 32.96,
+        "color_balance": {
+            "R": 149.15,
+            "G": 134.43,
+            "B": 115.3
+        }
+    },
+    {
+        "filename": "IMG_20261109_224014_1.jpg",
+        "sharpness_mtf_proxy": 198.68,
+        "color_balance": {
+            "R": 127.28,
+            "G": 113.54,
+            "B": 89.98
+        }
+    },
+    {
+        "filename": "20261109_223924_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 162.85,
+        "color_balance": {
+            "R": 140.67,
+            "G": 116.19,
+            "B": 83.17
+        }
+    },
+    {
+        "filename": "20261109_223927_lmc_8.4.PORTRAIT.jpg",
+        "sharpness_mtf_proxy": 151.37,
+        "color_balance": {
+            "R": 143.5,
+            "G": 119.45,
+            "B": 84.26
+        }
+    },
+    {
+        "filename": "IMG_20261109_224139_1.jpg",
+        "sharpness_mtf_proxy": 275.12,
+        "color_balance": {
+            "R": 127.43,
+            "G": 111.39,
+            "B": 101.3
+        }
+    },
+    {
+        "filename": "IMG_20261109_224431_1.jpg",
+        "sharpness_mtf_proxy": 73.11,
+        "color_balance": {
+            "R": 156.27,
+            "G": 107.43,
+            "B": 74.13
+        }
+    },
+    {
+        "filename": "IMG_20261109_224423_1.jpg",
+        "sharpness_mtf_proxy": 179.94,
+        "color_balance": {
+            "R": 149.76,
+            "G": 101.85,
+            "B": 62.94
+        }
+    },
+    {
+        "filename": "20261109_224450_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 99.96,
+        "color_balance": {
+            "R": 134.89,
+            "G": 82.56,
+            "B": 61.11
+        }
+    },
+    {
+        "filename": "20261109_224459_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 226.19,
+        "color_balance": {
+            "R": 133.88,
+            "G": 75.59,
+            "B": 54.95
+        }
+    },
+    {
+        "filename": "20261109_224626_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 345.34,
+        "color_balance": {
+            "R": 153.93,
+            "G": 83.48,
+            "B": 56.15
+        }
+    },
+    {
+        "filename": "20261110_004119_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 2.47,
+        "color_balance": {
+            "R": 56.12,
+            "G": 0.76,
+            "B": 14.65
+        }
+    },
+    {
+        "filename": "20261109_224621_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 131.41,
+        "color_balance": {
+            "R": 151.04,
+            "G": 84.7,
+            "B": 60.3
+        }
+    },
+    {
+        "filename": "20261109_224747_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 323.67,
+        "color_balance": {
+            "R": 150.48,
+            "G": 83.73,
+            "B": 58.13
+        }
+    },
+    {
+        "filename": "20261110_004130_lmc_8.4.jpg",
+        "sharpness_mtf_proxy": 9.87,
+        "color_balance": {
+            "R": 73.4,
+            "G": 61.28,
+            "B": 54.73
+        }
+    },
+    {
+        "filename": "20261109_224632_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 293.36,
+        "color_balance": {
+            "R": 144.06,
+            "G": 75.57,
+            "B": 46.95
+        }
+    },
+    {
+        "filename": "20261109_224815_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 425.99,
+        "color_balance": {
+            "R": 119.12,
+            "G": 73.11,
+            "B": 50.05
+        }
+    },
+    {
+        "filename": "20261109_224842_lmc_8.4.NIGHT.jpg",
+        "sharpness_mtf_proxy": 408.76,
+        "color_balance": {
+            "R": 127.95,
+            "G": 79.02,
+            "B": 56.5
+        }
+    },
+    {
+        "filename": ".trashed-1796843268-020261110_003726_LXX521_IMX682_Best_NightBokeh_Video_Still.jpg",
+        "sharpness_mtf_proxy": 18.0,
+        "color_balance": {
+            "R": 90.35,
+            "G": 85.88,
+            "B": 69.86
+        }
+    }
+]
