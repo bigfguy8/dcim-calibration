@@ -9,7 +9,8 @@ Runs the calibration pipeline in discrete, togglable steps:
   3. calibrate- OpenCV MTF50 + sharpness over an image batch
   4. skin_tone- tune skin-tone profile parameters
   5. build_v10- build the V10 baseline config
-  6. deploy   - deploy a profile to /sdcard/LMC8.4
+  6. build-allrounder - synthesize Ultimate All-Rounder master XML
+  7. deploy   - deploy a profile to /sdcard/LMC8.4
 
 Usage examples:
     ./run_pipeline.py                       # run all steps
@@ -36,9 +37,11 @@ from core import (  # noqa: E402
     DEFAULT_TARGET,
     LMC_STORAGE_DIR,
     REPORTS_DIR,
+    XML_DIR,
     ensure_dirs,
 )
 from core import build_v10, calibration, noise, skin_tone, xml_utils  # noqa: E402
+from core import build_ultimate_allrounder  # noqa: E402
 from core.logging import get_logger, setup_logger  # noqa: E402
 
 logger = get_logger()
@@ -112,6 +115,22 @@ def _step_build_v10(args: argparse.Namespace) -> Tuple[bool, str]:
     return True, "V10 baseline config built"
 
 
+def _step_build_allrounder(args: argparse.Namespace) -> Tuple[bool, str]:
+    try:
+        build_ultimate_allrounder.build_ultimate_allrounder(
+            base_path=Path(args.allrounder_base),
+            skin_tone_path=Path(args.allrounder_skin_tone),
+            low_light_path=Path(args.allrounder_low_light),
+            output_path=Path(args.allrounder_output),
+            dry_run=args.dry_run,
+        )
+    except SystemExit as exc:
+        return False, f"All-Rounder build failed: {exc.code}"
+    except Exception as exc:  # noqa: BLE001
+        return False, f"All-Rounder build failed: {exc}"
+    return True, "Ultimate All-Rounder master XML built"
+
+
 def _step_deploy(args: argparse.Namespace) -> Tuple[bool, str]:
     profile = Path(args.deploy_profile)
     if not profile.is_file():
@@ -133,6 +152,7 @@ STEPS: List[Tuple[str, str, Callable[[argparse.Namespace], Tuple[bool, str]]]] =
     ("calibrate", "OpenCV MTF50 + sharpness over image batch", _step_calibrate),
     ("skin_tone", "tune skin-tone profile parameters", _step_skin_tone),
     ("build_v10", "build V10 baseline config", _step_build_v10),
+    ("build-allrounder", "synthesize Ultimate All-Rounder master XML", _step_build_allrounder),
     ("deploy", "deploy profile to /sdcard/LMC8.4", _step_deploy),
 ]
 
@@ -172,6 +192,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-build-v10",
         action="store_true",
         help="skip the V10 baseline build step",
+    )
+    parser.add_argument(
+        "--skip-build-allrounder",
+        action="store_true",
+        help="skip the Ultimate All-Rounder build step",
     )
     parser.add_argument(
         "--skip-deploy",
@@ -224,6 +249,31 @@ def build_parser() -> argparse.ArgumentParser:
         help="destination directory for V10 baseline config",
     )
     parser.add_argument(
+        "--allrounder-base",
+        default=str(DEFAULT_MASTER),
+        help="base AllRounder XML profile path",
+    )
+    parser.add_argument(
+        "--allrounder-skin-tone",
+        default=str(DEFAULT_TARGET),
+        help="skin-tone perfect XML profile path",
+    )
+    parser.add_argument(
+        "--allrounder-low-light",
+        default=str(
+            Path(__file__).resolve().parent
+            / "analysis_results"
+            / "imx682_config"
+            / "lowlight.xml"
+        ),
+        help="low-light XML profile path",
+    )
+    parser.add_argument(
+        "--allrounder-output",
+        default=str(XML_DIR / "LXX521_IMX682_LMC84_Ultimate_AllRounder.xml"),
+        help="output path for Ultimate All-Rounder XML",
+    )
+    parser.add_argument(
         "--deploy-profile",
         default=str(DEFAULT_TARGET),
         help="profile file to deploy to phone storage",
@@ -244,6 +294,7 @@ def resolve_steps(args: argparse.Namespace) -> List[Tuple[str, str, Callable]]:
         "calibrate": args.skip_calibration,
         "skin_tone": args.skip_skin_tone,
         "build_v10": args.skip_build_v10,
+        "build-allrounder": args.skip_build_allrounder,
         "deploy": args.skip_deploy,
     }
 
