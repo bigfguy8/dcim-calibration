@@ -1,33 +1,58 @@
-name: Build Android APK
+name: Build LMC 8.4 Calibration Assets
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.14'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo6 cmake libffi-dev libssl-dev
-          pip install --upgrade cython buildozer
+          python -m pip install --upgrade pip
+          pip install opencv-python numpy matplotlib Pillow
 
-      - name: Build APK with Buildozer
-        working-directory: ./dcim_apk_build
+      - name: Run calibration pipeline (build All-In-One Master XML)
         run: |
-          buildozer -v android debug
+          python run_pipeline.py --steps env,build-all-in-one
 
-      - name: Upload APK Artifact
+      - name: Verify LMC XML output
+        run: |
+          python -c "
+import xml.etree.ElementTree as ET
+tree = ET.parse('configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml')
+root = tree.getroot()
+assert root.tag == 'map', f'Expected <map> root, got <{root.tag}>'
+keys = [el.get('name') for el in root.findall('string') if el.get('name')]
+assert len(keys) == len(set(keys)), 'Duplicate keys found'
+assert len(keys) > 0, 'No keys found'
+print(f'LMC XML valid: {len(keys)} keys, root=<map>')
+          "
+
+      - name: Package calibration assets
+        run: |
+          mkdir -p calib_assets
+          cp configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml calib_assets/
+          cp configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.status.md calib_assets/
+          cp configs/xml/LXX521_IMX682_LMC84_SkinTone_Perfect.xml calib_assets/
+          cp configs/xml/LXX521_IMX682_LMC84_AllRounder.xml calib_assets/
+          cp analysis/reports/all_in_one_master_validation.json calib_assets/ 2>/dev/null || true
+          cp analysis/reports/all_in_one_master_merge_diff.md calib_assets/ 2>/dev/null || true
+          zip -r calib_assets.zip calib_assets/
+
+      - name: Upload calibration artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dcim-profile-manager-apk
-          path: dcim_apk_build/bin/*.apk
+          name: lmc-8-4-calibration-assets
+          path: calib_assets.zip
+          retention-days: 30
