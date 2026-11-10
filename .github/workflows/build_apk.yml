@@ -29,14 +29,14 @@ jobs:
       - name: Verify LMC XML output
         run: |
           python -c "
-import xml.etree.ElementTree as ET
-tree = ET.parse('configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml')
-root = tree.getroot()
-assert root.tag == 'map', f'Expected <map> root, got <{root.tag}>'
-keys = [el.get('name') for el in root.findall('string') if el.get('name')]
-assert len(keys) == len(set(keys)), 'Duplicate keys found'
-assert len(keys) > 0, 'No keys found'
-print(f'LMC XML valid: {len(keys)} keys, root=<map>')
+          import xml.etree.ElementTree as ET
+          tree = ET.parse('configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml')
+          root = tree.getroot()
+          assert root.tag == 'map', f'Expected <map> root, got <{root.tag}>'
+          keys = [el.get('name') for el in root.findall('string') if el.get('name')]
+          assert len(keys) == len(set(keys)), 'Duplicate keys found'
+          assert len(keys) > 0, 'No keys found'
+          print(f'LMC XML valid: {len(keys)} keys, root=<map>')
           "
 
       - name: Package calibration assets
