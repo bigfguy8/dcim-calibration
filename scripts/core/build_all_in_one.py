@@ -23,7 +23,7 @@ Output:
   analysis/reports/all_in_one_master_merge_diff.md
 
 The output is an LMC 8.4-compatible <map> XML file and is deployed to
-/sdcard/LMC8.4/ (the directory the LMC 8.4 app reads).
+/sdcard/LMC84/ (the directory the LMC 8.4 app reads).
 """
 from __future__ import annotations
 
@@ -322,7 +322,7 @@ portrait scenarios before deployment.
         )
         logger.info("Merge diff report written: %s", MERGE_DIFF_REPORT)
 
-        # ---- Deploy to /sdcard/LMC8.4/ ------------------------------------
+        # ---- Deploy to /sdcard/LMC84/ ------------------------------------
         if deploy:
             DEPLOY_DIR.mkdir(parents=True, exist_ok=True)
             deploy_path = DEPLOY_DIR / output_path.name

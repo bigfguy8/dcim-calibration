@@ -9,7 +9,7 @@ Overrides (proven-safe operational parameters):
     pref_awb_key           : 0     (disables forced AWB override)
     pref_qjpg_key          : 97    (balanced JPEG compression)
 
-The output is ALWAYS written to /sdcard/LMC8.4/ so the LMC 8.4 app can
+The output is ALWAYS written to /sdcard/LMC84/ so the LMC 8.4 app can
 load it directly.
 """
 from __future__ import annotations
@@ -30,14 +30,14 @@ SAFE_OVERRIDES = {
 }
 
 # Deploy target — LMC 8.4 reads configs from this directory on the device
-LMC84_DIR = Path("/sdcard/LMC8.4")
+LMC84_DIR = Path("/sdcard/LMC84")
 
 
 def generate_safe_master_config(
     input_path: str | Path,
     output_filename: str = "LXX521_IMX682_Safe_Master.xml",
 ) -> Path:
-    """Generate a safe All-In-One Master config and deploy to /sdcard/LMC8.4/.
+    """Generate a safe All-In-One Master config and deploy to /sdcard/LMC84/.
 
     Returns the path to the deployed file.
     """
@@ -78,7 +78,7 @@ def generate_safe_master_config(
     # Ensure deploy directory exists
     LMC84_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Write to /sdcard/LMC8.4/ (always)
+    # Write to /sdcard/LMC84/ (always)
     deploy_path = LMC84_DIR / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
     print(f"Successfully generated safe All-In-One config at: {deploy_path}")

@@ -11,7 +11,7 @@ Runs the calibration pipeline in discrete, togglable steps:
   5. build_v10- build the V10 baseline config
   6. build-allrounder - synthesize Ultimate All-Rounder master XML
   7. build-all-in-one - synthesize All-in-One Master LMC XML (Night + Bokeh + Skin-Tone)
-  8. deploy   - deploy profile to /sdcard/LMC8.4
+  8. deploy   - deploy profile to /sdcard/LMC84
 
 Usage examples:
     ./run_pipeline.py                       # run all steps
@@ -172,7 +172,7 @@ STEPS: List[Tuple[str, str, Callable[[argparse.Namespace], Tuple[bool, str]]]] =
     ("build_v10", "build V10 baseline config", _step_build_v10),
     ("build-allrounder", "synthesize Ultimate All-Rounder master XML", _step_build_allrounder),
     ("build-all-in-one", "synthesize All-in-One Master XML (Night + Bokeh + Skin-Tone)", _step_build_all_in_one),
-    ("deploy", "deploy profile to /sdcard/LMC8.4", _step_deploy),
+    ("deploy", "deploy profile to /sdcard/LMC84", _step_deploy),
 ]
 
 STEP_NAMES = [name for name, _desc, _fn in STEPS]

@@ -25,7 +25,7 @@ RUNS_DIR = ROOT / "runs"
 # --- Defaults ---
 DEFAULT_MASTER = XML_DIR / "LXX521_IMX682_LMC84_AllRounder.xml"
 DEFAULT_TARGET = XML_DIR / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
-LMC_STORAGE_DIR = Path("/sdcard/LMC8.4")
+LMC_STORAGE_DIR = Path("/sdcard/LMC84")
 
 
 def ensure_dirs() -> None:

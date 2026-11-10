@@ -66,7 +66,7 @@ def build_v10_baseline(
         probe.write_text("test", encoding="utf-8")
         probe.unlink()
     except OSError as exc:
-        fail(f"Cannot write to LMC8.4 folder {dest_dir}: {exc}")
+        fail(f"Cannot write to LMC84 folder {dest_dir}: {exc}")
 
     candidate = dest_dir / base_name
     stamp = datetime.now().astimezone().strftime("%Y%m%d_%H%M%S")
