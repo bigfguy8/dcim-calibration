@@ -10,7 +10,8 @@ Runs the calibration pipeline in discrete, togglable steps:
   4. skin_tone- tune skin-tone profile parameters
   5. build_v10- build the V10 baseline config
   6. build-allrounder - synthesize Ultimate All-Rounder master XML
-  7. deploy   - deploy a profile to /sdcard/LMC8.4
+  7. build-all-in-one - synthesize All-in-One Master XML (Night + Bokeh + Skin-Tone)
+  8. deploy   - deploy a profile to /sdcard/LMC8.4
 
 Usage examples:
     ./run_pipeline.py                       # run all steps
@@ -41,7 +42,7 @@ from core import (  # noqa: E402
     ensure_dirs,
 )
 from core import build_v10, calibration, noise, skin_tone, xml_utils  # noqa: E402
-from core import build_ultimate_allrounder  # noqa: E402
+from core import build_ultimate_allrounder, build_all_in_one  # noqa: E402
 from core.logging import get_logger, setup_logger  # noqa: E402
 
 logger = get_logger()
@@ -131,6 +132,22 @@ def _step_build_allrounder(args: argparse.Namespace) -> Tuple[bool, str]:
     return True, "Ultimate All-Rounder master XML built"
 
 
+def _step_build_all_in_one(args: argparse.Namespace) -> Tuple[bool, str]:
+    try:
+        build_all_in_one.build_all_in_one_master(
+            base_path=Path(args.all_in_one_base),
+            skin_tone_path=Path(args.all_in_one_skin_tone),
+            low_light_path=Path(args.all_in_one_low_light),
+            output_path=Path(args.all_in_one_output),
+            dry_run=args.dry_run,
+        )
+    except SystemExit as exc:
+        return False, f"All-in-One build failed: {exc.code}"
+    except Exception as exc:  # noqa: BLE001
+        return False, f"All-in-One build failed: {exc}"
+    return True, "All-in-One Master XML built"
+
+
 def _step_deploy(args: argparse.Namespace) -> Tuple[bool, str]:
     profile = Path(args.deploy_profile)
     if not profile.is_file():
@@ -153,6 +170,7 @@ STEPS: List[Tuple[str, str, Callable[[argparse.Namespace], Tuple[bool, str]]]] =
     ("skin_tone", "tune skin-tone profile parameters", _step_skin_tone),
     ("build_v10", "build V10 baseline config", _step_build_v10),
     ("build-allrounder", "synthesize Ultimate All-Rounder master XML", _step_build_allrounder),
+    ("build-all-in-one", "synthesize All-in-One Master XML (Night + Bokeh + Skin-Tone)", _step_build_all_in_one),
     ("deploy", "deploy profile to /sdcard/LMC8.4", _step_deploy),
 ]
 
@@ -197,6 +215,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-build-allrounder",
         action="store_true",
         help="skip the Ultimate All-Rounder build step",
+    )
+    parser.add_argument(
+        "--skip-build-all-in-one",
+        action="store_true",
+        help="skip the All-in-One Master build step",
     )
     parser.add_argument(
         "--skip-deploy",
@@ -274,6 +297,31 @@ def build_parser() -> argparse.ArgumentParser:
         help="output path for Ultimate All-Rounder XML",
     )
     parser.add_argument(
+        "--all-in-one-base",
+        default=str(DEFAULT_MASTER),
+        help="base AllRounder XML profile path",
+    )
+    parser.add_argument(
+        "--all-in-one-skin-tone",
+        default=str(DEFAULT_TARGET),
+        help="skin-tone perfect XML profile path",
+    )
+    parser.add_argument(
+        "--all-in-one-low-light",
+        default=str(
+            Path(__file__).resolve().parent
+            / "analysis_results"
+            / "imx682_config"
+            / "lowlight.xml"
+        ),
+        help="low-light XML profile path",
+    )
+    parser.add_argument(
+        "--all-in-one-output",
+        default=str(XML_DIR / "LXX521_IMX682_LMC84_AllInOne_Master.xml"),
+        help="output path for All-in-One Master XML",
+    )
+    parser.add_argument(
         "--deploy-profile",
         default=str(DEFAULT_TARGET),
         help="profile file to deploy to phone storage",
@@ -295,6 +343,7 @@ def resolve_steps(args: argparse.Namespace) -> List[Tuple[str, str, Callable]]:
         "skin_tone": args.skip_skin_tone,
         "build_v10": args.skip_build_v10,
         "build-allrounder": args.skip_build_allrounder,
+        "build-all-in-one": args.skip_build_all_in_one,
         "deploy": args.skip_deploy,
     }
 
