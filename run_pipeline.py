@@ -10,8 +10,8 @@ Runs the calibration pipeline in discrete, togglable steps:
   4. skin_tone- tune skin-tone profile parameters
   5. build_v10- build the V10 baseline config
   6. build-allrounder - synthesize Ultimate All-Rounder master XML
-  7. build-all-in-one - synthesize All-in-One Master XML (Night + Bokeh + Skin-Tone)
-  8. deploy   - deploy a profile to /sdcard/LMC8.4
+  7. build-all-in-one - synthesize All-in-One Master BSG XML (Night + Bokeh + Skin-Tone)
+  8. deploy   - deploy profile to /sdcard/GCam/Configs/ (LMC 8.4 config dir)
 
 Usage examples:
     ./run_pipeline.py                       # run all steps
@@ -36,6 +36,7 @@ if str(REPO_ROOT / "scripts") not in sys.path:
 from core import (  # noqa: E402
     DEFAULT_MASTER,
     DEFAULT_TARGET,
+    GCAM_CONFIGS_DIR,
     LMC_STORAGE_DIR,
     REPORTS_DIR,
     XML_DIR,
@@ -135,26 +136,27 @@ def _step_build_allrounder(args: argparse.Namespace) -> Tuple[bool, str]:
 def _step_build_all_in_one(args: argparse.Namespace) -> Tuple[bool, str]:
     try:
         build_all_in_one.build_all_in_one_master(
-            base_path=Path(args.all_in_one_base),
+            bsg_template=Path(args.all_in_one_template),
             skin_tone_path=Path(args.all_in_one_skin_tone),
             low_light_path=Path(args.all_in_one_low_light),
             output_path=Path(args.all_in_one_output),
             dry_run=args.dry_run,
+            deploy=True,
         )
     except SystemExit as exc:
         return False, f"All-in-One build failed: {exc.code}"
     except Exception as exc:  # noqa: BLE001
         return False, f"All-in-One build failed: {exc}"
-    return True, "All-in-One Master XML built"
+    return True, "All-in-One Master BSG XML built and deployed"
 
 
 def _step_deploy(args: argparse.Namespace) -> Tuple[bool, str]:
     profile = Path(args.deploy_profile)
     if not profile.is_file():
         return False, f"profile to deploy not found: {profile}"
-    dest = LMC_STORAGE_DIR / profile.name
+    dest = GCAM_CONFIGS_DIR / profile.name
     try:
-        LMC_STORAGE_DIR.mkdir(parents=True, exist_ok=True)
+        GCAM_CONFIGS_DIR.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(profile.read_bytes())
     except OSError as exc:
         return False, f"deploy failed: {exc}"
@@ -297,9 +299,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="output path for Ultimate All-Rounder XML",
     )
     parser.add_argument(
-        "--all-in-one-base",
-        default=str(DEFAULT_MASTER),
-        help="base AllRounder XML profile path",
+        "--all-in-one-template",
+        default=str(Path("/sdcard/GCam/Configs/LXX521_BSG_LMC_v2_AllInOne.xml")),
+        help="BSG config template path (the schema LMC 8.4 reads for photo mode)",
     )
     parser.add_argument(
         "--all-in-one-skin-tone",

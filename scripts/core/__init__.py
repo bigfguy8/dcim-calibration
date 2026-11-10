@@ -5,11 +5,12 @@ orchestrators) can import them with a single dotted path:
 
     from scripts.core import calibration, xml_utils, skin_tone, build_v10, noise
 """
-from . import build_v10, calibration, logging, noise, skin_tone, xml_utils
+from . import build_all_in_one, build_v10, calibration, logging, noise, skin_tone, xml_utils
 from .paths import (
     DATA_DIR,
     DEFAULT_MASTER,
     DEFAULT_TARGET,
+    GCAM_CONFIGS_DIR,
     LMC_STORAGE_DIR,
     REPORTS_DIR,
     ROOT,
@@ -18,6 +19,7 @@ from .paths import (
 )
 
 __all__ = [
+    "build_all_in_one",
     "build_v10",
     "calibration",
     "logging",
@@ -27,6 +29,7 @@ __all__ = [
     "DATA_DIR",
     "DEFAULT_MASTER",
     "DEFAULT_TARGET",
+    "GCAM_CONFIGS_DIR",
     "LMC_STORAGE_DIR",
     "REPORTS_DIR",
     "ROOT",
