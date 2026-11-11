@@ -1,48 +1,44 @@
 #!/usr/bin/env bash
 #
-# run_deploy_and_analyze.sh — Deploy LMC 8.4 calibration config and analyze DCIM captures
+# run_deploy_and_analyze.sh — Deploy the mandated MGC 8.9 profiles and analyze
+# device captures.
 #
 # Steps:
-#   1. Run generate_best_tuned_config.py to write the updated configuration
-+      directly to /sdcard/LMC8.4/LXX521_IMX682.xml
+#   1. Run deploy_profiles.sh to deploy exactly LXX521_TEX.xml and LXX521_AI.xml
+#      to /sdcard/lmc8.4/ (any other *.xml is archived, never deleted).
 #   2. Run analyze_photos.py to extract image resolution and color channel
-+      metrics from the latest captures in /sdcard/DCIM/Camera/
+#      metrics from the latest captures in /sdcard/DCIM/Camera/.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-LMC84_DIR="/sdcard/LMC8.4"
-DCIM_DIR="/sdcard/DCIM/Camera"
-OUTPUT_XML="LXX521_IMX682.xml"
-BASE_CONFIG="configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml"
+LMC_DIR="${CALIB_LMC_DIR:-/sdcard/lmc8.4}"
+DCIM_DIR="${DCIM_PATH:-/sdcard/DCIM/Camera}"
 
 echo "============================================================"
-echo "LMC 8.4 Calibration Deploy & Analyze"
+echo "MGC 8.9 Profile Deploy & Analyze"
 echo "============================================================"
 echo ""
 
 # ------------------------------------------------------------------
-# Step 1: Generate and deploy the updated calibration XML
+# Step 1: Deploy the two mandated profiles
 # ------------------------------------------------------------------
-echo "[1/2] Generating best-tuned calibration XML..."
-python "${SCRIPT_DIR}/generate_best_tuned_config.py" \
-    --base "${BASE_CONFIG}" \
-    --output "${OUTPUT_XML}"
+echo "[1/2] Deploying LXX521_TEX.xml and LXX521_AI.xml..."
+bash "${SCRIPT_DIR}/deploy_profiles.sh" --prune
 
-# Verify deployment
-if [[ -f "${LMC84_DIR}/${OUTPUT_XML}" ]]; then
-    echo "  ✓ Deployed to ${LMC84_DIR}/${OUTPUT_XML}"
-else
-    echo "  ✗ ERROR: Failed to deploy ${OUTPUT_XML} to ${LMC84_DIR}/"
-    exit 1
-fi
-
-echo ""
+for profile in LXX521_TEX.xml LXX521_AI.xml; do
+    if [[ ! -f "${LMC_DIR}/${profile}" ]]; then
+        echo "  ✗ ERROR: ${profile} missing from ${LMC_DIR}/" >&2
+        exit 1
+    fi
+    echo "  ✓ ${profile}"
+done
 
 # ------------------------------------------------------------------
 # Step 2: Analyze DCIM captures
 # ------------------------------------------------------------------
+echo ""
 echo "[2/2] Analyzing DCIM captures for image metrics..."
 python "${SCRIPT_DIR}/analyze_photos.py" \
     --camera-dir "${DCIM_DIR}" \
@@ -51,6 +47,6 @@ python "${SCRIPT_DIR}/analyze_photos.py" \
 echo ""
 echo "============================================================"
 echo "Deploy & Analyze complete."
-echo "  Config:    ${LMC84_DIR}/${OUTPUT_XML}"
+echo "  Profiles:  ${LMC_DIR}/LXX521_TEX.xml, ${LMC_DIR}/LXX521_AI.xml"
 echo "  Metrics:   ${REPO_DIR}/analysis/data/dcim_camera_analysis/calibration_metrics.json"
 echo "============================================================"

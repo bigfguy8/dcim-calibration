@@ -25,7 +25,8 @@ LOCKFILE_PATH       lockfile path               (default <base>/.daemon.lock)
 LOCK_TIMEOUT        seconds to wait for lock    (default 0 = fail fast)
 MAX_RETRIES         max retries per flaky op    (default 3)
 RETRY_BACKOFF       base backoff seconds        (default 1.0)
-BASELINE_PROFILE    reference profile name      (default LXX521_IMX682_NightSight_Ultra.xml)
+BASELINE_PROFILE    reference profile name      (default LXX521_TEX.xml)
+CONFIGS_XML_PATH    directory holding the active XML (default <repo>/configs/xml)
 AUTO_TUNE_INTERVAL  seconds between auto-tune   (default 30.0)
 AUTO_TUNE_ENABLED   run auto-tune in daemon     (default true)
 """
@@ -42,7 +43,7 @@ IMAGE_EXTS: Set[str] = {
 }
 PROFILE_EXTS: Set[str] = {".xml"}
 
-_DEFAULT_BASELINE = "LXX521_IMX682_NightSight_Ultra.xml"
+_DEFAULT_BASELINE = "LXX521_TEX.xml"
 
 
 def _env(name: str, default: str) -> str:
@@ -117,7 +118,8 @@ def load_config() -> DaemonConfig:
     base_dir = Path(_env("BASE_DIR", str(Path(__file__).resolve().parent.parent.parent))).resolve()
     # scripts/core/ -> scripts/ -> packages/cli  =>  BASE_DIR = packages/cli
     dcim_path = Path(_env("DCIM_PATH", "/sdcard/DCIM/Camera")).expanduser().resolve()
-    configs_xml_path = Path(_env("CONFIGS_XML_PATH", "/sdcard/LMC8.4")).expanduser().resolve()
+    default_xml_dir = base_dir.parents[1] / "configs" / "xml"
+    configs_xml_path = Path(_env("CONFIGS_XML_PATH", str(default_xml_dir))).expanduser().resolve()
     captures_dir = Path(_env("CAPTURES_DIR", str(base_dir / "captures"))).resolve()
     logs_dir = Path(_env("LOGS_DIR", str(base_dir / "logs"))).resolve()
     reports_dir = Path(_env("REPORTS_DIR", str(base_dir / "analysis" / "reports"))).resolve()
