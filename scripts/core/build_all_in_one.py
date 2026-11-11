@@ -1,4 +1,4 @@
-"""Build the LXX521_IMX682_LMC84_AllInOne_Master.xml configuration (LMC format).
+"""Build the LXX521_AllInOne_Master.xml configuration (LMC-compatible map).
 
 Synthesizes a single production-ready LMC 8.4 "All-in-One Master" profile by
 merging calibration attributes from four specialized sub-profiles:
@@ -17,8 +17,8 @@ Merge priority (later wins, except skin-tone keys which are locked):
       -> Sharpness & MTF50 (balanced coefficients, no halos on skin)
 
 Output:
-  configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml
-  configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.status.md
+  configs/xml/LXX521_AllInOne_Master.xml
+  configs/xml/LXX521_AllInOne_Master.status.md
   analysis/reports/all_in_one_master_validation.json
   analysis/reports/all_in_one_master_merge_diff.md
 
@@ -53,12 +53,12 @@ logger = get_logger()
 
 # --- Paths ------------------------------------------------------------------
 
-BASE_PROFILE = XML_DIR / "LXX521_IMX682_LMC84_AllRounder.xml"
-SKIN_TONE_PROFILE = XML_DIR / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
+BASE_PROFILE = XML_DIR / "LXX521_TEX.xml"
+SKIN_TONE_PROFILE = XML_DIR / "LXX521_AI.xml"
 LOW_LIGHT_PROFILE = DATA_DIR.parent / "imx682_config" / "lowlight.xml"
 
-OUTPUT_XML = XML_DIR / "LXX521_IMX682_LMC84_AllInOne_Master.xml"
-OUTPUT_STATUS = XML_DIR / "LXX521_IMX682_LMC84_AllInOne_Master.status.md"
+OUTPUT_XML = XML_DIR / "LXX521_AllInOne_Master.xml"
+OUTPUT_STATUS = XML_DIR / "LXX521_AllInOne_Master.status.md"
 VALIDATION_REPORT = REPORTS_DIR / "all_in_one_master_validation.json"
 MERGE_DIFF_REPORT = REPORTS_DIR / "all_in_one_master_merge_diff.md"
 
@@ -113,9 +113,11 @@ def build_all_in_one_master(
     low_light_path = Path(low_light_path)
     output_path = Path(output_path)
 
-    for p in (base_path, skin_tone_path, low_light_path):
+    for p in (base_path, skin_tone_path):
         if not p.is_file():
             raise FileNotFoundError(f"Source profile missing: {p}")
+    if not low_light_path.is_file():
+        logger.warning("Low-light profile missing, skipping tier: %s", low_light_path)
 
     # ---- Tier 1: Base (AllRounder) ---------------------------------------
     base_params = _load_lmc_params(base_path)
@@ -133,11 +135,14 @@ def build_all_in_one_master(
     )
 
     # ---- Tier 3: Low-Light / Night Enhancement ---------------------------
-    low_light_params = _load_lmc_params(low_light_path)
-    night_overrides = {
-        k: v for k, v in low_light_params.items()
-        if not _is_skin_tone_key(k)
-    }
+    if low_light_path.is_file():
+        low_light_params = _load_lmc_params(low_light_path)
+        night_overrides = {
+            k: v for k, v in low_light_params.items()
+            if not _is_skin_tone_key(k)
+        }
+    else:
+        night_overrides = {}
     logger.info("Low-Light / Night: %d keys overridden", len(night_overrides))
 
     # ---- Tier 4: Portrait & Bokeh Tuning ---------------------------------

@@ -55,7 +55,7 @@ from core.paths import XML_DIR, LMC_STORAGE_DIR  # noqa: E402
 from core.safety import GuardError, check_deploy_target  # noqa: E402
 from core.xml_utils import parse_xml_params  # noqa: E402
 
-BASE_NAME = "LXX521_IMX682.xml"
+BASE_NAME = "LXX521_TEX.xml"
 DEFAULT_VARIANT = "v3"
 
 # ---------------------------------------------------------------------------

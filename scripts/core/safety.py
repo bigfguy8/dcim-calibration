@@ -55,7 +55,7 @@ def check_deploy_target(path: "str | Path") -> Path:
     """Validate a deploy/write directory. Returns the resolved path.
 
     Raises GuardError if the resolved path is empty, a filesystem root, or
-    a forbidden storage mount point. Subdirectories (e.g. ``/sdcard/LMC84``)
+    a forbidden storage mount point. Subdirectories (e.g. ``/sdcard/lmc8.4``)
     are allowed — they are the explicit, user-facing deploy location.
     """
     p = resolved(path)

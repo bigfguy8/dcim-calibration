@@ -1,4 +1,4 @@
-"""Build the LXX521_IMX682_LMC84_Ultimate_AllRounder.xml configuration.
+"""Build the LXX521_Ultimate_AllRounder.xml configuration.
 
 Synthesizes a single production-ready LMC 8.4 profile by merging calibration
 attributes from four specialized sub-profiles into the AllRounder base:
@@ -16,7 +16,7 @@ Merge priority (later wins, except skin-tone keys which are locked):
       -> Portrait / Bokeh (WB/face/sharpening moderate)
       -> Sharpness & MTF50 (balanced coefficients, no halos on skin)
 
-The output is written to configs/xml/LXX521_IMX682_LMC84_Ultimate_AllRounder.xml
+The output is written to configs/xml/LXX521_Ultimate_AllRounder.xml
 and a validation diff report is written to analysis/reports/.
 """
 from __future__ import annotations
@@ -43,12 +43,12 @@ from .xml_utils import parse_xml_params
 
 logger = get_logger()
 
-BASE_PROFILE = XML_DIR / "LXX521_IMX682_LMC84_AllRounder.xml"
-SKIN_TONE_PROFILE = XML_DIR / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
+BASE_PROFILE = XML_DIR / "LXX521_TEX.xml"
+SKIN_TONE_PROFILE = XML_DIR / "LXX521_AI.xml"
 LOW_LIGHT_PROFILE = XML_DIR.parent.parent / "analysis_results" / "imx682_config" / "lowlight.xml"
 
-OUTPUT_XML = XML_DIR / "LXX521_IMX682_LMC84_Ultimate_AllRounder.xml"
-OUTPUT_STATUS = XML_DIR / "LXX521_IMX682_LMC84_Ultimate_AllRounder.status.md"
+OUTPUT_XML = XML_DIR / "LXX521_Ultimate_AllRounder.xml"
+OUTPUT_STATUS = XML_DIR / "LXX521_Ultimate_AllRounder.status.md"
 VALIDATION_REPORT = REPORTS_DIR / "ultimate_allrounder_validation.json"
 MERGE_DIFF_REPORT = REPORTS_DIR / "ultimate_allrounder_merge_diff.md"
 
@@ -99,9 +99,11 @@ def build_ultimate_allrounder(
     low_light_path = Path(low_light_path)
     output_path = Path(output_path)
 
-    for p in (base_path, skin_tone_path, low_light_path):
+    for p in (base_path, skin_tone_path):
         if not p.is_file():
             raise FileNotFoundError(f"Source profile missing: {p}")
+    if not low_light_path.is_file():
+        logger.warning("Low-light profile missing, skipping tier: %s", low_light_path)
 
     # ---- Tier 1: Base (AllRounder) ---------------------------------------
     base_params = _load_profile(base_path)
@@ -118,11 +120,14 @@ def build_ultimate_allrounder(
     )
 
     # ---- Tier 3: Low-Light / Night ---------------------------------------
-    low_light_params = _load_profile(low_light_path)
-    low_light_overrides = {
-        k: v for k, v in low_light_params.items()
-        if base_params.get(k) != v and not _is_skin_tone_key(k)
-    }
+    if low_light_path.is_file():
+        low_light_params = _load_profile(low_light_path)
+        low_light_overrides = {
+            k: v for k, v in low_light_params.items()
+            if base_params.get(k) != v and not _is_skin_tone_key(k)
+        }
+    else:
+        low_light_overrides = {}
     logger.info(
         "Low-Light / Night: %d keys overridden", len(low_light_overrides)
     )

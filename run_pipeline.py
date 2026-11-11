@@ -19,7 +19,7 @@ Usage examples:
     ./run_pipeline.py --skip-audit --verbose
     ./run_pipeline.py --steps env,calibrate --batch-dir /sdcard/DCIM/Camera
     ./run_pipeline.py --deploy              # authorize writes to phone storage
-    #    (/sdcard/LMC84, overridable via DCIM_LMC_DIR; or set DCIM_DEPLOY=1)
+    #    (/sdcard/lmc8.4, overridable via DCIM_LMC_DIR; or set DCIM_DEPLOY=1)
 
 Phone-storage writes (build_v10, build-all-in-one deploy, deploy step) are
 NEVER performed unless --deploy is passed or DCIM_DEPLOY=1 is set.
@@ -215,7 +215,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--deploy",
         action="store_true",
-        help="authorize writes to phone storage (/sdcard/LMC84, overridable via "
+        help="authorize writes to phone storage (/sdcard/lmc8.4, overridable via "
         "DCIM_LMC_DIR); also enabled by DCIM_DEPLOY=1. Without it, all "
         "phone-writing steps are skipped.",
     )
@@ -331,7 +331,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--allrounder-output",
-        default=str(XML_DIR / "LXX521_IMX682_LMC84_Ultimate_AllRounder.xml"),
+        default=str(XML_DIR / "LXX521_Ultimate_AllRounder.xml"),
         help="output path for Ultimate All-Rounder XML",
     )
     parser.add_argument(
@@ -356,7 +356,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--all-in-one-output",
-        default=str(XML_DIR / "LXX521_IMX682_LMC84_AllInOne_Master.xml"),
+        default=str(XML_DIR / "LXX521_AllInOne_Master.xml"),
         help="output path for All-in-One Master XML",
     )
     parser.add_argument(

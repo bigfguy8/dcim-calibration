@@ -22,7 +22,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict
 
-LMC84_DIR = Path("/sdcard/LMC8.4")
+LMC84_DIR = Path("/sdcard/lmc8.4")
 
 # Crash-critical parameters — must use SkinTone_Perfect values
 CRASH_CRITICAL: Dict[str, str] = {
@@ -94,7 +94,7 @@ def set_elem_value(elem: ET.Element, value: str) -> None:
 
 def synthesize_master_config(
     lmc84_dir: Path = LMC84_DIR,
-    output_filename: str = "LXX521_IMX682_LMC84_Synthesized_Master.xml",
+    output_filename: str = "LXX521_Synthesized_Master.xml",
 ) -> Path:
     """Synthesize a new Master config from all LMC84 configs.
 
@@ -106,8 +106,8 @@ def synthesize_master_config(
       - For all other parameters: keep PATCHED values
     Output deployed to /sdcard/LMC8.4/
     """
-    patched_path = lmc84_dir / "LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml"
-    skintone_path = lmc84_dir / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
+    patched_path = lmc84_dir / "LXX521_TEX.xml"
+    skintone_path = lmc84_dir / "LXX521_AI.xml"
 
     if not patched_path.is_file():
         raise FileNotFoundError(f"Patched config not found: {patched_path}")

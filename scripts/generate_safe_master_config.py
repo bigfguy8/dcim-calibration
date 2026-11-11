@@ -82,7 +82,7 @@ SAFE_OVERRIDES: Dict[str, str] = {
 }
 
 # Deploy target — LMC 8.4 reads configs from this directory on the device
-LMC84_DIR = Path("/sdcard/LMC84")
+LMC84_DIR = Path("/sdcard/lmc8.4")
 
 
 def get_elem_value(elem: ET.Element) -> str:
@@ -154,6 +154,6 @@ def generate_safe_master_config(
 
 if __name__ == "__main__":
     # Source AllInOne Master and output path
-    source_xml = "configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml"
+    source_xml = "configs/xml/LXX521_TEX.xml"
     target_xml = "LXX521_IMX682_Safe_Master.xml"
     generate_safe_master_config(source_xml, target_xml)

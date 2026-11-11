@@ -14,7 +14,7 @@ Calibrated from DCIM capture analysis:
 - Bokeh / Portrait Mode: pref_Copmode_portrait_key=1, pref_opmode_portrait_key=1,
   lib_depth1_key=1, lib_depth2_key=1, lib_sharpeningedge_key=1
 
-Output: LXX521_IMX682_LMC84_Best.xml deployed to /sdcard/LMC8.4/
+Output: LXX521_IMX682_LMC84_Best.xml deployed to /sdcard/lmc8.4/
 """
 from __future__ import annotations
 
@@ -23,7 +23,7 @@ import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-LMC84_DIR = Path("/sdcard/LMC8.4")
+LMC84_DIR = Path("/sdcard/lmc8.4")
 
 # Best-tuned parameters for IMX682 + LXX521 (calibrated from DCIM data)
 BEST_TUNED_PARAMS: dict[str, str] = {
@@ -154,7 +154,7 @@ def generate_best_tuned_config(
     # Validate well-formedness
     ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
-    # Deploy to /sdcard/LMC8.4/
+    # Deploy to /sdcard/lmc8.4/
     LMC84_DIR.mkdir(parents=True, exist_ok=True)
     deploy_path = LMC84_DIR / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
@@ -174,13 +174,13 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--base",
-        default="configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml",
+        default="configs/xml/LXX521_TEX.xml",
         help="Path to base XML profile",
     )
     parser.add_argument(
         "--output",
         default="LXX521_IMX682_LMC84_Best.xml",
-        help="Output filename (deployed to /sdcard/LMC8.4/)",
+        help="Output filename (deployed to /sdcard/lmc8.4/)",
     )
     args = parser.parse_args()
 

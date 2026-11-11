@@ -29,7 +29,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict
 
-LMC84_DIR = Path("/sdcard/LMC8.4")
+LMC84_DIR = Path("/sdcard/lmc8.4")
 
 # Best-tuned parameters for IMX682 + LXX521 based on DCIM calibration analysis
 UPGRADED_PARAMS: Dict[str, str] = {
@@ -141,6 +141,6 @@ def generate_upgraded_config(
 
 
 if __name__ == "__main__":
-    base_path = Path("configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml")
+    base_path = Path("configs/xml/LXX521_TEX.xml")
     output_filename = "LXX521_IMX682_LMC84_Upgraded_Master.xml"
     generate_upgraded_config(base_path, output_filename)

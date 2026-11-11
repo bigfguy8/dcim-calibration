@@ -24,12 +24,12 @@ LOGS_DIR = ROOT / "logs"
 RUNS_DIR = ROOT / "runs"
 
 # --- Defaults ---
-DEFAULT_MASTER = XML_DIR / "LXX521_IMX682_LMC84_AllRounder.xml"
-DEFAULT_TARGET = XML_DIR / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
+DEFAULT_MASTER = XML_DIR / "LXX521_TEX.xml"
+DEFAULT_TARGET = XML_DIR / "LXX521_AI.xml"
 # Phone deploy directory (directory the LMC 8.4 app reads). Overridable via
 # the DCIM_LMC_DIR environment variable; validated by scripts.core.safety
 # before any write. Never a filesystem root/mount point.
-LMC_STORAGE_DIR = Path(os.environ.get("DCIM_LMC_DIR", "/sdcard/LMC8.4"))
+LMC_STORAGE_DIR = Path(os.environ.get("DCIM_LMC_DIR", "/sdcard/lmc8.4"))
 
 
 def ensure_dirs() -> None:

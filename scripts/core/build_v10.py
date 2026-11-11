@@ -1,7 +1,7 @@
-"""V10 LMC 8.4 baseline config builder.
+"""V10 baseline config builder.
 
-Refactored from build_v10_lmc84.py. Copies the AllRounder source profile to
-the LMC 8.4 storage directory as an untuned, device-unvalidated baseline,
+Copies the texture-first source profile to the MGC storage directory as an
+untuned, device-unvalidated baseline,
 writing a matching .status.md report. Never overwrites an existing config.
 """
 from __future__ import annotations
@@ -18,7 +18,7 @@ from .safety import check_deploy_target
 
 logger = get_logger()
 
-BASE_NAME = "LXX521_IMX682_LMC84_V10_Baseline_UNVALIDATED.xml"
+BASE_NAME = "LXX521_V10_Baseline_UNVALIDATED.xml"
 STATUS_LABEL = "BASELINE_COPY_UNTUNED_NOT_DEVICE_VALIDATED"
 
 
@@ -106,7 +106,7 @@ def build_v10_baseline(
         suffix += 1
         extra = f"_{suffix}" if suffix > 1 else ""
         candidate = dest_dir / (
-            f"LXX521_IMX682_LMC84_V10_Baseline_UNVALIDATED_{stamp}{extra}.xml"
+            f"LXX521_V10_Baseline_UNVALIDATED_{stamp}{extra}.xml"
         )
 
     # Never overwrite an existing config.

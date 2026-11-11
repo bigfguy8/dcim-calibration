@@ -18,11 +18,19 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import cv2
-import matplotlib
+try:
+    import cv2  # type: ignore
+except ImportError:  # Termux: OpenCV is optional; MTF fallbacks live in analyze.py
+    cv2 = None  # type: ignore
 
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
+try:
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt  # noqa: E402
+except ImportError:  # plotting is optional
+    matplotlib = None  # type: ignore
+    plt = None  # type: ignore
 import numpy as np
 from PIL import Image, ExifTags
 

@@ -227,19 +227,19 @@ def main() -> None:
     parser.add_argument(
         "--master",
         type=Path,
-        default=Path("configs/xml/LXX521_IMX682_LMC84_AllInOne_Master.xml"),
+        default=Path("configs/xml/LXX521_TEX.xml"),
         help="Path to the All-In-One Master XML",
     )
     parser.add_argument(
         "--reference",
         type=Path,
-        default=Path("configs/xml/LXX521_IMX682_LMC84_SkinTone_Perfect.xml"),
+        default=Path("configs/xml/LXX521_AI.xml"),
         help="Path to the SkinTone Perfect reference XML",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml"),
+        default=Path("configs/xml/LXX521_TEX_PATCHED.xml"),
         help="Output path for patched XML",
     )
     parser.add_argument(
