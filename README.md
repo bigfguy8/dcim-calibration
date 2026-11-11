@@ -114,3 +114,105 @@ python3 -m unittest discover -s scripts/tests -v
 The suite validates MTF50 against an analytic Gaussian PSF, noise-sigma
 recovery, exposure statistics, report grouping, and profile reproducibility.
 
+---
+
+## LXX521 Candidate Triage
+
+Seventeen LXX521 LMC84 XML profile variants are registered as **read-only inputs**
+under `configs/candidates/LXX521/` and triaged against the canonical baseline
+`configs/xml/LXX521_TEX.xml`.
+
+### Invariant (read-only)
+
+Candidates are **inputs, not deploy targets**. The active deployed pair remains
+`LXX521_TEX.xml` + `LXX521_AI.xml`; `deploy_profiles.sh` deploys only that pair.
+`/sdcard/lmc8.4` is **READ-ONLY** in this feature: the `device_live` source is
+verify-only and is never written to or deployed from. No push to `main`; all work
+lands on a feature branch only.
+
+### Sources registry (`configs/sources.json`)
+
+Three sources are registered:
+
+| name | path | kind | role | read_only |
+|---|---|---|---|---|
+| `repo_canonical` | `configs/xml` | lmc84 | canonical | no |
+| `repo_candidates` | `configs/candidates/LXX521` | lmc84 | candidate | no |
+| `device_live` | `/sdcard/lmc8.4` | lmc84 | live | yes |
+
+`manifest_sha256` algorithm: build the canonical JSON blob
+`{"files":[{"name":<basename>,"sha256":<hex>,"bytes":<int>}, ...]}` with file
+entries sorted by name, object keys sorted, UTF-8 encoding, no whitespace, then
+SHA-256 that blob. `verify` recomputes it and exits `0` on match, `1` on drift.
+
+Commands (`scripts/sources.py`):
+
+```bash
+# list all sources with file/byte counts
+python3 scripts/sources.py list
+
+# verify every source manifest (exit 0 = all match, 1 = drift)
+python3 scripts/sources.py verify
+
+# verify a single source
+python3 scripts/sources.py verify --name repo_candidates
+
+# register a new source (writes only to configs/)
+python3 scripts/sources.py add --name foo --path /some/dir --kind lmc84 --role candidate
+
+# remove a source (live sources require --yes)
+python3 scripts/sources.py remove --name foo --yes
+```
+
+### Triage CLI (`scripts/triage_profiles.py`)
+
+```bash
+python3 scripts/triage_profiles.py \
+    --candidates configs/candidates/LXX521 \
+    --reference configs/xml/LXX521_TEX.xml \
+    --out reports \
+    --format md
+```
+
+Writes `reports/lxx521_triage.md` (human; `generated_at` in header only) and
+`reports/lxx521_triage.json` (machine; **no timestamps**, deterministic ordering).
+
+For each candidate it reports sha256, byte size, key count, the delta vs the
+reference (added / removed / changed keys), a family assignment, and validation
+status via `validate_source` (kind `lmc84`).
+
+### Family taxonomy (deterministic, first match wins)
+
+| family | rule |
+|---|---|
+| `baseline` | no added or changed keys |
+| `night` | name contains `NIGHT`, or `lib_denoise_key>1` AND `pref_frames_hdr_key>4` |
+| `balanced` | name contains `BALANCED` |
+| `dslr` | name matches `/DSLR(64|MAX)?/` |
+| `sharpness_probe` | name contains `SHARPNESS_PROBE`, or only `lib_sharpnessb_key` changed |
+| `allinone` | name contains `ALLINONE` |
+| `hr` | name contains `_HR` |
+| `aesthetic` | name in `{IPHONE, PIXEL, PORTRAIT}` |
+| `experiment` | fallback |
+
+### Duplicate detection
+
+Candidates are grouped by exact sha256 and by delta signature
+(frozenset of `{"key","old","new"}` change triples). Groups with `>1` member are
+reported as duplicates.
+
+### `keys_unknown.txt` workflow
+
+When validating a **candidate** source, unknown keys are downgraded to warnings
+and appended to `configs/keys_unknown.txt` (sorted, deduped). Review that file to
+decide whether to promote unknown keys into `configs/keys.txt`.
+
+### Deploy / source overlap guard
+
+Before `deploy_profiles.sh --prune` archives anything into the destination, it
+calls `scripts/sources.py verify-overlap --path <dest>`. If the destination is a
+registered `live` source path (e.g. `/sdcard/lmc8.4`), the prune is refused with
+exit code `2` unless `--force-source-overlap` is supplied. Dry-run behavior is
+unchanged.
+
+

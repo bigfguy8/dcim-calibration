@@ -16,6 +16,7 @@ ADB="${ADB:-adb}"
 PRUNE=0
 DRY_RUN=0
 FORCE_LOCAL=0
+FORCE_SOURCE_OVERLAP=0
 
 ACTIVE=("LXX521_TEX.xml" "LXX521_AI.xml")
 
@@ -27,6 +28,7 @@ Usage: scripts/deploy_profiles.sh [options]
   --prune        archive any non-mandated *.xml in DEST before deploying
   --local        force direct filesystem access (no adb)
   --dry-run      print the plan, change nothing
+  --force-source-overlap allow pruning into a registered `live` source path
 
 Environment: ADB, CALIB_XML_DIR, CALIB_LMC_DIR / DCIM_LMC_DIR
 USAGE
@@ -42,6 +44,7 @@ while [ "$#" -gt 0 ]; do
         --prune) PRUNE=1; shift ;;
         --local) FORCE_LOCAL=1; shift ;;
         --dry-run) DRY_RUN=1; shift ;;
+        --force-source-overlap) FORCE_SOURCE_OVERLAP=1; shift ;;
         -h|--help) usage; exit 0 ;;
         *) die "unknown option: $1" ;;
     esac
@@ -112,6 +115,15 @@ archive="${DEST}/archive/${stamp}"
 pruned=()
 
 if [ "${PRUNE}" -eq 1 ]; then
+    # Overlap guard: refuse to prune into a registered `live` source path
+    # (e.g. /sdcard/lmc8.4) unless --force-source-overlap is given.
+    # Read-only; skipped in dry-run so dry-run behavior is unchanged.
+    if [ "${DRY_RUN}" -eq 0 ]; then
+        OVERLAP_ARGS=(--path "${DEST}")
+        [ "${FORCE_SOURCE_OVERLAP}" -eq 1 ] && OVERLAP_ARGS+=(--force-source-overlap)
+        python3 "${REPO_ROOT}/scripts/sources.py" verify-overlap "${OVERLAP_ARGS[@]}" \
+            || die "destination overlaps a registered live source; pass --force-source-overlap to override"
+    fi
     while IFS= read -r remote; do
         [ -n "${remote}" ] || continue
         base="$(basename "${remote}")"
