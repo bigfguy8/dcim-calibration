@@ -25,7 +25,7 @@ RUNS_DIR = ROOT / "runs"
 
 # --- Defaults ---
 DEFAULT_MASTER = XML_DIR / "LXX521_TEX.xml"
-DEFAULT_TARGET = XML_DIR / "LXX521_AI.xml"
+DEFAULT_TARGET = XML_DIR / "LXX521_NIGHT.xml"
 # Phone deploy directory (directory the LMC 8.4 app reads). Overridable via
 # the DCIM_LMC_DIR environment variable; validated by scripts.core.safety
 # before any write. Never a filesystem root/mount point.

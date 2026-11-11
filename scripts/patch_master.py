@@ -233,7 +233,7 @@ def main() -> None:
     parser.add_argument(
         "--reference",
         type=Path,
-        default=Path("configs/xml/LXX521_AI.xml"),
+        default=Path("configs/xml/LXX521_NIGHT.xml"),
         help="Path to the SkinTone Perfect reference XML",
     )
     parser.add_argument(

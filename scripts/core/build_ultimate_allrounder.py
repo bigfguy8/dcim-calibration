@@ -44,7 +44,8 @@ from .xml_utils import parse_xml_params
 logger = get_logger()
 
 BASE_PROFILE = XML_DIR / "LXX521_TEX.xml"
-SKIN_TONE_PROFILE = XML_DIR / "LXX521_AI.xml"
+# NIGHT preserves every TEX skin-tone key, so this lock is a no-op by design.
+SKIN_TONE_PROFILE = XML_DIR / "LXX521_NIGHT.xml"
 LOW_LIGHT_PROFILE = XML_DIR.parent.parent / "analysis_results" / "imx682_config" / "lowlight.xml"
 
 OUTPUT_XML = XML_DIR / "LXX521_Ultimate_AllRounder.xml"

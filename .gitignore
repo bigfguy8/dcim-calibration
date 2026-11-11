@@ -26,7 +26,7 @@ analysis_results_opencv/
 analysis/reports/
 *.report.json
 *.status.md
-!configs/xml/LXX521_AI.status.md
+!configs/xml/LXX521_NIGHT.status.md
 
 # Generated calibration config artifacts (track canonical XML sources only)
 configs/xml/*_TEXTURE_FIRST.status.md

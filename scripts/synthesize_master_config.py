@@ -107,7 +107,7 @@ def synthesize_master_config(
     Output deployed to /sdcard/LMC8.4/
     """
     patched_path = lmc84_dir / "LXX521_TEX.xml"
-    skintone_path = lmc84_dir / "LXX521_AI.xml"
+    skintone_path = lmc84_dir / "LXX521_NIGHT.xml"
 
     if not patched_path.is_file():
         raise FileNotFoundError(f"Patched config not found: {patched_path}")

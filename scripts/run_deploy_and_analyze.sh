@@ -4,7 +4,7 @@
 # device captures.
 #
 # Steps:
-#   1. Run deploy_profiles.sh to deploy exactly LXX521_TEX.xml and LXX521_AI.xml
+#   1. Run deploy_profiles.sh to deploy exactly LXX521_TEX.xml and LXX521_NIGHT.xml
 #      to /sdcard/lmc8.4/ (any other *.xml is archived, never deleted).
 #   2. Run analyze_photos.py to extract image resolution and color channel
 #      metrics from the latest captures in /sdcard/DCIM/Camera/.
@@ -24,10 +24,10 @@ echo ""
 # ------------------------------------------------------------------
 # Step 1: Deploy the two mandated profiles
 # ------------------------------------------------------------------
-echo "[1/2] Deploying LXX521_TEX.xml and LXX521_AI.xml..."
+echo "[1/2] Deploying LXX521_TEX.xml and LXX521_NIGHT.xml..."
 bash "${SCRIPT_DIR}/deploy_profiles.sh" --prune
 
-for profile in LXX521_TEX.xml LXX521_AI.xml; do
+for profile in LXX521_TEX.xml LXX521_NIGHT.xml; do
     if [[ ! -f "${LMC_DIR}/${profile}" ]]; then
         echo "  ✗ ERROR: ${profile} missing from ${LMC_DIR}/" >&2
         exit 1
@@ -47,6 +47,6 @@ python "${SCRIPT_DIR}/analyze_photos.py" \
 echo ""
 echo "============================================================"
 echo "Deploy & Analyze complete."
-echo "  Profiles:  ${LMC_DIR}/LXX521_TEX.xml, ${LMC_DIR}/LXX521_AI.xml"
+echo "  Profiles:  ${LMC_DIR}/LXX521_TEX.xml, ${LMC_DIR}/LXX521_NIGHT.xml"
 echo "  Metrics:   ${REPO_DIR}/analysis/data/dcim_camera_analysis/calibration_metrics.json"
 echo "============================================================"

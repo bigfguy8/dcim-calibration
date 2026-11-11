@@ -46,6 +46,19 @@ GATES: dict[str, Any] = {
     "noise_green_iso3200_max_dn": 12.0,
 }
 
+# Night captures are legitimately darker, softer (denoise) and noisier, so the
+# NIGHT profile is judged against relaxed thresholds instead of the daylight
+# TEX gates. Profiles whose name contains "night" opt in automatically.
+NIGHT_GATES: dict[str, Any] = {
+    "mtf50_center_min_cpp": 0.18,
+    "mtf50_edge_min_cpp": 0.12,
+    "mean_luma_min": 70.0,
+    "mean_luma_max": 120.0,
+    "highlight_clipping_max_pct": 2.0,
+    "noise_green_iso100_max_dn": 2.5,
+    "noise_green_iso3200_max_dn": 15.0,
+}
+
 _METRIC_LABELS = {
     "mtf50_center": "MTF50 center (cy/px)",
     "mtf50_edge": "MTF50 edge (cy/px)",
@@ -58,15 +71,23 @@ _METRIC_LABELS = {
 # --------------------------------------------------------------------------- #
 # Gate helpers
 # --------------------------------------------------------------------------- #
-def noise_gate(iso: float | None) -> float:
+def gates_for(profile: str | None) -> dict[str, Any]:
+    """Return the gate set for ``profile`` (night profiles get relaxed gates)."""
+    if profile and "night" in str(profile).lower():
+        return {**GATES, **NIGHT_GATES}
+    return GATES
+
+
+def noise_gate(iso: float | None, gates: dict[str, Any] | None = None) -> float:
     """Log-linear green-noise threshold between ISO 100 and ISO 3200."""
+    gates = gates or GATES
     lo, hi = 100.0, 3200.0
     if iso is None or iso <= 0:
-        return float(GATES["noise_green_iso100_max_dn"])
+        return float(gates["noise_green_iso100_max_dn"])
     iso = min(max(float(iso), lo), hi)
     fraction = math.log2(iso / lo) / math.log2(hi / lo)
-    low = float(GATES["noise_green_iso100_max_dn"])
-    high = float(GATES["noise_green_iso3200_max_dn"])
+    low = float(gates["noise_green_iso100_max_dn"])
+    high = float(gates["noise_green_iso3200_max_dn"])
     return low * (high / low) ** fraction
 
 
@@ -153,16 +174,17 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
         mean_luma = _mean(r.get("mean_luma") for r in items)
         clip = _mean(r.get("highlight_clipping_pct") for r in items)
         shadow = _mean(r.get("shadow_clipping_pct") for r in items)
-        threshold = noise_gate(iso)
+        gates = gates_for(profile)
+        threshold = noise_gate(iso, gates)
 
         checks = {
             "mtf50_center": _state(
                 mtf_center,
-                [("mtf50_center", (mtf_center or 0) >= GATES["mtf50_center_min_cpp"])],
+                [("mtf50_center", (mtf_center or 0) >= gates["mtf50_center_min_cpp"])],
             ),
             "mtf50_edge": _state(
                 mtf_edge,
-                [("mtf50_edge", (mtf_edge or 0) >= GATES["mtf50_edge_min_cpp"])],
+                [("mtf50_edge", (mtf_edge or 0) >= gates["mtf50_edge_min_cpp"])],
             ),
             "noise_green": _state(
                 noise_green, [("noise_green", (noise_green or 0) <= threshold)]
@@ -172,15 +194,15 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 [
                     (
                         "mean_luma",
-                        GATES["mean_luma_min"]
+                        gates["mean_luma_min"]
                         <= (mean_luma or 0)
-                        <= GATES["mean_luma_max"],
+                        <= gates["mean_luma_max"],
                     )
                 ],
             ),
             "highlight_clipping_pct": _state(
                 clip,
-                [("highlight_clipping", (clip or 0) < GATES["highlight_clipping_max_pct"])],
+                [("highlight_clipping", (clip or 0) < gates["highlight_clipping_max_pct"])],
             ),
         }
 
@@ -206,6 +228,7 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 "mtf50_edge": mtf_edge,
                 "noise_green": noise_green,
                 "noise_gate": threshold,
+                "gates": gates,
                 "mean_luma": mean_luma,
                 "highlight_clipping_pct": clip,
                 "shadow_clipping_pct": shadow,
@@ -276,6 +299,15 @@ def render_markdown(
     lines.append(
         f"| Green sigma | <= {GATES['noise_green_iso100_max_dn']:.1f} DN @ ISO 100, "
         f"<= {GATES['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200 |"
+    )
+    lines.append("")
+    lines.append(
+        "Night profiles (`*NIGHT*`) use relaxed gates: "
+        f"MTF50 center >= {NIGHT_GATES['mtf50_center_min_cpp']:.2f}, "
+        f"edge >= {NIGHT_GATES['mtf50_edge_min_cpp']:.2f} cy/px, "
+        f"luma {NIGHT_GATES['mean_luma_min']:.0f}-{NIGHT_GATES['mean_luma_max']:.0f} DN, "
+        f"clipping < {NIGHT_GATES['highlight_clipping_max_pct']:.1f} %, "
+        f"green sigma <= {NIGHT_GATES['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200."
     )
     lines.append("")
 
@@ -393,6 +425,7 @@ def main(argv: list[str] | None = None) -> int:
         "title": args.title,
         "sources": sources,
         "gates": GATES,
+        "night_gates": NIGHT_GATES,
         "summary": summary,
         "records": records,
     }

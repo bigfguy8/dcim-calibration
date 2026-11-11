@@ -178,9 +178,30 @@ class FilePipelineTests(unittest.TestCase):
             low_iso = [g for g in payload["summary"]["groups"] if g["iso"] == 100][0]
             self.assertEqual(low_iso["status"], "pass")
 
-    def test_ai_profile_is_reproducible(self):
+    def test_night_profile_uses_night_gates(self):
+        record = {
+            "profile": "LXX521_NIGHT.xml",
+            "camera": "main",
+            "iso": 3200,
+            "status": "ok",
+            "mtf50_center": 0.20,
+            "mtf50_edge": 0.14,
+            "noise_sigma": {"g": 14.0},
+            "mean_luma": 90.0,
+            "highlight_clipping_pct": 1.5,
+        }
+        night = report.build_summary([record])["groups"][0]
+        self.assertEqual(night["status"], "pass")
+        self.assertEqual(night["gates"]["mtf50_center_min_cpp"], 0.18)
+
+        daylight = report.build_summary([{**record, "profile": "LXX521_TEX.xml"}])[
+            "groups"
+        ][0]
+        self.assertEqual(daylight["status"], "fail")
+
+    def test_night_profile_is_reproducible(self):
         result = subprocess.run(
-            [sys.executable, str(SCRIPTS / "make_ai_profile.py"), "--check"],
+            [sys.executable, str(SCRIPTS / "make_night_profile.py"), "--check"],
             capture_output=True, text=True,
         )
         self.assertEqual(result.returncode, 0, result.stderr)

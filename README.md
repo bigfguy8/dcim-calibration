@@ -11,7 +11,7 @@ Automated optical calibration, testing, and configuration management for the **L
 * **Configuration Directory:** `/sdcard/lmc8.4/` (MGC compatibility path)
 * **Active Profiles:** 
   * `LXX521_TEX.xml` (V4.1 Texture-First Production Profile)
-  * `LXX521_AI.xml` (Optimized Balance Variant)
+  * `LXX521_NIGHT.xml` (Handheld City / Nightscape Profile)
 
 ---
 
@@ -34,6 +34,12 @@ Automated optical calibration, testing, and configuration management for the **L
 | **Noise ($\sigma$) @ ISO 3200** | $\le 12\text{ DN}$ |
 | **Mean Luma** | $100 - 140$ |
 | **Highlight Clipping** | $< 1\%$ |
+
+Night captures (`LXX521_NIGHT.xml`) are judged against relaxed gates by
+`report.py`: MTF50 center $\ge 0.18$, edge $\ge 0.12$ cy/px, mean luma
+$70 - 120$ DN, highlight clipping $< 2\%$, and green sigma
+$\le 15$ DN @ ISO 3200. Profiles whose name contains `NIGHT` opt in
+automatically; the set is published as `night_gates` in the JSON report.
 
 ---
 
@@ -80,17 +86,17 @@ gate, so CI can block regressions.
 
 ### Profile management
 
-`configs/xml/LXX521_AI.xml` is generated from `LXX521_TEX.xml`; the delta set
-and rationale are documented in `configs/xml/LXX521_AI.status.md` and enforced
+`configs/xml/LXX521_NIGHT.xml` is generated from `LXX521_TEX.xml`; the delta set
+and rationale are documented in `configs/xml/LXX521_NIGHT.status.md` and enforced
 by:
 
 ```bash
-python3 scripts/make_ai_profile.py --check
+python3 scripts/make_night_profile.py --check
 ```
 
 `deploy_profiles.sh --prune` archives any other `*.xml` in `/sdcard/lmc8.4/`
 under `archive/<timestamp>/` before deploying the two active profiles, so the
-destination always contains exactly `LXX521_TEX.xml` and `LXX521_AI.xml`.
+destination always contains exactly `LXX521_TEX.xml` and `LXX521_NIGHT.xml`.
 
 ### Tests
 
