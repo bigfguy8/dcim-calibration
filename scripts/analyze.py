@@ -609,6 +609,12 @@ def _json_safe(value: Any) -> Any:
         return value.item()
     if isinstance(value, float) and not math.isfinite(value):
         return None
+    # PIL returns EXIF rationals as IFDRational, which json cannot encode.
+    if hasattr(value, "numerator") and hasattr(value, "denominator"):
+        try:
+            return float(value.numerator) / float(value.denominator)
+        except (TypeError, ValueError, ZeroDivisionError):
+            return None
     if isinstance(value, dict):
         return {k: _json_safe(v) for k, v in value.items()}
     if isinstance(value, (list, tuple)):
