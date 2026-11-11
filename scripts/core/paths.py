@@ -25,7 +25,7 @@ RUNS_DIR = ROOT / "runs"
 
 # --- Defaults ---
 DEFAULT_MASTER = XML_DIR / "LXX521_TEX.xml"
-DEFAULT_TARGET = XML_DIR / "LXX521_NIGHT.xml"
+DEFAULT_TARGET = XML_DIR / "LXX521_AI.xml"
 # Phone deploy directory (directory the MGC app reads). There is deliberately
 # no default: set CALIB_LMC_DIR (preferred) or DCIM_LMC_DIR to the app's config
 # folder. Validated by scripts.core.safety before any write. Never a
