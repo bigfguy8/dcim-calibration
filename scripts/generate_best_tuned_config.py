@@ -14,16 +14,21 @@ Calibrated from DCIM capture analysis:
 - Bokeh / Portrait Mode: pref_Copmode_portrait_key=1, pref_opmode_portrait_key=1,
   lib_depth1_key=1, lib_depth2_key=1, lib_sharpeningedge_key=1
 
-Output: LXX521_IMX682_LMC84_Best.xml deployed to /sdcard/lmc8.4/
+Output: LXX521_IMX682_LMC84_Best.xml deployed to CALIB_LMC_DIR
 """
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-LMC84_DIR = Path("/sdcard/lmc8.4")
+LMC84_DIR = (
+    Path(os.environ["CALIB_LMC_DIR"]).expanduser()
+    if os.environ.get("CALIB_LMC_DIR")
+    else None
+)
 
 # Best-tuned parameters for IMX682 + LXX521 (calibrated from DCIM data)
 BEST_TUNED_PARAMS: dict[str, str] = {
@@ -154,7 +159,9 @@ def generate_best_tuned_config(
     # Validate well-formedness
     ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
-    # Deploy to /sdcard/lmc8.4/
+    # Deploy to the configured MGC profile directory
+    if LMC84_DIR is None:
+        raise SystemExit("[-] set CALIB_LMC_DIR to the MGC profile directory")
     LMC84_DIR.mkdir(parents=True, exist_ok=True)
     deploy_path = LMC84_DIR / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
@@ -180,7 +187,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output",
         default="LXX521_IMX682_LMC84_Best.xml",
-        help="Output filename (deployed to /sdcard/lmc8.4/)",
+        help="Output filename (deployed to CALIB_LMC_DIR)",
     )
     args = parser.parse_args()
 

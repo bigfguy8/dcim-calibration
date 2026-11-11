@@ -8,7 +8,7 @@ Environment variables
 ---------------------
 BASE_DIR            project working directory  (default: dir of this file's parent)
 DCIM_PATH           source camera capture folder  (default /sdcard/DCIM/Camera)
-CONFIGS_XML_PATH    LMC 8.4 XML profile folder  (default /sdcard/LMC8.4)
+CONFIGS_XML_PATH    profile XML folder          (default <repo>/configs/xml)
 CAPTURES_DIR        local capture staging dir   (default <base>/captures)
 LOGS_DIR            transient log dir           (default <base>/logs)
 REPORTS_DIR         archived reports dir        (default <base>/analysis/reports)

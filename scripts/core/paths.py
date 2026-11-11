@@ -26,10 +26,16 @@ RUNS_DIR = ROOT / "runs"
 # --- Defaults ---
 DEFAULT_MASTER = XML_DIR / "LXX521_TEX.xml"
 DEFAULT_TARGET = XML_DIR / "LXX521_NIGHT.xml"
-# Phone deploy directory (directory the LMC 8.4 app reads). Overridable via
-# the DCIM_LMC_DIR environment variable; validated by scripts.core.safety
-# before any write. Never a filesystem root/mount point.
-LMC_STORAGE_DIR = Path(os.environ.get("DCIM_LMC_DIR", "/sdcard/lmc8.4"))
+# Phone deploy directory (directory the MGC app reads). There is deliberately
+# no default: set CALIB_LMC_DIR (preferred) or DCIM_LMC_DIR to the app's config
+# folder. Validated by scripts.core.safety before any write. Never a
+# filesystem root/mount point.
+def configured_lmc_dir() -> "Path | None":
+    raw = os.environ.get("CALIB_LMC_DIR") or os.environ.get("DCIM_LMC_DIR")
+    return Path(raw).expanduser() if raw else None
+
+
+LMC_STORAGE_DIR = configured_lmc_dir()
 
 
 def ensure_dirs() -> None:
@@ -56,5 +62,6 @@ __all__ = [
     "DEFAULT_MASTER",
     "DEFAULT_TARGET",
     "LMC_STORAGE_DIR",
+    "configured_lmc_dir",
     "ensure_dirs",
 ]

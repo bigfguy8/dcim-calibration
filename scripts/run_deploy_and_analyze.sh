@@ -5,7 +5,7 @@
 #
 # Steps:
 #   1. Run deploy_profiles.sh to deploy exactly LXX521_TEX.xml and LXX521_NIGHT.xml
-#      to /sdcard/lmc8.4/ (any other *.xml is archived, never deleted).
+#      to the directory in CALIB_LMC_DIR (any other *.xml is archived).
 #   2. Run analyze_photos.py to extract image resolution and color channel
 #      metrics from the latest captures in /sdcard/DCIM/Camera/.
 set -euo pipefail
@@ -13,8 +13,13 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
-LMC_DIR="${CALIB_LMC_DIR:-/sdcard/lmc8.4}"
+LMC_DIR="${CALIB_LMC_DIR:-${DCIM_LMC_DIR:-}}"
 DCIM_DIR="${DCIM_PATH:-/sdcard/DCIM/Camera}"
+
+if [[ -z "${LMC_DIR}" ]]; then
+    echo "[-] set CALIB_LMC_DIR to the MGC profile directory" >&2
+    exit 2
+fi
 
 echo "============================================================"
 echo "MGC 8.9 Profile Deploy & Analyze"

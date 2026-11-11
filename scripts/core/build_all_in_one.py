@@ -23,7 +23,7 @@ Output:
   analysis/reports/all_in_one_master_merge_diff.md
 
 The output is an LMC 8.4-compatible <map> XML file and is deployed to
-/sdcard/LMC84/ (the directory the LMC 8.4 app reads).
+the MGC profile directory named by CALIB_LMC_DIR.
 """
 from __future__ import annotations
 
@@ -301,7 +301,7 @@ def build_all_in_one_master(
 - Portrait & bokeh keys: {validation['portrait_keys']}
 - Sharpness & MTF50 keys: {validation['sharpness_keys']}
 - Photo-mode ready: {validation['photo_mode_ready']}
-- Deploy target: {DEPLOY_DIR}
+- Deploy target: {DEPLOY_DIR or '(not configured)'}
 - Tuning changes: merged from 4 sub-profiles; see
   `analysis/reports/all_in_one_master_merge_diff.md`
 - Device validation: NOT PERFORMED.
@@ -331,15 +331,20 @@ portrait scenarios before deployment.
 
         # ---- Deploy to phone config dir (opt-in, guarded) -------------------
         if deploy:
-            try:
-                target_dir = check_deploy_target(DEPLOY_DIR)
-            except GuardError as exc:
-                logger.warning("Deploy skipped: %s", exc)
+            if DEPLOY_DIR is None:
+                logger.warning(
+                    "Deploy skipped: set CALIB_LMC_DIR to the MGC profile directory"
+                )
             else:
-                target_dir.mkdir(parents=True, exist_ok=True)
-                deploy_path = target_dir / output_path.name
-                shutil.copy2(output_path, deploy_path)
-                logger.info("Deployed to: %s", deploy_path)
+                try:
+                    target_dir = check_deploy_target(DEPLOY_DIR)
+                except GuardError as exc:
+                    logger.warning("Deploy skipped: %s", exc)
+                else:
+                    target_dir.mkdir(parents=True, exist_ok=True)
+                    deploy_path = target_dir / output_path.name
+                    shutil.copy2(output_path, deploy_path)
+                    logger.info("Deployed to: %s", deploy_path)
     else:
         logger.info("Dry run — no files written")
 
@@ -421,7 +426,7 @@ def _write_merge_diff_report(
     lines.append(f"- Keys changed: {total_changed}")
     lines.append("- Schema: `<map>` with `string name/value` entries (LMC 8.4)")
     lines.append("- Status: built_unverified")
-    lines.append(f"- Deploy target: {DEPLOY_DIR}")
+    lines.append(f"- Deploy target: {DEPLOY_DIR or '(not configured)'}")
 
     MERGE_DIFF_REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

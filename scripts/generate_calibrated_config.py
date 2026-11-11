@@ -1121,8 +1121,8 @@ def main() -> int:
         "--dest",
         type=Path,
         default=LMC_STORAGE_DIR,
-        help="phone deploy directory (default: %(default)s; "
-        "override with DCIM_LMC_DIR)",
+        help="phone deploy directory (default: CALIB_LMC_DIR; required "
+        "with --deploy)",
     )
     parser.add_argument(
         "--dry-run", action="store_true", help="show the delta without writing"
@@ -1174,6 +1174,12 @@ def main() -> int:
     )
 
     if args.deploy:
+        if args.dest is None:
+            print(
+                "[-] --deploy requires --dest or CALIB_LMC_DIR",
+                file=sys.stderr,
+            )
+            return 2
         info = deploy(report, args.dest)
         print(f"deployed: {info['file']}")
         if info["backup"]:

@@ -33,10 +33,12 @@ def fail(message: str) -> None:
 
 def build_v10_baseline(
     source: Path | str = DEFAULT_MASTER,
-    dest_dir: Path | str = LMC_STORAGE_DIR,
+    dest_dir: Path | str | None = LMC_STORAGE_DIR,
 ) -> None:
     """Build the V10 baseline config in ``dest_dir``."""
     source = Path(source)
+    if dest_dir is None:
+        fail("No deploy directory configured; set CALIB_LMC_DIR")
     dest_dir = check_deploy_target(dest_dir)
     base_name = BASE_NAME
 
@@ -67,7 +69,7 @@ def build_v10_baseline(
         probe.write_text("test", encoding="utf-8")
         probe.unlink()
     except OSError as exc:
-        fail(f"Cannot write to LMC84 folder {dest_dir}: {exc}")
+        fail(f"Cannot write to deploy folder {dest_dir}: {exc}")
 
     candidate = dest_dir / base_name
     stamp = datetime.now().astimezone().strftime("%Y%m%d_%H%M%S")

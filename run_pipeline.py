@@ -19,7 +19,7 @@ Usage examples:
     ./run_pipeline.py --skip-audit --verbose
     ./run_pipeline.py --steps env,calibrate --batch-dir /sdcard/DCIM/Camera
     ./run_pipeline.py --deploy              # authorize writes to phone storage
-    #    (/sdcard/lmc8.4, overridable via DCIM_LMC_DIR; or set DCIM_DEPLOY=1)
+    #    (CALIB_LMC_DIR must be set; or set DCIM_DEPLOY=1)
 
 Phone-storage writes (build_v10, build-all-in-one deploy, deploy step) are
 NEVER performed unless --deploy is passed or DCIM_DEPLOY=1 is set.
@@ -173,9 +173,11 @@ def _step_deploy(args: argparse.Namespace) -> Tuple[bool, str]:
         logger.warning(
             "deploy step targets phone storage (%s) — skipping. "
             "Pass --deploy (or set DCIM_DEPLOY=1) to authorize writes.",
-            LMC_STORAGE_DIR,
+            LMC_STORAGE_DIR or "(CALIB_LMC_DIR not set)",
         )
         return True, "skipped: phone storage write not authorized (use --deploy)"
+    if LMC_STORAGE_DIR is None:
+        return False, "deploy refused: CALIB_LMC_DIR is not set"
     profile = Path(args.deploy_profile)
     if not profile.is_file():
         return False, f"profile to deploy not found: {profile}"
@@ -215,9 +217,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--deploy",
         action="store_true",
-        help="authorize writes to phone storage (/sdcard/lmc8.4, overridable via "
-        "DCIM_LMC_DIR); also enabled by DCIM_DEPLOY=1. Without it, all "
-        "phone-writing steps are skipped.",
+        help="authorize writes to phone storage (CALIB_LMC_DIR must be set); "
+        "also enabled by DCIM_DEPLOY=1. Without it, all phone-writing steps "
+        "are skipped.",
     )
     parser.add_argument(
         "--dry-run",
@@ -306,8 +308,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--v10-dest",
-        default=str(LMC_STORAGE_DIR),
-        help="destination directory for V10 baseline config",
+        default=str(LMC_STORAGE_DIR) if LMC_STORAGE_DIR else None,
+        help="destination directory for V10 baseline config "
+        "(default: CALIB_LMC_DIR)",
     )
     parser.add_argument(
         "--allrounder-base",

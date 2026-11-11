@@ -8,7 +8,8 @@ Automated optical calibration, testing, and configuration management for the **L
 
 * **Base App:** MGC 8.9 (BSG)
 * **Target Device:** Lava Play Ultra 5G (`LXX521` / Sony `IMX682`)
-* **Configuration Directory:** `/sdcard/lmc8.4/` (MGC compatibility path)
+* **Configuration Directory:** set via `CALIB_LMC_DIR` (no default; the
+  deploy scripts refuse to run until it is provided)
 * **Active Profiles:** 
   * `LXX521_TEX.xml` (V4.1 Texture-First Production Profile)
   * `LXX521_NIGHT.xml` (Handheld City / Nightscape Profile)
@@ -59,7 +60,7 @@ python3 scripts/analyze.py analysis_results/20261111_190000/device --recursive
 python3 scripts/report.py analysis_results/20261111_190000/device/analysis.json
 
 # 5. Enforce the two-profile mandate on the MGC storage path
-./scripts/deploy_profiles.sh --prune
+CALIB_LMC_DIR=/path/to/mgc/config ./scripts/deploy_profiles.sh --prune
 ```
 
 ### ADB-optional operation
@@ -94,9 +95,10 @@ by:
 python3 scripts/make_night_profile.py --check
 ```
 
-`deploy_profiles.sh --prune` archives any other `*.xml` in `/sdcard/lmc8.4/`
+`deploy_profiles.sh --prune` archives any other `*.xml` in the destination
 under `archive/<timestamp>/` before deploying the two active profiles, so the
 destination always contains exactly `LXX521_TEX.xml` and `LXX521_NIGHT.xml`.
+There is no hardcoded destination: pass `--dest DIR` or set `CALIB_LMC_DIR`.
 
 ### Tests
 

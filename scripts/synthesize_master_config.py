@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 synthesize_master_config.py — Generate a new synthesized LMC 8.4 All-In-One
-Master config by combining parameters from all configs in /sdcard/LMC8.4/.
+Master config by combining parameters from all configured profile XMLs.
 
 Strategy:
   - SkinTone_Perfect.xml is the SAFE REFERENCE (proven working values)
@@ -13,16 +13,21 @@ Strategy:
       * Camera shutter sound off (pref_camera_single_shot_sound_key = "0")
   - Result: crash-safe config with best-practice composition and audio settings
 
-Output: LXX521_IMX682_LMC84_Synthesized_Master.xml deployed to /sdcard/LMC8.4/
+Output: LXX521_Synthesized_Master.xml deployed to CALIB_LMC_DIR
 """
 from __future__ import annotations
 
+import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict
 
-LMC84_DIR = Path("/sdcard/lmc8.4")
+LMC84_DIR = (
+    Path(os.environ["CALIB_LMC_DIR"]).expanduser()
+    if os.environ.get("CALIB_LMC_DIR")
+    else None
+)
 
 # Crash-critical parameters — must use SkinTone_Perfect values
 CRASH_CRITICAL: Dict[str, str] = {
@@ -93,10 +98,10 @@ def set_elem_value(elem: ET.Element, value: str) -> None:
 
 
 def synthesize_master_config(
-    lmc84_dir: Path = LMC84_DIR,
+    lmc84_dir: Path | None = LMC84_DIR,
     output_filename: str = "LXX521_Synthesized_Master.xml",
 ) -> Path:
-    """Synthesize a new Master config from all LMC84 configs.
+    """Synthesize a new Master config from the configured profiles.
 
     Strategy:
       - Load PATCHED.xml as base (Master image quality + 25 crash fixes)
@@ -104,8 +109,10 @@ def synthesize_master_config(
       - For crash-critical params: force SkinTone value
       - For best-practice params: set golden ratio grid + sound off
       - For all other parameters: keep PATCHED values
-    Output deployed to /sdcard/LMC8.4/
+    Output deployed to CALIB_LMC_DIR
     """
+    if lmc84_dir is None:
+        raise SystemExit("[-] set CALIB_LMC_DIR to the MGC profile directory")
     patched_path = lmc84_dir / "LXX521_TEX.xml"
     skintone_path = lmc84_dir / "LXX521_NIGHT.xml"
 
@@ -160,7 +167,7 @@ def synthesize_master_config(
     # Validate well-formedness
     ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
-    # Deploy to /sdcard/LMC8.4/
+    # Deploy to the configured MGC profile directory
     lmc84_dir.mkdir(parents=True, exist_ok=True)
     deploy_path = lmc84_dir / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)

@@ -2,7 +2,7 @@
 # deploy_profiles.sh - enforce the two-profile mandate on the MGC storage path.
 #
 # Only LXX521_TEX.xml and LXX521_NIGHT.xml are permitted as active profiles in
-# /sdcard/lmc8.4/. Any other *.xml found there is moved to
+# the destination directory. Any other *.xml found there is moved to
 # <dest>/archive/<timestamp>/ (never deleted) when --prune is used.
 #
 # Works over adb (device path) or directly on the filesystem (Termux shared
@@ -11,7 +11,7 @@ set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 XML_DIR="${CALIB_XML_DIR:-${REPO_ROOT}/configs/xml}"
-DEST="${CALIB_LMC_DIR:-${DCIM_LMC_DIR:-/sdcard/lmc8.4}}"
+DEST="${CALIB_LMC_DIR:-${DCIM_LMC_DIR:-}}"
 ADB="${ADB:-adb}"
 PRUNE=0
 DRY_RUN=0
@@ -23,7 +23,7 @@ usage() {
     cat <<'USAGE'
 Usage: scripts/deploy_profiles.sh [options]
 
-  --dest DIR     destination (default: /sdcard/lmc8.4)
+  --dest DIR     destination (required; or set CALIB_LMC_DIR)
   --prune        archive any non-mandated *.xml in DEST before deploying
   --local        force direct filesystem access (no adb)
   --dry-run      print the plan, change nothing
@@ -50,7 +50,7 @@ done
 case "${DEST}" in
     /|/sdcard|/storage|/data|/system|/vendor|/mnt) die "refusing unsafe destination: ${DEST}" ;;
 esac
-[ -n "${DEST}" ] || die "empty destination"
+[ -n "${DEST}" ] || die "no destination: pass --dest or set CALIB_LMC_DIR"
 
 # --------------------------------------------------------------------------- #
 # Transport selection
@@ -103,7 +103,9 @@ log "validated ${#ACTIVE[@]} active profile(s)"
 # --------------------------------------------------------------------------- #
 # Deploy
 # --------------------------------------------------------------------------- #
-dest_mkdir "${DEST}" || die "cannot create ${DEST}"
+if [ "${DRY_RUN}" -eq 0 ]; then
+    dest_mkdir "${DEST}" || die "cannot create ${DEST}"
+fi
 
 stamp="$(date +%Y%m%d_%H%M%S)"
 archive="${DEST}/archive/${stamp}"
@@ -174,4 +176,6 @@ fi
 
 log "deployed: ${deployed[*]}"
 if [ "${#pruned[@]}" -gt 0 ]; then log "archived: ${pruned[*]}"; fi
-[ "${DRY_RUN}" -eq 0 ] && log "manifest: ${DEST}/deploy_manifest.json"
+if [ "${DRY_RUN}" -eq 0 ]; then log "manifest: ${DEST}/deploy_manifest.json"; fi
+
+exit 0

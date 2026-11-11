@@ -30,11 +30,12 @@ Overrides (proven-safe operational parameters from SkinTone_Perfect):
     pref_qjpg_key          : 97    (balanced JPEG compression)
     pref_raw_key_main      : 0     (no raw output overhead)
 
-The output is ALWAYS written to /sdcard/LMC84/ so the LMC 8.4 app can
+The output is ALWAYS written to CALIB_LMC_DIR so the MGC app can
 load it directly.
 """
 from __future__ import annotations
 
+import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -82,7 +83,11 @@ SAFE_OVERRIDES: Dict[str, str] = {
 }
 
 # Deploy target — LMC 8.4 reads configs from this directory on the device
-LMC84_DIR = Path("/sdcard/lmc8.4")
+LMC84_DIR = (
+    Path(os.environ["CALIB_LMC_DIR"]).expanduser()
+    if os.environ.get("CALIB_LMC_DIR")
+    else None
+)
 
 
 def get_elem_value(elem: ET.Element) -> str:
@@ -101,7 +106,7 @@ def generate_safe_master_config(
     input_path: str | Path,
     output_filename: str = "LXX521_IMX682_Safe_Master.xml",
 ) -> Path:
-    """Generate a safe All-In-One Master config and deploy to /sdcard/LMC84/.
+    """Generate a safe All-In-One Master config and deploy to CALIB_LMC_DIR.
 
     Returns the path to the deployed file.
     """
@@ -137,9 +142,11 @@ def generate_safe_master_config(
         print(f"Warning: keys not found in source: {missing}")
 
     # Ensure deploy directory exists
+    if LMC84_DIR is None:
+        raise SystemExit("[-] set CALIB_LMC_DIR to the MGC profile directory")
     LMC84_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Write to /sdcard/LMC84/ (always)
+    # Write to the configured MGC profile directory
     deploy_path = LMC84_DIR / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
     print(f"Successfully generated safe All-In-One config at: {deploy_path}")

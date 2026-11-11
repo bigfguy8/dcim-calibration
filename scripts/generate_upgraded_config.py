@@ -20,16 +20,21 @@ Optimizations applied:
   - Golden ratio grid: pref_camera_grid_lines_mode=2
   - Sound off: pref_camera_single_shot_sound_key=0
 
-Output: LXX521_IMX682_LMC84_Upgraded_Master.xml deployed to /sdcard/LMC8.4/
+Output: LXX521_IMX682_LMC84_Upgraded_Master.xml deployed to CALIB_LMC_DIR
 """
 from __future__ import annotations
 
+import os
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict
 
-LMC84_DIR = Path("/sdcard/lmc8.4")
+LMC84_DIR = (
+    Path(os.environ["CALIB_LMC_DIR"]).expanduser()
+    if os.environ.get("CALIB_LMC_DIR")
+    else None
+)
 
 # Best-tuned parameters for IMX682 + LXX521 based on DCIM calibration analysis
 UPGRADED_PARAMS: Dict[str, str] = {
@@ -126,7 +131,9 @@ def generate_upgraded_config(
     # Validate well-formedness
     ET.tostring(root, encoding="utf-8", xml_declaration=True)
 
-    # Deploy to /sdcard/LMC8.4/
+    # Deploy to the configured MGC profile directory
+    if LMC84_DIR is None:
+        raise SystemExit("[-] set CALIB_LMC_DIR to the MGC profile directory")
     LMC84_DIR.mkdir(parents=True, exist_ok=True)
     deploy_path = LMC84_DIR / output_filename
     tree.write(deploy_path, encoding="utf-8", xml_declaration=True)
