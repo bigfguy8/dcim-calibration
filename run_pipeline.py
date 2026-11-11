@@ -11,13 +11,18 @@ Runs the calibration pipeline in discrete, togglable steps:
   5. build_v10- build the V10 baseline config
   6. build-allrounder - synthesize Ultimate All-Rounder master XML
   7. build-all-in-one - synthesize All-in-One Master LMC XML (Night + Bokeh + Skin-Tone)
-  8. deploy   - deploy profile to /sdcard/LMC84
+  8. deploy   - deploy profile to phone storage (requires --deploy)
 
 Usage examples:
-    ./run_pipeline.py                       # run all steps
+    ./run_pipeline.py                       # run all steps (phone deploy NOT included)
     ./run_pipeline.py --dry-run             # print plan, execute nothing
     ./run_pipeline.py --skip-audit --verbose
     ./run_pipeline.py --steps env,calibrate --batch-dir /sdcard/DCIM/Camera
+    ./run_pipeline.py --deploy              # authorize writes to phone storage
+    #    (/sdcard/LMC84, overridable via DCIM_LMC_DIR; or set DCIM_DEPLOY=1)
+
+Phone-storage writes (build_v10, build-all-in-one deploy, deploy step) are
+NEVER performed unless --deploy is passed or DCIM_DEPLOY=1 is set.
 """
 from __future__ import annotations
 
@@ -43,6 +48,7 @@ from core import (  # noqa: E402
 )
 from core import build_v10, calibration, noise, skin_tone, xml_utils  # noqa: E402
 from core import build_ultimate_allrounder, build_all_in_one  # noqa: E402
+from core.safety import deploy_enabled, is_phone_path, check_deploy_target, GuardError  # noqa: E402
 from core.logging import get_logger, setup_logger  # noqa: E402
 
 logger = get_logger()
@@ -106,11 +112,21 @@ def _step_skin_tone(args: argparse.Namespace) -> Tuple[bool, str]:
 
 
 def _step_build_v10(args: argparse.Namespace) -> Tuple[bool, str]:
+    dest = Path(args.v10_dest)
+    if is_phone_path(dest) and not deploy_enabled(args.deploy):
+        logger.warning(
+            "build_v10 targets phone storage (%s) — skipping. "
+            "Pass --deploy (or set DCIM_DEPLOY=1) to authorize writes.",
+            dest,
+        )
+        return True, "skipped: phone storage write not authorized (use --deploy)"
     try:
         build_v10.build_v10_baseline(
             source=Path(args.v10_source),
-            dest_dir=Path(args.v10_dest),
+            dest_dir=dest,
         )
+    except GuardError as exc:
+        return False, f"V10 build refused: {exc}"
     except SystemExit as exc:
         return False, f"V10 build failed: {exc.code}"
     return True, "V10 baseline config built"
@@ -140,22 +156,36 @@ def _step_build_all_in_one(args: argparse.Namespace) -> Tuple[bool, str]:
             low_light_path=Path(args.all_in_one_low_light),
             output_path=Path(args.all_in_one_output),
             dry_run=args.dry_run,
-            deploy=True,
+            deploy=deploy_enabled(args.deploy),
         )
     except SystemExit as exc:
         return False, f"All-in-One build failed: {exc.code}"
     except Exception as exc:  # noqa: BLE001
         return False, f"All-in-One build failed: {exc}"
-    return True, "All-in-One Master LMC XML built and deployed"
+    return True, (
+        "All-in-One Master LMC XML built"
+        + (" and deployed" if deploy_enabled(args.deploy) else " (phone deploy skipped; use --deploy)")
+    )
 
 
 def _step_deploy(args: argparse.Namespace) -> Tuple[bool, str]:
+    if not deploy_enabled(args.deploy):
+        logger.warning(
+            "deploy step targets phone storage (%s) — skipping. "
+            "Pass --deploy (or set DCIM_DEPLOY=1) to authorize writes.",
+            LMC_STORAGE_DIR,
+        )
+        return True, "skipped: phone storage write not authorized (use --deploy)"
     profile = Path(args.deploy_profile)
     if not profile.is_file():
         return False, f"profile to deploy not found: {profile}"
-    dest = LMC_STORAGE_DIR / profile.name
     try:
-        LMC_STORAGE_DIR.mkdir(parents=True, exist_ok=True)
+        dest_dir = check_deploy_target(LMC_STORAGE_DIR)
+    except GuardError as exc:
+        return False, f"deploy refused: {exc}"
+    dest = dest_dir / profile.name
+    try:
+        dest_dir.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(profile.read_bytes())
     except OSError as exc:
         return False, f"deploy failed: {exc}"
@@ -172,7 +202,7 @@ STEPS: List[Tuple[str, str, Callable[[argparse.Namespace], Tuple[bool, str]]]] =
     ("build_v10", "build V10 baseline config", _step_build_v10),
     ("build-allrounder", "synthesize Ultimate All-Rounder master XML", _step_build_allrounder),
     ("build-all-in-one", "synthesize All-in-One Master XML (Night + Bokeh + Skin-Tone)", _step_build_all_in_one),
-    ("deploy", "deploy profile to /sdcard/LMC84", _step_deploy),
+    ("deploy", "deploy profile to phone storage (requires --deploy)", _step_deploy),
 ]
 
 STEP_NAMES = [name for name, _desc, _fn in STEPS]
@@ -181,6 +211,13 @@ STEP_NAMES = [name for name, _desc, _fn in STEPS]
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="IMX682 / LMC 8.4 calibration pipeline orchestrator",
+    )
+    parser.add_argument(
+        "--deploy",
+        action="store_true",
+        help="authorize writes to phone storage (/sdcard/LMC84, overridable via "
+        "DCIM_LMC_DIR); also enabled by DCIM_DEPLOY=1. Without it, all "
+        "phone-writing steps are skipped.",
     )
     parser.add_argument(
         "--dry-run",

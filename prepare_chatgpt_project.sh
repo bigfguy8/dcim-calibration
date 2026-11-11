@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-set -eu
+set -Eeuo pipefail
 
 PROJECT="$HOME/dcim_calibration"
 OUTPUT="$HOME/storage/shared/Download"

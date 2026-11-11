@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 """
-Generate best-tuned LMC 8.4 calibration XML for LXX521 / IMX682.
+generate_best_tuned_config.py — Generate a clean, best-tuned LMC 8.4 All-In-One
+Master XML for Lava Play Ultra (LXX521) / Sony IMX682 sensor.
 
-Based on DCIM capture analysis:
-- R/B ratio: 0.90 - 1.37 (warm bias → AWB auto, cw_rg ~0.5725)
-- Sharpness: 19.9 - 298.4 (inconsistent → balanced sharpening)
-- Black clip: up to 12.56% (crushed shadows → HDR + highlight preservation)
-- Edge density: 2% - 17% (low texture → moderate sharpness boost)
-- ISO: up to 6200 (moderate denoise needed)
+Calibrated from DCIM capture analysis:
+- R/B ratio fix: AWB auto, cw_rg ~0.5725
+- Sharpness: lib_sharpgain_key=1.0, lib_sharpnessb_key=1.1, lib_sharpmini_key=0.5
+- Denoise: lib_denoise_key=1, lib_lumadenoise_key=1, pref_noise_model_key=1
+- Dynamic Range: pref_frames_hdr_key=2, pref_preservinghigh_key=1
+- JPEG Quality: pref_qjpg_key=95
+- Golden ratio grid: pref_camera_grid_lines_mode=2
+- Camera shutter sound: pref_camera_single_shot_sound_key=0
+- Bokeh / Portrait Mode: pref_Copmode_portrait_key=1, pref_opmode_portrait_key=1,
+  lib_depth1_key=1, lib_depth2_key=1, lib_sharpeningedge_key=1
 
-Output: LXX521_IMX682_LMC84_Best.xml → /sdcard/LMC8.4/
+Output: LXX521_IMX682_LMC84_Best.xml deployed to /sdcard/LMC8.4/
 """
 from __future__ import annotations
 
+import argparse
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -163,6 +169,19 @@ def generate_best_tuned_config(
 
 
 if __name__ == "__main__":
-    base_path = Path("configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml")
-    output_filename = "LXX521_IMX682_LMC84_Best.xml"
-    generate_best_tuned_config(base_path, output_filename)
+    parser = argparse.ArgumentParser(
+        description="Generate LMC 8.4 IMX682 best-tuned calibration XML"
+    )
+    parser.add_argument(
+        "--base",
+        default="configs/xml/LXX521_IMX682_LMC84_AllInOne_Master_PATCHED.xml",
+        help="Path to base XML profile",
+    )
+    parser.add_argument(
+        "--output",
+        default="LXX521_IMX682_LMC84_Best.xml",
+        help="Output filename (deployed to /sdcard/LMC8.4/)",
+    )
+    args = parser.parse_args()
+
+    generate_best_tuned_config(args.base, args.output)

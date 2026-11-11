@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 
 from .logging import get_logger
 from .paths import DEFAULT_MASTER, LMC_STORAGE_DIR
+from .safety import check_deploy_target
 
 logger = get_logger()
 
@@ -36,7 +37,7 @@ def build_v10_baseline(
 ) -> None:
     """Build the V10 baseline config in ``dest_dir``."""
     source = Path(source)
-    dest_dir = Path(dest_dir)
+    dest_dir = check_deploy_target(dest_dir)
     base_name = BASE_NAME
 
     if not source.is_file() or source.stat().st_size == 0:

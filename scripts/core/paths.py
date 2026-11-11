@@ -4,6 +4,7 @@ All path constants live here so individual scripts never hardcode
 relative locations. Resolve everything relative to this file so the
 package works regardless of the current working directory.
 """
+import os
 from pathlib import Path
 
 # Root of the dcim-calibration repository (parent of scripts/).
@@ -25,7 +26,10 @@ RUNS_DIR = ROOT / "runs"
 # --- Defaults ---
 DEFAULT_MASTER = XML_DIR / "LXX521_IMX682_LMC84_AllRounder.xml"
 DEFAULT_TARGET = XML_DIR / "LXX521_IMX682_LMC84_SkinTone_Perfect.xml"
-LMC_STORAGE_DIR = Path("/sdcard/LMC84")
+# Phone deploy directory (directory the LMC 8.4 app reads). Overridable via
+# the DCIM_LMC_DIR environment variable; validated by scripts.core.safety
+# before any write. Never a filesystem root/mount point.
+LMC_STORAGE_DIR = Path(os.environ.get("DCIM_LMC_DIR", "/sdcard/LMC8.4"))
 
 
 def ensure_dirs() -> None:

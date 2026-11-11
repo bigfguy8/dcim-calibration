@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # MGC AllInOne candidate — reproducible static validation (no camera runtime, no install)
 # Re-runnable. Prints PASS/FAIL per check and exits non-zero on any FAIL.
-set -u
+set -uo pipefail
 HOME_="$HOME"
 NATIVE="$HOME_/storage/shared/Download/MGC_CONFIG/9.4.103/mgc.xml"
 HERE="$(cd "$(dirname "$0")" && pwd)"

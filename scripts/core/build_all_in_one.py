@@ -36,6 +36,7 @@ from typing import Dict
 
 import xml.etree.ElementTree as ET
 
+from .safety import GuardError, check_deploy_target
 from .logging import get_logger
 from .paths import (
     ANALYSIS_DIR,
@@ -322,12 +323,17 @@ portrait scenarios before deployment.
         )
         logger.info("Merge diff report written: %s", MERGE_DIFF_REPORT)
 
-        # ---- Deploy to /sdcard/LMC84/ ------------------------------------
+        # ---- Deploy to phone config dir (opt-in, guarded) -------------------
         if deploy:
-            DEPLOY_DIR.mkdir(parents=True, exist_ok=True)
-            deploy_path = DEPLOY_DIR / output_path.name
-            shutil.copy2(output_path, deploy_path)
-            logger.info("Deployed to: %s", deploy_path)
+            try:
+                target_dir = check_deploy_target(DEPLOY_DIR)
+            except GuardError as exc:
+                logger.warning("Deploy skipped: %s", exc)
+            else:
+                target_dir.mkdir(parents=True, exist_ok=True)
+                deploy_path = target_dir / output_path.name
+                shutil.copy2(output_path, deploy_path)
+                logger.info("Deployed to: %s", deploy_path)
     else:
         logger.info("Dry run — no files written")
 

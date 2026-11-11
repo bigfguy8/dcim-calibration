@@ -16,3 +16,17 @@ runs/*
 # Superseded analysis output directories
 analysis_results/
 analysis_results_opencv/
+
+# Editor/backup files
+*.bak
+*.orig
+*.swp
+
+# Generated analysis reports (transient metric output)
+analysis/reports/
+*.report.json
+*.status.md
+
+# Generated calibration config artifacts (track canonical XML sources only)
+configs/xml/*_TEXTURE_FIRST.status.md
+configs/xml/*_TEXTURE_FIRST.report.json

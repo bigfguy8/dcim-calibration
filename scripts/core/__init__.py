@@ -6,6 +6,7 @@ orchestrators) can import them with a single dotted path:
     from scripts.core import calibration, xml_utils, skin_tone, build_v10, noise
 """
 from . import build_all_in_one, build_v10, calibration, logging, noise, skin_tone, xml_utils
+from . import safety
 from .paths import (
     DATA_DIR,
     DEFAULT_MASTER,
@@ -25,6 +26,7 @@ __all__ = [
     "noise",
     "skin_tone",
     "xml_utils",
+    "safety",
     "DATA_DIR",
     "DEFAULT_MASTER",
     "DEFAULT_TARGET",
