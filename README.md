@@ -12,7 +12,7 @@ Automated optical calibration, testing, and configuration management for the **L
   deploy scripts refuse to run until it is provided)
 * **Active Profiles:** 
   * `LXX521_TEX.xml` (V4.1 Texture-First Production Profile)
-  * `LXX521_NIGHT.xml` (Handheld City / Nightscape Profile)
+  * `LXX521_AI.xml` (Balanced Computational Variant)
 
 ---
 
@@ -20,7 +20,7 @@ Automated optical calibration, testing, and configuration management for the **L
 
 1. **`capture.sh`** — Executes automated test chart capture sequences via `adb` into structured session directories (`/sdcard/DCIM/calib/<session_id>/`), with local-import fallback when ADB is unavailable.
 2. **`pull.sh`** — Synchronizes captured RAW (`.dng`) and JPEG (`.jpg`) assets from device storage to the local workspace with SHA-256 integrity verification.
-3. **`analyze.py`** — Computes slanted-edge MTF50 sharpness metrics, per-channel noise distributions ($\sigma$), and exposure statistics using NumPy (with OpenCV when available).
+3. **`analyze.py`** — Computes slanted-edge MTF50 sharpness metrics, per-channel MAD-based noise distributions ($\sigma$), exposure statistics, and optional gray-patch CIEDE2000 neutrality using NumPy (with OpenCV when available).
 4. **`report.py`** — Aggregates metrics by profile, camera, and ISO to generate structured Markdown + JSON audit reports against the quality gates.
 
 ---
@@ -35,12 +35,14 @@ Automated optical calibration, testing, and configuration management for the **L
 | **Noise ($\sigma$) @ ISO 3200** | $\le 12\text{ DN}$ |
 | **Mean Luma** | $100 - 140$ |
 | **Highlight Clipping** | $< 1\%$ |
+| **Gray-Patch Neutrality ($\Delta E_{00}$)** | $\le 5$ |
 
 Night captures (`LXX521_NIGHT.xml`) are judged against relaxed gates by
 `report.py`: MTF50 center $\ge 0.18$, edge $\ge 0.12$ cy/px, mean luma
 $70 - 120$ DN, highlight clipping $< 2\%$, and green sigma
 $\le 15$ DN @ ISO 3200. Profiles whose name contains `NIGHT` opt in
-automatically; the set is published as `night_gates` in the JSON report.
+automatically; the set is published as `night_gates` in the JSON report. The
+gray-patch $\Delta E_{00} \le 5$ gate applies to every profile.
 
 ---
 
@@ -53,8 +55,9 @@ automatically; the set is published as `night_gates` in the JSON report.
 # 2. Pull + verify integrity (SHA-256 manifest, DNG/JPG pairing optional)
 ./scripts/pull.sh 20261111_190000 --require-raw
 
-# 3. Measure MTF50, per-channel sigma and exposure
-python3 scripts/analyze.py analysis_results/20261111_190000/device --recursive
+# 3. Measure MTF50, per-channel sigma, exposure and gray-patch neutrality
+python3 scripts/analyze.py analysis_results/20261111_190000/device --recursive \
+    --gray-patch 1180,820,420,420
 
 # 4. Aggregate to Markdown + JSON
 python3 scripts/report.py analysis_results/20261111_190000/device/analysis.json
@@ -87,18 +90,20 @@ gate, so CI can block regressions.
 
 ### Profile management
 
-`configs/xml/LXX521_NIGHT.xml` is generated from `LXX521_TEX.xml`; the delta set
-and rationale are documented in `configs/xml/LXX521_NIGHT.status.md` and enforced
+`configs/xml/LXX521_AI.xml` is generated from `LXX521_TEX.xml`; the delta set
+and rationale are documented in `configs/xml/LXX521_AI.status.md` and enforced
 by:
 
 ```bash
-python3 scripts/make_night_profile.py --check
+python3 scripts/make_ai_profile.py --check
 ```
 
 `deploy_profiles.sh --prune` archives any other `*.xml` in the destination
 under `archive/<timestamp>/` before deploying the two active profiles, so the
-destination always contains exactly `LXX521_TEX.xml` and `LXX521_NIGHT.xml`.
+destination always contains exactly `LXX521_TEX.xml` and `LXX521_AI.xml`.
 There is no hardcoded destination: pass `--dest DIR` or set `CALIB_LMC_DIR`.
+The optional `LXX521_NIGHT.xml` remains in `configs/xml/` for night sessions
+and is archived by `--prune` when it is not part of the active pair.
 
 ### Tests
 

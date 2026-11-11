@@ -12,6 +12,9 @@ For every captured frame this module reports:
   median, so chart edges do not inflate the result.
 * **Exposure statistics**: mean luma, highlight/shadow clipping and the
   5/50/95 luma percentiles.
+* **Gray-patch neutrality**: optional ``--gray-patch X,Y,W,H`` ROI converted
+  to CIE L*a*b* (D65) and compared with a neutral of the same lightness using
+  CIEDE2000 (spec gate: deltaE00 <= 5).
 
 OpenCV is used when importable, but is *not* required: loading and all
 measurements fall back to NumPy/Pillow so the pipeline runs on a stock
@@ -23,7 +26,7 @@ CLI
 ---
     python3 scripts/analyze.py <file-or-directory> [-o out.json]
                                 [--recursive] [--profile TEX] [--camera back]
-                                [--no-mtf]
+                                [--gray-patch X,Y,W,H] [--no-mtf]
 
 When the target is a directory and ``-o`` is omitted the JSON is written to
 ``<directory>/analysis.json``; a single file prints to stdout.
@@ -540,11 +543,137 @@ def measure_exposure(rgb: np.ndarray | None, gray: np.ndarray) -> dict[str, floa
 
 
 # --------------------------------------------------------------------------- #
+# Gray-patch neutrality (sRGB -> CIE Lab -> CIEDE2000)
+# --------------------------------------------------------------------------- #
+def _srgb_to_lab(rgb_dn: np.ndarray) -> tuple[float, float, float]:
+    """Convert an sRGB triple in 8-bit DN to CIE L*a*b* (D65, 2 deg)."""
+    rgb = np.asarray(rgb_dn, dtype=np.float64) / 255.0
+    linear = np.where(
+        rgb <= 0.04045, rgb / 12.92, ((rgb + 0.055) / 1.055) ** 2.4
+    )
+    r, g, b = linear
+    x = r * 0.4124564 + g * 0.3575761 + b * 0.1804375
+    y = r * 0.2126729 + g * 0.7151522 + b * 0.0721750
+    z = r * 0.0193339 + g * 0.1191920 + b * 0.9503041
+
+    xn, yn, zn = 0.95047, 1.0, 1.08883
+
+    def f(t: float) -> float:
+        return t ** (1.0 / 3.0) if t > 0.008856 else 7.787 * t + 16.0 / 116.0
+
+    fx, fy, fz = f(x / xn), f(y / yn), f(z / zn)
+    return (116.0 * fy - 16.0, 500.0 * (fx - fy), 200.0 * (fy - fz))
+
+
+def delta_e00(
+    lab1: tuple[float, float, float], lab2: tuple[float, float, float]
+) -> float:
+    """CIEDE2000 colour difference between two CIE L*a*b* points."""
+    l1, a1, b1 = lab1
+    l2, a2, b2 = lab2
+
+    c1 = math.hypot(a1, b1)
+    c2 = math.hypot(a2, b2)
+    c_bar = (c1 + c2) / 2.0
+    c_bar7 = c_bar**7
+    g = 0.5 * (1.0 - math.sqrt(c_bar7 / (c_bar7 + 25.0**7)))
+    a1p = (1.0 + g) * a1
+    a2p = (1.0 + g) * a2
+    c1p = math.hypot(a1p, b1)
+    c2p = math.hypot(a2p, b2)
+
+    def hue(a: float, b: float) -> float:
+        if a == 0.0 and b == 0.0:
+            return 0.0
+        return math.degrees(math.atan2(b, a)) % 360.0
+
+    h1p = hue(a1p, b1)
+    h2p = hue(a2p, b2)
+
+    d_lp = l2 - l1
+    d_cp = c2p - c1p
+    if c1p * c2p == 0.0:
+        d_hp = 0.0
+    elif abs(h2p - h1p) <= 180.0:
+        d_hp = h2p - h1p
+    elif h2p - h1p > 180.0:
+        d_hp = h2p - h1p - 360.0
+    else:
+        d_hp = h2p - h1p + 360.0
+    d_big_hp = 2.0 * math.sqrt(c1p * c2p) * math.sin(math.radians(d_hp) / 2.0)
+
+    l_barp = (l1 + l2) / 2.0
+    c_barp = (c1p + c2p) / 2.0
+    if c1p * c2p == 0.0:
+        h_barp = h1p + h2p
+    elif abs(h1p - h2p) <= 180.0:
+        h_barp = (h1p + h2p) / 2.0
+    elif h1p + h2p < 360.0:
+        h_barp = (h1p + h2p + 360.0) / 2.0
+    else:
+        h_barp = (h1p + h2p - 360.0) / 2.0
+
+    t = (
+        1.0
+        - 0.17 * math.cos(math.radians(h_barp - 30.0))
+        + 0.24 * math.cos(math.radians(2.0 * h_barp))
+        + 0.32 * math.cos(math.radians(3.0 * h_barp + 6.0))
+        - 0.20 * math.cos(math.radians(4.0 * h_barp - 63.0))
+    )
+    d_theta = 30.0 * math.exp(-(((h_barp - 275.0) / 25.0) ** 2))
+    c_barp7 = c_barp**7
+    rc = 2.0 * math.sqrt(c_barp7 / (c_barp7 + 25.0**7))
+    sl = 1.0 + (0.015 * (l_barp - 50.0) ** 2) / math.sqrt(
+        20.0 + (l_barp - 50.0) ** 2
+    )
+    sc = 1.0 + 0.045 * c_barp
+    sh = 1.0 + 0.015 * c_barp * t
+    rt = -math.sin(math.radians(2.0 * d_theta)) * rc
+
+    term_l = d_lp / sl
+    term_c = d_cp / sc
+    term_h = d_big_hp / sh
+    return math.sqrt(
+        term_l**2 + term_c**2 + term_h**2 + rt * term_c * term_h
+    )
+
+
+def measure_gray_patch(
+    rgb: np.ndarray | None, roi: tuple[int, int, int, int] | None
+) -> dict[str, Any] | None:
+    """Measure a neutral gray patch ROI and its CIEDE2000 error vs neutral."""
+    if rgb is None or roi is None:
+        return None
+    height, width = rgb.shape[:2]
+    x, y, patch_w, patch_h = roi
+    if patch_w <= 1 or patch_h <= 1:
+        return None
+    x0, y0 = max(0, x), max(0, y)
+    x1, y1 = min(width, x + patch_w), min(height, y + patch_h)
+    if x1 - x0 < 2 or y1 - y0 < 2:
+        return None
+
+    mean_dn = (
+        rgb[y0:y1, x0:x1].reshape(-1, 3).astype(np.float64).mean(axis=0) * 255.0
+    )
+    lab = _srgb_to_lab(mean_dn)
+    # Neutral of the same lightness: a* = b* = 0.
+    delta_e = delta_e00(lab, (lab[0], 0.0, 0.0))
+    return {
+        "roi": [x0, y0, x1 - x0, y1 - y0],
+        "rgb_dn": {"r": float(mean_dn[0]), "g": float(mean_dn[1]), "b": float(mean_dn[2])},
+        "lab": {"L": lab[0], "a": lab[1], "b": lab[2]},
+        "delta_e00": delta_e,
+    }
+
+
+
+# --------------------------------------------------------------------------- #
 # Record assembly
 # --------------------------------------------------------------------------- #
 _SESSION_RE = re.compile(r"(\d{8}[_-]\d{6})")
 _ISO_RE = re.compile(r"iso[\s_-]*(\d+)", re.IGNORECASE)
-_PROFILE_RE = re.compile(r"(LXX521[_-](TEX|AI))", re.IGNORECASE)
+_PROFILE_RE = re.compile(r"(LXX521[_-](TEX|AI|NIGHT))", re.IGNORECASE)
 _CAMERA_RE = re.compile(r"(front|back|rear|main|tele|wide|macro)", re.IGNORECASE)
 
 
@@ -629,6 +758,7 @@ def analyse_file(
     camera: str | None = None,
     session: str | None = None,
     compute_mtf: bool = True,
+    gray_patch: tuple[int, int, int, int] | None = None,
 ) -> dict[str, Any]:
     metadata = read_metadata(path)
     record: dict[str, Any] = {
@@ -662,6 +792,7 @@ def analyse_file(
                 "mean_luma": None,
                 "highlight_clipping_pct": None,
                 "shadow_clipping_pct": None,
+                "gray_patch": None,
             }
         )
         return _json_safe(record)
@@ -678,6 +809,7 @@ def analyse_file(
     record.update(measure_exposure(image.rgb, image.gray))
     record["noise_sigma"] = measure_noise(image.rgb, image.gray)
     record["noise_sigma_green"] = record["noise_sigma"]["g"]
+    record["gray_patch"] = measure_gray_patch(image.rgb, gray_patch)
 
     if compute_mtf:
         mtf = measure_mtf50(image.gray)
@@ -719,7 +851,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("target", type=Path, help="image file or directory")
     parser.add_argument("-o", "--output", type=Path, help="output JSON path")
     parser.add_argument("--recursive", action="store_true", help="walk sub-directories")
-    parser.add_argument("--profile", help="override profile label (TEX/AI)")
+    parser.add_argument("--profile", help="override profile label (TEX/AI/NIGHT)")
+    parser.add_argument(
+        "--gray-patch",
+        metavar="X,Y,W,H",
+        help="pixel ROI of a neutral gray card; reports CIEDE2000 neutrality error",
+    )
     parser.add_argument("--camera", help="override camera label")
     parser.add_argument("--session", help="override session id")
     parser.add_argument(
@@ -729,6 +866,19 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def _parse_roi(text: str) -> tuple[int, int, int, int]:
+    parts = [part.strip() for part in text.split(",")]
+    if len(parts) != 4:
+        raise argparse.ArgumentTypeError("expected X,Y,W,H")
+    try:
+        x, y, w, h = (int(part) for part in parts)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("ROI values must be integers") from exc
+    if w <= 1 or h <= 1:
+        raise argparse.ArgumentTypeError("ROI width/height must be > 1")
+    return x, y, w, h
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     target: Path = args.target
@@ -736,6 +886,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"[-] target not found: {target}", file=sys.stderr)
         return 2
 
+    roi = _parse_roi(args.gray_patch) if args.gray_patch else None
     images = list(iter_images(target, args.recursive))
     if not images:
         print(f"[-] no images found under: {target}", file=sys.stderr)
@@ -748,6 +899,7 @@ def main(argv: list[str] | None = None) -> int:
             camera=args.camera,
             session=args.session,
             compute_mtf=not args.no_mtf,
+            gray_patch=roi,
         )
         for path in images
     ]

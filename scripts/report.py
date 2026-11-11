@@ -44,6 +44,7 @@ GATES: dict[str, Any] = {
     "highlight_clipping_max_pct": 1.0,
     "noise_green_iso100_max_dn": 1.5,
     "noise_green_iso3200_max_dn": 12.0,
+    "gray_patch_delta_e00_max": 5.0,
 }
 
 # Night captures are legitimately darker, softer (denoise) and noisier, so the
@@ -65,6 +66,7 @@ _METRIC_LABELS = {
     "noise_green": "Noise sigma G (DN)",
     "mean_luma": "Mean luma (DN)",
     "highlight_clipping_pct": "Highlight clip (%)",
+    "gray_patch_delta_e00": "Gray-patch deltaE00",
 }
 
 
@@ -174,6 +176,9 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
         mean_luma = _mean(r.get("mean_luma") for r in items)
         clip = _mean(r.get("highlight_clipping_pct") for r in items)
         shadow = _mean(r.get("shadow_clipping_pct") for r in items)
+        delta_e = _mean(
+            (r.get("gray_patch") or {}).get("delta_e00") for r in items
+        )
         gates = gates_for(profile)
         threshold = noise_gate(iso, gates)
 
@@ -204,6 +209,15 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 clip,
                 [("highlight_clipping", (clip or 0) < gates["highlight_clipping_max_pct"])],
             ),
+            "gray_patch_delta_e00": _state(
+                delta_e,
+                [
+                    (
+                        "gray_patch_delta_e00",
+                        (delta_e or 0) <= gates["gray_patch_delta_e00_max"],
+                    )
+                ],
+            ),
         }
 
         for metric, status in checks.items():
@@ -232,6 +246,7 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 "mean_luma": mean_luma,
                 "highlight_clipping_pct": clip,
                 "shadow_clipping_pct": shadow,
+                "gray_patch_delta_e00": delta_e,
                 "checks": checks,
                 "status": "pass"
                 if all(status != "fail" for status in checks.values())
@@ -300,6 +315,9 @@ def render_markdown(
         f"| Green sigma | <= {GATES['noise_green_iso100_max_dn']:.1f} DN @ ISO 100, "
         f"<= {GATES['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200 |"
     )
+    lines.append(
+        f"| Gray-patch neutrality | deltaE00 <= {GATES['gray_patch_delta_e00_max']:.1f} |"
+    )
     lines.append("")
     lines.append(
         "Night profiles (`*NIGHT*`) use relaxed gates: "
@@ -316,15 +334,16 @@ def render_markdown(
     if summary["groups"]:
         lines.append(
             "| Profile | Camera | ISO | n | MTF50 C | MTF50 E | sigma G | Gate | "
-            "Luma | Clip | Status |"
+            "Luma | Clip | deltaE00 | Status |"
         )
         lines.append(
-            "| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :---: |"
+            "| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | "
+            "---: | :---: |"
         )
         for row in summary["groups"]:
             lines.append(
                 "| {profile} | {camera} | {iso} | {n} | {mc} | {me} | {ng} | {gate} | "
-                "{luma} | {clip} | {status} |".format(
+                "{luma} | {clip} | {de} | {status} |".format(
                     profile=row["profile"],
                     camera=row["camera"],
                     iso=row["iso"] if row["iso"] is not None else "n/a",
@@ -335,6 +354,7 @@ def render_markdown(
                     gate=_fmt(row["noise_gate"], 2),
                     luma=_fmt(row["mean_luma"], 1),
                     clip=_fmt(row["highlight_clipping_pct"], 2, "%"),
+                    de=_fmt(row.get("gray_patch_delta_e00"), 2),
                     status=_badge(row["status"]),
                 )
             )

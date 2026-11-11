@@ -207,5 +207,59 @@ class FilePipelineTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
 
+class GrayPatchTests(unittest.TestCase):
+    def test_ciede2000_matches_reference(self):
+        # Sharma et al. (2005) CIEDE2000 test pair #1.
+        self.assertAlmostEqual(
+            analyze.delta_e00((50.0, 2.6772, -79.7751), (50.0, 0.0, -82.7485)),
+            2.0425,
+            places=3,
+        )
+        self.assertEqual(
+            analyze.delta_e00((50.0, 0.0, 0.0), (50.0, 0.0, 0.0)), 0.0
+        )
+
+    def test_neutral_patch_is_near_zero_and_tint_fails(self):
+        neutral = np.full((64, 64, 3), 0.5, dtype=np.float32)
+        result = analyze.measure_gray_patch(neutral, (8, 8, 32, 32))
+        self.assertIsNotNone(result)
+        self.assertLess(result["delta_e00"], 0.5)
+
+        tinted = np.full((64, 64, 3), [0.50, 0.50, 0.40], dtype=np.float32)
+        tinted_result = analyze.measure_gray_patch(tinted, (8, 8, 32, 32))
+        self.assertGreater(tinted_result["delta_e00"], 5.0)
+
+    def test_roi_outside_image_is_skipped(self):
+        image = np.full((32, 32, 3), 0.5, dtype=np.float32)
+        self.assertIsNone(analyze.measure_gray_patch(image, (50, 50, 10, 10)))
+        self.assertIsNone(analyze.measure_gray_patch(None, (0, 0, 10, 10)))
+
+    def test_report_applies_delta_e_gate(self):
+        base = {
+            "profile": "LXX521_TEX.xml",
+            "camera": "main",
+            "iso": 100,
+            "status": "ok",
+            "mtf50_center": 0.35,
+            "mtf50_edge": 0.25,
+            "noise_sigma": {"g": 1.0},
+            "mean_luma": 120.0,
+            "highlight_clipping_pct": 0.0,
+            "gray_patch": {"delta_e00": 3.0},
+        }
+        passing = report.build_summary([base])["groups"][0]
+        self.assertEqual(passing["checks"]["gray_patch_delta_e00"], "pass")
+
+        failing = report.build_summary(
+            [{**base, "gray_patch": {"delta_e00": 8.0}}]
+        )["groups"][0]
+        self.assertEqual(failing["checks"]["gray_patch_delta_e00"], "fail")
+
+        missing = report.build_summary(
+            [{k: v for k, v in base.items() if k != "gray_patch"}]
+        )["groups"][0]
+        self.assertEqual(missing["checks"]["gray_patch_delta_e00"], "n/a")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
