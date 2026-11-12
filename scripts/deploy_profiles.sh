@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # deploy_profiles.sh - enforce the two-profile mandate on the MGC storage path.
 #
-# Only LXX521_TEX.xml and LXX521_AI.xml are permitted as active profiles in
+# Only LXX521_TEX.xml and LXX521_NIGHT.xml are permitted as active profiles in
 # the destination directory. Any other *.xml found there is moved to
 # <dest>/archive/<timestamp>/ (never deleted) when --prune is used.
 #
@@ -18,7 +18,7 @@ DRY_RUN=0
 FORCE_LOCAL=0
 FORCE_SOURCE_OVERLAP=0
 
-ACTIVE=("LXX521_TEX.xml" "LXX521_AI.xml")
+ACTIVE=("LXX521_TEX.xml" "LXX521_NIGHT.xml")
 
 usage() {
     cat <<'USAGE'

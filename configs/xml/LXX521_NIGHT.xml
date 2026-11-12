@@ -949,7 +949,7 @@
     <string name="bb_1_key">1.83</string>
     <string name="lib_lumadh_l2_pro_key">0</string>
     <string name="lib_lumadlsabre_l4a_key_front">0</string>
-    <string name="pref_opmode_video_key_front">0</string>
+    <string name="pref_opmode_video_key_front">1</string>
     <string name="gb_0_key">0.086</string>
     <string name="pref_exposure_wide_key">-3</string>
     <string name="lib_robustness_key">0</string>
@@ -2234,7 +2234,7 @@
     <string name="lib_tunsupresshotpixel_key">0</string>
     <string name="lib_gainthreshold_key_3">0</string>
     <string name="lib_shastafactor_key_front">0</string>
-    <string name="pref_opmode_key_front">0</string>
+    <string name="pref_opmode_key_front">1</string>
     <string name="lib_dehazedregulator2_key">0</string>
     <string name="lib_gainthreshold_key_5">0</string>
     <string name="lib_lumadnewb_key_3">0</string>
@@ -2645,4 +2645,4 @@
     <string name="green_key_tele">1.0</string>
     <string name="lib_lumadhsabre_l2a_pro_key">0</string>
     <string name="pref_opmode_night_key">0</string>
-<string name="pref_preservinghigh_key">1</string></map>
+<string name="pref_preservinghigh_key">1</string><string name="pref_camera_id_front">1</string><string name="pref_video_camera_id_front">1</string><string name="active_cam_id_front_key">1</string><string name="pref_camera_front_flashmode_key">ns</string><string name="pref_camera_previous_front_flashmode_key" /></map>

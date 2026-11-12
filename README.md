@@ -12,7 +12,7 @@ Automated optical calibration, testing, and configuration management for the **L
   deploy scripts refuse to run until it is provided)
 * **Active Profiles:** 
   * `LXX521_TEX.xml` (V4.1 Texture-First Production Profile)
-  * `LXX521_AI.xml` (Balanced Computational Variant)
+  * `LXX521_NIGHT.xml` (Handheld City / Nightscape Profile)
 
 ---
 
@@ -90,20 +90,20 @@ gate, so CI can block regressions.
 
 ### Profile management
 
-`configs/xml/LXX521_AI.xml` is generated from `LXX521_TEX.xml`; the delta set
-and rationale are documented in `configs/xml/LXX521_AI.status.md` and enforced
+`configs/xml/LXX521_NIGHT.xml` is generated from `LXX521_TEX.xml`; the delta set
+and rationale are documented in `configs/xml/LXX521_NIGHT.status.md` and enforced
 by:
 
 ```bash
-python3 scripts/make_ai_profile.py --check
+python3 scripts/make_night_profile.py --check
 ```
 
 `deploy_profiles.sh --prune` archives any other `*.xml` in the destination
 under `archive/<timestamp>/` before deploying the two active profiles, so the
-destination always contains exactly `LXX521_TEX.xml` and `LXX521_AI.xml`.
+destination always contains exactly `LXX521_TEX.xml` and `LXX521_NIGHT.xml`.
 There is no hardcoded destination: pass `--dest DIR` or set `CALIB_LMC_DIR`.
-The optional `LXX521_NIGHT.xml` remains in `configs/xml/` for night sessions
-and is archived by `--prune` when it is not part of the active pair.
+The optional `LXX521_AI.xml` remains in `configs/xml/` for computational/AI
+shooting modes and is archived by `--prune` when it is not part of the active pair.
 
 ### Tests
 
@@ -125,7 +125,7 @@ under `configs/candidates/LXX521/` and triaged against the canonical baseline
 ### Invariant (read-only)
 
 Candidates are **inputs, not deploy targets**. The active deployed pair remains
-`LXX521_TEX.xml` + `LXX521_AI.xml`; `deploy_profiles.sh` deploys only that pair.
+`LXX521_TEX.xml` + `LXX521_NIGHT.xml`; `deploy_profiles.sh` deploys only that pair.
 `/sdcard/lmc8.4` is **READ-ONLY** in this feature: the `device_live` source is
 verify-only and is never written to or deployed from. No push to `main`; all work
 lands on a feature branch only.

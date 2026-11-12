@@ -2124,7 +2124,6 @@
   texcolor.a = uAlphaFactor;                        
   thermalThrottleFps = 
   timestamp (nanos): 
-  topShotEnabled = 
   trackingEnabled = 
   uri = 
   useContinuousAutoFocusOnDuringRecording = 
@@ -3883,7 +3882,6 @@
  to use 
  took 
  tooltip_precise_anchor_threshold
- topShotEnabled = 
  trackingEnabled = 
  transitionToStart 
  unable to parse MotionScene file
@@ -4592,7 +4590,6 @@
 !camera.gouda.spotlight_enhance_v2
 !camera.leopard_scene_mode_enabled
 !camera.lobster.cuttlefish_enabled
-!camera.longp_topshot_notification
 !camera.max_zoom_ratio_facing_back
 !camera.mts_motion_photo_threshold
 !camera.mts_smartcapturenet_enable
@@ -7844,7 +7841,6 @@ $camera.cuttle.extended.uwz.threshold
 $camera.double_tap_launch_edu_enabled
 $camera.falcon_lowlight_lux_threshold
 $camera.gouda.pdstereo_remosaic_model
-$camera.mts_dynamic_topshot_INFERENCE
 $camera.optbar.show_auto_flash_option
 $camera.squad_faces_thres_for_shutter
 $camera_slow_launch_dialog_trigger_ms
@@ -13109,7 +13105,6 @@ $|$x
 , topEnd = 
 , topLeft=
 , topRight=
-, topShotScore=
 , touchEndBehavior=
 , transcodeClass=
 , transcoder=
@@ -26317,7 +26312,6 @@ FOCUS_SESSION
 FOLD
 FOLD_STATE_CHANGED
 FOLD_STATE_EVENT
-FONDUE_TOPSHOT
 FOOD
 FOREGROUND_EVENT
 FOREGROUND_SERVICE_START
@@ -66131,7 +66125,6 @@ TOOLTIP
 TOO_EARLY_FOR_HDR_PLUS_RESULT
 TOO_LATE_TO_CANCEL
 TOOzSyqTYeNhCbXw
-TOPSHOT_MODE
 TOP_BOTTOM
 TOP_LEFT
 TOP_MARGIN
@@ -69675,7 +69668,6 @@ Toolbar_titleTextColor
 Top level name must be simple
 TopBar
 TopeOSiTeYUWhAum
-Topshot
 ToqWUtyijlzrRpCV
 ToqsgELKGwpkICwA
 TotalCaptureResult
@@ -91440,7 +91432,6 @@ camera.ddepth_rear
 camera.ddepth_rear_use_opencl
 camera.decepticon_enabled
 camera.default_immersive
-camera.default_topshot_off
 camera.direct_encode
 camera.disable_hdrplus_postview
 camera.disable_merge_fix
@@ -91610,7 +91601,6 @@ camera.lobster.wide_virtual
 camera.location_default
 camera.logger_throttle_millis
 camera.longp_top_shot_animation
-camera.longp_topshot_indicator
 camera.longp_zoom_lock
 camera.longshot_lazy_proc
 camera.longshot_xtra_frames
@@ -91667,7 +91657,6 @@ camera.mts_long_shot_diversity
 camera.mts_ls_de_d2x
 camera.mts_ls_dupe_last
 camera.mts_max_alt_1
-camera.mts_new_topshot_weight
 camera.mts_newscore
 camera.mts_nima_aesthetic_tpu
 camera.mts_pose
