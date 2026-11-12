@@ -1,5 +1,5 @@
 # MGC 8.9 (BSG) — LXX521 / IMX682 — System Documentation
-Reconciled to the TEX + AI active-profile mandate (commit 3b513dd / PR #1).
+Reconciled to the TEX + NIGHT active-profile mandate.
 Generated 2026-11-12. Source of truth: scripts/deploy_profiles.sh, configs/gates.json.
 
 ## Active deploy pair (enforced by deploy_profiles.sh)
@@ -7,7 +7,7 @@ Generated 2026-11-12. Source of truth: scripts/deploy_profiles.sh, configs/gates
 | Profile | Role | SHA-256 | Keys | Deltas vs TEX |
 |---|---|---|---|---|
 | LXX521_TEX.xml | V4.1 Texture-First Production (baseline) | f84a96a0c1324f808edf6cf2e0d880dc64f7e7ea7e72faf4745a0e195678a1a0 | 2641 | 0 |
-| LXX521_AI.xml | Balanced Computational Variant | 2948747ed52c81a17f3d0df9261157dddd812a64d8edb0295628448e3348f204 | 2641 | 43 |
+| LXX521_NIGHT.xml | Handheld City / Nightscape Profile | 75a7621578f6e644291ea04b33e27322a418716de10cbb529cf5b9a730a7eaee | 2641 | 99 |
 
 Deploy contract:
 - No implicit destination: `--dest DIR` or `CALIB_LMC_DIR` required (DCIM_LMC_DIR fallback).
@@ -21,13 +21,13 @@ Deploy contract:
 
 | Profile | SHA-256 | Status |
 |---|---|---|
-| LXX521_NIGHT.xml | 75a7621578f6e644291ea04b33e27322a418716de10cbb529cf5b9a730a7eaee | Optional night/handheld session. Transport copy at /sdcard/Download/LXX521_NIGHT.xml. Not active; archived by --prune if present in dest. |
+| LXX521_AI.xml | 2948747ed52c81a17f3d0df9261157dddd812a64d8edb0295628448e3348f204 | Balanced Computational Variant. Transport copy at /sdcard/Download/. Not active; archived by --prune if present in dest. |
 | LXX521_ALLINONE.xml | 7f6a93ad... | Archived candidate (historical). |
 | LXX521_NIGHT_CRISP.xml | 00df6df3... | Transport copy in /sdcard/Download/. |
 
 ## Quality gates (configs/gates.json, day / night)
 
-| Metric | Day (TEX/AI) | Night (*NIGHT*) |
+| Metric | Day (TEX/NIGHT) | Night (*NIGHT*) |
 |---|---|---|
 | MTF50 center | >= 0.30 cy/px | >= 0.18 cy/px |
 | MTF50 edge | >= 0.22 cy/px | >= 0.12 cy/px |
