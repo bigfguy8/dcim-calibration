@@ -34,8 +34,11 @@ When the target is a directory and ``-o`` is omitted the JSON is written to
 from __future__ import annotations
 
 import argparse
+import datetime as _dt
+import hashlib
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
@@ -69,6 +72,71 @@ try:
 except Exception:  # pragma: no cover
     rawpy = None  # type: ignore
     _HAS_RAWPY = False
+
+try:  # ISO 12233 slanted-edge MTF (pure NumPy)
+    from mtf import slanted_edge_mtf50  # type: ignore
+
+    _HAS_MTF = True
+except Exception:  # pragma: no cover - same directory, should import
+    slanted_edge_mtf50 = None  # type: ignore
+    _HAS_MTF = False
+
+
+MGC_VERSION = "MGC 8.9 BSG"
+GATES_JSON_PATH = Path(__file__).resolve().parent.parent / "configs" / "gates.json"
+
+
+def _git_short_sha() -> str:
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(Path(__file__).resolve().parent.parent),
+             "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, timeout=5,
+        )
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return "unknown"
+
+
+def _sha256_file(path: Path) -> str | None:
+    try:
+        digest = hashlib.sha256()
+        with open(path, "rb") as handle:
+            for chunk in iter(lambda: handle.read(1 << 20), b""):
+                digest.update(chunk)
+        return digest.hexdigest()
+    except OSError:
+        return None
+
+
+def build_provenance(profile: str | None, mtf_method: str) -> dict[str, Any]:
+    """Build the analysis provenance block."""
+    profile_sha: str | None = None
+    profile_name = profile or "unknown"
+    if profile:
+        candidates = [
+            Path(__file__).resolve().parent.parent / "configs" / "xml" / f"LXX521_{profile}.xml",
+            Path(__file__).resolve().parent.parent / "configs" / "xml" / f"{profile}.xml",
+        ]
+        for candidate in candidates:
+            if candidate.is_file():
+                profile_sha = _sha256_file(candidate)
+                break
+    gates_sha = _sha256_file(GATES_JSON_PATH)
+    gates_source = (
+        f"{GATES_JSON_PATH} (sha256 {gates_sha})" if gates_sha else str(GATES_JSON_PATH)
+    )
+    return {
+        "tool_version": _git_short_sha(),
+        "profile_name": profile_name,
+        "profile_sha256": profile_sha,
+        "mgc_version": MGC_VERSION,
+        "mtf_method": mtf_method,
+        "gates_source": gates_source,
+        "analysis_timestamp": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+    }
 
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".bmp"}
@@ -758,6 +826,7 @@ def analyse_file(
     camera: str | None = None,
     session: str | None = None,
     compute_mtf: bool = True,
+    mtf_method: str = "gaussian",
     gray_patch: tuple[int, int, int, int] | None = None,
 ) -> dict[str, Any]:
     metadata = read_metadata(path)
@@ -812,20 +881,33 @@ def analyse_file(
     record["gray_patch"] = measure_gray_patch(image.rgb, gray_patch)
 
     if compute_mtf:
-        mtf = measure_mtf50(image.gray)
-        record["mtf50_center"] = mtf["mtf50_center"]
-        record["mtf50_edge"] = mtf["mtf50_edge"]
-        record["mtf50_cpp"] = mtf["mtf50_center"] or mtf["mtf50_edge"]
-        record["mtf50_region"] = (
-            "center" if mtf["mtf50_center"] is not None else
-            "edge" if mtf["mtf50_edge"] is not None else None
-        )
-        record["mtf_candidates"] = mtf["candidates"]
+        if mtf_method == "iso12233" and slanted_edge_mtf50 is not None:
+            mtf = slanted_edge_mtf50(image.gray)
+            record["mtf50_center"] = mtf["mtf50"]
+            record["mtf50_edge"] = mtf["mtf50"]
+            record["mtf50_cpp"] = mtf["mtf50"]
+            record["mtf50_region"] = (
+                "center" if mtf["mtf50"] is not None else None
+            )
+            record["mtf_candidates"] = []
+        else:
+            mtf = measure_mtf50(image.gray)
+            record["mtf50_center"] = mtf["mtf50_center"]
+            record["mtf50_edge"] = mtf["mtf50_edge"]
+            record["mtf50_cpp"] = mtf["mtf50_center"] or mtf["mtf50_edge"]
+            record["mtf50_region"] = (
+                "center" if mtf["mtf50_center"] is not None else
+                "edge" if mtf["mtf50_edge"] is not None else None
+            )
+            record["mtf_candidates"] = mtf["candidates"]
+        record["mtf_method"] = mtf_method
     else:
         record["mtf50_center"] = None
         record["mtf50_edge"] = None
         record["mtf50_cpp"] = None
         record["mtf50_region"] = None
+        record["mtf_candidates"] = []
+        record["mtf_method"] = "none"
 
     return _json_safe(record)
 
@@ -861,6 +943,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--session", help="override session id")
     parser.add_argument(
         "--no-mtf", action="store_true", help="skip MTF50 (faster batch runs)"
+    )
+    parser.add_argument(
+        "--mtf-method",
+        choices=["gaussian", "iso12233"],
+        default="gaussian",
+        help="MTF50 measurement method (default gaussian)",
     )
     parser.add_argument("--pretty", action="store_true", help="indent JSON output")
     return parser
@@ -899,6 +987,7 @@ def main(argv: list[str] | None = None) -> int:
             camera=args.camera,
             session=args.session,
             compute_mtf=not args.no_mtf,
+            mtf_method=args.mtf_method,
             gray_patch=roi,
         )
         for path in images
@@ -909,6 +998,8 @@ def main(argv: list[str] | None = None) -> int:
         "analyzer": "analyze.py",
         "target": str(target),
         "image_count": len(records),
+        "mtf_method": args.mtf_method,
+        "provenance": build_provenance(args.profile, args.mtf_method),
         "records": records,
     }
     text = json.dumps(_json_safe(payload), indent=2 if args.pretty else None)
