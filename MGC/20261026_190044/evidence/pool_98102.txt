@@ -2225,7 +2225,6 @@
   timestamp (nanos): 
   toneMapPosition.x = floor(clamp(toneMapPosition.x, 0.0, toneMapColumns - 1.0));
   toneMapPosition.y = floor(clamp(toneMapPosition.y, 0.0, toneMapRows - 1.0));
-  topShotEnabled = 
   trackingEnabled = 
   underwaterColorEnabled = 
   uri = 
@@ -4377,7 +4376,6 @@
  to track with range 
  took 
  tooltip_precise_anchor_threshold
- topShotEnabled = 
  trackingEnabled = 
  transitionToStart 
  u3(
@@ -5221,7 +5219,6 @@
 !camera.leopard_scene_mode_enabled
 !camera.lobster.cuttlefish_enabled
 !camera.lobster.precapture_regular
-!camera.longp_topshot_notification
 !camera.max_zoom_ratio_facing_back
 !camera.milk.front_model_thumbnail
 !camera.mts_motion_photo_threshold
@@ -8676,7 +8673,6 @@ $camera.falcon_lowlight_lux_threshold
 $camera.gate_activity_controller_init
 $camera.gouda.pdstereo_remosaic_model
 $camera.hotshot_pause_object_detector
-$camera.mts_dynamic_topshot_INFERENCE
 $camera.optbar.show_auto_flash_option
 $camera.preview_fps_debug_log_enabled
 $camera.squad_faces_thres_for_shutter
@@ -14620,7 +14616,6 @@ $}0'
 , topEnd = 
 , topLeft=
 , topRight=
-, topShotScore=
 , touchEndBehavior=
 , transcodeClass=
 , transcoder=
@@ -28741,7 +28736,6 @@ FOLD
 FOLDABLE_FEATURE_EVENT
 FOLD_STATE_CHANGED
 FOLD_STATE_EVENT
-FONDUE_TOPSHOT
 FOOD
 FOREGROUND_EVENT
 FOREGROUND_SEGMENTER_ID
@@ -72739,7 +72733,6 @@ TOO_EARLY_FOR_HDR_PLUS_RESULT
 TOO_FEW_LANDMARKS
 TOO_LATE_TO_CANCEL
 TOO_MANY_PEOPLE
-TOPSHOT_MODE
 TOP_BOTTOM
 TOP_LEFT
 TOP_MARGIN
@@ -76621,7 +76614,6 @@ Top bit not zero:
 Top level name must be simple
 TopBar
 TopMmlHywJoccxaK
-Topshot
 TotalCaptureResult
 Touch
 Touch roi type 
@@ -103446,7 +103438,6 @@ camera.decepticon.segmentation
 camera.decepticon_enabled
 camera.decepticon_force_run
 camera.default_immersive
-camera.default_topshot_off
 camera.developer.enable
 camera.diorama_enabled
 camera.direct_encode
@@ -103722,7 +103713,6 @@ camera.location_default
 camera.log_frame_availability
 camera.logger_throttle_millis
 camera.longp_top_shot_animation
-camera.longp_topshot_indicator
 camera.longp_zoom_lock
 camera.longshot_lazy_proc
 camera.longshot_xtra_frames
@@ -103815,7 +103805,6 @@ camera.mts_long_shot_diversity
 camera.mts_ls_de_d2x
 camera.mts_ls_dupe_last
 camera.mts_max_alt_1
-camera.mts_new_topshot_weight
 camera.mts_newscore
 camera.mts_nima_aesthetic_tpu
 camera.mts_pose
@@ -103965,8 +103954,6 @@ camera.tele_rm
 camera.thread_throttling
 camera.toast_remote_data
 camera.toggle_zoom_bar
-camera.topshotns
-camera.topshotp
 camera.ultrashort_tet_factor
 camera.unfold_preference
 camera.use_eclipse
