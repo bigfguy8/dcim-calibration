@@ -116,7 +116,7 @@ pruned=()
 
 if [ "${PRUNE}" -eq 1 ]; then
     # Overlap guard: refuse to prune into a registered `live` source path
-    # (e.g. /sdcard/lmc8.4) unless --force-source-overlap is given.
+    # unless --force-source-overlap is given.
     # Read-only; skipped in dry-run so dry-run behavior is unchanged.
     if [ "${DRY_RUN}" -eq 0 ]; then
         OVERLAP_ARGS=(--path "${DEST}")

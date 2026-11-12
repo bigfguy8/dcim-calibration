@@ -1,0 +1,21 @@
+{
+  "day": {
+    "mtf50_center_min_cpp": { "min": 0.30, "max": null, "unit": "cycles/px" },
+    "mtf50_edge_min_cpp": { "min": 0.22, "max": null, "unit": "cycles/px" },
+    "mean_luma_min": { "min": 100.0, "max": null, "unit": "DN" },
+    "mean_luma_max": { "min": null, "max": 140.0, "unit": "DN" },
+    "highlight_clipping_max_pct": { "min": null, "max": 1.0, "unit": "percent" },
+    "noise_green_iso100_max_dn": { "min": null, "max": 1.5, "unit": "DN" },
+    "noise_green_iso3200_max_dn": { "min": null, "max": 12.0, "unit": "DN" },
+    "gray_patch_delta_e00_max": { "min": null, "max": 5.0, "unit": "dE00" }
+  },
+  "night": {
+    "mtf50_center_min_cpp": { "min": 0.18, "max": null, "unit": "cycles/px" },
+    "mtf50_edge_min_cpp": { "min": 0.12, "max": null, "unit": "cycles/px" },
+    "mean_luma_min": { "min": 70.0, "max": null, "unit": "DN" },
+    "mean_luma_max": { "min": null, "max": 120.0, "unit": "DN" },
+    "highlight_clipping_max_pct": { "min": null, "max": 2.0, "unit": "percent" },
+    "noise_green_iso100_max_dn": { "min": null, "max": 2.5, "unit": "DN" },
+    "noise_green_iso3200_max_dn": { "min": null, "max": 15.0, "unit": "DN" }
+  }
+}
