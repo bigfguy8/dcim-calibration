@@ -1,0 +1,32 @@
+{
+  "sources": [
+    {
+      "name": "repo_canonical",
+      "path": "configs/xml",
+      "kind": "lmc84",
+      "role": "canonical",
+      "added_at": "2026-11-11T17:58:20.013812+00:00",
+      "manifest_sha256": "15961be1979b942a5427db488a7d2830eb5138aed145a9763abf67a5a4a6c4d9",
+      "notes": "TEX baseline, do not mutate"
+    },
+    {
+      "name": "repo_candidates",
+      "path": "configs/candidates/LXX521",
+      "kind": "lmc84",
+      "role": "candidate",
+      "added_at": "2026-11-11T17:58:20.013812+00:00",
+      "manifest_sha256": "a13d0d572263872552b1dc7b2755c89d292ec5ef8616d626fe50f4a5975d5d36",
+      "notes": "17 LXX521 variants, read-only inputs"
+    },
+    {
+      "name": "device_live",
+      "path": "/sdcard/lmc8.4",
+      "kind": "lmc84",
+      "role": "live",
+      "read_only": true,
+      "added_at": "2026-11-11T17:58:20.013812+00:00",
+      "manifest_sha256": "be1760a97fadd43041cc1eba963f4aa0245f411c223ea40044ecb938ea87640d",
+      "notes": "MGC deploy destination; READ-ONLY. Never write. Never deploy here."
+    }
+  ]
+}

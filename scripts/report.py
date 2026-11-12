@@ -36,7 +36,12 @@ from typing import Any, Iterable
 
 SCHEMA_VERSION = 1
 
-GATES: dict[str, Any] = {
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_GATES_PATH = REPO_ROOT / "configs" / "gates.json"
+
+# Verbatim fallback thresholds from the MGC 8.9 (BSG) specification, used only
+# if configs/gates.json is missing or unreadable.
+_DEFAULT_DAY = {
     "mtf50_center_min_cpp": 0.30,
     "mtf50_edge_min_cpp": 0.22,
     "mean_luma_min": 100.0,
@@ -46,11 +51,7 @@ GATES: dict[str, Any] = {
     "noise_green_iso3200_max_dn": 12.0,
     "gray_patch_delta_e00_max": 5.0,
 }
-
-# Night captures are legitimately darker, softer (denoise) and noisier, so the
-# NIGHT profile is judged against relaxed thresholds instead of the daylight
-# TEX gates. Profiles whose name contains "night" opt in automatically.
-NIGHT_GATES: dict[str, Any] = {
+_DEFAULT_NIGHT = {
     "mtf50_center_min_cpp": 0.18,
     "mtf50_edge_min_cpp": 0.12,
     "mean_luma_min": 70.0,
@@ -59,6 +60,75 @@ NIGHT_GATES: dict[str, Any] = {
     "noise_green_iso100_max_dn": 2.5,
     "noise_green_iso3200_max_dn": 15.0,
 }
+
+
+def _flat_section(section: dict[str, Any]) -> dict[str, float]:
+    """Flatten ``{metric: {min,max,unit}}`` into ``{metric: value}``."""
+    flat: dict[str, float] = {}
+    for metric, spec in section.items():
+        mn, mx = spec.get("min"), spec.get("max")
+        if mn is not None:
+            flat[metric] = float(mn)
+        elif mx is not None:
+            flat[metric] = float(mx)
+    return flat
+
+
+def load_gates(path: Path | str | None = None) -> tuple[dict[str, float], dict[str, float]]:
+    """Load day/night flat gate dicts from a JSON gates file.
+
+    Returns ``(day, night)``.  Falls back to the verbatim specification
+    defaults when the file is missing or unreadable.
+    """
+    p = Path(path) if path is not None else DEFAULT_GATES_PATH
+    day = dict(_DEFAULT_DAY)
+    night = dict(_DEFAULT_NIGHT)
+    try:
+        raw = json.loads(p.read_text(encoding="utf-8"))
+        day_sec = raw.get("day", {})
+        night_sec = raw.get("night", {})
+        if isinstance(day_sec, dict):
+            day = _flat_section(day_sec) or dict(_DEFAULT_DAY)
+        if isinstance(night_sec, dict):
+            night = _flat_section(night_sec) or dict(_DEFAULT_NIGHT)
+    except (OSError, json.JSONDecodeError, ValueError, AttributeError):
+        pass
+    return day, night
+
+
+def _embedded_gates_source(inputs: list[Path]) -> str | None:
+    """Return the first provenance ``gates_source`` path found in the inputs.
+
+    Each input may be an analysis JSON (with a top-level ``provenance`` block)
+    or a directory of such JSONs.  The ``gates_source`` value is stored as
+    ``"<path> (sha256 ...)"``, so only the path prefix is returned.
+    """
+    for path in inputs:
+        candidates = [path] if path.is_file() else sorted(path.glob("*.json"))
+        for candidate in candidates:
+            if candidate.name.startswith("calibration_report"):
+                continue
+            try:
+                payload = json.loads(candidate.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            prov = payload.get("provenance") if isinstance(payload, dict) else None
+            if isinstance(prov, dict):
+                source = prov.get("gates_source")
+                if isinstance(source, str):
+                    return source.split(" (", 1)[0].strip()
+    return None
+
+
+#: Effective gate sets loaded from ``configs/gates.json`` at import time.
+GATES, NIGHT_GATES = load_gates()
+
+
+def gates_for(profile: str | None) -> dict[str, Any]:
+    """Return the gate set for ``profile`` (night profiles get relaxed gates)."""
+    if profile and "night" in str(profile).lower():
+        return {**GATES, **NIGHT_GATES}
+    return GATES
 
 _METRIC_LABELS = {
     "mtf50_center": "MTF50 center (cy/px)",
@@ -73,13 +143,6 @@ _METRIC_LABELS = {
 # --------------------------------------------------------------------------- #
 # Gate helpers
 # --------------------------------------------------------------------------- #
-def gates_for(profile: str | None) -> dict[str, Any]:
-    """Return the gate set for ``profile`` (night profiles get relaxed gates)."""
-    if profile and "night" in str(profile).lower():
-        return {**GATES, **NIGHT_GATES}
-    return GATES
-
-
 def noise_gate(iso: float | None, gates: dict[str, Any] | None = None) -> float:
     """Log-linear green-noise threshold between ISO 100 and ISO 3200."""
     gates = gates or GATES
@@ -152,7 +215,18 @@ def _record_iso(record: dict[str, Any]) -> int | None:
         return None
 
 
-def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
+def build_summary(
+    records: list[dict[str, Any]],
+    day_gates: dict[str, Any] | None = None,
+    night_gates: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Aggregate records into profile/camera/ISO groups.
+
+    ``day_gates``/``night_gates`` override the module-level gate sets loaded
+    from ``configs/gates.json`` (useful for the ``--gates`` CLI override).
+    """
+    day = day_gates if day_gates is not None else GATES
+    night = night_gates if night_gates is not None else NIGHT_GATES
     analysed = [r for r in records if r.get("status", "ok") == "ok"]
     groups: dict[tuple[str, str, int | None], list[dict[str, Any]]] = defaultdict(list)
     for record in analysed:
@@ -179,17 +253,19 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
         delta_e = _mean(
             (r.get("gray_patch") or {}).get("delta_e00") for r in items
         )
-        gates = gates_for(profile)
-        threshold = noise_gate(iso, gates)
+        effective_gates = gates_for(profile) if (
+            day_gates is None and night_gates is None
+        ) else ({**day, **night} if profile and "night" in str(profile).lower() else day)
+        threshold = noise_gate(iso, effective_gates)
 
         checks = {
             "mtf50_center": _state(
                 mtf_center,
-                [("mtf50_center", (mtf_center or 0) >= gates["mtf50_center_min_cpp"])],
+                [("mtf50_center", (mtf_center or 0) >= effective_gates["mtf50_center_min_cpp"])],
             ),
             "mtf50_edge": _state(
                 mtf_edge,
-                [("mtf50_edge", (mtf_edge or 0) >= gates["mtf50_edge_min_cpp"])],
+                [("mtf50_edge", (mtf_edge or 0) >= effective_gates["mtf50_edge_min_cpp"])],
             ),
             "noise_green": _state(
                 noise_green, [("noise_green", (noise_green or 0) <= threshold)]
@@ -199,22 +275,22 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 [
                     (
                         "mean_luma",
-                        gates["mean_luma_min"]
+                        effective_gates["mean_luma_min"]
                         <= (mean_luma or 0)
-                        <= gates["mean_luma_max"],
+                        <= effective_gates["mean_luma_max"],
                     )
                 ],
             ),
             "highlight_clipping_pct": _state(
                 clip,
-                [("highlight_clipping", (clip or 0) < gates["highlight_clipping_max_pct"])],
+                [("highlight_clipping", (clip or 0) < effective_gates["highlight_clipping_max_pct"])],
             ),
             "gray_patch_delta_e00": _state(
                 delta_e,
                 [
                     (
                         "gray_patch_delta_e00",
-                        (delta_e or 0) <= gates["gray_patch_delta_e00_max"],
+                        (delta_e or 0) <= effective_gates["gray_patch_delta_e00_max"],
                     )
                 ],
             ),
@@ -242,7 +318,7 @@ def build_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
                 "mtf50_edge": mtf_edge,
                 "noise_green": noise_green,
                 "noise_gate": threshold,
-                "gates": gates,
+                "gates": effective_gates,
                 "mean_luma": mean_luma,
                 "highlight_clipping_pct": clip,
                 "shadow_clipping_pct": shadow,
@@ -284,7 +360,11 @@ def render_markdown(
     sources: list[str],
     title: str,
     generated_at: str,
+    day_gates: dict[str, Any] | None = None,
+    night_gates: dict[str, Any] | None = None,
 ) -> str:
+    day = day_gates if day_gates is not None else GATES
+    night = night_gates if night_gates is not None else NIGHT_GATES
     lines: list[str] = [f"# {title}", ""]
     lines.append(f"Generated: `{generated_at}`  ")
     lines.append(
@@ -302,30 +382,30 @@ def render_markdown(
     lines.append("")
     lines.append("| Metric | Target |")
     lines.append("| :--- | :--- |")
-    lines.append(f"| MTF50 center | >= {GATES['mtf50_center_min_cpp']:.2f} cy/px |")
-    lines.append(f"| MTF50 edge | >= {GATES['mtf50_edge_min_cpp']:.2f} cy/px |")
+    lines.append(f"| MTF50 center | >= {day['mtf50_center_min_cpp']:.2f} cy/px |")
+    lines.append(f"| MTF50 edge | >= {day['mtf50_edge_min_cpp']:.2f} cy/px |")
     lines.append(
-        f"| Mean luma | {GATES['mean_luma_min']:.0f} - "
-        f"{GATES['mean_luma_max']:.0f} DN |"
+        f"| Mean luma | {day['mean_luma_min']:.0f} - "
+        f"{day['mean_luma_max']:.0f} DN |"
     )
     lines.append(
-        f"| Highlight clipping | < {GATES['highlight_clipping_max_pct']:.1f} % |"
+        f"| Highlight clipping | < {day['highlight_clipping_max_pct']:.1f} % |"
     )
     lines.append(
-        f"| Green sigma | <= {GATES['noise_green_iso100_max_dn']:.1f} DN @ ISO 100, "
-        f"<= {GATES['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200 |"
+        f"| Green sigma | <= {day['noise_green_iso100_max_dn']:.1f} DN @ ISO 100, "
+        f"<= {day['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200 |"
     )
     lines.append(
-        f"| Gray-patch neutrality | deltaE00 <= {GATES['gray_patch_delta_e00_max']:.1f} |"
+        f"| Gray-patch neutrality | deltaE00 <= {day['gray_patch_delta_e00_max']:.1f} |"
     )
     lines.append("")
     lines.append(
         "Night profiles (`*NIGHT*`) use relaxed gates: "
-        f"MTF50 center >= {NIGHT_GATES['mtf50_center_min_cpp']:.2f}, "
-        f"edge >= {NIGHT_GATES['mtf50_edge_min_cpp']:.2f} cy/px, "
-        f"luma {NIGHT_GATES['mean_luma_min']:.0f}-{NIGHT_GATES['mean_luma_max']:.0f} DN, "
-        f"clipping < {NIGHT_GATES['highlight_clipping_max_pct']:.1f} %, "
-        f"green sigma <= {NIGHT_GATES['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200."
+        f"MTF50 center >= {night['mtf50_center_min_cpp']:.2f}, "
+        f"edge >= {night['mtf50_edge_min_cpp']:.2f} cy/px, "
+        f"luma {night['mean_luma_min']:.0f}-{night['mean_luma_max']:.0f} DN, "
+        f"clipping < {night['highlight_clipping_max_pct']:.1f} %, "
+        f"green sigma <= {night['noise_green_iso3200_max_dn']:.0f} DN @ ISO 3200."
     )
     lines.append("")
 
@@ -423,6 +503,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--fail-on-gate", action="store_true", help="exit 1 when any gate fails"
     )
+    parser.add_argument(
+        "--gates",
+        type=Path,
+        default=None,
+        help="path to a gates JSON file (default: embedded gates_source, else configs/gates.json)",
+    )
     return parser
 
 
@@ -437,15 +523,21 @@ def main(argv: list[str] | None = None) -> int:
         print("[-] no records found in the supplied inputs", file=sys.stderr)
         return 2
 
-    summary = build_summary(records)
+    gates_path = args.gates
+    if gates_path is None:
+        embedded = _embedded_gates_source(args.inputs)
+        gates_path = Path(embedded) if embedded else DEFAULT_GATES_PATH
+    eff_day, eff_night = load_gates(gates_path)
+
+    summary = build_summary(records, day_gates=eff_day, night_gates=eff_night)
     generated_at = _dt.datetime.now().astimezone().isoformat(timespec="seconds")
     payload = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": generated_at,
         "title": args.title,
         "sources": sources,
-        "gates": GATES,
-        "night_gates": NIGHT_GATES,
+        "gates": eff_day,
+        "night_gates": eff_night,
         "summary": summary,
         "records": records,
     }
@@ -455,7 +547,11 @@ def main(argv: list[str] | None = None) -> int:
     md_path = args.output_dir / "calibration_report.md"
     json_path.write_text(json.dumps(payload, indent=2, default=str) + "\n")
     md_path.write_text(
-        render_markdown(summary, records, sources, args.title, generated_at) + "\n"
+        render_markdown(
+            summary, records, sources, args.title, generated_at,
+            day_gates=eff_day, night_gates=eff_night,
+        )
+        + "\n"
     )
 
     print(f"[*] report -> {md_path}")

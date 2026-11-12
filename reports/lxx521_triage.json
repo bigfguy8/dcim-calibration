@@ -1,0 +1,2586 @@
+{
+  "candidate_count": 17,
+  "candidates": [
+    {
+      "bytes": 141557,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_2",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_3",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_4",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_5",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_front",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_2",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_3",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_4",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_5",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_front",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_2",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_3",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_4",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_5",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_front",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_2",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_3",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_4",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_5",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_front",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "pref_qjpg_key",
+            "new": "95",
+            "old": "97"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpgain_key_2",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpgain_key_3",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpgain_key_4",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpgain_key_5",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpgain_key_front",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpmini_key",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpmini_key_2",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpmini_key_3",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpmini_key_4",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpmini_key_5",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpmini_key_front",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.1"
+        ],
+        [
+          "lib_sharpnessb_key_2",
+          "0",
+          "1.1"
+        ],
+        [
+          "lib_sharpnessb_key_3",
+          "0",
+          "1.1"
+        ],
+        [
+          "lib_sharpnessb_key_4",
+          "0",
+          "1.1"
+        ],
+        [
+          "lib_sharpnessb_key_5",
+          "0",
+          "1.1"
+        ],
+        [
+          "lib_sharpnessb_key_front",
+          "0",
+          "1.1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ],
+        [
+          "pref_frames_hdr_key_2",
+          "0",
+          "2"
+        ],
+        [
+          "pref_frames_hdr_key_3",
+          "0",
+          "2"
+        ],
+        [
+          "pref_frames_hdr_key_4",
+          "0",
+          "2"
+        ],
+        [
+          "pref_frames_hdr_key_5",
+          "0",
+          "2"
+        ],
+        [
+          "pref_frames_hdr_key_front",
+          "0",
+          "2"
+        ],
+        [
+          "pref_qjpg_key",
+          "97",
+          "95"
+        ]
+      ],
+      "family": "experiment",
+      "key_count": 2641,
+      "name": "LXX521_AI.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_AI.xml",
+      "sha256": "2948747ed52c81a17f3d0df9261157dddd812a64d8edb0295628448e3348f204",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141527,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_expocor_key",
+            "new": "-0.1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.2",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "15",
+            "old": "0"
+          },
+          {
+            "key": "pref_iso_noise_key",
+            "new": "4",
+            "old": "3"
+          },
+          {
+            "key": "pref_qjpg_key",
+            "new": "98",
+            "old": "97"
+          },
+          {
+            "key": "pref_video_resolution",
+            "new": "RES_2160P",
+            "old": "RES_1080P"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_expocor_key",
+          "0",
+          "-0.1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.2"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "15"
+        ],
+        [
+          "pref_iso_noise_key",
+          "3",
+          "4"
+        ],
+        [
+          "pref_qjpg_key",
+          "97",
+          "98"
+        ],
+        [
+          "pref_video_resolution",
+          "RES_1080P",
+          "RES_2160P"
+        ]
+      ],
+      "family": "allinone",
+      "key_count": 2641,
+      "name": "LXX521_ALLINONE.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_ALLINONE.xml",
+      "sha256": "7f6a93ad1fd85a935ee9e14434d5d215bc3a44895eeed22427c08a6ab8078c86",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141521,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "cw_rg_key_front",
+            "new": "0.5925",
+            "old": "0.5725"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "cw_rg_key_front",
+          "0.5725",
+          "0.5925"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ]
+      ],
+      "family": "dslr",
+      "key_count": 2641,
+      "name": "LXX521_DSLR.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_DSLR.xml",
+      "sha256": "130f6f51f192eb807d2c396144082d12d7d6a6356d8eb57bf337963dde8420c6",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141521,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "dslr",
+      "key_count": 2641,
+      "name": "LXX521_DSLR64.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_DSLR64.xml",
+      "sha256": "f88b64a5dbf1762d7eaa7bbad1957d2b7c79a8dd413edabf85c20254da10f020",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141527,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_sharpgain_key",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_sharpgain_key",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpmini_key",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "dslr",
+      "key_count": 2641,
+      "name": "LXX521_DSLRMAX.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_DSLRMAX.xml",
+      "sha256": "d7fc151dfba05dd5e341392cdf7f6a2a6cbecaf667f9f9c7e91352b1e8672fbc",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "hr",
+      "key_count": 2641,
+      "name": "LXX521_HR.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_HR.xml",
+      "sha256": "1564bea411e4d399a18ca52addedca20b45c5f8d5b82c0315b29f8bd4635bbc4",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "experiment",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_CALIBRATED_V3.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_CALIBRATED_V3.xml",
+      "sha256": "1564bea411e4d399a18ca52addedca20b45c5f8d5b82c0315b29f8bd4635bbc4",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "cw_rg_key_front",
+            "new": "0.5925",
+            "old": "0.5725"
+          },
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "cw_rg_key_front",
+          "0.5725",
+          "0.5925"
+        ],
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "allinone",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V3_ALLINONE.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V3_ALLINONE.xml",
+      "sha256": "3d5306758ec94b241706dd6be38f3437fe4eefa5c43765a5b2687bd2bc6c86ea",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141521,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "dslr",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V3_DSLR_64MP.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V3_DSLR_64MP.xml",
+      "sha256": "f88b64a5dbf1762d7eaa7bbad1957d2b7c79a8dd413edabf85c20254da10f020",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141527,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_sharpgain_key",
+            "new": "1.0",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key",
+            "new": "0.5",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_sharpgain_key",
+          "0",
+          "1.0"
+        ],
+        [
+          "lib_sharpmini_key",
+          "0",
+          "0.5"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "dslr",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V3_DSLR_MAX.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V3_DSLR_MAX.xml",
+      "sha256": "d7fc151dfba05dd5e341392cdf7f6a2a6cbecaf667f9f9c7e91352b1e8672fbc",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatiala_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatialdenmi2_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "lib_spatiala_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_spatialdenmi2_key",
+          "0",
+          "1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "night",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V4_NIGHT.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V4_NIGHT.xml",
+      "sha256": "a915416bea420235e66ce65c5bb2ab97b3f3c800e5eab58dbecf1fc1f8cd469e",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatiala_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "lib_spatiala_key",
+          "0",
+          "1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "balanced",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V5_BALANCED.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V5_BALANCED.xml",
+      "sha256": "084b68e443f8c85a3a438a33023eb217273960583f33d2cd33c5966ce726a9b5",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141523,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "sharpness_probe",
+      "key_count": 2641,
+      "name": "LXX521_IMX682_LMC84_V6_SHARPNESS_PROBE.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IMX682_LMC84_V6_SHARPNESS_PROBE.xml",
+      "sha256": "b7df884c5f6c170858a881d278280d87998792b7943c63d787350232f99680f4",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "cw_rg_key_front",
+            "new": "0.5925",
+            "old": "0.5725"
+          },
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "cw_rg_key_front",
+          "0.5725",
+          "0.5925"
+        ],
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "aesthetic",
+      "key_count": 2641,
+      "name": "LXX521_IPHONE.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_IPHONE.xml",
+      "sha256": "3d5306758ec94b241706dd6be38f3437fe4eefa5c43765a5b2687bd2bc6c86ea",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141519,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_darkenlight_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_darkenlight_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_darkenlight_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_darkenlight_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_darkenlight_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_darkenlight_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_2",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_3",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_4",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_5",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoise_key_front",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_exposure_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_hdrbrightness_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_lightfix_key",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_2",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_3",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_4",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_5",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key_front",
+            "new": "3",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumanoise_key",
+            "new": "3",
+            "old": "1"
+          },
+          {
+            "key": "lib_night_mode_gain_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_night_mode_gain_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_night_mode_gain_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_night_mode_gain_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_night_mode_gain_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_night_mode_gain_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_nightmodeexposition_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpeningedge_key",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpeningedge_key_2",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpeningedge_key_3",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpeningedge_key_4",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpeningedge_key_5",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpeningedge_key_front",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpgain_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpgain_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpmini_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_2",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_3",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_4",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_5",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key_front",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessnoisemodel_key",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpnessnoisemodel_key_2",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpnessnoisemodel_key_3",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpnessnoisemodel_key_4",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "lib_sharpnessnoisemodel_key_5",
+            "new": "0",
+            "old": "1"
+          },
+          {
+            "key": "pref_camera_hdr_plus_key",
+            "new": "enhanced",
+            "old": "auto"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_2",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_3",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_4",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_5",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key_front",
+            "new": "8",
+            "old": "0"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key_2",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key_3",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key_4",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key_5",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_gamma_curve_mode_key_front",
+            "new": "0",
+            "old": "-1"
+          },
+          {
+            "key": "pref_hdrregion_key",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_hdrregion_key_2",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_hdrregion_key_3",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_hdrregion_key_4",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_hdrregion_key_5",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_hdrregion_key_front",
+            "new": "6",
+            "old": "5"
+          },
+          {
+            "key": "pref_noise_model_key",
+            "new": "0",
+            "old": "1"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_darkenlight_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_darkenlight_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_darkenlight_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_darkenlight_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_darkenlight_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_darkenlight_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoise_key",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoise_key_2",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoise_key_3",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoise_key_4",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoise_key_5",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoise_key_front",
+          "0",
+          "3"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_exposure_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_hdrbrightness_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_lightfix_key",
+          "1",
+          "0"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumadenoise_key_2",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumadenoise_key_3",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumadenoise_key_4",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumadenoise_key_5",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumadenoise_key_front",
+          "0",
+          "3"
+        ],
+        [
+          "lib_lumanoise_key",
+          "1",
+          "3"
+        ],
+        [
+          "lib_night_mode_gain_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_night_mode_gain_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_night_mode_gain_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_night_mode_gain_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_night_mode_gain_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_night_mode_gain_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_nightmodeexposition_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpeningedge_key",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpeningedge_key_2",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpeningedge_key_3",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpeningedge_key_4",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpeningedge_key_5",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpeningedge_key_front",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpgain_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpgain_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpmini_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key_2",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key_3",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key_4",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key_5",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key_front",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessnoisemodel_key",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpnessnoisemodel_key_2",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpnessnoisemodel_key_3",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpnessnoisemodel_key_4",
+          "1",
+          "0"
+        ],
+        [
+          "lib_sharpnessnoisemodel_key_5",
+          "1",
+          "0"
+        ],
+        [
+          "pref_camera_hdr_plus_key",
+          "auto",
+          "enhanced"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "8"
+        ],
+        [
+          "pref_frames_hdr_key_2",
+          "0",
+          "8"
+        ],
+        [
+          "pref_frames_hdr_key_3",
+          "0",
+          "8"
+        ],
+        [
+          "pref_frames_hdr_key_4",
+          "0",
+          "8"
+        ],
+        [
+          "pref_frames_hdr_key_5",
+          "0",
+          "8"
+        ],
+        [
+          "pref_frames_hdr_key_front",
+          "0",
+          "8"
+        ],
+        [
+          "pref_gamma_curve_mode_key",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_gamma_curve_mode_key_2",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_gamma_curve_mode_key_3",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_gamma_curve_mode_key_4",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_gamma_curve_mode_key_5",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_gamma_curve_mode_key_front",
+          "-1",
+          "0"
+        ],
+        [
+          "pref_hdrregion_key",
+          "5",
+          "6"
+        ],
+        [
+          "pref_hdrregion_key_2",
+          "5",
+          "6"
+        ],
+        [
+          "pref_hdrregion_key_3",
+          "5",
+          "6"
+        ],
+        [
+          "pref_hdrregion_key_4",
+          "5",
+          "6"
+        ],
+        [
+          "pref_hdrregion_key_5",
+          "5",
+          "6"
+        ],
+        [
+          "pref_hdrregion_key_front",
+          "5",
+          "6"
+        ],
+        [
+          "pref_noise_model_key",
+          "1",
+          "0"
+        ]
+      ],
+      "family": "night",
+      "key_count": 2641,
+      "name": "LXX521_NIGHT.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_NIGHT.xml",
+      "sha256": "75a7621578f6e644291ea04b33e27322a418716de10cbb529cf5b9a730a7eaee",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "cw_rg_key_front",
+            "new": "0.5925",
+            "old": "0.5725"
+          },
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatiala_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatialdenmi2_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "cw_rg_key_front",
+          "0.5725",
+          "0.5925"
+        ],
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "lib_spatiala_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_spatialdenmi2_key",
+          "0",
+          "1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "aesthetic",
+      "key_count": 2641,
+      "name": "LXX521_PIXEL.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_PIXEL.xml",
+      "sha256": "45c98c6d714a861620b69fd3216bed86804787077d84c9d233e88a3e05391be8",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    },
+    {
+      "bytes": 141524,
+      "delta": {
+        "added": [],
+        "changed": [
+          {
+            "key": "lib_denoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_denoisesmoothing_key",
+            "new": "2",
+            "old": "0"
+          },
+          {
+            "key": "lib_lumadenoise_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_sharpnessb_key",
+            "new": "1.02",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatiala_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "lib_spatialdenmi2_key",
+            "new": "1",
+            "old": "0"
+          },
+          {
+            "key": "pref_frames_hdr_key",
+            "new": "2",
+            "old": "0"
+          }
+        ],
+        "removed": []
+      },
+      "delta_signature": [
+        [
+          "lib_denoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_denoisesmoothing_key",
+          "0",
+          "2"
+        ],
+        [
+          "lib_lumadenoise_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_sharpnessb_key",
+          "0",
+          "1.02"
+        ],
+        [
+          "lib_spatiala_key",
+          "0",
+          "1"
+        ],
+        [
+          "lib_spatialdenmi2_key",
+          "0",
+          "1"
+        ],
+        [
+          "pref_frames_hdr_key",
+          "0",
+          "2"
+        ]
+      ],
+      "family": "aesthetic",
+      "key_count": 2641,
+      "name": "LXX521_PORTRAIT.xml",
+      "path": "/data/data/com.termux/files/home/dcim-calibration-github/configs/candidates/LXX521/LXX521_PORTRAIT.xml",
+      "sha256": "a915416bea420235e66ce65c5bb2ab97b3f3c800e5eab58dbecf1fc1f8cd469e",
+      "validation": {
+        "errors": [],
+        "pass": true,
+        "warnings": []
+      }
+    }
+  ],
+  "duplicate_groups": {
+    "by_delta_signature": [
+      [
+        "LXX521_DSLR64.xml",
+        "LXX521_IMX682_LMC84_V3_DSLR_64MP.xml"
+      ],
+      [
+        "LXX521_DSLRMAX.xml",
+        "LXX521_IMX682_LMC84_V3_DSLR_MAX.xml"
+      ],
+      [
+        "LXX521_HR.xml",
+        "LXX521_IMX682_LMC84_CALIBRATED_V3.xml"
+      ],
+      [
+        "LXX521_IMX682_LMC84_V3_ALLINONE.xml",
+        "LXX521_IPHONE.xml"
+      ],
+      [
+        "LXX521_IMX682_LMC84_V4_NIGHT.xml",
+        "LXX521_PORTRAIT.xml"
+      ]
+    ],
+    "by_sha256": [
+      [
+        "LXX521_DSLR64.xml",
+        "LXX521_IMX682_LMC84_V3_DSLR_64MP.xml"
+      ],
+      [
+        "LXX521_DSLRMAX.xml",
+        "LXX521_IMX682_LMC84_V3_DSLR_MAX.xml"
+      ],
+      [
+        "LXX521_HR.xml",
+        "LXX521_IMX682_LMC84_CALIBRATED_V3.xml"
+      ],
+      [
+        "LXX521_IMX682_LMC84_V3_ALLINONE.xml",
+        "LXX521_IPHONE.xml"
+      ],
+      [
+        "LXX521_IMX682_LMC84_V4_NIGHT.xml",
+        "LXX521_PORTRAIT.xml"
+      ]
+    ]
+  },
+  "families": {
+    "aesthetic": 3,
+    "allinone": 2,
+    "balanced": 1,
+    "dslr": 5,
+    "experiment": 2,
+    "hr": 1,
+    "night": 2,
+    "sharpness_probe": 1
+  },
+  "reference": "LXX521_TEX.xml",
+  "reference_key_count": 2641,
+  "schema_version": 1,
+  "validation_summary": {
+    "error": 0,
+    "pass": 17,
+    "warn": 0
+  }
+}
